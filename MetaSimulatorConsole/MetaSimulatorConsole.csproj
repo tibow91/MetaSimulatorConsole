@@ -41,6 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Case.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameController.cs" />
+    <Compile Include="GameView.cs" />
+    <Compile Include="Grille.cs" />
+    <Compile Include="Iterateur.cs" />
+    <Compile Include="MyLinkedList.cs" />
     <Compile Include="Personnages\Archer.cs" />
     <Compile Include="Personnages\Chevalier.cs" />
     <Compile Include="Comportements\ComportementCombat.cs" />
@@ -50,9 +57,12 @@
     <Compile Include="Organisation.cs" />
     <Compile Include="Personnages\Personnage.cs" />
     <Compile Include="Personnages\Princesse.cs" />
+    <Compile Include="PriorityQueue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimulationJeu.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="Vertex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
