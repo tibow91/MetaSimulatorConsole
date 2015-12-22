@@ -18,25 +18,39 @@ namespace MetaSimulatorConsole
         public NomJeu JeuChoisi = ListeJeux[0];
 
         Dictionary<NomJeu, Game> Jeux = new Dictionary<NomJeu, Game>(){};
+        public Grille TableauDeJeu;
 
-        protected GameManager()
+        public GameManager()
         {
         }
 
         private Game creerJeu(NomJeu nomjeu) // Poids mouche
         {
-             Game jeu = (Game)Jeux[nomjeu];
+            if (Jeux.ContainsKey(nomjeu))
+                return Jeux[nomjeu];
+            CreerTableauDeJeu();
+            Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, TableauDeJeu);
 
-              if(jeu == null) {
-                 jeu = GameFactorySelect.CreerJeu(nomjeu);
-                 Console.WriteLine("Creation du jeu : " + nomjeu);
-              }
-              return jeu;
+            Console.WriteLine("Creation du jeu : " + nomjeu);
+            return Jeux[nomjeu];
         }
-
+       
         public Game CreerNouveauJeu()
         {
             return creerJeu(JeuChoisi);
+        }
+
+        private void CreerTableauDeJeu()
+        {
+            if (Grille.HasInstance()) return;
+            Console.WriteLine("Quelles Dimensions pour le tableau de jeu ? Longueur = ?");
+            int longueur=0,largeur=0;
+            var ans = Console.ReadLine();
+            if (ans != null) longueur = Int32.Parse(ans);
+            Console.WriteLine("Largeur ?");
+            ans = Console.ReadLine();
+            if (ans != null) largeur = Int32.Parse(ans);
+            TableauDeJeu = Grille.Instance(longueur, largeur);
         }
 
         private Game chargerJeu(NomJeu nomjeu) // + données XML en param
@@ -45,7 +59,10 @@ namespace MetaSimulatorConsole
             return null;
         }
 
-        public void chosirJeu() { }
+        public void ChoisirJeu(NomJeu nomjeu)
+        {
+            JeuChoisi = nomjeu;
+        }
         public void chargerFichierXML(){} // Doit Permettre de restaurer ces instances de jeu depuis les fichiers XML
 
         public void save() { } // Sauvegarde les instances de jeu dans les XML

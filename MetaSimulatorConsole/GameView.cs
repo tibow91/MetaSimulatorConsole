@@ -7,8 +7,8 @@ namespace MetaSimulatorConsole
 {
     abstract class GameView
     {
-        private Game Jeu;
-        public GameView(Game jeu)
+        private GameObservable Jeu;
+        public GameView(GameObservable jeu)
         {
             this.Jeu = jeu;
         }

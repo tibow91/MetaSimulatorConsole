@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MetaSimulatorConsole
 {
 
-    class PriorityQueue<T> where T : IComparable<T>,IEquatable<T>
+    class PriorityQueue<T> where T : IComparable,IEquatable<T>
     {
         private MyLinkedList<T> first;
 

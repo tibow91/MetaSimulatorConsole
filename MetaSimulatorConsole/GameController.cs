@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class GameController : ObservateurView
+    class GameController : IObservateurView
     {
         private GameView View;
-        private Game Model;
+        private GameObservable Model;
 
-        public GameController(Game jeu,GameView view)
+        public GameController(GameObservable jeu,GameView view)
         {
             this.Model = jeu;
             this.View = view;
         }
 
-        public override void UpdateView()
+        public void UpdateView()
         {
             Model.UpdateView();
         }

@@ -10,7 +10,18 @@ namespace MetaSimulatorConsole
     {
         static void Main(string[] args)
         {
-            new SimulationJeu();
+            //new SimulationJeu();
+            var Manager = new GameManager();
+            Manager.CreerNouveauJeu();
+            Manager.CreerNouveauJeu();
+            Manager.ChoisirJeu(NomJeu.CDGSimulator);
+            Manager.CreerNouveauJeu();
+            var tableau = Manager.TableauDeJeu;
+            var path = tableau.Route(tableau[0, 0], tableau[4, 4]);
+            foreach (Vertex elem in path)
+            {
+                Console.WriteLine(elem.ToString());
+            }
             Console.Read();  // https://github.com/tibow91/MetaSimulatorConsole.git
         }
     }

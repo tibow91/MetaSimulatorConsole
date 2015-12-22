@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class Vertex : IComparable<Vertex>,IEquatable<Vertex>
+    class Vertex : IComparable,IEquatable<Vertex>
     {
         public int minDistance = Int32.MaxValue;
         public readonly String name;
@@ -23,9 +23,19 @@ namespace MetaSimulatorConsole
             return name;
         }
 
-        public int CompareTo(Vertex other)
+        public int CompareTo(object other)
         {
-            return minDistance.CompareTo(other.minDistance);
+            if(other == null)
+                throw new ArgumentNullException();
+            if(other is Vertex)
+            {
+                var vertex = (Vertex) other;
+                return minDistance.CompareTo(vertex.minDistance);
+            }
+            else
+            {
+                throw new InvalidCastException();   
+            }
         }
 
 
