@@ -22,6 +22,32 @@ namespace MetaSimulatorConsole
 
         public GameManager()
         {
+            DemanderJeuAChoisir();
+        }
+
+        private void DemanderJeuAChoisir()
+        {
+            /*
+            int k = 0,i;
+            do
+            {
+                i = 1;
+                foreach (var jeu in ListeJeux)
+                {
+                    Console.WriteLine(i + ": " + jeu);
+                    ++i;
+                }
+                Console.WriteLine("Entrez le numéro du jeu que vous souhaitez simuler");
+                string answer = "";
+                do
+                {
+                    answer = Console.ReadLine();
+                } while (String.IsNullOrEmpty(answer));
+                k = Int32.Parse(answer);
+            } while (k <= 0 || k< i);
+            ChoisirJeu(ListeJeux.);
+             * */
+
         }
 
         private Game creerJeu(NomJeu nomjeu) // Poids mouche
@@ -29,7 +55,7 @@ namespace MetaSimulatorConsole
             if (Jeux.ContainsKey(nomjeu))
                 return Jeux[nomjeu];
             CreerTableauDeJeu();
-            Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, TableauDeJeu);
+              Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, TableauDeJeu);
 
             Console.WriteLine("Creation du jeu : " + nomjeu);
             return Jeux[nomjeu];

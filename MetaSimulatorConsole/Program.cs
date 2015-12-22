@@ -22,6 +22,7 @@ namespace MetaSimulatorConsole
             {
                 Console.WriteLine(elem.ToString());
             }
+            //Manager.TableauDeJeu.Afficher();
             Console.Read();  // https://github.com/tibow91/MetaSimulatorConsole.git
         }
     }

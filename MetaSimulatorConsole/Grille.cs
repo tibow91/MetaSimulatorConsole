@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MetaSimulatorConsole
 {
-    class Node<T> : Vertex
+    class Node<T> : Vertex,IComparable,IEquatable<Node<T>>
     {
         private T _value;
         public T Value
@@ -19,6 +19,12 @@ namespace MetaSimulatorConsole
             : base(name)
         {
 
+        }
+
+        public bool Equals(Node<T> other)
+        {
+            if (this.CompareTo(other) == 0) return true;
+            return false;
         }
     }
 
@@ -84,19 +90,19 @@ namespace MetaSimulatorConsole
         public ConteneurParcourable(int longueur, int largeur) : base(longueur,largeur)
         {
         }
-        public void computePaths(Vertex source, Vertex dest)
+        public void computePaths(Node<T> source, Node<T> dest)
         {
             source.minDistance = 0;
             //  visit each vertex u, always visiting vertex with smallest minDistance first
 
-            PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
+            PriorityQueue<Node<T>> vertexQueue = new PriorityQueue<Node<T>>();
             vertexQueue.add(source);
             bool firststep = true;
 
 
             while (vertexQueue.peek() != null)
             {
-                Vertex u = vertexQueue.remove();
+                Node<T> u = vertexQueue.remove();
                 if (u == dest)
                 {
                     source.previous = null;
@@ -105,7 +111,7 @@ namespace MetaSimulatorConsole
                 // Visit each edge exiting u
                 foreach (Edge e in u.Edges)
                 {
-                    Vertex v = e.Target;
+                    Node<T> v = (Node<T>)e.Target;
                     //if(v.is_arrival() && dest != v) continue;
                     //if(firststep && !v.is_Walkable()) continue;
                     int weight = e.weight;
@@ -143,9 +149,9 @@ namespace MetaSimulatorConsole
 
         public ArrayList Route(object paris,object marseille)
         {
-            if (paris is Vertex && marseille is Vertex)
+            if (paris is Node<T> && marseille is Node<T>)
             {
-                computePaths((Vertex)paris, (Vertex)marseille);
+                computePaths((Node<T>)paris, (Node<T>)marseille);
                 return getShortestPathTo((Vertex)marseille);
             }
             else
@@ -158,11 +164,12 @@ namespace MetaSimulatorConsole
     class Grille : ConteneurParcourable<Case>
     {
         private static Grille instance;
-
+        private Window Fenetre;
         protected Grille(int longueur, int largeur)
             : base(longueur, largeur)
         {
             ConstruireGrille();
+            Fenetre = new Window(600,600,this);
         }
 
         public static bool HasInstance()
@@ -180,6 +187,7 @@ namespace MetaSimulatorConsole
 
             return instance;
         }
+
         private void ConstruireGrille()
         {
             Console.WriteLine("Construction de la Grille ({0},{1})",Longueur,Largeur);
@@ -188,7 +196,7 @@ namespace MetaSimulatorConsole
             {
                 for (int j = 0; j < Largeur; ++j)
                 {
-                    this[i,j] = new Case();
+                    this[i, j] = new Case();
                 }
             }
 
@@ -200,6 +208,7 @@ namespace MetaSimulatorConsole
                 for (; It.CurrentItem() != null; It.Droite())
                 {
                     var node = (Vertex)It.CurrentItem();
+                    
                     if (It.ItGauche().CurrentItem() != null)
                     {
                         // Ajouter Le noeud de gauche parmi les edges
@@ -220,11 +229,14 @@ namespace MetaSimulatorConsole
                         // Ajouter Le noeud du bas parmi les edges
                         node.Edges.Add(new Edge((Vertex)It.ItBas().CurrentItem(), 1));
                     }
-                    Console.Write(It+ " ");
                 }
-                Console.WriteLine();
             }
             Console.WriteLine("Fin de la Construction");
+        }
+
+        public void Afficher()
+        {
+            Fenetre.Run();
         }
     }
 }

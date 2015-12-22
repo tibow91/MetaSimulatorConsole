@@ -12,11 +12,13 @@ namespace MetaSimulatorConsole
     }
     abstract class Game
     {
-        private Grille grille;
+        protected Grille Tableau;
         public Game(Grille grille)
         {
-            this.grille = grille;
+            this.Tableau = grille;
         }
+
+        protected abstract void RemplirGrille();
     }
 
     class GameObservable : Game,IObservateurView
@@ -26,28 +28,59 @@ namespace MetaSimulatorConsole
         public virtual void UpdateView()
         {
         }
+
+        protected override void RemplirGrille(){}
+    
     }
     class GameAgeOfKebab : GameObservable
     {
+        protected override void RemplirGrille()
+        {
+            // pour chaque element de la grille
+            // Inscrire une texture avec pikachu
+            for (int i = 0; i < Tableau.Longueur; ++i)
+            {
+                for (int j = 0; j < Tableau.Largeur; ++j)
+                {
+                    Tableau[i, j] = new Case(new TexturePikachu());
+                }
+            }
+        }
         public GameAgeOfKebab(Grille grille) : base(grille)
         {
+            RemplirGrille();
         }
 
         public override void UpdateView()
         {
             throw new NotImplementedException();
         }
+
     }
 
     class GameCDGSimulator : GameObservable
     {
         public GameCDGSimulator(Grille grille) : base(grille)
         {
+            RemplirGrille();
         }
 
         public override void UpdateView()
         {
  	        throw new NotImplementedException();
+        }
+
+        protected override void RemplirGrille()
+        {
+            // pour chaque element de la grille
+            // Inscrire une texture avec pikachu
+            for (int i = 0; i < Tableau.Longueur; ++i)
+            {
+                for (int j = 0; j < Tableau.Largeur; ++j)
+                {
+                    Tableau[i, j] = new Case(new TexturePikachu(new TextureHerbe()));
+                }
+            }
         }
     }
 
