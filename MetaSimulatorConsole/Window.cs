@@ -191,7 +191,11 @@ namespace MetaSimulatorConsole
 
         private void RetroactionToucheNum1(object sender, KeyPressEventArgs e)
         {
-
+            if (Partie.Keyboard[Key.Keypad1])
+            {
+                Partie.Gestionnaire.DemanderJeuAChoisir();
+                Partie.Gestionnaire.CreerNouveauJeu();
+            }
         }
 
         private void RetroactionToucheNum2(object sender, KeyPressEventArgs e)

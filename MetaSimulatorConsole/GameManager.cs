@@ -36,7 +36,7 @@ namespace MetaSimulatorConsole
             DemanderJeuAChoisir();
         }
 
-        private void DemanderJeuAChoisir()
+        public void DemanderJeuAChoisir()
         {
             
             int k = 0,i;
