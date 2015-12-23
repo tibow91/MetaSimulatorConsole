@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace MetaSimulatorConsole
+{
+    abstract class CommandGameManager // pattern commandes
+    {
+        protected GameManager gestionnaire;
+
+        protected CommandGameManager(GameManager manager)
+        {
+            gestionnaire = manager;
+        }
+        public abstract void Execute();
+    }
+
+    class StopSimulation : CommandGameManager
+    {
+        public StopSimulation(GameManager manager) : base(manager){}
+    
+        public override void Execute()
+        {
+            Console.WriteLine("Demande d'arrêt de la simulation");
+            if(gestionnaire != null)
+                gestionnaire.Simulation.Stop = true;
+        }
+    }
+
+    class StartSimulation : CommandGameManager
+    {
+
+        public StartSimulation(GameManager manager): base(manager){}
+        public override void Execute()
+        {
+            Console.WriteLine("Demande de lancement de la simulation");
+            if (gestionnaire != null)
+            {
+                gestionnaire.LancerSimulation();
+            }
+        }
+    }
+
+    class ChangerJeu : CommandGameManager
+    {
+        private static bool Demande = false;
+        public ChangerJeu(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Demande de changement de Jeu");
+            if (gestionnaire != null)
+            {
+                if (!Demande)
+                {
+                    Demande = true;
+                    Thread workerThread = new Thread(this.operation);
+                    workerThread.Start();
+                }
+                else
+                {
+                    Console.WriteLine("Demande De jeu déjà en cours !");
+                }
+            }
+        }
+
+        private void operation()
+        {
+            gestionnaire.DemanderJeuAChoisir();
+            gestionnaire.CreerNouveauJeu();
+            Demande = false;
+        }
+    }
+}

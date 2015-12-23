@@ -12,8 +12,8 @@ namespace MetaSimulatorConsole
         static void Main(string[] args)
         {
             //new SimulationJeu();
-            var Manager = new GameManager();
-            Manager.CreerNouveauJeu();
+            var manager = new GameManager();
+            manager.CreerNouveauJeu();
             //Manager.CreerNouveauJeu();
             //Manager.ChoisirJeu(NomJeu.CDGSimulator);
             //Manager.CreerNouveauJeu();
@@ -23,10 +23,10 @@ namespace MetaSimulatorConsole
             //{
             //    Console.WriteLine(elem.ToString());
             //}
-            Thread workerThread = new Thread(Manager.Simulation.LancerSimulation);
-            workerThread.Start();
-            Manager.Fenetre.Run();
-            Console.Read();  // https://github.com/tibow91/MetaSimulatorConsole.git
+            //Thread workerThread = new Thread(Manager.Simulation.LancerSimulation);
+            //workerThread.Start();
+            manager.Fenetre.Run();
+          // https://github.com/tibow91/MetaSimulatorConsole.git
         }
     }
 }

@@ -169,32 +169,33 @@ namespace MetaSimulatorConsole
     class Clavier
     {
         private Window Partie;
-
+        private AppuiClavier CommandesClavier;
         public Clavier(Window jeu)
         {
             this.Partie = jeu;
+            CommandesClavier = AppuiClavier.ChaineDeCommandes(Partie);
             ChargerConfiguration();
         }
         public void ChargerConfiguration()
         {
-            Partie.KeyPress += RetroactionToucheNum0;
-            Partie.KeyPress += RetroactionToucheNum1;
-            Partie.KeyPress += RetroactionToucheNum2;
+            Partie.KeyPress += RetroactionTouches;
         }
-        private void RetroactionToucheNum0(object sender, KeyPressEventArgs e)
+        private void RetroactionTouches(object sender, KeyPressEventArgs e)
         {
-            if (Partie.Keyboard[Key.Keypad0])
-            {
-                Partie.Gestionnaire.Simulation.Stop = true;
-            }
+            if(CommandesClavier != null)
+                CommandesClavier.Traitement();
         }
 
         private void RetroactionToucheNum1(object sender, KeyPressEventArgs e)
         {
             if (Partie.Keyboard[Key.Keypad1])
             {
-                Partie.Gestionnaire.DemanderJeuAChoisir();
-                Partie.Gestionnaire.CreerNouveauJeu();
+                Console.WriteLine("Demande de lancement de la simulation");
+                Thread workerThread= new Thread(Partie.Gestionnaire.Simulation.LancerSimulation);
+                workerThread.Start();
+                workerThread.Join();
+                //Partie.Gestionnaire.DemanderJeuAChoisir();
+                //Partie.Gestionnaire.CreerNouveauJeu();
             }
         }
 

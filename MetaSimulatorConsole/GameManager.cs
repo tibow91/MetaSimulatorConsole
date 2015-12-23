@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
@@ -25,10 +26,10 @@ namespace MetaSimulatorConsole
         }
 
         public Grille TableauDeJeu;
-        private Game simulation;
+        private Game _simulation;
         public Game Simulation
         {
-            get { return simulation; }
+            get { return _simulation; }
         }
 
         public GameManager()
@@ -63,12 +64,16 @@ namespace MetaSimulatorConsole
         private Game creerJeu(NomJeu nomjeu) // Poids mouche
         {
             if (Jeux.ContainsKey(nomjeu))
+            {
+                _simulation = Jeux[nomjeu];
+                Simulation.AfficherGrille();
                 return Jeux[nomjeu];
+            }
             CreerTableauDeJeu();
               Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, TableauDeJeu);
 
             Console.WriteLine("Creation du jeu : " + nomjeu);
-            simulation = Jeux[nomjeu];
+            _simulation = Jeux[nomjeu];
             return Jeux[nomjeu];
         }
        
@@ -81,12 +86,12 @@ namespace MetaSimulatorConsole
         {
             if (Grille.HasInstance()) return;
             Console.WriteLine("Quelles Dimensions pour le tableau de jeu ? Longueur = ?");
-            int longueur=0,largeur=0;
-            var ans = Console.ReadLine();
-            if (ans != null) longueur = Int32.Parse(ans);
-            Console.WriteLine("Largeur ?");
-            ans = Console.ReadLine();
-            if (ans != null) largeur = Int32.Parse(ans);
+            int longueur=50,largeur=50;
+            //var ans = Console.ReadLine();
+            //if (ans != null) longueur = Int32.Parse(ans);
+            //Console.WriteLine("Largeur ?");
+            //ans = Console.ReadLine();
+            //if (ans != null) largeur = Int32.Parse(ans);
             TableauDeJeu = Grille.Instance(longueur, largeur);
             _fenetre = new Window(600,600,this);
         }
@@ -106,6 +111,22 @@ namespace MetaSimulatorConsole
 
         public void save() { } // Sauvegarde les instances de jeu dans les XML
 
+
+        internal void LancerSimulation()
+        {
+            if (Simulation == null)
+            {
+                Console.WriteLine("Pas de simulation chargée");
+                return;
+            }
+            if (Simulation.Started)
+            {
+                Console.WriteLine("Il y a déja une simulation en cours !");
+                return;
+            }
+            Thread workerThread = new Thread(Simulation.LancerSimulation);
+            workerThread.Start();
+        }
     }
 
 }

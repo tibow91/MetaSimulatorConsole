@@ -17,8 +17,15 @@ namespace MetaSimulatorConsole
         {
             get { return _stop; }
             set { _stop = value; }
-        } 
+        }
 
+        private bool _started = false;
+
+        public bool Started
+        {
+            get { return _started;  }
+            set { _started = value; }
+        }
         protected Grille Tableau;
         public Game(Grille grille)
         {
@@ -27,6 +34,11 @@ namespace MetaSimulatorConsole
 
         protected abstract void RemplirGrille();
         public abstract void LancerSimulation();
+
+        public void AfficherGrille()
+        {
+            RemplirGrille();
+        }
     }
 
     class GameObservable : Game,IObservateurView
@@ -44,6 +56,7 @@ namespace MetaSimulatorConsole
         {
             throw new NotImplementedException();
         }
+
     }
     class GameAgeOfKebab : GameObservable
     {
@@ -72,11 +85,13 @@ namespace MetaSimulatorConsole
         public override void LancerSimulation()
         {
             Stop = false;
+            Started = true;
             Console.WriteLine("Simulation lancée");
             while(!Stop)
             {
 
             }
+            Started = false;
             Console.WriteLine("Simulation arrêtée");
             var node = (Node<Case>)Tableau[24, 24];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
@@ -111,11 +126,13 @@ namespace MetaSimulatorConsole
         public override void LancerSimulation()
         {
             Stop = false;
+            Started = true;
             Console.WriteLine("Simulation lancée");
             while (!Stop)
             {
 
             }
+            Started = false;
             Console.WriteLine("Simulation arrêtée");
             var node = (Node<Case>)Tableau[0, 0];
             node.Value.SetTextures(new TextureHerbe());
@@ -150,11 +167,13 @@ namespace MetaSimulatorConsole
         public override void LancerSimulation()
         {
             Stop = false;
+            Started = true;
             Console.WriteLine("Simulation lancée");
             while (!Stop)
             {
 
             }
+            Started = false;
             Console.WriteLine("Simulation arrêtée");
             var node = (Node<Case>)Tableau[49, 49];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
