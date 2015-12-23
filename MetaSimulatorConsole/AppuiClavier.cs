@@ -43,15 +43,29 @@ namespace MetaSimulatorConsole
             AppuiClavier touche0 = new AppuiClavierToucheNum0(fenetre);
             AppuiClavier touche1 = new AppuiClavierToucheNum1(fenetre);
             AppuiClavier touche2 = new AppuiClavierToucheNum2(fenetre);
+            //AppuiClavier toucheEchap  = new AppuiClavierToucheEchap(fenetre);
 
             touche0.SetCommandeSuivante(touche1);
             touche1.SetCommandeSuivante(touche2);
             touche2.SetCommandeSuivante(null);
+            //toucheEchap.SetCommandeSuivante(null);
 
             //fileLogger.setNextLogger(consoleLogger);
 
             return touche0;
         }
+
+        public static AppuiClavier ChaineDeCommandesSpeciales(Window fenetre)
+        {
+            AppuiClavier toucheEchap = new AppuiClavierToucheEchap(fenetre);
+            toucheEchap.SetCommandeSuivante(null);
+
+            //fileLogger.setNextLogger(consoleLogger);
+
+            return toucheEchap;
+        }
+
+
     }
 
 
@@ -104,6 +118,27 @@ namespace MetaSimulatorConsole
         {
             if (Partie.Keyboard[Key.Keypad2])
             {
+                ExecuteCommandes();
+            }
+            else if (CommandeSuivante != null)
+                CommandeSuivante.Traitement();
+        }
+    }
+
+    class AppuiClavierToucheEchap : AppuiClavier
+    {
+        public AppuiClavierToucheEchap(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire));
+        }
+        public override void Traitement()
+        {
+            //Console.WriteLine("Traitement de l'appui clavier touche echap ...");
+            if (Partie.Keyboard[Key.Escape])
+            {
+                Console.WriteLine("appui clavier touche echap Détecté !");
+
                 ExecuteCommandes();
             }
             else if (CommandeSuivante != null)

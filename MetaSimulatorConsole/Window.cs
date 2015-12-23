@@ -41,7 +41,6 @@ namespace MetaSimulatorConsole
             };
 
 
-            Partie.UpdateFrame += Partie.Touches.KeyboardEvents;
             Partie.RenderFrame += Partie.InitRender;
             Partie.RenderFrame += RenderQuads;
             Partie.RenderFrame += Partie.SwapBuffers;
@@ -170,72 +169,35 @@ namespace MetaSimulatorConsole
     {
         private Window Partie;
         private AppuiClavier CommandesClavier;
+        private AppuiClavier CommandesSpeciales;
+
         public Clavier(Window jeu)
         {
             this.Partie = jeu;
             CommandesClavier = AppuiClavier.ChaineDeCommandes(Partie);
+            CommandesSpeciales = AppuiClavier.ChaineDeCommandesSpeciales(Partie);
             ChargerConfiguration();
         }
         public void ChargerConfiguration()
         {
             Partie.KeyPress += RetroactionTouches;
+            Partie.UpdateFrame += RetroactionTouchesSpeciales;
         }
         private void RetroactionTouches(object sender, KeyPressEventArgs e)
         {
             if(CommandesClavier != null)
                 CommandesClavier.Traitement();
         }
-
-        private void RetroactionToucheNum1(object sender, KeyPressEventArgs e)
+        private void RetroactionTouchesSpeciales(object sender, FrameEventArgs e)
         {
-            if (Partie.Keyboard[Key.Keypad1])
-            {
-                Console.WriteLine("Demande de lancement de la simulation");
-                Thread workerThread= new Thread(Partie.Gestionnaire.Simulation.LancerSimulation);
-                workerThread.Start();
-                workerThread.Join();
-                //Partie.Gestionnaire.DemanderJeuAChoisir();
-                //Partie.Gestionnaire.CreerNouveauJeu();
-            }
+            if (CommandesSpeciales != null)
+                CommandesSpeciales.Traitement();
         }
-
-        private void RetroactionToucheNum2(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        public void KeyboardEvents(object sender, FrameEventArgs e)
-        {
-            // add game logic, input handling
-
-            if (Partie.Keyboard[Key.Escape])
-            {
-                Partie.Exit();
-            }
-            else if (Partie.Keyboard[Key.G])
-            {
-                Partie.Couleur = Color4.Green;
-            }
-            else if (Partie.Keyboard[Key.B])
-            {
-                Partie.Couleur = Color4.Blue;
-            }
-
-        }
-
     }
     class Window : GameWindow
     {
-        float decX = -1f, decY = 1f, decZ = 0;
-
-        float dec = 0.1f;
-        public Color4 Couleur = Color4.Blue;
-        Color4 CouleurVerte = Color4.Green;
-        private int texture1, texture2;
         private Graphisme Graphismes;
         public Clavier Touches;
-        private int p1;
-        private int p2;
         private Grille tableau;
         public GameManager Gestionnaire;
 
@@ -255,15 +217,6 @@ namespace MetaSimulatorConsole
             //this.
             //Run(60.0);  // Run the game at 60 updates per second
 
-        }
-
-        public void DoWork()
-        {
-            Run();
-        }
-
-        public void RequestStop()
-        {
         }
 
         public void InitRender(object sender, FrameEventArgs e)

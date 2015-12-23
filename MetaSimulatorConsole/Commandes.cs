@@ -75,4 +75,21 @@ namespace MetaSimulatorConsole
             Demande = false;
         }
     }
+
+    class QuitterSimulation : CommandGameManager
+    {
+        public QuitterSimulation(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à quitter la simulation");
+            if (gestionnaire != null)
+            {
+                new StopSimulation(gestionnaire).Execute();
+                Console.WriteLine("Arrêt du programme ...");
+                // Attendre un moment
+                gestionnaire.Fenetre.Exit();
+            }
+        }
+    }
 }
