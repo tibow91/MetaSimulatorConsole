@@ -151,8 +151,8 @@ namespace MetaSimulatorConsole
 
         public void ChargerTextures()
         {
-            Textures.Add(NomTexture.Herbe, ChargerTexture("grass.png"));
-            Textures.Add(NomTexture.Pikachu, ChargerTexture("m_front.png"));
+            Textures.Add(NomTexture.Herbe, ChargerTexture("../res/grass.png"));
+            Textures.Add(NomTexture.Pikachu, ChargerTexture("../res/m_front.png"));
         }
     }
 
@@ -185,6 +185,7 @@ namespace MetaSimulatorConsole
         {
             if (Partie.Keyboard[Key.Keypad0])
             {
+                Partie.Gestionnaire.Simulation.Stop = true;
             }
         }
 
@@ -231,20 +232,21 @@ namespace MetaSimulatorConsole
         private int p1;
         private int p2;
         private Grille tableau;
+        public GameManager Gestionnaire;
 
         public Grille Tableau
         {
            get { return tableau; }
         }
 
-        public Window(int width, int height, Grille grille)
+        public Window(int width, int height, GameManager manager)
             : base(width, height)
         {
-            tableau = grille;
+            Gestionnaire = manager;
+            tableau = Gestionnaire.TableauDeJeu;
             Touches = new Clavier(this);
             Graphismes = new Graphisme(this);
-            //Thread workerThread = new Thread(this.DoWork);
-//            workerThread.Start();
+
             //this.
             //Run(60.0);  // Run the game at 60 updates per second
 

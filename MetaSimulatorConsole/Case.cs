@@ -56,6 +56,10 @@ namespace MetaSimulatorConsole
         }
     }
 
+    class TexturePikachuSurHerbe : TexturePikachu
+    {
+        public TexturePikachuSurHerbe() : base(new TextureHerbe()) { }
+    }
     class Case 
     {
         public Texture Textures;

@@ -18,7 +18,18 @@ namespace MetaSimulatorConsole
         public NomJeu JeuChoisi = ListeJeux[0];
 
         Dictionary<NomJeu, Game> Jeux = new Dictionary<NomJeu, Game>(){};
+        private Window _fenetre;
+        public Window Fenetre
+        {
+            get { return _fenetre; }
+        }
+
         public Grille TableauDeJeu;
+        private Game simulation;
+        public Game Simulation
+        {
+            get { return simulation; }
+        }
 
         public GameManager()
         {
@@ -27,7 +38,7 @@ namespace MetaSimulatorConsole
 
         private void DemanderJeuAChoisir()
         {
-            /*
+            
             int k = 0,i;
             do
             {
@@ -37,16 +48,15 @@ namespace MetaSimulatorConsole
                     Console.WriteLine(i + ": " + jeu);
                     ++i;
                 }
-                Console.WriteLine("Entrez le numéro du jeu que vous souhaitez simuler");
                 string answer = "";
                 do
                 {
+                    Console.WriteLine("Entrez le numéro du jeu que vous souhaitez simuler");
                     answer = Console.ReadLine();
                 } while (String.IsNullOrEmpty(answer));
                 k = Int32.Parse(answer);
-            } while (k <= 0 || k< i);
-            ChoisirJeu(ListeJeux.);
-             * */
+            } while (k <= 0 || k >  ListeJeux.Count);
+            ChoisirJeu(ListeJeux[k-1]);            
 
         }
 
@@ -58,6 +68,7 @@ namespace MetaSimulatorConsole
               Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, TableauDeJeu);
 
             Console.WriteLine("Creation du jeu : " + nomjeu);
+            simulation = Jeux[nomjeu];
             return Jeux[nomjeu];
         }
        
@@ -77,6 +88,7 @@ namespace MetaSimulatorConsole
             ans = Console.ReadLine();
             if (ans != null) largeur = Int32.Parse(ans);
             TableauDeJeu = Grille.Instance(longueur, largeur);
+            _fenetre = new Window(600,600,this);
         }
 
         private Game chargerJeu(NomJeu nomjeu) // + données XML en param
@@ -88,6 +100,7 @@ namespace MetaSimulatorConsole
         public void ChoisirJeu(NomJeu nomjeu)
         {
             JeuChoisi = nomjeu;
+            Console.WriteLine("Jeu choisi: {0}", JeuChoisi);
         }
         public void chargerFichierXML(){} // Doit Permettre de restaurer ces instances de jeu depuis les fichiers XML
 

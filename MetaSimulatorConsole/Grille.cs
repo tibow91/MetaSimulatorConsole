@@ -164,12 +164,10 @@ namespace MetaSimulatorConsole
     class Grille : ConteneurParcourable<Case>
     {
         private static Grille instance;
-        private Window Fenetre;
         protected Grille(int longueur, int largeur)
             : base(longueur, largeur)
         {
             ConstruireGrille();
-            Fenetre = new Window(600,600,this);
         }
 
         public static bool HasInstance()
@@ -234,9 +232,5 @@ namespace MetaSimulatorConsole
             Console.WriteLine("Fin de la Construction");
         }
 
-        public void Afficher()
-        {
-            Fenetre.Run();
-        }
     }
 }

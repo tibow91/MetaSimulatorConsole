@@ -12,6 +12,13 @@ namespace MetaSimulatorConsole
     }
     abstract class Game
     {
+        private bool _stop = true;
+        public bool Stop
+        {
+            get { return _stop; }
+            set { _stop = value; }
+        } 
+
         protected Grille Tableau;
         public Game(Grille grille)
         {
@@ -19,6 +26,7 @@ namespace MetaSimulatorConsole
         }
 
         protected abstract void RemplirGrille();
+        public abstract void LancerSimulation();
     }
 
     class GameObservable : Game,IObservateurView
@@ -30,7 +38,12 @@ namespace MetaSimulatorConsole
         }
 
         protected override void RemplirGrille(){}
-    
+
+
+        public override void LancerSimulation()
+        {
+            throw new NotImplementedException();
+        }
     }
     class GameAgeOfKebab : GameObservable
     {
@@ -56,6 +69,18 @@ namespace MetaSimulatorConsole
             throw new NotImplementedException();
         }
 
+        public override void LancerSimulation()
+        {
+            Stop = false;
+            Console.WriteLine("Simulation lancée");
+            while(!Stop)
+            {
+
+            }
+            Console.WriteLine("Simulation arrêtée");
+            var node = (Node<Case>)Tableau[24, 24];
+            node.Value.SetTextures(new TexturePikachuSurHerbe());
+        }
     }
 
     class GameCDGSimulator : GameObservable
@@ -78,9 +103,22 @@ namespace MetaSimulatorConsole
             {
                 for (int j = 0; j < Tableau.Largeur; ++j)
                 {
-                    Tableau[i, j] = new Case(new TexturePikachu(new TextureHerbe()));
+                    Tableau[i, j] = new Case(new TexturePikachuSurHerbe());
                 }
             }
+        }
+
+        public override void LancerSimulation()
+        {
+            Stop = false;
+            Console.WriteLine("Simulation lancée");
+            while (!Stop)
+            {
+
+            }
+            Console.WriteLine("Simulation arrêtée");
+            var node = (Node<Case>)Tableau[0, 0];
+            node.Value.SetTextures(new TextureHerbe());
         }
     }
 
@@ -89,10 +127,37 @@ namespace MetaSimulatorConsole
         public GameHoneywell(Grille grille)
             : base(grille)
         {
+            RemplirGrille();
         }
         public override void UpdateView()
         {
             throw new NotImplementedException();
+        }
+
+        protected override void RemplirGrille()
+        {
+            // pour chaque element de la grille
+            // Inscrire une texture avec pikachu
+            for (int i = 0; i < Tableau.Longueur; ++i)
+            {
+                for (int j = 0; j < Tableau.Largeur; ++j)
+                {
+                    Tableau[i, j] = new Case(new TextureHerbe());
+                }
+            }
+        }
+
+        public override void LancerSimulation()
+        {
+            Stop = false;
+            Console.WriteLine("Simulation lancée");
+            while (!Stop)
+            {
+
+            }
+            Console.WriteLine("Simulation arrêtée");
+            var node = (Node<Case>)Tableau[49, 49];
+            node.Value.SetTextures(new TexturePikachuSurHerbe());
         }
     }
 

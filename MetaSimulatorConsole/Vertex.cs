@@ -18,7 +18,7 @@ namespace MetaSimulatorConsole
             this.name = name;
         }
 
-        public  String ToString()
+        public override String ToString()
         {
             return name;
         }
