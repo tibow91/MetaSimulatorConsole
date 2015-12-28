@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 namespace MetaSimulatorConsole
 {
     enum NomJeu  { AgeOfKebab, CDGSimulator, HoneyWell };
+    enum EMenu { Principal, Creation, Chargement, Simulation  };
+
     class GameManager 
     {
         public static List<NomJeu> ListeJeux = new List<NomJeu>()
@@ -32,9 +34,70 @@ namespace MetaSimulatorConsole
             get { return _simulation; }
         }
 
+        /*----------------------------------
+        * GESTION DES ETATS (MENUS)
+        *----------------------------------*/
+        // Liste des états possibles du gestionnaire de jeu
+        public static readonly Dictionary<EMenu, Menu> Menus = new Dictionary<EMenu, Menu> 
+        {
+             { EMenu.Principal, new MenuPrincipal() },
+             { EMenu.Creation, new MenuCreation() },
+             { EMenu.Chargement, new MenuChargement() },
+             { EMenu.Simulation, new MenuSimulation() }
+        };
+        // Etat actuel de la machine
+        private Menu _menuCourant;
+        public Menu MenuCourant
+        {
+            get { return _menuCourant; }
+            set { _menuCourant = value; }
+        }
+
+        private void PasserAuMenu(EMenu menu)
+        {
+            Menus[menu].ModifieEtat(this);
+        }
+
+        public void PasserAuMenuPrincipal()
+        {
+            if (MenuCourant is MenuSimulation)
+            {
+                if (Simulation.Started)
+                {
+                    Console.WriteLine("Veuillez arrêter la simulation pour revenir au menu principal");
+                    return;
+                }
+            }
+            PasserAuMenu(EMenu.Principal);
+        }
+
+        public void PasserAuMenuDeCreation()
+        {
+            if(MenuCourant is MenuPrincipal)
+                PasserAuMenu(EMenu.Creation);
+        }
+
+        public void PasserAuMenuDeChargement()
+        {
+            if (MenuCourant is MenuPrincipal)
+                PasserAuMenu(EMenu.Chargement);
+        }
+
+        public void PasserAuMenuDeSimulation()
+        {
+            if (MenuCourant is MenuCreation)
+                PasserAuMenu(EMenu.Simulation);
+        }
+
+        
+        /*----------------------------------
+        * CONSTRUCTEUR
+        *----------------------------------*/
         public GameManager()
         {
-            DemanderJeuAChoisir();
+            //DemanderJeuAChoisir();
+            CreerTableauDeJeu();
+            PasserAuMenuPrincipal();
         }
 
         public void DemanderJeuAChoisir()
@@ -85,7 +148,7 @@ namespace MetaSimulatorConsole
         private void CreerTableauDeJeu()
         {
             if (Grille.HasInstance()) return;
-            Console.WriteLine("Quelles Dimensions pour le tableau de jeu ? Longueur = ?");
+            //Console.WriteLine("Quelles Dimensions pour le tableau de jeu ? Longueur = ?");
             int longueur=50,largeur=50;
             //var ans = Console.ReadLine();
             //if (ans != null) longueur = Int32.Parse(ans);

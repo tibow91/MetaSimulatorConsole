@@ -10,7 +10,7 @@ namespace MetaSimulatorConsole
     internal abstract class AppuiClavier // Chaine de Resp + invocateur de commandes
     {
         protected AppuiClavier CommandeSuivante;
-        private List<CommandGameManager> commandes = new List<CommandGameManager>();
+        private Dictionary<EMenu,CommandGameManager> commandes = new Dictionary<EMenu,CommandGameManager>();
         protected Window Partie;
 
         public void SetCommandeSuivante(AppuiClavier suivant)
@@ -18,15 +18,34 @@ namespace MetaSimulatorConsole
             CommandeSuivante = suivant;
         }
 
-        protected void AjouterCommande(CommandGameManager uneCommande)
+        protected void AjouterCommande(CommandGameManager uneCommande, EMenu menu)
         {
-            commandes.Add(uneCommande);
+            commandes.Add(menu,uneCommande);
         }
         protected void ExecuteCommandes()
         {
             foreach (var commande in commandes)
             {
-                commande.Execute();
+                if (Partie.Gestionnaire.MenuCourant is MenuPrincipal)
+                {
+                    if(commandes.ContainsKey(EMenu.Principal))
+                        commandes[EMenu.Principal].Execute();
+                }
+                else if (Partie.Gestionnaire.MenuCourant is MenuCreation)
+                {
+                    if (commandes.ContainsKey(EMenu.Creation))
+                        commandes[EMenu.Creation].Execute();
+                }
+                else if (Partie.Gestionnaire.MenuCourant is MenuChargement)
+                {
+                    if (commandes.ContainsKey(EMenu.Chargement))
+                        commandes[EMenu.Chargement].Execute();
+                }
+                else if (Partie.Gestionnaire.MenuCourant is MenuSimulation)
+                {
+                    if (commandes.ContainsKey(EMenu.Simulation))
+                        commandes[EMenu.Simulation].Execute();
+                }
             }
         }
 
@@ -74,7 +93,8 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheNum0(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new StopSimulation(fenetre.Gestionnaire));
+            AjouterCommande(new StopSimulation(fenetre.Gestionnaire),EMenu.Simulation);
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire),EMenu.Principal );
         }
 
         public override void Traitement()

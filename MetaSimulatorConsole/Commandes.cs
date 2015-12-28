@@ -92,4 +92,32 @@ namespace MetaSimulatorConsole
             }
         }
     }
+
+    class PasserAuMenuPrincipal : CommandGameManager
+    {
+        public PasserAuMenuPrincipal(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à passer au menu principal");
+            if (gestionnaire != null)
+            {
+                gestionnaire.PasserAuMenuPrincipal();
+            }
+        }
+    }
+
+    class PasserAuMenuDeCreation : CommandGameManager
+    {
+        public PasserAuMenuDeCreation(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à passer au menu de création de simulation");
+            if (gestionnaire != null)
+            {
+                gestionnaire.PasserAuMenuDeCreation();
+            }
+        }
+    }
 }

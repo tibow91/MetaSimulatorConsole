@@ -53,6 +53,7 @@
     <Compile Include="GameView.cs" />
     <Compile Include="Grille.cs" />
     <Compile Include="Iterateur.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="MyLinkedList.cs" />
     <Compile Include="Window.cs" />
     <Compile Include="Personnages\Archer.cs" />
