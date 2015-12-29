@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    enum NomJeu  { AgeOfKebab, CDGSimulator, HoneyWell };
+    enum NomJeu  { AgeOfKebab, CDGSimulator, Honeyland };
     enum EMenu { Principal, Creation, Chargement, Simulation  };
 
     class GameManager 
@@ -16,7 +16,7 @@ namespace MetaSimulatorConsole
         {
             { NomJeu.AgeOfKebab},
             { NomJeu.CDGSimulator},
-            { NomJeu.HoneyWell}
+            { NomJeu.Honeyland}
         };
         public NomJeu JeuChoisi = ListeJeux[0];
 

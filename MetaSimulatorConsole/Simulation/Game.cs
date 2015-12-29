@@ -86,7 +86,7 @@ namespace MetaSimulatorConsole
     {
         public override Game CreerJeu(Grille grille)
         {
-            return new GameHoneywell(grille);
+            return new GameHoneyland(grille);
         }
     }
 
@@ -99,7 +99,7 @@ namespace MetaSimulatorConsole
             {
                 case NomJeu.AgeOfKebab: return new GameAgeOfKebabFactory().CreerJeu(grille);
                 case NomJeu.CDGSimulator: return new GameCDGSimulatorFactory().CreerJeu(grille);
-                case NomJeu.HoneyWell: return new GameHoneywellFactory().CreerJeu(grille); 
+                case NomJeu.Honeyland: return new GameHoneywellFactory().CreerJeu(grille); 
             }
 
             return null;

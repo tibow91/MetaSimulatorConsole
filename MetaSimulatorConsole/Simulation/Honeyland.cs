@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    class GameHoneywell : GameObservable
+    class GameHoneyland : GameObservable
     {
-        public GameHoneywell(Grille grille)
+        public GameHoneyland(Grille grille)
             : base(grille)
         {
             RemplirGrille();

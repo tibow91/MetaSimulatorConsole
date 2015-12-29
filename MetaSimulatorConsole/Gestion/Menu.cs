@@ -36,7 +36,7 @@ namespace MetaSimulatorConsole
             manager.Fenetre.TextMenu.Clear();
             manager.Fenetre.TextMenu.Add("Age Of Kebab", "Touche 0");
             manager.Fenetre.TextMenu.Add("CDGSimulator", "Touche 1");
-            manager.Fenetre.TextMenu.Add("Honeywell", "Touche 2");
+            manager.Fenetre.TextMenu.Add("Honeyland", "Touche 2");
             manager.Fenetre.TextMenu.Add("Retour", "Touche Precedent");
 
         }

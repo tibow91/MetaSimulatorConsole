@@ -49,7 +49,7 @@
     <Compile Include="Fenetre\Graphisme.cs" />
     <Compile Include="Simulation\AgeOfKebab.cs" />
     <Compile Include="Simulation\CDGSimulator.cs" />
-    <Compile Include="Simulation\Honeywell.cs" />
+    <Compile Include="Simulation\Honeyland.cs" />
     <Compile Include="Tableau\Case.cs" />
     <Compile Include="Gestion\AppuiClavier.cs" />
     <Compile Include="Gestion\Commandes.cs" />

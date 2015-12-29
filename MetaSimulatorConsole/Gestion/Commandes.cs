@@ -156,7 +156,7 @@ namespace MetaSimulatorConsole
             Console.WriteLine("Vous avez demandé à lancer le jeu Honeywell");
             if (gestionnaire != null)
             {
-                gestionnaire.CreerJeu(NomJeu.HoneyWell);
+                gestionnaire.CreerJeu(NomJeu.Honeyland);
                 new PasserAuMenuDeSimulation(gestionnaire).Execute();
             }
         }
