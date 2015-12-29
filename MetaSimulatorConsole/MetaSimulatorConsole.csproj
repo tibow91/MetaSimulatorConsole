@@ -45,37 +45,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Case.cs" />
-    <Compile Include="AppuiClavier.cs" />
-    <Compile Include="Commandes.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="GameController.cs" />
-    <Compile Include="GameView.cs" />
-    <Compile Include="Grille.cs" />
-    <Compile Include="Iterateur.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MyLinkedList.cs" />
-    <Compile Include="Window.cs" />
-    <Compile Include="Personnages\Archer.cs" />
-    <Compile Include="Personnages\Chevalier.cs" />
-    <Compile Include="Comportements\ComportementCombat.cs" />
-    <Compile Include="Comportements\ComportementEmettreUnSon.cs" />
-    <Compile Include="Deplacement.cs" />
-    <Compile Include="Personnages\Fantassin.cs" />
-    <Compile Include="Organisation.cs" />
-    <Compile Include="Personnages\Personnage.cs" />
-    <Compile Include="Personnages\Princesse.cs" />
-    <Compile Include="PriorityQueue.cs" />
+    <Compile Include="Fenetre\Clavier.cs" />
+    <Compile Include="Fenetre\Graphisme.cs" />
+    <Compile Include="Simulation\AgeOfKebab.cs" />
+    <Compile Include="Simulation\CDGSimulator.cs" />
+    <Compile Include="Simulation\Honeywell.cs" />
+    <Compile Include="Tableau\Case.cs" />
+    <Compile Include="Gestion\AppuiClavier.cs" />
+    <Compile Include="Gestion\Commandes.cs" />
+    <Compile Include="Simulation\Game.cs" />
+    <Compile Include="unused\MVC\GameController.cs" />
+    <Compile Include="unused\MVC\GameView.cs" />
+    <Compile Include="Tableau\Grille.cs" />
+    <Compile Include="Tableau\Iterateur.cs" />
+    <Compile Include="Gestion\Menu.cs" />
+    <Compile Include="Dijkstra\MyLinkedList.cs" />
+    <Compile Include="Fenetre\Window.cs" />
+    <Compile Include="unused\Personnages\Archer.cs" />
+    <Compile Include="unused\Personnages\Chevalier.cs" />
+    <Compile Include="unused\Comportements\ComportementCombat.cs" />
+    <Compile Include="unused\Comportements\ComportementEmettreUnSon.cs" />
+    <Compile Include="unused\Deplacement.cs" />
+    <Compile Include="unused\Personnages\Fantassin.cs" />
+    <Compile Include="unused\Organisation.cs" />
+    <Compile Include="unused\Personnages\Personnage.cs" />
+    <Compile Include="unused\Personnages\Princesse.cs" />
+    <Compile Include="Dijkstra\PriorityQueue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimulationJeu.cs" />
-    <Compile Include="GameManager.cs" />
-    <Compile Include="Vertex.cs" />
+    <Compile Include="unused\SimulationJeu.cs" />
+    <Compile Include="Gestion\GameManager.cs" />
+    <Compile Include="Dijkstra\Vertex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

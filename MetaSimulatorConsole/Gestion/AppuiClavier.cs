@@ -53,9 +53,9 @@ namespace MetaSimulatorConsole
         }
 
         public abstract void Traitement();
-        protected void TraitementGenerique(Key key)
+        protected void TraitementGenerique(Key touche)
         {
-            if (Partie.Keyboard[key])
+            if (Partie.Keyboard[touche])
             {
                 ExecuteCommandes();
             }

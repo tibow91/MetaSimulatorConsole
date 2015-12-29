@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
-using OpenTK.Input;
 
-namespace MetaSimulatorConsole
+namespace MetaSimulatorConsole.Fenetre
 {
-    class Graphisme
+class Graphisme
     {
         private Window Partie;
         private Dictionary<NomTexture, int> Textures = new Dictionary<NomTexture, int>();
@@ -64,20 +64,19 @@ namespace MetaSimulatorConsole
             Partie.RenderFrame += Partie.SwapBuffers;
         }
 
-
         public void RenderQuads(object sender, FrameEventArgs e)
         {
             int width = Partie.Tableau.Largeur;
             int height = Partie.Tableau.Longueur;
-            float unitWidth = 2f/width;
+            float unitWidth = 2f / width;
             float unitHeight = 2f / height;
             var it = Partie.Tableau.CreateIterator();
-            for (float i = 1f; i > -1f && it.CurrentItem() != null; i-=unitHeight,it.Bas())
+            for (float i = 1f; i > -1f && it.CurrentItem() != null; i -= unitHeight, it.Bas())
             {
                 var it2 = it.Clone();
                 for (float j = -1f; j < 1f && it.CurrentItem() != null; j += unitWidth, it2.Droite())
                 {
-                    var node = (Node<Case>) it2.CurrentItem();
+                    var node = (Node<Case>)it2.CurrentItem();
                     if (node != null)
                     {
                         var textures = node.Value.Textures.Name();
@@ -87,7 +86,7 @@ namespace MetaSimulatorConsole
                         }
                         //AfficherQuad(j,i, unitHeight,unitWidth, node.Value.Textures);
                     }
-                    else{} // Afficher Texture vide
+                    else { } // Afficher Texture vide
                 }
             }
 
@@ -205,7 +204,7 @@ namespace MetaSimulatorConsole
 
         private int GenererTextTexture(string text)
         {
-            Bitmap bitmap = new Bitmap(Partie.Width,Partie.Height);
+            Bitmap bitmap = new Bitmap(Partie.Width, Partie.Height);
 
             int textureId;
             GL.Hint(HintTarget.PerspectiveCorrectionHint, HintMode.Nicest);
@@ -216,8 +215,8 @@ namespace MetaSimulatorConsole
             //GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)All.Linear);
             //GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, text_bmp.Width, text_bmp.Height, 0,
             //    OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, IntPtr.Zero); // just allocate memory, so we can update efficiently using TexSubImage2D
-               
-            ChargerTexte(bitmap,text);
+
+            ChargerTexte(bitmap, text);
 
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
@@ -226,7 +225,7 @@ namespace MetaSimulatorConsole
 
             return textureId;
         }
-        public void ChargerTexte(Bitmap textBitmap,string text)
+        public void ChargerTexte(Bitmap textBitmap, string text)
         {
             using (Graphics gfx = Graphics.FromImage(textBitmap))
             {
@@ -234,8 +233,8 @@ namespace MetaSimulatorConsole
 
                 // Create font and brush.
                 Font drawFont = new Font("Comic Sans MS", 16);
-                SolidBrush drawBrush = new SolidBrush(Color.FromArgb(128,Color.Gray));
-                gfx.DrawString(text, drawFont, drawBrush, 0,0);
+                SolidBrush drawBrush = new SolidBrush(Color.FromArgb(128, Color.Gray));
+                gfx.DrawString(text, drawFont, drawBrush, 0, 0);
             }
             // Do this only when text changes.
             BitmapData data = textBitmap.LockBits(new Rectangle(0, 0, textBitmap.Width, textBitmap.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
@@ -252,7 +251,6 @@ namespace MetaSimulatorConsole
 
     }
 
-
     class ActionGraphique
     {
         public static void ActiverTranslation(float decX, float decY, float decZ)
@@ -261,79 +259,4 @@ namespace MetaSimulatorConsole
             GL.LoadMatrix(ref TransMatrix);
         }
     }
-
-    class Clavier
-    {
-        private Window Partie;
-        private AppuiClavier CommandesClavier;
-        private AppuiClavier CommandesSpeciales;
-
-        public Clavier(Window jeu)
-        {
-            this.Partie = jeu;
-            CommandesClavier = AppuiClavier.ChaineDeCommandes(Partie);
-            CommandesSpeciales = AppuiClavier.ChaineDeCommandesSpeciales(Partie);
-            ChargerConfiguration();
-        }
-        public void ChargerConfiguration()
-        {
-            Partie.KeyPress += RetroactionTouches;
-            Partie.UpdateFrame += RetroactionTouchesSpeciales;
-        }
-        private void RetroactionTouches(object sender, KeyPressEventArgs e)
-        {
-            if(CommandesClavier != null)
-                CommandesClavier.Traitement();
-        }
-        private void RetroactionTouchesSpeciales(object sender, FrameEventArgs e)
-        {
-            if (CommandesSpeciales != null)
-                CommandesSpeciales.Traitement();
-        }
-    }
-    class Window : GameWindow
-    {
-        private Graphisme Graphismes;
-        public Clavier Touches;
-        private Grille tableau;
-        public GameManager Gestionnaire;
-        public bool ShowInterface = true;
-
-        public Dictionary<string, string> TextMenu = new Dictionary<string, string>();
-
-        public Grille Tableau
-        {
-           get { return tableau; }
-        }
-
-        public Window(int width, int height, GameManager manager)
-            : base(width, height)
-        {
-            Gestionnaire = manager;
-            tableau = Gestionnaire.TableauDeJeu;
-            Touches = new Clavier(this);
-            Graphismes = new Graphisme(this);
-
-            //this.
-            //Run(60.0);  // Run the game at 60 updates per second
-
-        }
-
-        public void InitRender(object sender, FrameEventArgs e)
-        {
-            // render graphics
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.Ortho(-1, 1, -1, 1, 0.0, 0);
-
-            //Matrix4.LookAt()
-        }
-
-        public void SwapBuffers(object sender, FrameEventArgs e)
-        {
-            SwapBuffers();
-        }
-    }
-
 }
