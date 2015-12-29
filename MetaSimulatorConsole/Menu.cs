@@ -37,6 +37,8 @@ namespace MetaSimulatorConsole
             manager.Fenetre.TextMenu.Add("Age Of Kebab", "Touche 0");
             manager.Fenetre.TextMenu.Add("CDGSimulator", "Touche 1");
             manager.Fenetre.TextMenu.Add("Honeywell", "Touche 2");
+            manager.Fenetre.TextMenu.Add("Retour", "Touche Precedent");
+
         }
 
         public override string AfficherEtat()
@@ -51,7 +53,7 @@ namespace MetaSimulatorConsole
         {
             manager.MenuCourant = this;
             manager.Fenetre.TextMenu.Clear();
-            manager.Fenetre.TextMenu.Add("Retour", "Touche 0");
+            manager.Fenetre.TextMenu.Add("Retour", "Touche 0 / Precedent");
         }
 
         public override string AfficherEtat()
@@ -69,7 +71,7 @@ namespace MetaSimulatorConsole
             manager.Fenetre.TextMenu.Add("Lancer la simulation", "Touche 0");
             manager.Fenetre.TextMenu.Add("Arrêter la simulation", "Touche 1");
             manager.Fenetre.TextMenu.Add("Cacher l'interface de commandes ", "Touche 2");
-            manager.Fenetre.TextMenu.Add("Retour au menu principal", "Touche 3");
+            manager.Fenetre.TextMenu.Add("Retour au menu principal", "Touche Precedent");
         }
 
         public override string AfficherEtat()

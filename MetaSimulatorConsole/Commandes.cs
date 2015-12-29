@@ -26,7 +26,7 @@ namespace MetaSimulatorConsole
         public override void Execute()
         {
             Console.WriteLine("Demande d'arrêt de la simulation");
-            if(gestionnaire != null)
+            if(gestionnaire != null && gestionnaire.Simulation != null)
                 gestionnaire.Simulation.Stop = true;
         }
     }
@@ -42,37 +42,6 @@ namespace MetaSimulatorConsole
             {
                 gestionnaire.LancerSimulation();
             }
-        }
-    }
-
-    class ChangerJeu : CommandGameManager
-    {
-        private static bool Demande = false;
-        public ChangerJeu(GameManager manager) : base(manager) { }
-
-        public override void Execute()
-        {
-            Console.WriteLine("Demande de changement de Jeu");
-            if (gestionnaire != null)
-            {
-                if (!Demande)
-                {
-                    Demande = true;
-                    Thread workerThread = new Thread(this.operation);
-                    workerThread.Start();
-                }
-                else
-                {
-                    Console.WriteLine("Demande De jeu déjà en cours !");
-                }
-            }
-        }
-
-        private void operation()
-        {
-            gestionnaire.DemanderJeuAChoisir();
-            gestionnaire.CreerNouveauJeu();
-            Demande = false;
         }
     }
 
@@ -120,4 +89,97 @@ namespace MetaSimulatorConsole
             }
         }
     }
+
+    class PasserAuMenuDeChargement : CommandGameManager
+    {
+        public PasserAuMenuDeChargement(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à passer au menu de chargement d'une simulation");
+            if (gestionnaire != null)
+            {
+                gestionnaire.PasserAuMenuDeChargement();
+            }
+        }
+    }
+
+    class PasserAuMenuDeSimulation : CommandGameManager
+    {
+        public PasserAuMenuDeSimulation(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à passer au menu de lancement d'une simulation");
+            if (gestionnaire != null)
+            {
+                gestionnaire.PasserAuMenuDeSimulation();
+            }
+        }
+    }
+
+    class CreerJeuAgeOfKebab : CommandGameManager
+    {
+        public CreerJeuAgeOfKebab(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à lancer le jeu Age Of Kebab");
+            if (gestionnaire != null)
+            {
+                gestionnaire.CreerJeu(NomJeu.AgeOfKebab);
+                new PasserAuMenuDeSimulation(gestionnaire).Execute();
+            }
+        }
+    }
+
+    class CreerJeuCDGSimulator : CommandGameManager
+    {
+        public CreerJeuCDGSimulator(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à lancer le jeu CDGSimulator");
+            if (gestionnaire != null)
+            {
+                gestionnaire.CreerJeu(NomJeu.CDGSimulator);
+                new PasserAuMenuDeSimulation(gestionnaire).Execute();
+            }
+        }
+    }
+    class CreerJeuHoneywell : CommandGameManager
+    {
+        public CreerJeuHoneywell(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à lancer le jeu Honeywell");
+            if (gestionnaire != null)
+            {
+                gestionnaire.CreerJeu(NomJeu.HoneyWell);
+                new PasserAuMenuDeSimulation(gestionnaire).Execute();
+            }
+        }
+    }
+
+    class MontrerCacherInterface : CommandGameManager
+    {
+        public MontrerCacherInterface(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à montrer l'interface du jeu");
+            if (gestionnaire != null)
+            {
+                if(gestionnaire.MenuCourant is MenuSimulation)
+                {
+                    if (gestionnaire.Fenetre.ShowInterface)
+                        gestionnaire.Fenetre.ShowInterface = false;
+                    else 
+                        gestionnaire.Fenetre.ShowInterface  = true;
+                }
+            }
+        }
+    }
+
 }

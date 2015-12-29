@@ -23,30 +23,28 @@ namespace MetaSimulatorConsole
             commandes.Add(menu,uneCommande);
         }
         protected void ExecuteCommandes()
-        {
-            foreach (var commande in commandes)
+        { 
+            if (Partie.Gestionnaire.MenuCourant is MenuPrincipal)
             {
-                if (Partie.Gestionnaire.MenuCourant is MenuPrincipal)
-                {
-                    if(commandes.ContainsKey(EMenu.Principal))
-                        commandes[EMenu.Principal].Execute();
-                }
-                else if (Partie.Gestionnaire.MenuCourant is MenuCreation)
-                {
-                    if (commandes.ContainsKey(EMenu.Creation))
-                        commandes[EMenu.Creation].Execute();
-                }
-                else if (Partie.Gestionnaire.MenuCourant is MenuChargement)
-                {
-                    if (commandes.ContainsKey(EMenu.Chargement))
-                        commandes[EMenu.Chargement].Execute();
-                }
-                else if (Partie.Gestionnaire.MenuCourant is MenuSimulation)
-                {
-                    if (commandes.ContainsKey(EMenu.Simulation))
-                        commandes[EMenu.Simulation].Execute();
-                }
+                if(commandes.ContainsKey(EMenu.Principal))
+                    commandes[EMenu.Principal].Execute();
             }
+            else if (Partie.Gestionnaire.MenuCourant is MenuCreation)
+            {
+                if (commandes.ContainsKey(EMenu.Creation))
+                    commandes[EMenu.Creation].Execute();
+            }
+            else if (Partie.Gestionnaire.MenuCourant is MenuChargement)
+            {
+                if (commandes.ContainsKey(EMenu.Chargement))
+                    commandes[EMenu.Chargement].Execute();
+            }
+            else if (Partie.Gestionnaire.MenuCourant is MenuSimulation)
+            {
+                if (commandes.ContainsKey(EMenu.Simulation))
+                    commandes[EMenu.Simulation].Execute();
+            }
+
         }
 
         protected AppuiClavier(Window fenetre)
@@ -55,6 +53,15 @@ namespace MetaSimulatorConsole
         }
 
         public abstract void Traitement();
+        protected void TraitementGenerique(Key key)
+        {
+            if (Partie.Keyboard[key])
+            {
+                ExecuteCommandes();
+            }
+            else if (CommandeSuivante != null)
+                CommandeSuivante.Traitement();
+        }
 
         public static AppuiClavier ChaineDeCommandes(Window fenetre)
         {
@@ -62,12 +69,10 @@ namespace MetaSimulatorConsole
             AppuiClavier touche0 = new AppuiClavierToucheNum0(fenetre);
             AppuiClavier touche1 = new AppuiClavierToucheNum1(fenetre);
             AppuiClavier touche2 = new AppuiClavierToucheNum2(fenetre);
-            //AppuiClavier toucheEchap  = new AppuiClavierToucheEchap(fenetre);
 
             touche0.SetCommandeSuivante(touche1);
             touche1.SetCommandeSuivante(touche2);
             touche2.SetCommandeSuivante(null);
-            //toucheEchap.SetCommandeSuivante(null);
 
             //fileLogger.setNextLogger(consoleLogger);
 
@@ -77,7 +82,10 @@ namespace MetaSimulatorConsole
         public static AppuiClavier ChaineDeCommandesSpeciales(Window fenetre)
         {
             AppuiClavier toucheEchap = new AppuiClavierToucheEchap(fenetre);
-            toucheEchap.SetCommandeSuivante(null);
+            AppuiClavier touchePrecedent = new AppuiClavierTouchePrecedent(fenetre);
+
+            toucheEchap.SetCommandeSuivante(touchePrecedent);
+            touchePrecedent.SetCommandeSuivante(null);
 
             //fileLogger.setNextLogger(consoleLogger);
 
@@ -93,19 +101,15 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheNum0(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new StopSimulation(fenetre.Gestionnaire),EMenu.Simulation);
-            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire),EMenu.Principal );
+            AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire),EMenu.Principal );
+            AjouterCommande(new CreerJeuAgeOfKebab(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Chargement);
+            AjouterCommande(new StartSimulation(fenetre.Gestionnaire), EMenu.Simulation);
         }
 
         public override void Traitement()
         {
-            if (Partie.Keyboard[Key.Keypad0])
-            {
-                ExecuteCommandes();
-            }
-            else if(CommandeSuivante != null)
-                    CommandeSuivante.Traitement();
-            
+            TraitementGenerique(Key.Keypad0);            
         }
     }
 
@@ -114,17 +118,16 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheNum1(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new StartSimulation(fenetre.Gestionnaire));
+            AjouterCommande(new PasserAuMenuDeChargement(fenetre.Gestionnaire), EMenu.Principal);
+            AjouterCommande(new CreerJeuCDGSimulator(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new StopSimulation(fenetre.Gestionnaire), EMenu.Simulation);
         }
+
         public override void Traitement()
         {
-            if (Partie.Keyboard[Key.Keypad1])
-            {
-                ExecuteCommandes();
-            }
-            else if (CommandeSuivante != null)
-                CommandeSuivante.Traitement();
+            TraitementGenerique(Key.Keypad1);            
         }
+        
     }
 
     class AppuiClavierToucheNum2 : AppuiClavier
@@ -132,16 +135,12 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheNum2(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new ChangerJeu(fenetre.Gestionnaire));
+            AjouterCommande(new CreerJeuHoneywell(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
         }
         public override void Traitement()
         {
-            if (Partie.Keyboard[Key.Keypad2])
-            {
-                ExecuteCommandes();
-            }
-            else if (CommandeSuivante != null)
-                CommandeSuivante.Traitement();
+            TraitementGenerique(Key.Keypad2);
         }
     }
 
@@ -150,19 +149,32 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheEchap(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire));
+            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire),EMenu.Principal);
+            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Chargement);
+            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+
         }
+
         public override void Traitement()
         {
-            //Console.WriteLine("Traitement de l'appui clavier touche echap ...");
-            if (Partie.Keyboard[Key.Escape])
-            {
-                Console.WriteLine("appui clavier touche echap Détecté !");
+            TraitementGenerique(Key.Escape);
+        }
+    }
 
-                ExecuteCommandes();
-            }
-            else if (CommandeSuivante != null)
-                CommandeSuivante.Traitement();
+    class AppuiClavierTouchePrecedent : AppuiClavier
+    {
+        public AppuiClavierTouchePrecedent(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Chargement);
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Simulation);    
+        }
+
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.BackSpace);
         }
     }
 }

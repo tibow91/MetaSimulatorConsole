@@ -124,8 +124,9 @@ namespace MetaSimulatorConsole
 
         }
 
-        private Game creerJeu(NomJeu nomjeu) // Poids mouche
+        private Game creerJeu() // Poids mouche
         {
+            NomJeu nomjeu = JeuChoisi;
             if (Jeux.ContainsKey(nomjeu))
             {
                 _simulation = Jeux[nomjeu];
@@ -140,9 +141,10 @@ namespace MetaSimulatorConsole
             return Jeux[nomjeu];
         }
        
-        public Game CreerNouveauJeu()
+        public Game CreerJeu(NomJeu nomjeu)
         {
-            return creerJeu(JeuChoisi);
+            ChoisirJeu(nomjeu);
+            return creerJeu();
         }
 
         private void CreerTableauDeJeu()
@@ -165,7 +167,7 @@ namespace MetaSimulatorConsole
             return null;
         }
 
-        public void ChoisirJeu(NomJeu nomjeu)
+        private void ChoisirJeu(NomJeu nomjeu)
         {
             JeuChoisi = nomjeu;
             Console.WriteLine("Jeu choisi: {0}", JeuChoisi);

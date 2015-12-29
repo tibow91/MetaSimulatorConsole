@@ -99,23 +99,11 @@ namespace MetaSimulatorConsole
 
         public void RenderTexts(object sender, FrameEventArgs e)
         {
-            // Finally, render using a quad. 
-            // Do this every frame.
-            //GL.MatrixMode(MatrixMode.Projection);
-            //GL.LoadIdentity();
-            //GL.Ortho(0, Width, Height, 0, -1, 1);
 
-            //GL.Enable(EnableCap.Texture2D);
-            //GL.Enable(EnableCap.Blend);
-            //GL.BlendFunc(BlendingFactorSrc.One, BlendingFactorDst.OneMinusSourceAlpha);
-
-            //GL.Begin(BeginMode.Quads);
-            //GL.TexCoord(0f, 1f); GL.Vertex2(0f, 0f);
-            //GL.TexCoord(1f, 1f); GL.Vertex2(1f, 0f);
-            //GL.TexCoord(1f, 0f); GL.Vertex2(1f, 1f);
-            //GL.TexCoord(0f, 0f); GL.Vertex2(0f, 1f);
-            //GL.End();
-            //AfficherReverseQuad(-0.2f, 0.8f, 1f, 1f, text_texture);
+            if (Partie.Gestionnaire.MenuCourant is MenuSimulation)
+            {
+                if (!Partie.ShowInterface) return;
+            }
             int i = 0;
             foreach (var elem in Partie.TextMenu)
             {
@@ -126,8 +114,6 @@ namespace MetaSimulatorConsole
                 AfficherReverseQuad(0f, 1f + i * 0.2f, 1f, 1f, TextTextures[text]);
                 ++i;
             }
-            //AfficherReverseQuad(0f, 1f, 1f, 1f, text_texture);
-            //AfficherReverseQuad(0f, 1.2f, 1f, 1f, text_texture);
 
         }
 
@@ -136,9 +122,9 @@ namespace MetaSimulatorConsole
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
             GL.Ortho(0, width, height, 0, -1, 1);
-            GL.Enable(EnableCap.Texture2D);
-            GL.Enable(EnableCap.Blend);
-            GL.BlendFunc(BlendingFactorSrc.One, BlendingFactorDest.OneMinusSrcAlpha);
+            //GL.Enable(EnableCap.Texture2D);
+            //GL.Enable(EnableCap.Blend);
+            //GL.BlendFunc(BlendingFactorSrc.One, BlendingFactorDest.OneMinusSrcAlpha);
             GL.BindTexture(TextureTarget.Texture2D, texture);
             GL.Begin(PrimitiveType.Quads);
 
@@ -148,7 +134,6 @@ namespace MetaSimulatorConsole
             GL.TexCoord2(0, 0); GL.Vertex2(posX, posY - height);
 
             GL.End();
-            //AfficherQuad(posX, posY, height, width, texture);
         }
 
         private void AfficherTriangle(float posX, float posY, float height, float width, Color4 couleur)
@@ -170,14 +155,7 @@ namespace MetaSimulatorConsole
 
         private void AfficherQuad(float posX, float posY, float height, float width, int texture)
         {
-            GL.Enable(EnableCap.Texture2D);
-            GL.Enable(EnableCap.Blend);
-            GL.BlendFunc(BlendingFactorSrc.One, BlendingFactorDest.OneMinusSrcAlpha);
             GL.BindTexture(TextureTarget.Texture2D, texture);
-            //GL.Color3(Color.Red);       //  <------- The lack of this line might be causing it to turn red!
-            GL.BindTexture(TextureTarget.Texture2D, texture);
-            //GL.Enable(EnableCap.Texture2D);
-
             GL.Begin(PrimitiveType.Quads);
             //GL.Color4(CouleurVerte);
             //GL.Vertex2(-0.5f, 0.5f);
@@ -319,6 +297,7 @@ namespace MetaSimulatorConsole
         public Clavier Touches;
         private Grille tableau;
         public GameManager Gestionnaire;
+        public bool ShowInterface = true;
 
         public Dictionary<string, string> TextMenu = new Dictionary<string, string>();
 
