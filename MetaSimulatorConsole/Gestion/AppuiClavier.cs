@@ -7,7 +7,7 @@ using OpenTK.Input;
 
 namespace MetaSimulatorConsole
 {
-    internal abstract class AppuiClavier // Chaine de Resp + invocateur de commandes
+    internal abstract class AppuiClavier : IObservateurAbstrait  // Chaine de Resp + invocateur de commandes
     {
         protected AppuiClavier CommandeSuivante;
         private Dictionary<EMenu,CommandGameManager> commandes = new Dictionary<EMenu,CommandGameManager>();
@@ -92,7 +92,15 @@ namespace MetaSimulatorConsole
             return toucheEchap;
         }
 
-
+        public override void Update()
+        {
+            foreach (var commande in commandes)
+            {
+                commande.Value.Update();
+            }
+            if(CommandeSuivante != null)
+                CommandeSuivante.Update();
+        }
     }
 
 

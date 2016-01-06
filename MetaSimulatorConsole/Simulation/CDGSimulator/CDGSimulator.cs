@@ -7,13 +7,19 @@ using MetaSimulatorConsole.Dijkstra;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    class GameHoneyland : GameObservable
+    class CaseCDGSimulator : Case
     {
-        public GameHoneyland(Grille grille)
-            : base(grille)
+        public CaseCDGSimulator() : base(new TexturePikachuSurHerbe()) { }
+    }
+
+    class GameCDGSimulator : GameObservable
+    {
+        public GameCDGSimulator(GameManager manager, Grille grille)
+            : base(manager,grille)
         {
             RemplirGrille();
         }
+
         public override void UpdateView()
         {
             throw new NotImplementedException();
@@ -27,7 +33,8 @@ namespace MetaSimulatorConsole.Simulation
             {
                 for (int j = 0; j < Tableau.Largeur; ++j)
                 {
-                    Tableau[i, j] = new Case(new TextureHerbe());
+                    Tableau[i, j] = new CaseCDGSimulatorFactory().CreerCase();
+
                 }
             }
         }
@@ -37,14 +44,17 @@ namespace MetaSimulatorConsole.Simulation
             Stop = false;
             Started = true;
             Console.WriteLine("Simulation lancée");
+            Gestionnaire.Update();
             while (!Stop)
             {
 
             }
             Started = false;
             Console.WriteLine("Simulation arrêtée");
-            var node = (Node<Case>)Tableau[49, 49];
-            node.Value.SetTextures(new TexturePikachuSurHerbe());
+            Gestionnaire.Update();
+            var node = (Node<Case>)Tableau[0, 0];
+            node.Value.SetTextures(new TextureHerbe());
         }
     }
+
 }

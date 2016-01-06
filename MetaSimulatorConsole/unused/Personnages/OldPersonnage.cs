@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    abstract class IObservateurAbstrait
-    {
-        public abstract void Update();
-    }
-    abstract class Personnage : IObservateurAbstrait
+
+    abstract class OldPersonnage : IObservateurAbstrait
     {
         protected ComportementCombat Comportement = null;
         protected ComportementEmettreUnSon Son = null;
@@ -25,7 +22,7 @@ namespace MetaSimulatorConsole
 
         public abstract String SeDeplacer();
 
-        public Personnage(Organisation _observer,String nom)
+        public OldPersonnage(Organisation _observer,String nom)
         {
             Observer = _observer;
             Nom = nom;

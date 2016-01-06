@@ -10,7 +10,7 @@ namespace MetaSimulatorConsole
     enum NomJeu  { AgeOfKebab, CDGSimulator, Honeyland };
     enum EMenu { Principal, Creation, Chargement, Simulation  };
 
-    class GameManager 
+    class GameManager : SujetObserveAbstrait
     {
         public static List<NomJeu> ListeJeux = new List<NomJeu>()
         {
@@ -32,6 +32,11 @@ namespace MetaSimulatorConsole
         public Game Simulation
         {
             get { return _simulation; }
+            set
+            {
+                _simulation = value;
+                Update();
+            }
         }
 
         /*----------------------------------
@@ -97,7 +102,16 @@ namespace MetaSimulatorConsole
         {
             //DemanderJeuAChoisir();
             CreerTableauDeJeu();
+            AttachObservers();
             PasserAuMenuPrincipal();
+        }
+
+        private void AttachObservers()
+        {
+            foreach (var o in Fenetre.Observers())
+            {
+                Attach(o);
+            }
         }
 
         public void DemanderJeuAChoisir()
@@ -129,15 +143,15 @@ namespace MetaSimulatorConsole
             NomJeu nomjeu = JeuChoisi;
             if (Jeux.ContainsKey(nomjeu))
             {
-                _simulation = Jeux[nomjeu];
+                Simulation = Jeux[nomjeu];
                 Simulation.AfficherGrille();
                 return Jeux[nomjeu];
             }
             CreerTableauDeJeu();
-              Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, TableauDeJeu);
+              Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, this,TableauDeJeu);
 
             Console.WriteLine("Creation du jeu : " + nomjeu);
-            _simulation = Jeux[nomjeu];
+            Simulation = Jeux[nomjeu];
             return Jeux[nomjeu];
         }
        
@@ -157,7 +171,7 @@ namespace MetaSimulatorConsole
             //Console.WriteLine("Largeur ?");
             //ans = Console.ReadLine();
             //if (ans != null) largeur = Int32.Parse(ans);
-            TableauDeJeu = Grille.Instance(longueur, largeur);
+            TableauDeJeu = (Grille)Grille.Instance(longueur, largeur);
             _fenetre = new Window(600,600,this);
         }
 

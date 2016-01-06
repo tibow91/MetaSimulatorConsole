@@ -13,7 +13,7 @@ using OpenTK.Input;
 
 namespace MetaSimulatorConsole
 {
-   
+
     class Window : GameWindow
     {
         private Graphisme Graphismes;
@@ -36,7 +36,6 @@ namespace MetaSimulatorConsole
             tableau = Gestionnaire.TableauDeJeu;
             Touches = new Clavier(this);
             Graphismes = new Graphisme(this);
-
             //this.
             //Run(60.0);  // Run the game at 60 updates per second
 
@@ -56,6 +55,16 @@ namespace MetaSimulatorConsole
         public void SwapBuffers(object sender, FrameEventArgs e)
         {
             SwapBuffers();
+        }
+
+        public List<IObservateurAbstrait> Observers()
+        {
+            List<IObservateurAbstrait> observers = new List<IObservateurAbstrait>();
+            foreach (var o in Touches.Observers())
+            {
+                observers.Add(o);
+            }
+            return observers;
         }
     }
 

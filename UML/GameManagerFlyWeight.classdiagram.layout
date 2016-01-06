@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GameManagerFlyWeight">
+  <logicalClassDesignerModelMoniker Id="2d687d45-c1ec-4956-9aad-282a0a8776f8" />
+  <nestedChildShapes>
+    <classShape Id="d629845e-bf46-4a19-8aeb-509e3698c680" absoluteBounds="4.625, 1.125, 1.5, 5.3518979903062176" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="d9ae29c1-c661-4f1a-a45b-fa5405d82a73" LastKnownName="GameManager" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="fc8f741c-341b-456c-a3f1-836a2b366dfb" absoluteBounds="4.64, 1.6403356393178306, 1.4700000000000002, 1.9628905629118281" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="17b9a66b-c476-4174-9300-256bc2623ddf" absoluteBounds="4.64, 3.6132262022296584, 1.4700000000000002, 2.7636717880765596" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

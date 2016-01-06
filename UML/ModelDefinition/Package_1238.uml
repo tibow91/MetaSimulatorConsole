@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="de9dba8b-d177-4725-b150-b014894bf354"
+  name="Fenetre"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="c8bb02ee-792f-40f0-aa1c-893a6cb5298d"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetaSimulatorConsole.Fenetre"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="dbcbbd3d-cdc5-4ff8-845c-675d0148c072"
+        name="Clavier"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a94901d1-ef8f-4cb6-89fd-af7d0ad20423"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="cdf93720-8bd4-4a63-9639-695e5f76a75e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b705f7e7-19d7-4ac4-a0f7-606ca7ea9948">
+                <propertyInstance
+                  Id="1a4ddf3f-6f90-4d8a-9271-4a83dd461f6b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6e0cd92d-c690-462a-baf6-2d5c152021c8">
+                <propertyInstance
+                  Id="3f6e99d2-1434-40c9-964a-dde4b91f987c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="25469d74-139b-4763-8a80-6563aefde007">
+                <propertyInstance
+                  Id="a3e232f6-555c-4b5c-9229-9ef53ca511fa"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="27128ce4-7142-43ff-b256-cd7b63e3b69c">
+                <propertyInstance
+                  Id="91887605-6aa3-437d-be7f-5f5322e4865a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4aa9ff7-af16-4374-9960-dab40a1d4ae5">
+                <propertyInstance
+                  Id="429cc3bf-1693-4dc4-aaea-798a1a414250"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="8cd09a58-6906-4b01-b0d8-3107fffd5741"
+            name="Partie"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b8b62d52-92d3-4f69-a4e9-a8b60d4c4c73"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3DPartie"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2c0c6108-3a83-4e72-bf7c-1a437ba283c4"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b3bf9ac-301f-4c24-82ce-09b9749f3943">
+                    <propertyInstance
+                      Id="78c4663b-c441-4d13-b442-53d4b720d038"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7140431-7c6d-4e38-ae8f-fe817ed5a6e7">
+                    <propertyInstance
+                      Id="ad412b0a-3ccf-4576-9dfd-c749d5ee7e80"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df81275a-73ad-45f1-b3b9-e2d19977c949">
+                    <propertyInstance
+                      Id="6aa48c28-fffe-42a7-822f-5b1ee6a65518"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dfccc523-2c37-4be6-aabe-133fd8c7ae93">
+                    <propertyInstance
+                      Id="8423dbd8-d36a-460e-b024-5b8ac8dac35c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="617e23ff-5024-436f-9363-bb6715ede5cd">
+                    <propertyInstance
+                      Id="dafe447a-7280-4041-8ed1-00a5c9ceb173"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="864d730d-5f0a-4018-a329-203a17a9cd77"
+                LastKnownName="Window"
+                LastKnownLocation="Package_1230.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9959c623-ed87-46e2-97ee-055133edf0f9"
+            name="CommandesClavier"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6f923b89-9bfc-4a9d-802e-7d9f79d8f106"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3DCommandesClavier"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="642e26a2-d34c-460d-91e2-93cae1a34adb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad59599d-3a93-43d3-99fe-30c948dfeb63">
+                    <propertyInstance
+                      Id="b040c85c-202e-48eb-8e55-4134fa7625fb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16aa0824-6a42-45e5-8070-8535dd6157ac">
+                    <propertyInstance
+                      Id="e63cc284-c72b-4f88-807b-10699e74a64b"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e9c5173-2bc2-41f8-83c7-edbbfeb403ac">
+                    <propertyInstance
+                      Id="4ace9915-6933-4937-8322-4d123cee3d5c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1d1c5f7-4848-46a1-be0a-f118027ab390">
+                    <propertyInstance
+                      Id="219ed0d7-598f-4f78-bdc0-02cde392a72e"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35175fb5-df55-49ff-8256-fe85b127535d">
+                    <propertyInstance
+                      Id="ca4cc5cc-c10c-4c1f-9ef2-d001a16b3234"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="66f8f2a3-abe6-43b2-8755-2de2108315f0"
+                LastKnownName="AppuiClavier"
+                LastKnownLocation="Package_1230.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e0051e38-d0aa-443f-8ea4-ba7f9ebb4e46"
+            name="CommandesSpeciales"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="970a9674-854a-4ea3-acb0-5b506aef5c13"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3DCommandesSpeciales"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="489e2423-eebf-4e2a-a575-8eca3584e942"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9158264-3cab-4c3f-be53-56ab1f57c08c">
+                    <propertyInstance
+                      Id="cf26af9a-bb46-46e9-a33b-af5f4c2a80ed"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d82eb844-e353-424b-b860-ea6eae7a5dea">
+                    <propertyInstance
+                      Id="ce4277a4-317e-44c1-8e11-d8a42756da5c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fd628aae-06ac-4bec-a49c-23e6b5f3fea7">
+                    <propertyInstance
+                      Id="84c38d96-ec5e-4cf3-a66c-a04170e23ff6"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61b3ae66-4a36-4b0b-bcea-e0789a7cc562">
+                    <propertyInstance
+                      Id="340e8ce0-fe59-4a2e-9b9b-dc37dc8b6653"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87016889-f69c-4c75-bf6f-9a64d0ff1ae9">
+                    <propertyInstance
+                      Id="5d933a7a-5d52-4bda-a4ff-aa248d098901"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="66f8f2a3-abe6-43b2-8755-2de2108315f0"
+                LastKnownName="AppuiClavier"
+                LastKnownLocation="Package_1230.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ec925451-a76d-4ba3-b7f1-ec69529e7781"
+            name="Clavier"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f0f0d356-5cb0-44ae-b24d-a99d733e03de"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DWindow)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d5448105-7b61-436c-98b0-4f973372a09b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89db9d9e-f599-4d94-95fd-821cafec5f99">
+                    <propertyInstance
+                      Id="95bb4249-cf17-413c-b839-379f496fc6c7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b60aee4e-ed4e-4601-a66b-4d7b175f6ab0">
+                    <propertyInstance
+                      Id="df7fcf4c-5125-409e-af80-67121d532bf4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21857975-09c2-4586-a6ad-8b1697dab4e0">
+                    <propertyInstance
+                      Id="781e6bc8-5cea-47cb-a41c-dc87584ab15b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9bbaed8-febe-4d9c-9b2f-de859710ac9a">
+                    <propertyInstance
+                      Id="1915403b-2921-48ce-8546-609bbd35efd6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="29412732-71fd-453e-9aee-43a058f5c151">
+                    <propertyInstance
+                      Id="72c68823-f1a5-4b90-ae58-ffb46d4db6df"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ede5613-0a1d-4efb-8ae4-baa1485fb400">
+                    <propertyInstance
+                      Id="1682217a-8333-43ca-a7b9-ad21fbfd9543"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="57ee849a-10d4-42fe-92f0-97d578bf5853"
+                  name="jeu"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="ab44933c-2851-4f47-956e-d0a516e50a5a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DWindow)]) ParameterIdentifier%3Djeu"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="864d730d-5f0a-4018-a329-203a17a9cd77"
+                      LastKnownName="Window"
+                      LastKnownLocation="Package_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="768bb30e-e2be-4060-bcb9-eac1a79d2c96"
+            name="ChargerConfiguration"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ee253a88-5b1b-4531-91f7-7e030527cfae"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3DChargerConfiguration"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="29639868-77fd-43dc-84e1-8e630b6daa2a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a6044244-ba33-440c-857c-379b040e220f">
+                    <propertyInstance
+                      Id="21757805-3a35-4d0b-bc0c-e28a83b6e2a6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b298b732-7df6-422e-b75b-78088d4c5dd1">
+                    <propertyInstance
+                      Id="8872b3ec-18ed-405f-8ac1-d8eb076ef838"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="692cb6ff-2575-4fc6-9e08-dfb1682859ba">
+                    <propertyInstance
+                      Id="fea787e6-bca9-4c78-a00d-474045b082f8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24772e5b-2c56-4204-b218-21b8a6472ac9">
+                    <propertyInstance
+                      Id="7c8e879f-ebfd-4970-9d1e-b96259020be7"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6913067c-c8f5-484d-99ef-2f1e1ad7dc1f">
+                    <propertyInstance
+                      Id="0b9912a6-8c20-4e5c-aa3e-85cb8d719a50"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96189e53-b88f-4373-8d47-56955fd59a06">
+                    <propertyInstance
+                      Id="4b4b5517-511f-4127-9e9a-4dd47160109a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="abebfb0b-e13b-4ffc-b685-e740bf03e4cf"
+            name="RetroactionTouches"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="78112270-f1e2-49d8-a8a3-97a35d7f566e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3DRetroactionTouches OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DKeyPressEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="414d95e3-ba60-48e7-bd23-5bcfe04a13c2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="725cd34a-40c8-4cde-9818-f6507be671c0">
+                    <propertyInstance
+                      Id="c1f4411e-50be-420f-ae7f-401c5466d31e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="923de4ff-4f93-475c-b571-13a2b5faf8d6">
+                    <propertyInstance
+                      Id="6186fa5e-de98-47e5-9f69-4faf27c8ae4d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4d7b2ab-8835-49b0-a0e3-a246d1bbc65c">
+                    <propertyInstance
+                      Id="c5f37ae5-4c84-4645-ba60-ba54c98470d9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da47bb58-a1f1-4012-82e9-14effc25b8a2">
+                    <propertyInstance
+                      Id="59dcdb43-1e5d-4c33-a99b-42769fc00701"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="176042d9-08c2-4c06-9931-d4daea8f8983">
+                    <propertyInstance
+                      Id="c6404c69-8c94-48ed-ba63-4cad018e7c82"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1b13e0a-f129-4772-bd0d-dbfa93f35aa8">
+                    <propertyInstance
+                      Id="0bf59b91-6e9c-4243-be0b-d7c874a0340c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="46eccd7f-cbf5-4e13-a569-2173e34c7758"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="aa29d89a-236b-402d-9597-043107efec40"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3DRetroactionTouches OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DKeyPressEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="dae41b5a-d380-43f7-ad66-80d02cf82a98"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dfea5b40-087c-44b7-b9da-63dac5ac0837"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6487c7d6-b9f8-46e0-87b6-dfc58e9600a9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3DRetroactionTouches OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DKeyPressEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="b4d1f52c-1eeb-43a7-8fa8-08c79c3a93d8"
+                      LastKnownName="KeyPressEventArgs"
+                      LastKnownLocation="Package_1231.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a8d79b92-a5aa-4647-8550-195dc7534b51"
+            name="RetroactionTouchesSpeciales"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="de9e77f0-22c8-4a0c-8f43-6a861c59517b"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3DRetroactionTouchesSpeciales OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DFrameEventArgs)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b40fa510-f5bb-420b-9cc3-f819f600a533"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="542c415b-0148-410e-aea5-e5f78e632808">
+                    <propertyInstance
+                      Id="3a5c36f7-8ef4-4a3a-b5a4-b9c624149eb0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="863e47c9-ceaa-41f0-8ad8-fd70bdaabd9f">
+                    <propertyInstance
+                      Id="530ef691-e73d-4dee-b209-b3b236976ee3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5192521d-1c18-46e9-8e32-24c4ccb71918">
+                    <propertyInstance
+                      Id="4172ecf6-18f4-4aeb-9b61-16af3d13dd64"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed698854-1f39-49d3-89b8-7fcda9e8cb20">
+                    <propertyInstance
+                      Id="b54d2bc8-17bd-4a7d-a94e-12c295ecf870"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48565e58-ebea-4c4f-af18-82d37e3ab7db">
+                    <propertyInstance
+                      Id="03d03661-d38b-4bd6-8510-9b31ff08ae0a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f60afd54-8985-4818-a7c0-7b21a01613d5">
+                    <propertyInstance
+                      Id="38f64f35-139b-4239-9747-4b268f25ebf8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="765fdef0-04dc-49c5-aa43-2c394f32d3ca"
+                  name="sender"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0957feaa-5dc3-4054-be53-c3f9edde3d27"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3DRetroactionTouchesSpeciales OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DFrameEventArgs)]) ParameterIdentifier%3Dsender"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="dae41b5a-d380-43f7-ad66-80d02cf82a98"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package1_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5df51c6b-1297-4523-bbac-3dbb8bfc5cde"
+                  name="e"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="89397db9-dde5-4cc3-8fef-ed37c85c98f8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3D(Name%3DRetroactionTouchesSpeciales OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DFrameEventArgs)]) ParameterIdentifier%3De"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="22fc4c93-83a1-42e6-8fb2-b3769dbb3f70"
+                      LastKnownName="FrameEventArgs"
+                      LastKnownLocation="Package_1231.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="85d1c3a9-c948-40ae-ade1-1534f39baaa5"
+            name="Observers"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ea32a2b8-4937-408f-b80b-adca51714801"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FRelease%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Fenetre Type%3DClavier Member%3DObservers"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5cb09aeb-b166-4c44-81c3-2289c3759ec9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc059ba1-b130-41fd-82e8-75389e4e69ed">
+                    <propertyInstance
+                      Id="d5fe65d3-d79e-44fd-a487-6a90ec98e13c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05d40948-aca3-4fa1-90c3-9b714837d754">
+                    <propertyInstance
+                      Id="27d9bbcc-d394-4e48-8878-dc677c37c9f6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2481aa52-88a9-4585-88fd-244a3dabb61c">
+                    <propertyInstance
+                      Id="ef903e50-ae84-4a69-87ab-446e2fc68804"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd83ee2b-f34c-4b41-98c8-1cf8a19a5d4f">
+                    <propertyInstance
+                      Id="f1837960-a52d-4a74-a3d5-1a98686960f8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="58cf5dd6-c659-474e-bc4b-2bd749cd2fba">
+                    <propertyInstance
+                      Id="a21d819a-9586-44dd-a0fd-c7aa7aa8ff2b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1923a7a6-e481-452e-9eba-1eef2f0a0721">
+                    <propertyInstance
+                      Id="55791c59-e31e-433f-bd2b-e5d0051ebb97"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d48b6dc8-e4b8-4763-b648-2fe80916d114"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f5354c53-cd95-4fa7-b1d2-cfd63ea3b111"
+                      LastKnownName="List&lt;IObservateurAbstrait‎&gt;"
+                      LastKnownLocation="Package3_1231.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

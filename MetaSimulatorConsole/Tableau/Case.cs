@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
@@ -78,4 +79,34 @@ namespace MetaSimulatorConsole
             Textures = decor;
         }
     }
+
+    abstract class CaseFactory
+    {
+        public abstract Case CreerCase();
+    }
+
+    class CaseAgeOfKebabFactory : CaseFactory
+    {
+        public override Case CreerCase()
+        {
+            return new CaseAgeOfKebab();
+        }
+    }
+
+    class CaseCDGSimulatorFactory : CaseFactory
+    {
+        public override Case CreerCase()
+        {
+            return new CaseCDGSimulator();
+        }
+    }
+
+    class CaseHoneylandFactory : CaseFactory
+    {
+        public override Case CreerCase()
+        {
+            return new CaseHoneyland();
+        }
+    }
+
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class Fantassin : Personnage
+    class Fantassin : OldPersonnage
     {
 
         public Fantassin(Organisation organisation, string unNom)

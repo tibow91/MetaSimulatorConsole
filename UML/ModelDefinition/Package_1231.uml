@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f941e85d-454a-4360-80ae-9773fac0594d"
+  name="OpenTK"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1b5b91e6-eaa3-47ca-82ab-fe1de5f90bdd"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DOpenTK"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="baca1629-85e4-41e1-8684-200a077cec20"
+        LastKnownName="Input"
+        LastKnownLocation="Package1_1231.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b4d1f52c-1eeb-43a7-8fa8-08c79c3a93d8"
+        name="KeyPressEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0b631f5e-970b-419d-824f-f809fd50d3e6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DKeyPressEventArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="07c82abd-6279-42d8-b773-e32ffac74d22"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dfdcbeab-1869-457d-998f-f23d3f206d4d">
+                <propertyInstance
+                  Id="45b91f19-1140-4172-b31f-a9507773c0c1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31b40109-7338-4dd5-a481-777694d477cb">
+                <propertyInstance
+                  Id="63da46e4-48b7-41b6-a279-3c79622c96a4"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="39b378aa-ef6c-4027-b62c-173aa1f5a674">
+                <propertyInstance
+                  Id="913aaf7c-eff5-43fe-9a5c-24e85b792154"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="43f50f4f-8609-405c-a8ef-5dc33d6cf86e">
+                <propertyInstance
+                  Id="efb9893e-ce13-4ed5-88fc-53c289eee376"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="143a7c6d-4685-4ac7-9c09-b3e77b1a1c44">
+                <propertyInstance
+                  Id="f1bd447f-e5d9-4b63-b1ca-0e577aad5479"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="22fc4c93-83a1-42e6-8fb2-b3769dbb3f70"
+        name="FrameEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="1f5ebaf8-7c76-47c9-a1ac-c4799f1fbb60"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DFrameEventArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ae41e48c-2027-4b39-bfce-b081f8768bbf"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="659a34de-cc44-4ea0-b287-fabf704fbef8">
+                <propertyInstance
+                  Id="352ec853-072a-427d-a541-cba998672970"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28fd87d4-f246-404f-995b-8375abe81534">
+                <propertyInstance
+                  Id="8f2d4ea2-3a11-4dbe-b930-9bfcb3278542"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e0a8043e-c87b-4282-ac8c-0e1a56ee9c63">
+                <propertyInstance
+                  Id="3b31d27e-5ba1-4d5d-aa9e-189f45a3002c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c7e301b7-d836-4f4e-89a7-d45bded606b6">
+                <propertyInstance
+                  Id="e731aacb-5647-4f3b-baa6-ffb65bf59c4a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2656d6c2-c058-422a-8d21-761cae7eb0ec">
+                <propertyInstance
+                  Id="29127393-aceb-455e-9cfc-7a629f98d5f5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

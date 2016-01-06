@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    abstract class CommandGameManager // pattern commandes
+    abstract class CommandGameManager : IObservateurAbstrait // pattern commandes
     {
         protected GameManager gestionnaire;
 
@@ -17,17 +17,27 @@ namespace MetaSimulatorConsole
             gestionnaire = manager;
         }
         public abstract void Execute();
+
+        public override void Update()
+        {
+        }
     }
 
     class StopSimulation : CommandGameManager
     {
-        public StopSimulation(GameManager manager) : base(manager){}
-    
+        public StopSimulation(GameManager manager) : base(manager){ Update();}
+        private Game Simulation;
         public override void Execute()
         {
             Console.WriteLine("Demande d'arrêt de la simulation");
-            if(gestionnaire != null && gestionnaire.Simulation != null)
-                gestionnaire.Simulation.Stop = true;
+            if(Simulation != null)
+                Simulation.Stop = true;
+        }
+        public override void Update()
+        {
+            if (gestionnaire != null )
+                Simulation = gestionnaire.Simulation;
+            Console.WriteLine("Mise à jour de la commande Stop Simulation");
         }
     }
 
@@ -164,7 +174,19 @@ namespace MetaSimulatorConsole
 
     class MontrerCacherInterface : CommandGameManager
     {
-        public MontrerCacherInterface(GameManager manager) : base(manager) { }
+        public MontrerCacherInterface(GameManager manager) : base(manager) { Update(); }
+        private bool _showInterface;
+
+        private bool ShowInterface
+        {
+            get {  return _showInterface;}
+            set
+            {
+                gestionnaire.Fenetre.ShowInterface = value;
+                _showInterface = value;
+            }
+        }
+
 
         public override void Execute()
         {
@@ -173,12 +195,15 @@ namespace MetaSimulatorConsole
             {
                 if(gestionnaire.MenuCourant is MenuSimulation)
                 {
-                    if (gestionnaire.Fenetre.ShowInterface)
-                        gestionnaire.Fenetre.ShowInterface = false;
-                    else 
-                        gestionnaire.Fenetre.ShowInterface  = true;
+                    ShowInterface = !ShowInterface;
                 }
             }
+        }
+        public override void Update()
+        {
+            if (gestionnaire != null && gestionnaire.Fenetre != null)
+                ShowInterface = gestionnaire.Fenetre.ShowInterface;
+            Console.WriteLine("Mise à jour de la commande MontrerCacherInterface");
         }
     }
 

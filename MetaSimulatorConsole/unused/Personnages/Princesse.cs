@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class Princesse : Personnage
+    class Princesse : OldPersonnage
     {
         public Princesse(Organisation o,string sonNom) : base(o,"Princesse " + sonNom)
         {

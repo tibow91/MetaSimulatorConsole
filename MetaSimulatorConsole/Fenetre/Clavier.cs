@@ -35,5 +35,13 @@ namespace MetaSimulatorConsole.Fenetre
             if (CommandesSpeciales != null)
                 CommandesSpeciales.Traitement();
         }
+
+        internal List<IObservateurAbstrait> Observers()
+        {
+            var observers = new List<IObservateurAbstrait>();
+            observers.Add(CommandesClavier);
+            observers.Add(CommandesSpeciales);
+            return observers;
+        }
     }
 }

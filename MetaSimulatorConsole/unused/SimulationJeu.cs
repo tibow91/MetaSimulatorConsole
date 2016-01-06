@@ -8,7 +8,7 @@ namespace MetaSimulatorConsole
 {
     public class SimulationJeu
     {
-        private List<Personnage> PersonnagesList = new List<Personnage>();
+        private List<OldPersonnage> PersonnagesList = new List<OldPersonnage>();
         Organisation EtatMajor = new Organisation();
 
 
@@ -25,7 +25,7 @@ namespace MetaSimulatorConsole
         public String LancerCombat()
         {
             string chaineCombat = "";
-            foreach (Personnage p in PersonnagesList)
+            foreach (OldPersonnage p in PersonnagesList)
             {
                 chaineCombat += p.Combattre() + "\n";
             }
@@ -65,7 +65,7 @@ namespace MetaSimulatorConsole
             return dep;
         }
 
-        private void AjouterALaSimulation(Personnage p)
+        private void AjouterALaSimulation(OldPersonnage p)
         {
             EtatMajor.Attach(p);
         }

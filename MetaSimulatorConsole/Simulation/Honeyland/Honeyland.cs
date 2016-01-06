@@ -7,8 +7,22 @@ using MetaSimulatorConsole.Dijkstra;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    class GameAgeOfKebab : GameObservable
+    class CaseHoneyland : Case
     {
+        public CaseHoneyland() : base(new TextureHerbe()) { }
+    }
+    class GameHoneyland : GameObservable
+    {
+        public GameHoneyland(GameManager manager, Grille grille)
+            : base(manager,grille)
+        {
+            RemplirGrille();
+        }
+        public override void UpdateView()
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void RemplirGrille()
         {
             // pour chaque element de la grille
@@ -17,19 +31,9 @@ namespace MetaSimulatorConsole.Simulation
             {
                 for (int j = 0; j < Tableau.Largeur; ++j)
                 {
-                    Tableau[i, j] = new Case(new TexturePikachu());
+                    Tableau[i, j] = new CaseHoneylandFactory().CreerCase();
                 }
             }
-        }
-        public GameAgeOfKebab(Grille grille)
-            : base(grille)
-        {
-            RemplirGrille();
-        }
-
-        public override void UpdateView()
-        {
-            throw new NotImplementedException();
         }
 
         public override void LancerSimulation()
@@ -37,13 +41,15 @@ namespace MetaSimulatorConsole.Simulation
             Stop = false;
             Started = true;
             Console.WriteLine("Simulation lancée");
+            Gestionnaire.Update();
             while (!Stop)
             {
 
             }
             Started = false;
             Console.WriteLine("Simulation arrêtée");
-            var node = (Node<Case>)Tableau[24, 24];
+            Gestionnaire.Update();
+            var node = (Node<Case>)Tableau[49, 49];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
         }
     }

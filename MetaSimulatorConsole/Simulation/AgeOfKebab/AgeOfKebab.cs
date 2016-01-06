@@ -7,10 +7,26 @@ using MetaSimulatorConsole.Dijkstra;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    class GameCDGSimulator : GameObservable
+    class CaseAgeOfKebab : Case
     {
-        public GameCDGSimulator(Grille grille)
-            : base(grille)
+        public CaseAgeOfKebab() : base(new TexturePikachu()) { }
+    }
+    class GameAgeOfKebab : GameObservable
+    {
+        protected override void RemplirGrille()
+        {
+            // pour chaque element de la grille
+            // Inscrire une texture avec pikachu
+            for (int i = 0; i < Tableau.Longueur; ++i)
+            {
+                for (int j = 0; j < Tableau.Largeur; ++j)
+                {
+                    Tableau[i, j] = new CaseAgeOfKebabFactory().CreerCase();
+                }
+            }
+        }
+        public GameAgeOfKebab(GameManager manager,Grille grille)
+            : base(manager,grille)
         {
             RemplirGrille();
         }
@@ -20,33 +36,21 @@ namespace MetaSimulatorConsole.Simulation
             throw new NotImplementedException();
         }
 
-        protected override void RemplirGrille()
-        {
-            // pour chaque element de la grille
-            // Inscrire une texture avec pikachu
-            for (int i = 0; i < Tableau.Longueur; ++i)
-            {
-                for (int j = 0; j < Tableau.Largeur; ++j)
-                {
-                    Tableau[i, j] = new Case(new TexturePikachuSurHerbe());
-                }
-            }
-        }
-
         public override void LancerSimulation()
         {
             Stop = false;
             Started = true;
             Console.WriteLine("Simulation lancée");
+            Gestionnaire.Update();
             while (!Stop)
             {
 
             }
             Started = false;
             Console.WriteLine("Simulation arrêtée");
-            var node = (Node<Case>)Tableau[0, 0];
-            node.Value.SetTextures(new TextureHerbe());
+            Gestionnaire.Update();
+            var node = (Node<Case>)Tableau[24, 24];
+            node.Value.SetTextures(new TexturePikachuSurHerbe());
         }
     }
-
 }

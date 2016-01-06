@@ -28,8 +28,10 @@ namespace MetaSimulatorConsole
             set { _started = value; }
         }
         protected Grille Tableau;
-        public Game(Grille grille)
+        protected GameManager Gestionnaire;
+        public Game(GameManager manager,Grille grille)
         {
+            Gestionnaire = manager;
             this.Tableau = grille;
         }
 
@@ -42,9 +44,9 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class GameObservable : Game,IObservateurView
+        abstract class GameObservable : Game,IObservateurView
     {
-        public GameObservable(Grille grille) : base(grille) { }
+        public GameObservable(GameManager manager,Grille grille) : base(manager,grille) { }
 
         public virtual void UpdateView()
         {
@@ -63,43 +65,43 @@ namespace MetaSimulatorConsole
 
     abstract class GameFactory 
     {
-        public abstract Game CreerJeu(Grille grille);
+        public abstract Game CreerJeu(GameManager manager, Grille grille);
     }
 
     class GameAgeOfKebabFactory : GameFactory
     {
-        public override Game CreerJeu(Grille grille)
+        public override Game CreerJeu(GameManager manager, Grille grille) 
         {
-            return new GameAgeOfKebab(grille);
+            return new GameAgeOfKebab(manager,grille);
         }
     }
 
     class GameCDGSimulatorFactory : GameFactory
     {
-        public override Game CreerJeu(Grille grille)
+        public override Game CreerJeu(GameManager manager, Grille grille) 
         {
-            return new GameCDGSimulator(grille);
+            return new GameCDGSimulator(manager,grille);
         }
     }
 
     class GameHoneywellFactory : GameFactory
     {
-        public override Game CreerJeu(Grille grille)
+        public override Game CreerJeu(GameManager manager, Grille grille) 
         {
-            return new GameHoneyland(grille);
+            return new GameHoneyland(manager,grille);
         }
     }
 
 
     static class GameFactorySelect
     {
-        public static Game CreerJeu(NomJeu nomjeu,Grille grille)
+        public static Game CreerJeu(NomJeu nomjeu, GameManager manager, Grille grille) 
         {
             switch(nomjeu)
             {
-                case NomJeu.AgeOfKebab: return new GameAgeOfKebabFactory().CreerJeu(grille);
-                case NomJeu.CDGSimulator: return new GameCDGSimulatorFactory().CreerJeu(grille);
-                case NomJeu.Honeyland: return new GameHoneywellFactory().CreerJeu(grille); 
+                case NomJeu.AgeOfKebab: return new GameAgeOfKebabFactory().CreerJeu(manager,grille);
+                case NomJeu.CDGSimulator: return new GameCDGSimulatorFactory().CreerJeu(manager,grille);
+                case NomJeu.Honeyland: return new GameHoneywellFactory().CreerJeu(manager,grille); 
             }
 
             return null;

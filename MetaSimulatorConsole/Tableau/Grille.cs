@@ -8,15 +8,10 @@ using MetaSimulatorConsole.Dijkstra;
 namespace MetaSimulatorConsole
 {
 
-
-    class Grille : ConteneurParcourable<Case>
+    class Grille : ConteneurParcourable<Case> 
     {
         private static Grille instance;
-        protected Grille(int longueur, int largeur)
-            : base(longueur, largeur)
-        {
-            ConstruireGrille();
-        }
+
 
         public static bool HasInstance()
         {
@@ -24,16 +19,20 @@ namespace MetaSimulatorConsole
             return true;
         }
 
-        public static Grille Instance(int longueur,int largeur)
+        public static Grille Instance(int longueur, int largeur)
         {
             if(instance == null)
             {
-                instance = new Grille(longueur,largeur);
+                instance = new Grille(longueur, largeur);
             }
 
             return instance;
         }
-
+        protected Grille(int longueur, int largeur)
+            : base(longueur, largeur)
+        {
+            ConstruireGrille();
+        }
         private void ConstruireGrille()
         {
             Console.WriteLine("Construction de la Grille ({0},{1})",Longueur,Largeur);
@@ -81,4 +80,5 @@ namespace MetaSimulatorConsole
         }
 
     }
+
 }

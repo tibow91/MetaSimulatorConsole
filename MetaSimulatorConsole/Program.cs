@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole
 {
@@ -25,6 +26,12 @@ namespace MetaSimulatorConsole
             //}
             //Thread workerThread = new Thread(Manager.Simulation.LancerSimulation);
             //workerThread.Start();
+            var serveur = new KebabDirecteur();
+            var menu = new KebabBuilderSimple();
+            serveur.Construire(menu);
+            var kebab = menu.RecupererKebab();
+            Console.WriteLine(kebab.Composition());
+            Console.WriteLine("prix = " + kebab.Cout());
             manager.Fenetre.Run();
           // https://github.com/tibow91/MetaSimulatorConsole.git
         }
