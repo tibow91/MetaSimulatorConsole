@@ -66,17 +66,24 @@ namespace MetaSimulatorConsole
         public static AppuiClavier ChaineDeCommandes(Window fenetre)
         {
 
-            AppuiClavier touche0 = new AppuiClavierToucheNum0(fenetre);
-            AppuiClavier touche1 = new AppuiClavierToucheNum1(fenetre);
-            AppuiClavier touche2 = new AppuiClavierToucheNum2(fenetre);
+            AppuiClavier toucheK0 = new AppuiClavierToucheKeypad0(fenetre);
+            AppuiClavier toucheK1 = new AppuiClavierToucheKeypad1(fenetre);
+            AppuiClavier toucheK2 = new AppuiClavierToucheKeypad2(fenetre);
 
-            touche0.SetCommandeSuivante(touche1);
-            touche1.SetCommandeSuivante(touche2);
-            touche2.SetCommandeSuivante(null);
+            AppuiClavier toucheN0 = new AppuiClavierToucheNumber0(fenetre);
+            AppuiClavier toucheN1 = new AppuiClavierToucheNumber1(fenetre);
+            AppuiClavier toucheN2 = new AppuiClavierToucheNumber2(fenetre);
+
+            toucheK0.SetCommandeSuivante(toucheK1);
+            toucheK1.SetCommandeSuivante(toucheK2);
+            toucheK2.SetCommandeSuivante(toucheN0);
+            toucheN0.SetCommandeSuivante(toucheN1);
+            toucheN1.SetCommandeSuivante(toucheN2);
+            toucheN2.SetCommandeSuivante(null);
 
             //fileLogger.setNextLogger(consoleLogger);
 
-            return touche0;
+            return toucheK0;
         }
 
         public static AppuiClavier ChaineDeCommandesSpeciales(Window fenetre)
@@ -103,10 +110,26 @@ namespace MetaSimulatorConsole
         }
     }
 
-
-    class AppuiClavierToucheNum0 : AppuiClavier
+    class AppuiClavierToucheNumber0 : AppuiClavier
     {
-        public AppuiClavierToucheNum0(Window fenetre)
+        public AppuiClavierToucheNumber0(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire), EMenu.Principal);
+            AjouterCommande(new CreerJeuAgeOfKebab(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Chargement);
+            AjouterCommande(new StartSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number0);
+        }
+    }
+
+    class AppuiClavierToucheKeypad0 : AppuiClavier
+    {
+        public AppuiClavierToucheKeypad0(Window fenetre)
             : base(fenetre)
         {
             AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire),EMenu.Principal );
@@ -121,9 +144,25 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class AppuiClavierToucheNum1 : AppuiClavier
+    class AppuiClavierToucheNumber1 : AppuiClavier
     {
-        public AppuiClavierToucheNum1(Window fenetre)
+        public AppuiClavierToucheNumber1(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new PasserAuMenuDeChargement(fenetre.Gestionnaire), EMenu.Principal);
+            AjouterCommande(new CreerJeuCDGSimulator(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new StopSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number1);
+        }
+    }
+
+    class AppuiClavierToucheKeypad1 : AppuiClavier
+    {
+        public AppuiClavierToucheKeypad1(Window fenetre)
             : base(fenetre)
         {
             AjouterCommande(new PasserAuMenuDeChargement(fenetre.Gestionnaire), EMenu.Principal);
@@ -134,13 +173,12 @@ namespace MetaSimulatorConsole
         public override void Traitement()
         {
             TraitementGenerique(Key.Keypad1);            
-        }
-        
+        }  
     }
 
-    class AppuiClavierToucheNum2 : AppuiClavier
+    class AppuiClavierToucheKeypad2 : AppuiClavier
     {
-        public AppuiClavierToucheNum2(Window fenetre)
+        public AppuiClavierToucheKeypad2(Window fenetre)
             : base(fenetre)
         {
             AjouterCommande(new CreerJeuHoneywell(fenetre.Gestionnaire),EMenu.Creation);
@@ -151,6 +189,21 @@ namespace MetaSimulatorConsole
             TraitementGenerique(Key.Keypad2);
         }
     }
+
+    class AppuiClavierToucheNumber2 : AppuiClavier
+    {
+        public AppuiClavierToucheNumber2(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new CreerJeuHoneywell(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number2);
+        }
+    }
+
 
     class AppuiClavierToucheEchap : AppuiClavier
     {
