@@ -43,7 +43,6 @@ namespace MetaSimulatorConsole
 
     class StartSimulation : CommandGameManager
     {
-
         public StartSimulation(GameManager manager): base(manager){}
         public override void Execute()
         {

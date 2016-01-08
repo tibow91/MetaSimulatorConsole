@@ -23,7 +23,7 @@ namespace MetaSimulatorConsole
             commandes.Add(menu,uneCommande);
         }
         protected void ExecuteCommandes()
-        { 
+        {
             if (Partie.Gestionnaire.MenuCourant is MenuPrincipal)
             {
                 if(commandes.ContainsKey(EMenu.Principal))
@@ -65,7 +65,6 @@ namespace MetaSimulatorConsole
 
         public static AppuiClavier ChaineDeCommandes(Window fenetre)
         {
-
             AppuiClavier toucheK0 = new AppuiClavierToucheKeypad0(fenetre);
             AppuiClavier toucheK1 = new AppuiClavierToucheKeypad1(fenetre);
             AppuiClavier toucheK2 = new AppuiClavierToucheKeypad2(fenetre);
@@ -117,7 +116,6 @@ namespace MetaSimulatorConsole
         {
             AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire), EMenu.Principal);
             AjouterCommande(new CreerJeuAgeOfKebab(fenetre.Gestionnaire), EMenu.Creation);
-            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Chargement);
             AjouterCommande(new StartSimulation(fenetre.Gestionnaire), EMenu.Simulation);
         }
 
@@ -132,9 +130,8 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheKeypad0(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire),EMenu.Principal );
+            AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire), EMenu.Principal );
             AjouterCommande(new CreerJeuAgeOfKebab(fenetre.Gestionnaire), EMenu.Creation);
-            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Chargement);
             AjouterCommande(new StartSimulation(fenetre.Gestionnaire), EMenu.Simulation);
         }
 
@@ -166,7 +163,7 @@ namespace MetaSimulatorConsole
             : base(fenetre)
         {
             AjouterCommande(new PasserAuMenuDeChargement(fenetre.Gestionnaire), EMenu.Principal);
-            AjouterCommande(new CreerJeuCDGSimulator(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new CreerJeuCDGSimulator(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new StopSimulation(fenetre.Gestionnaire), EMenu.Simulation);
         }
 
@@ -181,7 +178,7 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheKeypad2(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
         }
         public override void Traitement()
@@ -195,7 +192,7 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheNumber2(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new CreerJeuHoneywell(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
         }
         public override void Traitement()
@@ -210,7 +207,7 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheEchap(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire),EMenu.Principal);
+            AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Principal);
             AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Chargement);
             AjouterCommande(new QuitterSimulation(fenetre.Gestionnaire), EMenu.Simulation);
@@ -228,7 +225,7 @@ namespace MetaSimulatorConsole
         public AppuiClavierTouchePrecedent(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Chargement);
             AjouterCommande(new PasserAuMenuPrincipal(fenetre.Gestionnaire), EMenu.Simulation);    
         }

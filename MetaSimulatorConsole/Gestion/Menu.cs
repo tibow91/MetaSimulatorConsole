@@ -38,7 +38,6 @@ namespace MetaSimulatorConsole
             manager.Fenetre.TextMenu.Add("CDGSimulator", "Touche 1");
             manager.Fenetre.TextMenu.Add("Honeyland", "Touche 2");
             manager.Fenetre.TextMenu.Add("Retour", "Touche Precedent");
-
         }
 
         public override string AfficherEtat()
@@ -53,7 +52,7 @@ namespace MetaSimulatorConsole
         {
             manager.MenuCourant = this;
             manager.Fenetre.TextMenu.Clear();
-            manager.Fenetre.TextMenu.Add("Retour", "Touche 0 / Precedent");
+            manager.Fenetre.TextMenu.Add("Retour", "Precedent");
         }
 
         public override string AfficherEtat()
