@@ -157,13 +157,13 @@ namespace MetaSimulatorConsole
             }
         }
     }
-    class CreerJeuHoneywell : CommandGameManager
+    class CreerJeuHoneyland : CommandGameManager
     {
-        public CreerJeuHoneywell(GameManager manager) : base(manager) { }
+        public CreerJeuHoneyland(GameManager manager) : base(manager) { }
 
         public override void Execute()
         {
-            Console.WriteLine("Vous avez demandé à lancer le jeu Honeywell");
+            Console.WriteLine("Vous avez demandé à lancer le jeu Honeyland");
             if (gestionnaire != null)
             {
                 gestionnaire.CreerJeu(NomJeu.Honeyland);

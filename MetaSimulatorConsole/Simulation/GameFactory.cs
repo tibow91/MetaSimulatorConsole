@@ -84,7 +84,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class GameHoneywellFactory : GameFactory
+    class GameHoneylandFactory : GameFactory
     {
         public override Game CreerJeu(GameManager manager, Grille grille) 
         {
@@ -101,7 +101,7 @@ namespace MetaSimulatorConsole
             {
                 case NomJeu.AgeOfKebab: return new GameAgeOfKebabFactory().CreerJeu(manager,grille);
                 case NomJeu.CDGSimulator: return new GameCDGSimulatorFactory().CreerJeu(manager,grille);
-                case NomJeu.Honeyland: return new GameHoneywellFactory().CreerJeu(manager,grille); 
+                case NomJeu.Honeyland: return new GameHoneylandFactory().CreerJeu(manager,grille); 
             }
 
             return null;

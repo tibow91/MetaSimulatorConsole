@@ -181,7 +181,7 @@ namespace MetaSimulatorConsole
         public AppuiClavierToucheKeypad2(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new CreerJeuHoneywell(fenetre.Gestionnaire),EMenu.Creation);
+            AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire),EMenu.Creation);
             AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
         }
         public override void Traitement()
