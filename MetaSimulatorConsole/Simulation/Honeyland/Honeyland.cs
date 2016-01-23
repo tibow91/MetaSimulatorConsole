@@ -11,6 +11,7 @@ namespace MetaSimulatorConsole.Simulation
     {
         public CaseHoneyland() : base(new TextureHerbe()) { }
     }
+
     class GameHoneyland : GameObservable
     {
         public GameHoneyland(GameManager manager, Grille grille)

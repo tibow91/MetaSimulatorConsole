@@ -247,6 +247,15 @@ class Graphisme
         {
             Textures.Add(NomTexture.Herbe, ChargerTexture("../res/grass.png"));
             Textures.Add(NomTexture.Pikachu, ChargerTexture("../res/m_front.png"));
+
+            Textures.Add(NomTexture.Bee, ChargerTexture("../res/bee.png"));
+            Textures.Add(NomTexture.Beehive, ChargerTexture("../res/beehive.png"));
+            Textures.Add(NomTexture.Flower, ChargerTexture("../res/flower.png"));
+
+            Textures.Add(NomTexture.Plane1, ChargerTexture("../res/plane.png"));
+            Textures.Add(NomTexture.Plane2, ChargerTexture("../res/planetexpress.png"));
+
+
         }
 
 

@@ -7,7 +7,11 @@ using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
-    enum NomTexture { Herbe,Pikachu }
+    enum NomTexture {
+        Herbe, Pikachu,
+        Bee, Beehive, Flower,
+        Plane1, Plane2
+    }
 
     abstract class Texture // Texture Unique
     {
@@ -47,13 +51,12 @@ namespace MetaSimulatorConsole
         public TexturePikachu() : base(null) { }
         public override List<NomTexture> Name()
         {
-            if (Decor != null)
-            {
-                var textures = Decor.Name();
-                textures.Add(NomTexture.Pikachu);
-                return textures;
-            }
-            else return new List<NomTexture>(){ NomTexture.Pikachu};
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.Pikachu };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.Pikachu);
+            return textures;        
         }
     }
 
@@ -61,6 +64,7 @@ namespace MetaSimulatorConsole
     {
         public TexturePikachuSurHerbe() : base(new TextureHerbe()) { }
     }
+
     class Case 
     {
         public Texture Textures;
