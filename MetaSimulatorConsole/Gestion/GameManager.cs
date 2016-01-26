@@ -12,20 +12,20 @@ namespace MetaSimulatorConsole
 
     class GameManager : SujetObserveAbstrait
     {
+
+        private static GameManager instance;
+
         public static List<NomJeu> ListeJeux = new List<NomJeu>()
         {
-            { NomJeu.AgeOfKebab},
-            { NomJeu.CDGSimulator},
-            { NomJeu.Honeyland}
+            { NomJeu.AgeOfKebab },
+            { NomJeu.CDGSimulator },
+            { NomJeu.Honeyland }
         };
+
         public NomJeu JeuChoisi = ListeJeux[0];
 
         Dictionary<NomJeu, Game> Jeux = new Dictionary<NomJeu, Game>(){};
-        private Window _fenetre;
-        public Window Fenetre
-        {
-            get { return _fenetre; }
-        }
+        public Window Fenetre { get; set; }
 
         public Grille TableauDeJeu;
         private Game _simulation;
@@ -51,12 +51,7 @@ namespace MetaSimulatorConsole
              { EMenu.Simulation, new MenuSimulation() }
         };
         // Etat actuel de la machine
-        private Menu _menuCourant;
-        public Menu MenuCourant
-        {
-            get { return _menuCourant; }
-            set { _menuCourant = value; }
-        }
+        public Menu MenuCourant{ get; set; }
 
         private void PasserAuMenu(EMenu menu)
         {
@@ -98,12 +93,20 @@ namespace MetaSimulatorConsole
         /*----------------------------------
         * CONSTRUCTEUR
         *----------------------------------*/
-        public GameManager()
+        protected GameManager()
         {
             //DemanderJeuAChoisir();
             CreerTableauDeJeu();
             AttachObservers();
             PasserAuMenuPrincipal();
+        }
+
+        public static GameManager Instance()
+        {
+            if (instance == null)
+                instance = new GameManager();
+
+            return instance;
         }
 
         private void AttachObservers()
@@ -172,7 +175,7 @@ namespace MetaSimulatorConsole
             //ans = Console.ReadLine();
             //if (ans != null) largeur = Int32.Parse(ans);
             TableauDeJeu = (Grille)Grille.Instance(longueur, largeur);
-            _fenetre = new Window(600,600,this);
+            this.Fenetre = new Window(600,600,this);
         }
 
         private Game chargerJeu(NomJeu nomjeu) // + données XML en param

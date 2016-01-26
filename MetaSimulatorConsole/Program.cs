@@ -13,7 +13,7 @@ namespace MetaSimulatorConsole
         static void Main(string[] args)
         {
             //new SimulationJeu();
-            var manager = new GameManager();
+            var manager = GameManager.Instance();
             //manager.CreerNouveauJeu();
             //Manager.CreerNouveauJeu();
             //Manager.ChoisirJeu(NomJeu.CDGSimulator);
