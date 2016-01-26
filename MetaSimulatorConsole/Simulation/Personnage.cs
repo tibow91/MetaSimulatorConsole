@@ -2,14 +2,8 @@
 
 namespace MetaSimulatorConsole.Simulation
 {
-    public abstract class IObservateurPersonnage
+    public abstract class PersonnageAbstract : SujetObserveAbstrait, IEquatable<PersonnageAbstract>
     {
-        public abstract void BaisserPointsDeVie();
-    }
-
-    public abstract class PersonnageAbstract : IObservateurPersonnage, IEquatable<PersonnageAbstract>
-    {
-
         public string Nom { get; set; }
         protected int PointsDeVie { get; set; }
         protected int SeuilCritique { get; set; }
@@ -23,7 +17,7 @@ namespace MetaSimulatorConsole.Simulation
             Etat = null;
         }
 
-        public override void BaisserPointsDeVie()
+        public void BaisserPointsDeVie()
         {
             if(PointsDeVie > 0) --PointsDeVie;
         }
