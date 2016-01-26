@@ -1,14 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
-    class Avion
+    public class Avion : PersonnageAbstract
     {
-        public int kerosene;
-        private EtatAbstrait etatCourant = null;
+        public override void Ajoute(PersonnageAbstract c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void AnalyserSituation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Execution()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Retire(PersonnageAbstract c)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
-    class Etat_EnVol : EtatAbstrait
+    class Etat_EnVol : EtatAbstract
     {
-        public override string ModifieEtat(Avion a)
+        public Etat_EnVol()
         {
-            throw new NotImplementedException();
+            this.Nom = "En Vol";
+        }
+        public override string ModifieEtat(PersonnageAbstract p)
+        {
+            p.Etat = new Etat_EnVol();
+
+            return String.Format("{0} est maintenant {1}", p.Nom, this.Nom);
         }
     }
 }

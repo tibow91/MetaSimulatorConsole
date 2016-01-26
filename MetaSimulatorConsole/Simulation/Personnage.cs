@@ -1,26 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    abstract class IObservateurPersonnage
+    public abstract class IObservateurPersonnage
     {
         public abstract void BaisserPointsDeVie();
     }
-    abstract class PersonnageAbstract : IObservateurPersonnage,IEquatable<PersonnageAbstract>
+
+    public abstract class PersonnageAbstract : IObservateurPersonnage, IEquatable<PersonnageAbstract>
     {
-        protected int _lifePoints = 100;
 
-        protected int PointsDeVie
+        public string Nom { get; set; }
+        protected int PointsDeVie { get; set; }
+        protected int SeuilCritique { get; set; }
+        public EtatAbstract Etat { get; set; }
+
+        public PersonnageAbstract()
         {
-            get { return _lifePoints;}
-            set { _lifePoints = value; }
+            Nom = "Sans nom";
+            PointsDeVie = 100;
+            SeuilCritique = 50;
+            Etat = null;
         }
-
-        protected int SeuilCritique = 50;
 
         public override void BaisserPointsDeVie()
         {
@@ -32,9 +33,13 @@ namespace MetaSimulatorConsole.Simulation
 
         public bool Equals(PersonnageAbstract other)
         {
-            throw new NotImplementedException();
-        }
+            if(this.GetType() == other.GetType()) 
+                if(this.PointsDeVie == other.PointsDeVie)
+                    return true;
 
+            return false;
+        }
+        
         public abstract void Ajoute(PersonnageAbstract c);
         public abstract void Retire(PersonnageAbstract c);
     }

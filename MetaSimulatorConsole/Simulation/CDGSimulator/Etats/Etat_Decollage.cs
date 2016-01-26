@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
-    class Etat_Decollage : EtatAbstrait
+    class Etat_Decollage : EtatAbstract
     {
-        public override string ModifieEtat(Avion a)
+        public Etat_Decollage()
         {
-            throw new NotImplementedException();
+            this.Nom = "En décollage";
+        }
+        public override string ModifieEtat(PersonnageAbstract p)
+        {
+            p.Etat = new Etat_Decollage();
+
+            return String.Format("{0} est maintenant {1}", p.Nom, this.Nom);
         }
     }
+}
 }

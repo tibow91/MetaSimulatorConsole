@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
@@ -11,22 +7,12 @@ namespace MetaSimulatorConsole
     {
         void UpdateView();
     }
+
     abstract class Game
     {
-        private bool _stop = true;
-        public bool Stop
-        {
-            get { return _stop; }
-            set { _stop = value; }
-        }
+        public bool Stop { get; set; }
+        public bool Started { get; set; }
 
-        private bool _started = false;
-
-        public bool Started
-        {
-            get { return _started;  }
-            set { _started = value; }
-        }
         protected Grille Tableau;
         protected GameManager Gestionnaire;
         public Game(GameManager manager,Grille grille)
@@ -44,7 +30,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-        abstract class GameObservable : Game,IObservateurView
+    abstract class GameObservable : Game,IObservateurView
     {
         public GameObservable(GameManager manager,Grille grille) : base(manager,grille) { }
 
