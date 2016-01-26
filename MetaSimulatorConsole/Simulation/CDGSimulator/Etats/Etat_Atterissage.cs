@@ -17,4 +17,3 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
         }
     }
 }
-}
