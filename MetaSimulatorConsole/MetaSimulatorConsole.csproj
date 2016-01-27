@@ -48,6 +48,7 @@
     <Compile Include="Dijkstra\Conteneur.cs" />
     <Compile Include="Fenetre\Clavier.cs" />
     <Compile Include="Fenetre\Graphisme.cs" />
+    <Compile Include="Objet.cs" />
     <Compile Include="Observateur.cs" />
     <Compile Include="Simulation\AgeOfKebab\AgeOfKebab.cs" />
     <Compile Include="Simulation\AgeOfKebab\Kebab.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="unused\SimulationJeu.cs" />
     <Compile Include="Gestion\GameManager.cs" />
     <Compile Include="Dijkstra\Vertex.cs" />
+    <Compile Include="Simulation\Zones.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
