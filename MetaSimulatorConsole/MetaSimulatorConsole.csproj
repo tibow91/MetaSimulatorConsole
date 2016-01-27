@@ -60,6 +60,10 @@
     <Compile Include="Simulation\CDGSimulator\Etats\Etat_Atterissage.cs" />
     <Compile Include="Simulation\CDGSimulator\Etats\Etat_Decollage.cs" />
     <Compile Include="Simulation\CDGSimulator\Etats\Etat_EnVol.cs" />
+    <Compile Include="Simulation\Honeyland\Bee.cs" />
+    <Compile Include="Simulation\Honeyland\Etats\Etat_Busy.cs" />
+    <Compile Include="Simulation\Honeyland\Etats\Etat_Free.cs" />
+    <Compile Include="Simulation\Honeyland\Etats\Etat_Full.cs" />
     <Compile Include="Simulation\Honeyland\Honeyland.cs" />
     <Compile Include="Simulation\Personnage.cs" />
     <Compile Include="Tableau\Case.cs" />
