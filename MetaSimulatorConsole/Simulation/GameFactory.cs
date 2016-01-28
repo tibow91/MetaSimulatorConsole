@@ -8,17 +8,22 @@ namespace MetaSimulatorConsole
         void UpdateView();
     }
 
-    abstract class Game
+    public enum EGame { AgeOfKebab, CDGSimulator, Honeyland}
+
+    abstract class Game : IEquatable<Game>
     {
+        public EGame NomDuJeu;
         public bool Stop { get; set; }
         public bool Started { get; set; }
 
         protected Grille Tableau;
         protected GameManager Gestionnaire;
-        public Game(GameManager manager,Grille grille)
+        public ZoneComposite ZoneGenerale;
+        protected Game(GameManager manager,Grille grille)
         {
             Gestionnaire = manager;
             this.Tableau = grille;
+            ConstruireZones();
         }
 
         protected abstract void RemplirGrille();
@@ -28,6 +33,16 @@ namespace MetaSimulatorConsole
         {
             RemplirGrille();
         }
+
+        public bool Equals(Game other)
+        {
+            if (NomDuJeu == other.NomDuJeu)
+                return true;
+            return false;
+        }
+
+        public abstract void ConstruireZones();
+        public abstract bool VerifierValiditeZones();
     }
 
     abstract class GameObservable : Game,IObservateurView
@@ -46,6 +61,16 @@ namespace MetaSimulatorConsole
             throw new NotImplementedException();
         }
 
+
+        public override void ConstruireZones()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool VerifierValiditeZones()
+        {
+            throw new NotImplementedException();
+        }
     }
    
 

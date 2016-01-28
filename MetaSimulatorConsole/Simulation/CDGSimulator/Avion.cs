@@ -4,6 +4,10 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
     public class Avion : PersonnageAbstract
     {
+        public Avion(EGame simulation)
+            : base(simulation)
+        {
+        }
         public override void Ajoute(PersonnageAbstract c)
         {
             throw new NotImplementedException();
@@ -23,5 +27,6 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
         {
             throw new NotImplementedException();
         }
+
     }
 }

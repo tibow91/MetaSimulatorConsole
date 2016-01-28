@@ -28,6 +28,7 @@ namespace MetaSimulatorConsole.Simulation
         public GameAgeOfKebab(GameManager manager,Grille grille)
             : base(manager,grille)
         {
+            NomDuJeu = EGame.AgeOfKebab;
             RemplirGrille();
         }
 
@@ -51,6 +52,11 @@ namespace MetaSimulatorConsole.Simulation
             Gestionnaire.Update();
             var node = (Node<Case>)Tableau[24, 24];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
+        }
+
+        public override void ConstruireZones()
+        {
+            ZoneGenerale = new ZoneMaker().ConstruireZonesAgeOfKebab(this);
         }
     }
 }

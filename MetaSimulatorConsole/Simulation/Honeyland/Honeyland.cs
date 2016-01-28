@@ -17,6 +17,7 @@ namespace MetaSimulatorConsole.Simulation
         public GameHoneyland(GameManager manager, Grille grille)
             : base(manager,grille)
         {
+            NomDuJeu = EGame.Honeyland;
             RemplirGrille();
         }
         public override void UpdateView()
@@ -52,6 +53,11 @@ namespace MetaSimulatorConsole.Simulation
             Gestionnaire.Update();
             var node = (Node<Case>)Tableau[49, 49];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
+        }
+
+        public override void ConstruireZones()
+        {
+            ZoneGenerale = new ZoneMaker().ConstruireZonesHoneyland(this); // A compléter
         }
     }
 }

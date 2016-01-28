@@ -17,6 +17,7 @@ namespace MetaSimulatorConsole.Simulation
         public GameCDGSimulator(GameManager manager, Grille grille)
             : base(manager,grille)
         {
+            NomDuJeu = EGame.CDGSimulator;
             RemplirGrille();
         }
 
@@ -54,6 +55,11 @@ namespace MetaSimulatorConsole.Simulation
             Gestionnaire.Update();
             var node = (Node<Case>)Tableau[0, 0];
             node.Value.SetTextures(new TextureHerbe());
+        }
+
+        public override void ConstruireZones()
+        {
+            ZoneGenerale = new ZoneMaker().ConstruireZonesCDGSimulator(this); // A commpléter
         }
     }
 

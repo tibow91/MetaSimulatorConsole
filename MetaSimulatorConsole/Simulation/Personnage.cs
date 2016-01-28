@@ -4,13 +4,15 @@ namespace MetaSimulatorConsole.Simulation
 {
     public abstract class PersonnageAbstract : SujetObserveAbstrait, IEquatable<PersonnageAbstract>
     {
+        public EGame Simulation;
         public string Nom { get; set; }
         protected int PointsDeVie { get; set; }
         protected int SeuilCritique { get; set; }
         public EtatAbstract Etat { get; set; }
 
-        public PersonnageAbstract()
+        protected PersonnageAbstract(EGame simulation)
         {
+            Simulation = simulation;
             Nom = "Sans nom";
             PointsDeVie = 100;
             SeuilCritique = 50;
