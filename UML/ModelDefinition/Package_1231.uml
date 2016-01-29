@@ -27,7 +27,7 @@
         <referencesInternal>
           <reference
             Id="0b631f5e-970b-419d-824f-f809fd50d3e6"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DKeyPressEventArgs"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2Fpackages%2FOpenTK.1.1.1589.5942%2Flib%2FNET40%2FOpenTK.dll Namespace%3DOpenTK Type%3DKeyPressEventArgs"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -85,7 +85,7 @@
         <referencesInternal>
           <reference
             Id="1f5ebaf8-7c76-47c9-a1ac-c4799f1fbb60"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DFrameEventArgs"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2Fpackages%2FOpenTK.1.1.1589.5942%2Flib%2FNET40%2FOpenTK.dll Namespace%3DOpenTK Type%3DFrameEventArgs"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -143,7 +143,7 @@
         <referencesInternal>
           <reference
             Id="f282339d-29f2-4d40-b87f-5f98020e1489"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DGameWindow"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2Fpackages%2FOpenTK.1.1.1589.5942%2Flib%2FNET40%2FOpenTK.dll Namespace%3DOpenTK Type%3DGameWindow"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>

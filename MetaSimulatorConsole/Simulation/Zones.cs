@@ -1,4 +1,5 @@
 ﻿using MetaSimulatorConsole.Simulation;
+using MetaSimulatorConsole.Simulation.Honeyland;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -135,39 +136,30 @@ namespace MetaSimulatorConsole
 
     class ZoneMaker
     {
-        protected ZoneComposite ZoneGeneraleAOK; // AgeOfKebab
-        protected ZoneComposite ZoneGeneraleCDG; // CDGSimulator
-        protected ZoneComposite ZoneGeneraleHoneyland; // Honeyland
+        protected ZoneGeneraleAOK ZoneGeneraleAgeOfKebab; // AgeOfKebab
+        protected ZoneGeneraleCDG ZoneGeneraleCDGSimulator; // CDGSimulator
+        protected ZoneGeneraleHoneyland ZoneGeneraleHoneyLand; // Honeyland
 
-        public ZoneComposite ConstruireZonesAgeOfKebab(Game simulation)
+        public ZoneGeneraleAOK ConstruireZonesAgeOfKebab(Game simulation)
         {
-            if (simulation == null)
-            {
-                Console.WriteLine("La simulation doit être lancée (instanciée) avant de pouvoir construire les zones");
-                return null;
-            }
-            ZoneGeneraleAOK = new ZoneComposite("Zone Générale",simulation);
-            var ZoneInterne = new ZoneComposite("Zone Interne (Kebab)", simulation);
-            var ZoneExterne = new ZoneFinale("Zone Externe (Dehors)", simulation);
-            ZoneGeneraleAOK.AjouterZone(ZoneInterne);
-            ZoneGeneraleAOK.AjouterZone(ZoneExterne);
-            var CaissesClient = new ZoneFinale("Zone Finale: Caisses client (Files d'attente)", simulation);
-            var CaissesCuistots = new ZoneFinale("Zone Finale: Caisses cuistots (côté serveur)", simulation);
-            var ZoneRepas = new ZoneFinale("Zone Finale: Repas pour les clients (chaises et tables)", simulation);
-            ZoneInterne.AjouterZone(CaissesClient);
-            ZoneInterne.AjouterZone(CaissesCuistots);
-            ZoneInterne.AjouterZone(ZoneRepas);
-            return ZoneGeneraleAOK;
+            if (ZoneGeneraleAgeOfKebab == null)            
+                ZoneGeneraleAgeOfKebab = new ZoneGeneraleAOK(simulation);
+            return ZoneGeneraleAgeOfKebab;
+
         }
 
-        public ZoneComposite ConstruireZonesCDGSimulator(Game simulation) // A faire
+        public ZoneGeneraleCDG ConstruireZonesCDGSimulator(Game simulation) // A faire
         {
-            return ZoneGeneraleCDG;
+            if (ZoneGeneraleCDGSimulator == null)
+                ZoneGeneraleCDGSimulator = new ZoneGeneraleCDG(simulation);
+            return ZoneGeneraleCDGSimulator;
         }
 
-        public ZoneComposite ConstruireZonesHoneyland(Game simulation) // A faire
+        public ZoneGeneraleHoneyland ConstruireZonesHoneyland(Game simulation) // A faire
         {
-            return ZoneGeneraleHoneyland;
+            if (ZoneGeneraleHoneyLand == null)
+                ZoneGeneraleHoneyLand = new ZoneGeneraleHoneyland(simulation);
+            return ZoneGeneraleHoneyLand;
         }
 
     }

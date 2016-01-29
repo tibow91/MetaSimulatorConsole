@@ -1545,7 +1545,7 @@
         <referencesInternal>
           <reference
             Id="3ee9688d-b640-4f02-9791-454404002449"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Simulation Type%3DPersonnageAbstract"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Simulation Type%3DPersonnageAbstract"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -2681,6 +2681,12 @@
           </stereotypeInstance>
         </appliedStereotypesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9cfbe882-86b6-4c52-b411-d5b5e4fc8aa6"
+        LastKnownName="Honeyland"
+        LastKnownLocation="Package_2203.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

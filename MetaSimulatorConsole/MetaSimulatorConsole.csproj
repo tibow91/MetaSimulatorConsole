@@ -48,6 +48,7 @@
     <Compile Include="Dijkstra\Conteneur.cs" />
     <Compile Include="Fenetre\Clavier.cs" />
     <Compile Include="Fenetre\Graphisme.cs" />
+    <Compile Include="Simulation\Honeyland\ZoneGeneraleHoneyland.cs" />
     <Compile Include="Simulation\Objet.cs" />
     <Compile Include="Observateur.cs" />
     <Compile Include="Simulation\AgeOfKebab\AgeOfKebab.cs" />
@@ -93,6 +94,8 @@
     <Compile Include="Gestion\GameManager.cs" />
     <Compile Include="Dijkstra\Vertex.cs" />
     <Compile Include="Simulation\Zones.cs" />
+    <Compile Include="Simulation\AgeOfKebab\ZoneGeneraleAOK.cs" />
+    <Compile Include="Simulation\CDGSimulator\ZoneGeneraleCDG.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

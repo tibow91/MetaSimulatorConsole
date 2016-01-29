@@ -20,7 +20,7 @@
         <referencesInternal>
           <reference
             Id="c8ac988a-09ca-4da9-880a-3e0c27b84072"
-            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK.Input Type%3DKey"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2Fpackages%2FOpenTK.1.1.1589.5942%2Flib%2FNET40%2FOpenTK.dll Namespace%3DOpenTK.Input Type%3DKey"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>

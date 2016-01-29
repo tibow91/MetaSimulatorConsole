@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="9cfbe882-86b6-4c52-b411-d5b5e4fc8aa6"
+  name="Honeyland"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3295c8fb-a8fc-445b-a2d9-21c1e2e8a272"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetaSimulatorConsole.Simulation.Honeyland"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="16abb459-b435-4d4d-addb-0957fdcc297f"
+        name="ZoneGeneraleHoneyland"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f21872da-5ed8-4993-9836-82ce88b48242"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Simulation.Honeyland Type%3DZoneGeneraleHoneyland"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="53e7ce28-819c-419d-a7ce-63a0cae3e37e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3f6dc4a6-62e4-41e9-be43-f35f7e09e93f">
+                <propertyInstance
+                  Id="92d76081-e7c0-4ca3-a61f-ff20c4bd66f2"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="18987f02-1f2c-4ea8-bc18-8891d72e4216">
+                <propertyInstance
+                  Id="c7b47489-9a6d-46d8-85cc-8a5676e9280d"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="31086a06-cdfd-4e4b-9039-978112757cf9">
+                <propertyInstance
+                  Id="a63fc778-303b-4111-8226-cfe7abac4a79"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ad6fcd3a-b10d-42ee-ad47-5b8f4cadfb87">
+                <propertyInstance
+                  Id="ff5588e8-562a-4c49-ac21-7f0a5aa48698"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fb514b6c-8b63-42ad-ac7e-4b01c911430c">
+                <propertyInstance
+                  Id="c351f1be-81bf-4edf-9650-983c2f73e1c8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="8d81ff54-3106-4d94-b23f-0ba318feb2a4"
+            isSubstitutable="false">
+            <classMoniker
+              Id="35479f3a-5fc7-4270-a774-5fd68e091da6"
+              LastKnownName="ZoneComposite"
+              LastKnownLocation="Package_1230.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="68a7825e-aab6-496d-8e46-6835a57f8a53"
+            name="ZoneGeneraleHoneyland"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6a04d8cb-fd46-45d1-b068-9f5898709c60"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Simulation.Honeyland Type%3DZoneGeneraleHoneyland Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cee139dd-a4c7-4335-ac9b-1f02806aa857"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0aa529a8-2dcb-4f07-a3f4-b1f5d32a0872">
+                    <propertyInstance
+                      Id="5721b799-5678-4999-9714-dcb610d144c2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba9bd3ed-68c0-405d-8a2e-ab2d7e29b07d">
+                    <propertyInstance
+                      Id="cc65d286-f0ba-4543-9e70-5649d2161187"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1a856d2-29d7-4c32-9a9e-40bb481710d2">
+                    <propertyInstance
+                      Id="52f1917b-f602-413c-bbae-9dd93c7473c1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9f08488-c533-47f0-a282-a7ebd42c7689">
+                    <propertyInstance
+                      Id="a391a1f0-5a43-4b02-919b-955b3e3f1d4a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="912a82fa-7ed6-4dfc-b09d-c589e9f9c5f3">
+                    <propertyInstance
+                      Id="d826fb1e-3478-492e-a800-448f52d36227"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3502bcd7-b66a-44b3-bd9e-08714f88a481">
+                    <propertyInstance
+                      Id="e329df52-236a-4aa3-b6e8-8b7f646e3ea0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e818ee2-03fb-4fe5-9262-b2fd98a28374"
+                  name="simu"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="94685718-69ce-42db-8550-05a9cd857974"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole.Simulation.Honeyland Type%3DZoneGeneraleHoneyland Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)]) ParameterIdentifier%3Dsimu"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c24f00e2-9ecd-4cf6-9128-a5c39d33a295"
+                      LastKnownName="Game"
+                      LastKnownLocation="Package_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

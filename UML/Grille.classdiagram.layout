@@ -2,11 +2,11 @@
 <logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GrilleSingleton">
   <logicalClassDesignerModelMoniker Id="4800470d-3ff5-4c05-9114-da408eeba444" />
   <nestedChildShapes>
-    <classShape Id="82501669-b615-460f-87a6-e69cc9680df1" absoluteBounds="3.5, 1.375, 3.25, 1.8284605995814007" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
-      <classMoniker Id="a1a1d7f0-c9d2-4a61-9c2e-a71ac9bdd52c" LastKnownName="Grille" />
+    <classShape Id="86473d21-4479-4378-9d60-e210c4dee169" absoluteBounds="3.75, 1.625, 3.25, 1.8284605995814007" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="a7af5780-89bb-41fb-b194-06a378ef3ab7" LastKnownName="Grille" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="46bed583-86fd-44f2-bdc3-7a58a84d4310" absoluteBounds="3.515, 1.8903356393178306, 3.2199999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="b454f5e6-9d49-48ec-993c-8db6ddc07a6b" absoluteBounds="3.515, 2.2616637519001959, 3.2199999999999998, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="9a416749-cc14-4d89-8484-d9030359acfa" absoluteBounds="3.765, 2.1403356393178306, 3.2199999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="05ef7662-0b7d-4e6a-bcfd-e4c2f53aa41c" absoluteBounds="3.765, 2.5116637519001959, 3.2199999999999998, 0.84179684768120455" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
