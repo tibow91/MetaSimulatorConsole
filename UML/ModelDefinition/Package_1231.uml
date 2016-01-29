@@ -133,5 +133,69 @@
         </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0884bc1d-b14a-46c9-8f77-4732a9995665"
+        name="GameWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f282339d-29f2-4d40-b87f-5f98020e1489"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FOpenTK%2F1.1%2FBinaries%2FOpenTK%2FRelease%2FOpenTK.dll Namespace%3DOpenTK Type%3DGameWindow"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1cacb771-eb39-47f7-a0bf-80bebbbf6a1a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="07b45887-9eb1-44f0-9d2d-b2fee45a15e9">
+                <propertyInstance
+                  Id="4a5dd2ff-1fc5-4afd-8b62-202ad40a884e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="936da115-7e14-4eb0-b33c-d598ed696d2a">
+                <propertyInstance
+                  Id="66d6dea8-bea6-42f3-9f1e-751c2965d04a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fbe52933-e908-4b7d-ba26-bc585809e2f7">
+                <propertyInstance
+                  Id="9a7bd784-75ed-4dc4-a4b5-93d6da5ad00d"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4d98c170-62c1-4918-8e69-751ef96b9026">
+                <propertyInstance
+                  Id="e961abda-dcad-4573-ada9-2ffbded387c0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0ab722f9-84fa-41ee-8005-a3fa310543da">
+                <propertyInstance
+                  Id="a63dee5e-1cfd-40c6-87cc-652c691da586"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="dde0231e-84df-441c-9ce9-a42f05eb10d4"
+        LastKnownName="Graphics"
+        LastKnownLocation="Package_1555.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>
