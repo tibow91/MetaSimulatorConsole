@@ -27,7 +27,11 @@ namespace MetaSimulatorConsole
         }
 
         protected abstract void RemplirGrille();
-        public abstract void LancerSimulation();
+        public void LancerSimulation()
+        {
+            // si la zone générale est pas valide
+            // ne pas lancer la simulation
+        }
 
         public void AfficherGrille()
         {

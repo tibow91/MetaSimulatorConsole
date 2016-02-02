@@ -12,6 +12,8 @@ namespace MetaSimulatorConsole
 
     class GameManager : SujetObserveAbstrait
     {
+        public static readonly int Longueur = 50;
+        public static readonly int Largeur = 50;
 
         private static GameManager instance;
 
@@ -168,13 +170,12 @@ namespace MetaSimulatorConsole
         {
             if (Grille.HasInstance()) return;
             //Console.WriteLine("Quelles Dimensions pour le tableau de jeu ? Longueur = ?");
-            int longueur=50,largeur=50;
             //var ans = Console.ReadLine();
             //if (ans != null) longueur = Int32.Parse(ans);
             //Console.WriteLine("Largeur ?");
             //ans = Console.ReadLine();
             //if (ans != null) largeur = Int32.Parse(ans);
-            TableauDeJeu = (Grille)Grille.Instance(longueur, largeur);
+            TableauDeJeu = (Grille)Grille.Instance(Longueur, Largeur);
             this.Fenetre = new Window(600,600,this);
         }
 

@@ -10,10 +10,11 @@ namespace MetaSimulatorConsole.Simulation
         protected int SeuilCritique { get; set; }
         public EtatAbstract Etat { get; set; }
 
+        public Coordonnees Case { get; set; }
         protected PersonnageAbstract(EGame simulation)
         {
             Simulation = simulation;
-            Nom = "Sans nom";
+            Nom = "Personnage Sans nom";
             PointsDeVie = 100;
             SeuilCritique = 50;
             Etat = null;
@@ -38,5 +39,10 @@ namespace MetaSimulatorConsole.Simulation
         
         public abstract void Ajoute(PersonnageAbstract c);
         public abstract void Retire(PersonnageAbstract c);
+        public abstract bool EstValide();
+        public override string ToString()
+        {
+            return Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case;
+        }
     }
 }

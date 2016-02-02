@@ -9,10 +9,15 @@ namespace MetaSimulatorConsole
     public abstract class ObjetAbstrait
     {
         public EGame TypeSimulation;
+        public string Nom { get; set; }
+        public Coordonnees Case { get; set; }
+
 
         protected ObjetAbstrait(EGame nomdujeu)
         {
             TypeSimulation = nomdujeu;
+            Nom = "Objet Sans nom";
         }
+        public abstract bool EstValide();
     }
 }
