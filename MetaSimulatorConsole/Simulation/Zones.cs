@@ -74,7 +74,7 @@ namespace MetaSimulatorConsole
         public abstract bool EstCompatible(ZoneAbstraite zone);
         public override string ToString()
         {
- 	         return nom;
+ 	         return "Zone " + nom;
         }
         public abstract bool ContientCoordonnees(Coordonnees coor);
     }
@@ -346,12 +346,36 @@ namespace MetaSimulatorConsole
         public override bool EstValide()
         {
             // pour chacune de ses cases
-                // si une n'est pas valide, alors c'est pas valide
+            foreach(var coor in Cases)
+            {
+                if (!coor.EstValide()) // si une n'est pas valide, alors c'est pas valide
+                {
+                    Console.WriteLine("EstValide: Zone " + this + " - Case " + coor + " non valide");
+                    return false;
+                }
+            }
+
             // pour chacun de ses objets
-                // si n'est pas valide, alors c'est pas valide
+            foreach(var objet in Objets)
+            {
+                if (!objet.EstValide())  // si n'est pas valide, alors c'est pas valide
+                {
+                    Console.WriteLine("EstValide: Zone " + this + " - Objet " + objet + " non valide");
+                    return false;
+                }
+            }
+
             // pour chacun de ses personnages
-                // si un n'est pas valide, alors c'est pas valide
-            throw new NotImplementedException();
+
+            foreach(var personnage in Personnages)
+            {
+                if(!personnage.EstValide())// si un n'est pas valide, alors c'est pas valide
+                {
+                    Console.WriteLine("EstValide: Zone " + this + " - Personnage " + personnage + " non valide");
+                    return false;
+                }
+            }
+            return true;
         }
 
         public override bool EstCompatible(ZoneAbstraite zone)
@@ -371,8 +395,28 @@ namespace MetaSimulatorConsole
             {
                 if (this.EstVide()) return true;
                 if (zone.EstVide()) return true;
-                // regarder si chacune des cases de cette zone est différente de l'autre zone
-                    // Si non c'est pas valide
+                ZoneFinale zoneCastee = (ZoneFinale)zone;
+
+                // regarder si chacune des cases de cette zone est différente de celles de l'autre zone
+                foreach(var coor1 in Cases)
+                {
+                    foreach (var coor2 in zoneCastee.Cases)
+                    {
+                        if(coor1.Equals(coor2))
+                        {
+                            Console.WriteLine("EstCompatible: Zone " + this + " - Case " + coor1 + " égale à Zone " + zoneCastee + " - Case " + coor2 );
+                            return false;
+                        }
+                    }
+                }
+
+                foreach (var perso1 in Personnages)
+                {
+                    foreach (var perso2 in zoneCastee.Personnages)
+                    {
+                        if(per)
+                    }
+                }
                     // Sinon regarder si les personnages de chaque zone ont des coordonnées différentes des perso de l'autre zone
                         // Si non c'est pas valide
                         // Sinon regarder si les objets de chaque zone ont des coordonnées différentes des objets de l'autre zone

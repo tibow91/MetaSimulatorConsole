@@ -42,7 +42,7 @@ namespace MetaSimulatorConsole.Simulation
         public abstract bool EstValide();
         public override string ToString()
         {
-            return Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case;
+            return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";
         }
     }
 }

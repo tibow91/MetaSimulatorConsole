@@ -19,5 +19,9 @@ namespace MetaSimulatorConsole
             Nom = "Objet Sans nom";
         }
         public abstract bool EstValide();
+        public override string ToString()
+        {
+            return "Objet " + Nom + ", " + Case + " (Jeu " + TypeSimulation.ToString() + ")";
+        }
     }
 }
