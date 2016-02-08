@@ -16,7 +16,7 @@ namespace MetaSimulatorConsole
         public bool Stop { get; set; }
         public bool Started { get; set; }
 
-        protected Grille Tableau;
+        public Grille Tableau;
         protected GameManager Gestionnaire;
         public ZoneComposite ZoneGenerale;
         protected Game(GameManager manager,Grille grille)

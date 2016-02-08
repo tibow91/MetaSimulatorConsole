@@ -8,7 +8,7 @@ using MetaSimulatorConsole.Dijkstra;
 namespace MetaSimulatorConsole
 {
 
-    public abstract class IIterateur
+    public abstract  class IIterateur
     {
         public abstract object First();
         public abstract object Haut();

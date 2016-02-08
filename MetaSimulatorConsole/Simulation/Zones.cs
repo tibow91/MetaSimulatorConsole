@@ -48,7 +48,7 @@ namespace MetaSimulatorConsole
     [XmlInclude(typeof(ZoneGenerale))]
     [XmlInclude(typeof(ZoneComposite))]
     [XmlInclude(typeof(ZoneFinale))]
-    public abstract class ZoneAbstraite
+    public abstract class ZoneAbstraite : SujetObserveAbstrait
     {
         [XmlAttribute]
         public string nom;

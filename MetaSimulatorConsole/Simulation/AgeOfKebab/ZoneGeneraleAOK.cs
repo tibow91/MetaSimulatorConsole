@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using MetaSimulatorConsole.Dijkstra;
 
 namespace MetaSimulatorConsole
 {
@@ -49,10 +50,14 @@ namespace MetaSimulatorConsole
                         if (j < GameManager.Largeur/2)
                         {
                             ZoneExterne.AjouterCase(new Coordonnees(i, j));
+                            var node = (Node<Case>) Simulation.Tableau[i, j];
+                            node.Value.SetZoneToObserve(ZoneExterne);
                         }
                         else
                         {
                             CaissesClient.AjouterCase(new Coordonnees(i, j));
+                            var node = (Node<Case>)Simulation.Tableau[i, j];
+                            node.Value.SetZoneToObserve(CaissesClient);
                         }
                     }
                     else
@@ -60,6 +65,8 @@ namespace MetaSimulatorConsole
                         if (j < GameManager.Longueur/2)
                         {
                             CaissesCuistots.AjouterCase(new Coordonnees(i, j));
+                            var node = (Node<Case>)Simulation.Tableau[i, j];
+                            node.Value.SetZoneToObserve(CaissesClient);
                         }
                         else
                         {

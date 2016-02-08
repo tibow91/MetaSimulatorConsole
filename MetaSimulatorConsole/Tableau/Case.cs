@@ -107,9 +107,11 @@ namespace MetaSimulatorConsole
         public TexturePikachuSurHerbe() : base(new TextureHerbe()) { }
     }
 
-    public class Case 
+    public class Case : IObservateurAbstrait
     {
         public Texture Textures;
+        private Texture ZoneTexture;
+        private ZoneFinale ZoneToObserve;
 
         public Case()
         {
@@ -123,6 +125,20 @@ namespace MetaSimulatorConsole
         public void SetTextures(Texture decor)
         {
             Textures = decor;
+        }
+
+        public void SetZoneToObserve(ZoneFinale zone)
+        {
+            ZoneToObserve = zone;
+            Update();
+        }
+
+        public override void Update()
+        {
+            if (ZoneToObserve == null) return;
+            ZoneTexture = ZoneToObserve.Texture;
+            if (ZoneTexture == null) return;
+            SetTextures(ZoneTexture);
         }
     }
 
