@@ -4,9 +4,9 @@ namespace MetaSimulatorConsole.Simulation.Honeyland.Etats
 {
     class Etat_Free : EtatAbstract
     {
-        public Etat_Free()
+        public Etat_Free() : base("Libre")
         {
-            this.Nom = "Libre";
+          
         }
 
         public override string ModifieEtat(PersonnageAbstract p)

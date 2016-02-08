@@ -40,7 +40,7 @@ namespace MetaSimulatorConsole.Simulation
             }
         }
 
-        public override void LancerSimulation()
+        protected override void LancerMoteurSimulation()
         {
             Stop = false;
             Started = true;

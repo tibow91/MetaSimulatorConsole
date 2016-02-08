@@ -28,5 +28,10 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
             throw new NotImplementedException();
         }
 
+
+        public override bool EstValide()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

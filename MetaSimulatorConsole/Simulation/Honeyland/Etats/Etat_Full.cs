@@ -4,9 +4,8 @@ namespace MetaSimulatorConsole.Simulation.Honeyland.Etats
 {
     class Etat_Full : EtatAbstract
     {
-        public Etat_Full()
+        public Etat_Full() : base("Porteuse de pollen")
         {
-            this.Nom = "Porteuse de pollen";
         }
 
         public override string ModifieEtat(PersonnageAbstract p)

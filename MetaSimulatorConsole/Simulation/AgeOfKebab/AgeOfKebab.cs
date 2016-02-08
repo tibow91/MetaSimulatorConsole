@@ -9,7 +9,7 @@ namespace MetaSimulatorConsole.Simulation
 {
     class CaseAgeOfKebab : Case
     {
-        public CaseAgeOfKebab() : base(new TexturePikachu()) { }
+        public CaseAgeOfKebab() : base(new TexturePikachuSurHerbe()) { }
     }
     class GameAgeOfKebab : GameObservable
     {
@@ -37,7 +37,7 @@ namespace MetaSimulatorConsole.Simulation
             throw new NotImplementedException();
         }
 
-        public override void LancerSimulation()
+        protected override void LancerMoteurSimulation()
         {
             Stop = false;
             Started = true;

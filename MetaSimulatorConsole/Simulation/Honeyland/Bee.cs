@@ -28,6 +28,11 @@ namespace MetaSimulatorConsole.Simulation.Honeyland
             throw new NotImplementedException();
         }
 
- 
+
+
+        public override bool EstValide()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

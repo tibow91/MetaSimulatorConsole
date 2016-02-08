@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    public abstract class ObjetAbstrait
+    public abstract class ObjetAbstrait : IEquatable<ObjetAbstrait>
     {
         public EGame TypeSimulation;
         public string Nom { get; set; }
@@ -21,7 +21,22 @@ namespace MetaSimulatorConsole
         public abstract bool EstValide();
         public override string ToString()
         {
-            return "Objet " + Nom + ", " + Case + " (Jeu " + TypeSimulation.ToString() + ")";
+            return "Objet " + Nom + ", " + Case + " (Jeu " + TypeSimulation + ")";
+        }
+
+        public bool Equals(ObjetAbstrait other)
+        {
+            if (other == null) return false;
+
+            if (TypeSimulation == other.TypeSimulation) // Même Simulation
+            {
+                if (Case.Equals(other.Case))
+                {
+
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

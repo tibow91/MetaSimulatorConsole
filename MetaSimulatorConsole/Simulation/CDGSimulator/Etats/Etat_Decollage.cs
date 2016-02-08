@@ -4,9 +4,8 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
     class Etat_Decollage : EtatAbstract
     {
-        public Etat_Decollage()
+        public Etat_Decollage() : base("En decollage")
         {
-            this.Nom = "En décollage";
         }
         public override string ModifieEtat(PersonnageAbstract p)
         {

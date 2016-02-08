@@ -4,9 +4,8 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
     class Etat_AttenteAutorisation : EtatAbstract
     {
-        public Etat_AttenteAutorisation()
+        public Etat_AttenteAutorisation() : base ("En attente")
         {
-            this.Nom = "En attente";
         }
         public override string ModifieEtat(PersonnageAbstract p)
         {

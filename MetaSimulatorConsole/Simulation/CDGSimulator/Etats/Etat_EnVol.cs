@@ -9,8 +9,8 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
     class Etat_EnVol : EtatAbstract
     {
         public Etat_EnVol()
+            : base("En Vol")
         {
-            this.Nom = "En Vol";
         }
         public override string ModifieEtat(PersonnageAbstract p)
         {

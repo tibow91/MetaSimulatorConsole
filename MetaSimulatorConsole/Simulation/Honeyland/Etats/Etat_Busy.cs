@@ -4,9 +4,8 @@ namespace MetaSimulatorConsole.Simulation.Honeyland.Etats
 {
     class Etat_Busy : EtatAbstract
     {
-        public Etat_Busy()
+        public Etat_Busy() : base("Occupée")
         {
-            this.Nom = "Occupée";
         }
 
         public override string ModifieEtat(PersonnageAbstract p)

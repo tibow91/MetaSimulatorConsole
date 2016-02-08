@@ -5,8 +5,8 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
     class Etat_Atterissage : EtatAbstract
     {
         public Etat_Atterissage()
+            : base("En atterissage")
         {
-            this.Nom = "En atterissage";
         }
 
         public override string ModifieEtat(PersonnageAbstract p)

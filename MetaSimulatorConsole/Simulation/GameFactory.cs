@@ -29,9 +29,16 @@ namespace MetaSimulatorConsole
         protected abstract void RemplirGrille();
         public void LancerSimulation()
         {
-            // si la zone générale est pas valide
-            // ne pas lancer la simulation
+            // si la zone générale est pas valide            // ne pas lancer la simulation
+            if (!ZoneGenerale.EstValide())
+            {
+                Console.WriteLine("La simulation ne peut être lancée car la zone générale n'est pas valide !");
+                return;
+            }
+            LancerMoteurSimulation();
         }
+
+        protected abstract void LancerMoteurSimulation();
 
         public void AfficherGrille()
         {
@@ -60,7 +67,7 @@ namespace MetaSimulatorConsole
         protected override void RemplirGrille(){}
 
 
-        public override void LancerSimulation()
+        protected override void LancerMoteurSimulation()
         {
             throw new NotImplementedException();
         }

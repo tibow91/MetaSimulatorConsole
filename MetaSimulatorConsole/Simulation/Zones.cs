@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    struct Coordonnees
+    public class Coordonnees : IEquatable<Coordonnees>
     {
-        int X = -1;
-        int Y = -1;
+        public int X = -1;
+        public int Y = -1;
         public Coordonnees(int x, int y)
         {
             X = x;
@@ -25,17 +25,12 @@ namespace MetaSimulatorConsole
             if (Y >= GameManager.Largeur) return false;
             return true; 
         }
-        public override bool Equals(object obj)
+
+        public bool Equals(Coordonnees other)
         {
-            if(obj is Coordonnees)
-            {
-                Coordonnees coor = (Coordonnees)obj;
-                if (!EstValide()) return false;
-                if (!coor.EstValide()) return false;
-                if ((X == coor.X) && (Y == coor.Y)) return true;
-                return false;
-            }
-            Console.WriteLine("L'objet Coordonnées ne peut pas etre comparé avec un objet de type " + obj.GetType());
+            if (!EstValide()) return false;
+            if (!other.EstValide()) return false;
+            if ((X == other.X) && (Y == other.Y)) return true;
             return false;
         }
 
@@ -103,12 +98,14 @@ namespace MetaSimulatorConsole
             // si la zone n'est pas valide (définir les criteres de validité dans une méthode  abstraite EstValide)
                 // l'ajout n'est pas validé
             // sinon si la zone est composite                 
-                
-                // Sinon l'ajout est validé si la zone à ajouter est compatible avec celle ci (définir les criteres de validité dans une méthode  abstraite EstCompatible)
-            // sinon si la zone est finale
-                // l'ajout est valide si
-             Zones.Add(zone);
 
+            // Sinon l'ajout est validé si la zone à ajouter est compatible avec celle ci (définir les criteres de validité dans une méthode  abstraite EstCompatible)
+            if (!EstCompatible(zone))
+            {
+                Console.WriteLine("AjouterZone: Les zones " + this + " et " + zone + " ne sont pas compatibles");
+                return;
+            }
+            Zones.Add(zone);
         }
 
 
@@ -174,14 +171,14 @@ namespace MetaSimulatorConsole
                     ZoneComposite zonecast = (ZoneComposite)zone;
                     foreach(var z2 in zonecast.Zones)
                     {
-                        if(z1 == z2)
+                        if(z1.Equals(z2))
                         {
                             Console.WriteLine("Compatibilité: Les zones " + z1 + " et " + z2 + " sont les mêmes !");
                             return false;
                         }
                         if (!z1.EstCompatible(z2))
                         {
-                            Console.WriteLine("La zone " + z1 + " n'est pas compatible avec la zone " + z2);
+                            Console.WriteLine("Compatibilité: La zone " + z1 + " n'est pas compatible avec la zone " + z2);
                             return false;
                         }
                     }
@@ -193,15 +190,15 @@ namespace MetaSimulatorConsole
                 ZoneFinale zonecast = (ZoneFinale)zone;
                 foreach (var z1 in Zones)
                 {
-                    if (!z1.EstCompatible(zone))
+                    if (!z1.EstCompatible(zonecast))
                     {
-                        Console.WriteLine("La zone " + z1 + " n'est pas compatible avec la zone " + zone);
+                        Console.WriteLine("Compatibilité: La zone " + z1 + " n'est pas compatible avec la zone " + zonecast);
                         return false;
                     }
                 }
                 return true;
             }
-            Console.WriteLine("La zone " + zone + " est de type non reconnu");
+            Console.WriteLine("Compatibilité: La zone " + zone + " est de type non reconnu");
             return false;
                 
         }
@@ -292,7 +289,7 @@ namespace MetaSimulatorConsole
             }
             foreach(var perso in Personnages)
             {
-                if (perso.Case.Equals(personnage.Case))
+                if (perso.Equals(personnage))
                 {
                     Console.WriteLine("AjouterPersonnage: Les personnages " + perso + " et " + personnage + " se situent aux mêmes coordonnées !");
                     return false;
@@ -345,6 +342,11 @@ namespace MetaSimulatorConsole
 
         public override bool EstValide()
         {
+            if (EstVide())
+            {
+                Console.WriteLine("Validité: Une zone finale ne peut être vide !");
+                return false;
+            }
             // pour chacune de ses cases
             foreach(var coor in Cases)
             {
@@ -416,17 +418,34 @@ namespace MetaSimulatorConsole
                 {
                     foreach (var perso2 in zoneCastee.Personnages)
                     {
-                        if(perso1.
+                        if (perso1.Equals(perso2))
+                        {
+                            Console.WriteLine("Equals: Le personnage " + perso1 + " et le personnage " + perso2 +
+                              " partagent les mêmes coordonnées !");
+                            return false;
+                        }
                     }
                 }
-                        // Si non c'est pas valide
-                        // Sinon regarder si les objets de chaque zone ont des coordonnées différentes des objets de l'autre zone
-                            // Si non alors c'est pas valide
-                            // Sinon regarder si les objets de chaque zone 
 
+
+                 // Sinon regarder si les objets de chaque zone ont des coordonnées différentes des objets de l'autre zone
+
+                foreach (var objet1 in Objets)
+                {
+                    foreach (var objet2 in zoneCastee.Objets)
+                    {
+                        if (objet1.Equals(objet2))
+                        {
+                            Console.WriteLine("Equals: L'objet " + objet1 + " et l'objet " + objet2 +
+                               " partagent les mêmes coordonnées ");
+                            return false;
+                        }
+                        
+                    }
+                }
 
             }
-            throw new NotImplementedException();
+
             return true;
         }
 

@@ -30,10 +30,17 @@ namespace MetaSimulatorConsole.Simulation
 
         public bool Equals(PersonnageAbstract other)
         {
-            if(this.GetType() == other.GetType()) 
-                if(this.PointsDeVie == other.PointsDeVie)
-                    return true;
+            if (other == null) return false;
 
+            if (Simulation == other.Simulation) // Même Simulation
+            {
+                if (Case.Equals(other.Case))
+                {
+                    Console.WriteLine("Equals: Jeu " + Simulation + " Le personnage " + this + " et le personnage " + other +
+                                      " partagent les mêmes coordonnées " + Case);
+                    return true;
+                }
+            }
             return false;
         }
         
