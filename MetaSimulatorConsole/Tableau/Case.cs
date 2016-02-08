@@ -3,22 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Xml.Serialization;
 using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
-    public enum NomTexture {
-        Herbe, Pikachu,
+    public enum NomTexture
+    {
+        Herbe, Herbe2, Ground1, Pikachu,
         Bee, Beehive, Flower,
-        Plane1, Plane2
+        Plane1, Plane2,
+        Ground2,
+        Mozaic1,
     }
+    [XmlInclude(typeof(TextureDecorator))]
+    [XmlInclude(typeof(TextureHerbe))]
+    [XmlInclude(typeof(TextureHerbe2))]
+    [XmlInclude(typeof(TextureGround1))]
+    [XmlInclude(typeof(TextureGround2))]
+    [XmlInclude(typeof(TextureMozaic1))]
 
     public abstract class Texture // Texture Unique
     {
         public abstract List<NomTexture> Name();
     }
 
-    abstract class TextureDecorator : Texture // Assemblage de textures
+    public abstract class TextureDecorator : Texture // Assemblage de textures
     {
         protected Texture Decor;
         public void SetTexture(Texture decor)
@@ -37,7 +47,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class TextureHerbe : Texture // "herbe" est une texture de base
+    public class TextureHerbe : Texture // "herbe" est une texture de base
     {
         public override List<NomTexture> Name()
         {
@@ -45,7 +55,39 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class TexturePikachu : TextureDecorator
+    public class TextureHerbe2 : Texture
+    {
+        public override List<NomTexture> Name()
+        {
+            return new List<NomTexture>() { NomTexture.Herbe2 };
+        }
+        
+    }
+
+    public class TextureGround1 : Texture
+    {
+        public override List<NomTexture> Name()
+        {
+            return new List<NomTexture>() { NomTexture.Ground1 };
+        } 
+    }
+    
+    public class TextureGround2 : Texture
+    {
+        public override List<NomTexture> Name()
+        {
+            return new List<NomTexture>() { NomTexture.Ground2 };
+        }
+    }
+
+    public class TextureMozaic1: Texture
+    {
+        public override List<NomTexture> Name()
+        {
+            return new List<NomTexture>() { NomTexture.Mozaic1 };
+        }
+    }
+    public class TexturePikachu : TextureDecorator
     {
         public TexturePikachu(Texture decor) : base(decor){}
         public TexturePikachu() : base(null) { }
@@ -60,7 +102,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class TexturePikachuSurHerbe : TexturePikachu
+    public class TexturePikachuSurHerbe : TexturePikachu
     {
         public TexturePikachuSurHerbe() : base(new TextureHerbe()) { }
     }

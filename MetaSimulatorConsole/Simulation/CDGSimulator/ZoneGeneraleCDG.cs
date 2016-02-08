@@ -6,17 +6,27 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class ZoneGeneraleCDG : ZoneComposite
+    class ZoneGeneraleCDG : ZoneGenerale
     {
         public ZoneGeneraleCDG(Game simu) 
             : base("Zone Générale CDG Simulator",simu)
         {
-            if (Simulation == null)
-            {
-                Console.WriteLine("La simulation doit être lancée (instanciée) avant de pouvoir construire les zones");
-                return;
-            }
         
+        }
+
+        protected override void ConstruireZones()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void HierarchiserZones()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void DistribuerZones()
+        {
+            throw new NotImplementedException();
         }
     }
 }

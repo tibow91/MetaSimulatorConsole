@@ -57,8 +57,6 @@ namespace MetaSimulatorConsole.Simulation
         public override void ConstruireZones()
         {
             ZoneGenerale = new ZoneMaker().ConstruireZonesAgeOfKebab(this);
-            var zone = new ZoneFinale("Zone Finale: Caisses client (Files d'attente)", this);
-            new ZoneSerializer().Serialize(zone, "ZoneFinale");
             new ZoneSerializer().Serialize(ZoneGenerale,"ZoneGenerale");
         }
     }

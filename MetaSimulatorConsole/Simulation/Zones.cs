@@ -45,6 +45,7 @@ namespace MetaSimulatorConsole
         }
     }
     [XmlInclude(typeof(ZoneGeneraleAOK))]
+    [XmlInclude(typeof(ZoneGenerale))]
     [XmlInclude(typeof(ZoneComposite))]
     [XmlInclude(typeof(ZoneFinale))]
     public abstract class ZoneAbstraite
@@ -70,6 +71,8 @@ namespace MetaSimulatorConsole
         public abstract List<ObjetAbstrait> ObtenirObjets();
         public abstract bool AjouterPersonnage(PersonnageAbstract personnage);
         public abstract bool AjouterObjet(ObjetAbstrait objet);
+        public abstract bool AjouterCase(Coordonnees coor);
+
         public bool ContientMemeInstance(ZoneAbstraite zone)
         {
             if(Simulation == null) return false;
@@ -148,13 +151,18 @@ namespace MetaSimulatorConsole
 
         public override bool AjouterPersonnage(PersonnageAbstract personnage)
         {
-            Console.WriteLine("Ajouter de Personnage impossible sur les zones composite");
+            Console.WriteLine("Ajout de Personnage impossible sur les zones composite");
             return false;
         }
 
         public override bool AjouterObjet(ObjetAbstrait objet)
         {
-            Console.WriteLine("Ajouter d'Objet impossible sur les zones composite");
+            Console.WriteLine("Ajout d'Objet impossible sur les zones composite");
+            return false;
+        }
+        public override bool AjouterCase(Coordonnees coor)
+        {
+            Console.WriteLine("Ajout de case impossible sur les zones composite");
             return false;
         }
 
@@ -265,15 +273,17 @@ namespace MetaSimulatorConsole
     }
 
 
-    public class ZoneFinale : ZoneAbstraite
+    public class ZoneFinale :  ZoneAbstraite
     {
         public List<PersonnageAbstract> Personnages = new List<PersonnageAbstract>();
         public List<ObjetAbstrait> Objets = new List<ObjetAbstrait>();
         public List<Coordonnees> Cases = new List<Coordonnees>();
+        public Texture Texture;
         public ZoneFinale() : base("Zone Finale générique",null) { }
-        public ZoneFinale(string name,Game simu)
+        public ZoneFinale(string name,Texture texture,Game simu)
             : base(name,simu)
         {
+            Texture = texture;
         }
         public override void AjouterZone(ZoneAbstraite c)
         {
@@ -347,6 +357,23 @@ namespace MetaSimulatorConsole
                 }
             }  
             Objets.Add(objet);
+            return true;
+        }
+
+        public override bool AjouterCase(Coordonnees coor)
+        {
+            if (coor == null) return false;
+            if (!coor.EstValide())
+            {
+                Console.WriteLine("AjouterCase: les coordonnées de la case " + coor + " ne sont pas valides");
+                return false;
+            }
+            if (this.ContientCoordonnees(coor))
+            {
+                Console.WriteLine("AjouterCase: La zone " + this + " contient déjà la case " + coor);
+                return false;
+            }
+            Cases.Add(coor);
             return true;
         }
 
@@ -481,6 +508,28 @@ namespace MetaSimulatorConsole
             }
             return false;
         }
+    }
+
+    public abstract class ZoneGenerale : ZoneComposite
+    {
+        protected ZoneGenerale() : base("Zone Générale générique", null) { }
+        protected ZoneGenerale(string name,Game simu)
+            : base(name, simu)
+        {
+            if (Simulation == null)
+            {
+                Console.WriteLine("La simulation doit être lancée (instanciée) avant de pouvoir construire les zones");
+                return;
+            }
+            ConstruireZones();
+            DistribuerZones();
+            HierarchiserZones();
+        }
+
+        protected abstract void ConstruireZones();
+        protected abstract void HierarchiserZones();
+        protected abstract void DistribuerZones();
+
     }
 
     class ZoneMaker

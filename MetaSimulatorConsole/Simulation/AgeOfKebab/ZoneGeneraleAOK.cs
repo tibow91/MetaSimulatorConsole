@@ -3,32 +3,71 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole
 {
-    public class ZoneGeneraleAOK : ZoneComposite
+    public class ZoneGeneraleAOK : ZoneGenerale
     {
+        [XmlIgnore]
+        private ZoneComposite ZoneInterne;
+        [XmlIgnore]
+        private ZoneFinale ZoneExterne, CaissesClient, CaissesCuistots, ZoneRepas;
+
         public ZoneGeneraleAOK() : base("Zone Générale Age Of kebab", null) { }
         public ZoneGeneraleAOK(Game simu) 
             : base("Zone Générale Age Of kebab",simu)
         {
-            if (Simulation == null)
-            {
-                Console.WriteLine("La simulation doit être lancée (instanciée) avant de pouvoir construire les zones");
-                return;
-            }
-            var ZoneInterne = new ZoneComposite("Zone Interne (Kebab)", Simulation);
-            var ZoneExterne = new ZoneFinale("Zone Externe (Dehors)", Simulation);
-            this.AjouterZone(ZoneInterne);
-            this.AjouterZone(ZoneExterne);
-            var CaissesClient = new ZoneFinale("Zone Finale: Caisses client (Files d'attente)", Simulation);
-            var CaissesCuistots = new ZoneFinale("Zone Finale: Caisses cuistots (côté serveur)", Simulation);
-            var ZoneRepas = new ZoneFinale("Zone Finale: Repas pour les clients (chaises et tables)", Simulation);
-            ZoneInterne.AjouterZone(CaissesClient);
-            ZoneInterne.AjouterZone(CaissesCuistots);
-            ZoneInterne.AjouterZone(ZoneRepas);            
         }
 
-        //protected void ConstruireZones
+        protected  override void ConstruireZones()
+        {
+            ZoneInterne = new ZoneComposite("Zone Interne (Kebab)", Simulation);
+            ZoneExterne = new ZoneFinale("Zone Externe (Dehors)", new TextureHerbe2(), Simulation);
+            CaissesClient = new ZoneFinale("Zone Finale: Caisses client (Files d'attente)",new TextureGround2(),  Simulation);
+            CaissesCuistots = new ZoneFinale("Zone Finale: Caisses cuistots (côté serveur)", new TextureGround1(), Simulation);
+            ZoneRepas = new ZoneFinale("Zone Finale: Repas pour les clients (chaises et tables)",new TextureMozaic1(),  Simulation);
+
+        }
+
+        protected  override void  HierarchiserZones()
+        {
+            AjouterZone(ZoneInterne);
+            AjouterZone(ZoneExterne);
+            ZoneInterne.AjouterZone(CaissesClient);
+            ZoneInterne.AjouterZone(CaissesCuistots);
+            ZoneInterne.AjouterZone(ZoneRepas);   
+        }
+        protected  override void DistribuerZones()
+        {
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    if (i < GameManager.Longueur/2)
+                    {
+                        if (j < GameManager.Largeur/2)
+                        {
+                            ZoneExterne.AjouterCase(new Coordonnees(i, j));
+                        }
+                        else
+                        {
+                            CaissesClient.AjouterCase(new Coordonnees(i, j));
+                        }
+                    }
+                    else
+                    {
+                        if (j < GameManager.Longueur/2)
+                        {
+                            CaissesCuistots.AjouterCase(new Coordonnees(i, j));
+                        }
+                        else
+                        {
+                            ZoneRepas.AjouterCase(new Coordonnees(i, j));
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -245,6 +245,12 @@ class Graphisme
         }
         public void ChargerTextures()
         {
+            Textures.Add(NomTexture.Herbe2, ChargerTexture("../res/grass2.png"));
+            Textures.Add(NomTexture.Ground1, ChargerTexture("../res/ground1.jpg"));
+            Textures.Add(NomTexture.Ground2, ChargerTexture("../res/ground2.jpg"));
+            Textures.Add(NomTexture.Mozaic1, ChargerTexture("../res/mozaic1.jpg"));
+
+
             Textures.Add(NomTexture.Herbe, ChargerTexture("../res/grass.png"));
             Textures.Add(NomTexture.Pikachu, ChargerTexture("../res/m_front.png"));
 
