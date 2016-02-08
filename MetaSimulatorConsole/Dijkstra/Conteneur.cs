@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Dijkstra
 {
-    class Node<T> : Vertex, IComparable, IEquatable<Node<T>>
+    public class Node<T> : Vertex, IComparable, IEquatable<Node<T>>
     {
         private T _value;
         public T Value
@@ -29,12 +29,12 @@ namespace MetaSimulatorConsole.Dijkstra
         }
     }
 
-    internal abstract class IIterable
+    public abstract class IIterable
     {
         public abstract IIterateur CreateIterator();
     }
 
-    internal class Conteneur<T> : IIterable
+    public class Conteneur<T> : IIterable
     {
         Node<T>[,] noeuds;
         public int Longueur, Largeur;
@@ -86,7 +86,7 @@ namespace MetaSimulatorConsole.Dijkstra
 
     }
 
-    class ConteneurParcourable<T> : Conteneur<T>
+    public class ConteneurParcourable<T> : Conteneur<T>
     {
         public ConteneurParcourable(int longueur, int largeur)
             : base(longueur, largeur)

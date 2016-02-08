@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class Vertex : IComparable,IEquatable<Vertex>
+    public class Vertex : IComparable,IEquatable<Vertex>
     {
         public int minDistance = Int32.MaxValue;
         public readonly String name;
@@ -46,7 +46,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class Edge
+    public class Edge
     {
         public Vertex Target;
         public int weight;

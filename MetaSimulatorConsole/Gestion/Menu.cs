@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    abstract class Menu
+    public abstract class Menu
     {
         public abstract void ModifieEtat(GameManager manager);
         public abstract String AfficherEtat();

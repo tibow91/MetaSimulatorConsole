@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    class ZoneGeneraleAOK : ZoneComposite
+    public class ZoneGeneraleAOK : ZoneComposite
     {
+        public ZoneGeneraleAOK() : base("Zone Générale Age Of kebab", null) { }
         public ZoneGeneraleAOK(Game simu) 
             : base("Zone Générale Age Of kebab",simu)
         {
@@ -27,5 +28,7 @@ namespace MetaSimulatorConsole
             ZoneInterne.AjouterZone(CaissesCuistots);
             ZoneInterne.AjouterZone(ZoneRepas);            
         }
+
+        //protected void ConstruireZones
     }
 }

@@ -10,7 +10,7 @@ namespace MetaSimulatorConsole
 
     public enum EGame { AgeOfKebab, CDGSimulator, Honeyland}
 
-    abstract class Game : IEquatable<Game>
+    public abstract class Game : IEquatable<Game>
     {
         public EGame NomDuJeu;
         public bool Stop { get; set; }

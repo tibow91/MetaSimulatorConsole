@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    enum NomJeu  { AgeOfKebab, CDGSimulator, Honeyland };
-    enum EMenu { Principal, Creation, Chargement, Simulation  };
+    public enum NomJeu  { AgeOfKebab, CDGSimulator, Honeyland };
+    public enum EMenu { Principal, Creation, Chargement, Simulation  };
 
-    class GameManager : SujetObserveAbstrait
+    public class GameManager : SujetObserveAbstrait
     {
         public static readonly int Longueur = 50;
         public static readonly int Largeur = 50;

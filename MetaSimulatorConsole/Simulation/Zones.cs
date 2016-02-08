@@ -5,13 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole
 {
     public class Coordonnees : IEquatable<Coordonnees>
     {
+        [XmlAttribute]
         public int X = -1;
+        [XmlAttribute]
         public int Y = -1;
+
+        public Coordonnees() { }
         public Coordonnees(int x, int y)
         {
             X = x;
@@ -39,11 +44,20 @@ namespace MetaSimulatorConsole
             return "(" + X + "," + Y + ")";
         }
     }
-    abstract class ZoneAbstraite
+    [XmlInclude(typeof(ZoneGeneraleAOK))]
+    [XmlInclude(typeof(ZoneComposite))]
+    [XmlInclude(typeof(ZoneFinale))]
+    public abstract class ZoneAbstraite
     {
-        protected string nom;
-        public Game Simulation; 
+        [XmlAttribute]
+        public string nom;
+        [XmlIgnore]
+        public Game Simulation;
 
+        public ZoneAbstraite()
+        {
+            nom = "Zone abstraite générique";
+        }
         protected ZoneAbstraite(string unNom,Game simulation)
         {
             nom = unNom;
@@ -74,10 +88,11 @@ namespace MetaSimulatorConsole
         public abstract bool ContientCoordonnees(Coordonnees coor);
     }
 
-    class ZoneComposite : ZoneAbstraite
+    public class ZoneComposite : ZoneAbstraite
     {
-        protected readonly List<ZoneAbstraite> Zones = new List<ZoneAbstraite>();
+        public readonly List<ZoneAbstraite> Zones = new List<ZoneAbstraite>();
 
+        public ZoneComposite() : base("Zone Composite générique", null) { }
         public ZoneComposite(string name,Game simu)
             : base(name,simu)
         {
@@ -145,6 +160,11 @@ namespace MetaSimulatorConsole
 
         public override bool EstValide()
         {
+            if (String.IsNullOrEmpty(nom))
+            {
+                Console.WriteLine("EstValide: Cette zone " + this + " n'a pas de nom !");
+                return false;
+            }
             if (this.EstVide()) return false;
             foreach(var zone in Zones)
             {
@@ -245,11 +265,12 @@ namespace MetaSimulatorConsole
     }
 
 
-    class ZoneFinale : ZoneAbstraite
+    public class ZoneFinale : ZoneAbstraite
     {
-        protected List<PersonnageAbstract> Personnages = new List<PersonnageAbstract>();
-        protected List<ObjetAbstrait> Objets = new List<ObjetAbstrait>();
-        protected List<Coordonnees> Cases = new List<Coordonnees>();
+        public List<PersonnageAbstract> Personnages = new List<PersonnageAbstract>();
+        public List<ObjetAbstrait> Objets = new List<ObjetAbstrait>();
+        public List<Coordonnees> Cases = new List<Coordonnees>();
+        public ZoneFinale() : base("Zone Finale générique",null) { }
         public ZoneFinale(string name,Game simu)
             : base(name,simu)
         {

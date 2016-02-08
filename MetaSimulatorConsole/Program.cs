@@ -32,6 +32,11 @@ namespace MetaSimulatorConsole
             var kebab = menu.RecupererKebab();
             Console.WriteLine(kebab.Composition());
             Console.WriteLine("prix = " + kebab.Cout());
+            new CoordonneesSerializer().Serialize(new Coordonnees(5, 5), "Coordonnées");
+            Coordonnees coor = (Coordonnees) new CoordonneesSerializer().Deserialize("Coordonnées");
+            Console.WriteLine("Coordonnées deserializées = " + coor);
+
+
             manager.Fenetre.Run();
           // https://github.com/tibow91/MetaSimulatorConsole.git
         }

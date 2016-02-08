@@ -14,7 +14,7 @@ using OpenTK.Input;
 namespace MetaSimulatorConsole
 {
 
-    class Window : GameWindow
+    public class Window : GameWindow
     {
         private Graphisme Graphismes;
         public Clavier Touches;

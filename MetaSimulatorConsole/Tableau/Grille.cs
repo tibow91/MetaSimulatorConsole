@@ -8,7 +8,7 @@ using MetaSimulatorConsole.Dijkstra;
 namespace MetaSimulatorConsole
 {
 
-    class Grille : ConteneurParcourable<Case> 
+    public class Grille : ConteneurParcourable<Case> 
     {
         private static Grille instance;
 

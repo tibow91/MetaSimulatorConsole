@@ -7,7 +7,7 @@ using OpenTK;
 
 namespace MetaSimulatorConsole.Fenetre
 {
-    class Clavier
+    public class Clavier
     {
         private Window Partie;
         private AppuiClavier CommandesClavier;
