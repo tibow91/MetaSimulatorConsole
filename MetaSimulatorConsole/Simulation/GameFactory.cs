@@ -29,10 +29,15 @@ namespace MetaSimulatorConsole
         protected abstract void RemplirGrille();
         public void LancerSimulation()
         {
-            // si la zone générale est pas valide            // ne pas lancer la simulation
+            // si la zone générale est pas valide   // ne pas lancer la simulation
             if (!ZoneGenerale.EstValide())
             {
                 Console.WriteLine("La simulation ne peut être lancée car la zone générale n'est pas valide !");
+                return;
+            }
+            if (!VerifierValiditeZones())
+            {
+                Console.WriteLine("La simulation ne peut être lancée car les zones ne sont pas conformes !");
                 return;
             }
             LancerMoteurSimulation();
@@ -53,35 +58,38 @@ namespace MetaSimulatorConsole
         }
 
         public abstract void ConstruireZones();
-        public abstract bool VerifierValiditeZones();
+
+        public bool VerifierValiditeZones()
+        {
+            //ZG est valide si toutes les zones occupent toutes les cases de la grille
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    if (!ZoneGenerale.ContientCoordonnees(new Coordonnees(i, j)))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 
     abstract class GameObservable : Game,IObservateurView
     {
-        public GameObservable(GameManager manager,Grille grille) : base(manager,grille) { }
+        protected GameObservable(GameManager manager,Grille grille) : base(manager,grille) { }
 
         public virtual void UpdateView()
         {
         }
 
         protected override void RemplirGrille(){}
+        
+        protected abstract override void LancerMoteurSimulation();
 
+        public abstract override void ConstruireZones();
 
-        protected override void LancerMoteurSimulation()
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public override void ConstruireZones()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool VerifierValiditeZones()
-        {
-            throw new NotImplementedException();
-        }
     }
    
 
