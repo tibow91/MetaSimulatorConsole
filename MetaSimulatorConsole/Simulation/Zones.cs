@@ -410,14 +410,15 @@ namespace MetaSimulatorConsole
                     }
                 }
 
+                // Sinon regarder si les personnages de chaque zone ont des coordonnées différentes des perso de l'autre zone
+
                 foreach (var perso1 in Personnages)
                 {
                     foreach (var perso2 in zoneCastee.Personnages)
                     {
-                        if(per)
+                        if(perso1.
                     }
                 }
-                    // Sinon regarder si les personnages de chaque zone ont des coordonnées différentes des perso de l'autre zone
                         // Si non c'est pas valide
                         // Sinon regarder si les objets de chaque zone ont des coordonnées différentes des objets de l'autre zone
                             // Si non alors c'est pas valide
