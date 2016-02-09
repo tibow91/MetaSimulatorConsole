@@ -69,6 +69,7 @@ namespace MetaSimulatorConsole
                 {
                     if (!ZoneGenerale.ContientCoordonnees(new Coordonnees(i, j)))
                     {
+                        Console.WriteLine("La zone générale " + ZoneGenerale + " ne contient pas les coordonéees " + new Coordonnees(i, j));
                         return false;
                     }
                 }

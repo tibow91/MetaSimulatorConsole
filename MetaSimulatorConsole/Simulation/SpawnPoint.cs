@@ -45,7 +45,7 @@ namespace MetaSimulatorConsole.Simulation
         {
             List<Coordonnees> list = new List<Coordonnees>();
             if (zone == null) return list;
-            list = zone.Cases;
+            list = new List<Coordonnees>( zone.Cases);
 
             foreach (var obj in zone.Objets) // Les cases ayant des objets ne sont pas disponibles pour un pt d'app
                 list.Remove(obj.Case);
