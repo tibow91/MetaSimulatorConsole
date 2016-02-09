@@ -20,7 +20,21 @@ namespace MetaSimulatorConsole
             Nom = "nom";
             Texture = texture;
         }
-        public abstract bool EstValide();
+
+        public virtual bool EstValide()
+        {
+            if (!Case.EstValide())
+            {
+                Console.WriteLine("Objet " + this + " invalide car la case "+ Case + " n'est pas valide !");
+                return false;
+            }
+            if (Texture == null)
+            {
+                Console.WriteLine("Objet "+ this + " invalide: Texture nulle !");
+                return false;
+            }
+            return true;
+        }
         public override string ToString()
         {
             return "Objet " + Nom + ", " + Case + " (Jeu " + TypeSimulation + ")";

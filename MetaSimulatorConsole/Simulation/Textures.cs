@@ -10,10 +10,8 @@ namespace MetaSimulatorConsole.Simulation
     public enum NomTexture
     {
         Herbe, Herbe2, Ground1, Pikachu,
-        Bee, Beehive, Flower,
-        Plane1, Plane2,
-        Ground2,
-        Mozaic1,
+        Bee, Beehive, Flower,Plane1, Plane2,
+        Ground2,Mozaic1,WoodPlatform1,WoodPlatform2
     }
     [XmlInclude(typeof(TextureDecorator))]
     [XmlInclude(typeof(TextureHerbe))]
@@ -105,6 +103,38 @@ namespace MetaSimulatorConsole.Simulation
     public class TexturePikachuSurHerbe : TexturePikachu
     {
         public TexturePikachuSurHerbe() : base(new TextureHerbe()) { }
+    }
+
+    public class TextureWoodPlatformVertical : TextureDecorator
+    {
+        public TextureWoodPlatformVertical() : base(null) { }
+
+        public TextureWoodPlatformVertical(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.WoodPlatform1 };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.WoodPlatform1);
+            return textures;
+        }
+    }
+
+    public class TextureWoodPlatformHorizontal : TextureDecorator
+    {
+        public TextureWoodPlatformHorizontal() : base(null) { }
+
+        public TextureWoodPlatformHorizontal(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.WoodPlatform2 };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.WoodPlatform2);
+            return textures;
+        }
     }
 
     public class TextureBee : TextureDecorator
