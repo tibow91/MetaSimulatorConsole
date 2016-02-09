@@ -253,6 +253,7 @@ class Graphisme
             Textures.Add(NomTexture.WoodPlatform1, ChargerTexture("../res/platform_vertical.png"));
             Textures.Add(NomTexture.WoodPlatform2, ChargerTexture("../res/platform_horizontal.png"));
             Textures.Add(NomTexture.CrossedCircle, ChargerTexture("../res/circle_crossed.png"));
+            Textures.Add(NomTexture.Feet, ChargerTexture("../res/foot_icon.png"));
 
 
             Textures.Add(NomTexture.Herbe, ChargerTexture("../res/grass.png"));

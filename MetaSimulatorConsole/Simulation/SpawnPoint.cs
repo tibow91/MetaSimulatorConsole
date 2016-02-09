@@ -27,7 +27,7 @@ namespace MetaSimulatorConsole.Simulation
         public static void PlacerPoint(ZoneFinale zone)
         {
             if (zone == null) return;
-            var list = new SpawnPointFinder().FindAvailableCases(zone);
+            var list = new ObjectPointFinder().FindAvailableCases(zone);
             if (list.Count == 0)
             {
                 Console.WriteLine("SpawnPoint -PlacerPoint: Impossible de trouver une case disponible dans la zone " + zone);
@@ -39,7 +39,7 @@ namespace MetaSimulatorConsole.Simulation
         }
     }
 
-    class SpawnPointFinder
+    class ObjectPointFinder
     {
         public List<Coordonnees> FindAvailableCases(ZoneFinale zone)
         {

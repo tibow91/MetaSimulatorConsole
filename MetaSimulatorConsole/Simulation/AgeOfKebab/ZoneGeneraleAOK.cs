@@ -106,7 +106,9 @@ namespace MetaSimulatorConsole
 
             // POINTS D'APPARITION
             SpawnPoint.PlacerPoint(ZoneExterne);
-            SpawnPoint.PlacerPoint(ZoneExterne);
+
+            // POINTS DE RASSEMBLEMENT
+            GatherPoint.PlacerPoint(ZoneExterne);
 
         }
 
