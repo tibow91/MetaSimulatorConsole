@@ -27,5 +27,10 @@ namespace MetaSimulatorConsole.Simulation.Honeyland
         {
             throw new NotImplementedException();
         }
+
+        protected override void PlacerAccessPoints()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -13,13 +13,11 @@ namespace MetaSimulatorConsole.Simulation
         Bee, Beehive, Flower,Plane1, Plane2,
         Ground2,Mozaic1,WoodPlatform1,WoodPlatform2
     }
-    [XmlInclude(typeof(TextureDecorator))]
-    [XmlInclude(typeof(TextureHerbe))]
-    [XmlInclude(typeof(TextureHerbe2))]
-    [XmlInclude(typeof(TextureGround1))]
-    [XmlInclude(typeof(TextureGround2))]
-    [XmlInclude(typeof(TextureMozaic1))]
 
+    [XmlInclude(typeof(TextureWoodPlatformHorizontal)), XmlInclude(typeof(TextureWoodPlatformVertical))]
+    [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe))]
+    [XmlInclude(typeof(TextureMozaic1)), XmlInclude(typeof(TextureGround2)),XmlInclude(typeof(TextureGround1))]
+    [XmlInclude(typeof(TextureDecorator))]
     public abstract class Texture // Texture Unique
     {
         public abstract List<NomTexture> Name();

@@ -32,6 +32,28 @@ namespace MetaSimulatorConsole
             return true; 
         }
 
+        public bool EstAdjacent(Coordonnees coor2)
+        {
+            if (!EstValide()) return false;
+            if (!coor2.EstValide()) return false;
+            return ObtenirCasesAdjacentes(this).Any(coor2.Equals);
+        }
+
+        public static List<Coordonnees> ObtenirCasesAdjacentes(Coordonnees coor)
+        {
+            List<Coordonnees> list = new List<Coordonnees>();
+            if (coor == null || !coor.EstValide()) return list;
+            var coorAdjacent = new Coordonnees(coor.X + 1, coor.Y);
+            if (coorAdjacent.EstValide()) list.Add(coorAdjacent);
+            coorAdjacent = new Coordonnees(coor.X - 1, coor.Y);
+            if (coorAdjacent.EstValide()) list.Add(coorAdjacent);
+            coorAdjacent = new Coordonnees(coor.X, coor.Y + 1);
+            if (coorAdjacent.EstValide()) list.Add(coorAdjacent);
+            coorAdjacent = new Coordonnees(coor.X, coor.Y - 1);
+            if (coorAdjacent.EstValide()) list.Add(coorAdjacent);
+            return list;
+        }
+
         public bool Equals(Coordonnees other)
         {
             if (!EstValide()) return false;
@@ -44,6 +66,7 @@ namespace MetaSimulatorConsole
         {
             return "(" + X + "," + Y + ")";
         }
+
     }
     [XmlInclude(typeof(ZoneGeneraleAOK))]
     [XmlInclude(typeof(ZoneGenerale))]
@@ -84,6 +107,7 @@ namespace MetaSimulatorConsole
         public abstract bool ContientDesZonesFinales();
         public abstract bool EstValide();
         public abstract bool EstCompatible(ZoneAbstraite zone);
+        public abstract bool PeutPlacerObjet(ObjetAbstrait objet);
         public override string ToString()
         {
  	         return "Zone " + nom;
@@ -271,6 +295,12 @@ namespace MetaSimulatorConsole
             }
             return false;
         }
+
+        public override bool PeutPlacerObjet(ObjetAbstrait objet)
+        {
+            Console.WriteLine("Impossible de placer un objet dans une Zone Composite !");
+            return false;
+        }
     }
 
 
@@ -334,30 +364,11 @@ namespace MetaSimulatorConsole
 
         public override bool AjouterObjet(ObjetAbstrait objet)
         {
-            if (objet == null) return false;
-            if (Simulation.NomDuJeu != objet.TypeSimulation)
+            if (!PeutPlacerObjet(objet))
             {
-                Console.WriteLine("On ne peut pas ajouter de personnages associés à une autre simulation !");
+                Console.WriteLine("AjouterObjet: Placement de l'objet " + objet +" impossible");
                 return false;
             }
-            if (!objet.Case.EstValide())
-            {
-                Console.WriteLine("AjouterObjet: les coordonnées de l'objet " + objet + "ne sont pas valides");
-                return false;
-            }
-            if (!this.ContientCoordonnees(objet.Case))
-            {
-                Console.WriteLine("AjouterObjet: Impossible d'ajouter l'objet " + objet + " car il ne se situe pas géographiquement dans cette zone " + this);
-                return false;
-            }
-            foreach (var obj in Objets)
-            {
-                if (obj.Case.Equals(objet.Case))
-                {
-                    Console.WriteLine("AjouterObjet: Les objets " + obj + " et " + objet + " se situent aux mêmes coordonnées !");
-                    return false;
-                }
-            }  
             Objets.Add(objet);
             new LinkCaseToObject().LinkObject(objet.Case, objet, Simulation.Tableau);
             return true;
@@ -404,6 +415,29 @@ namespace MetaSimulatorConsole
                 if (!coor.EstValide()) // si une n'est pas valide, alors c'est pas valide
                 {
                     Console.WriteLine("EstValide: Zone " + this + " - Case " + coor + " non valide");
+                    return false;
+                }
+            }
+
+            // Si chaque case a une autre case adjacente dans la zone alors c'est bon
+            foreach (var coor1 in Cases)
+            {
+                bool found = false;
+
+                foreach (var coor2 in Cases)
+                {
+                    if (!coor1.Equals(coor2))
+                    {
+                        if (coor1.EstAdjacent(coor2))
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (!found)
+                {
+                    Console.WriteLine("Zone " + this + ": Non valide car la case " + coor1 + " n'est adjacente à aucune autre case");
                     return false;
                 }
             }
@@ -511,6 +545,35 @@ namespace MetaSimulatorConsole
             }
             return false;
         }
+
+        public override bool PeutPlacerObjet(ObjetAbstrait objet)
+        {
+            if (objet == null) return false;
+            if (Simulation.NomDuJeu != objet.TypeSimulation)
+            {
+                Console.WriteLine("On ne peut pas ajouter de personnages associés à une autre simulation !");
+                return false;
+            }
+            if (!objet.Case.EstValide())
+            {
+                Console.WriteLine("AjouterObjet: les coordonnées de l'objet " + objet + "ne sont pas valides");
+                return false;
+            }
+            if (!this.ContientCoordonnees(objet.Case))
+            {
+                Console.WriteLine("AjouterObjet: Impossible d'ajouter l'objet " + objet + " car il ne se situe pas géographiquement dans cette zone " + this);
+                return false;
+            }
+            foreach (var obj in Objets)
+            {
+                if (obj.Case.Equals(objet.Case))
+                {
+                    Console.WriteLine("AjouterObjet: Les objets " + obj + " et " + objet + " se situent aux mêmes coordonnées !");
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
     public abstract class ZoneGenerale : ZoneComposite
@@ -527,11 +590,13 @@ namespace MetaSimulatorConsole
             ConstruireZones();
             DistribuerZones();
             HierarchiserZones();
+            PlacerAccessPoints();
         }
 
         protected abstract void ConstruireZones();
         protected abstract void HierarchiserZones();
         protected abstract void DistribuerZones();
+        protected abstract void PlacerAccessPoints();
 
     }
 

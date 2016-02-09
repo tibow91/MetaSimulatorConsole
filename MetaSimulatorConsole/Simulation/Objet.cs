@@ -3,22 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
+    [XmlInclude(typeof(AccessPoint))]
     public abstract class ObjetAbstrait : SujetObserveAbstrait,IEquatable<ObjetAbstrait>
     {
-        public EGame TypeSimulation;
+        [XmlAttribute]
         public string Nom { get; set; }
+        [XmlAttribute]
+        public EGame TypeSimulation;
         public Coordonnees Case { get; set; }
         public TextureDecorator Texture { get; set; }
 
+        protected ObjetAbstrait(string nom)
+        {
+            Nom = nom;
+        }
+        protected ObjetAbstrait(string nom, TextureDecorator texture)
+        {
+            Nom = nom;
+            Texture = texture;
+        }
         protected ObjetAbstrait(string nom, EGame nomdujeu,TextureDecorator texture)
         {
             TypeSimulation = nomdujeu;
-            Nom = "nom";
+            Nom = nom;
             Texture = texture;
+        }
+
+        public void SetCoordonnees(Coordonnees coor)
+        {
+            Case = coor;
         }
 
         public virtual bool EstValide()

@@ -24,11 +24,11 @@ namespace MetaSimulatorConsole
 
         protected  override void ConstruireZones()
         {
-            ZoneInterne = new ZoneComposite("Zone Interne (Kebab)", Simulation);
-            ZoneExterne = new ZoneFinale("Zone Externe (Dehors)", new TextureHerbe2(), Simulation);
-            CaissesClient = new ZoneFinale("Zone Finale: Caisses client (Files d'attente)",new TextureGround2(),  Simulation);
-            CaissesCuistots = new ZoneFinale("Zone Finale: Caisses cuistots (côté serveur)", new TextureGround1(), Simulation);
-            ZoneRepas = new ZoneFinale("Zone Finale: Repas pour les clients (chaises et tables)",new TextureMozaic1(),  Simulation);
+            ZoneInterne = new ZoneComposite("Zone Interne ", Simulation);
+            ZoneExterne = new ZoneFinale("Zone Externe ", new TextureHerbe(), Simulation);
+            CaissesClient = new ZoneFinale("Caisses client",new TextureGround2(),  Simulation);
+            CaissesCuistots = new ZoneFinale("Caisses cuistots", new TextureGround1(), Simulation);
+            ZoneRepas = new ZoneFinale("Zone Repas ",new TextureMozaic1(),  Simulation);
 
         }
 
@@ -94,5 +94,15 @@ namespace MetaSimulatorConsole
                 }
             }
         }
+
+        protected override void PlacerAccessPoints()
+        {
+            AccessPoint.PlacerPoint(ZoneExterne, CaissesClient);
+            AccessPoint.PlacerPoint( ZoneExterne, ZoneRepas); 
+            AccessPoint.PlacerPoint( CaissesClient, CaissesCuistots); 
+            AccessPoint.PlacerPoint( CaissesClient, CaissesCuistots); 
+            AccessPoint.PlacerPoint(CaissesClient,ZoneRepas);
+        }
+
     }
 }

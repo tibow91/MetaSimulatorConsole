@@ -28,5 +28,10 @@ namespace MetaSimulatorConsole
         {
             throw new NotImplementedException();
         }
+
+        protected override void PlacerAccessPoints()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
