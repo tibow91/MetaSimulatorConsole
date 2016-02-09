@@ -53,9 +53,14 @@ namespace MetaSimulatorConsole
 
         public override void Update()
         {
-            if (ZoneToObserve != null)  ZoneTexture = ZoneToObserve.Texture;
+            if (ZoneToObserve != null) ZoneTexture = ZoneToObserve.Texture;
+            else ZoneTexture = null;
+            
             if (ObjectToObserve != null) ObjectTexture = ObjectToObserve.Texture;
+            else ObjectTexture = null;
+
             if (PersonnageToObserve != null) PersonnageTexture = PersonnageToObserve.Texture;
+            else PersonnageTexture = null;
 
             if (PersonnageTexture == null)
             {

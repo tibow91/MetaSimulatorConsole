@@ -9,7 +9,7 @@ namespace MetaSimulatorConsole
 
     public abstract class SujetObserveAbstrait
     {
-        private readonly List<IObservateurAbstrait> observateurList = new List<IObservateurAbstrait>();
+        private List<IObservateurAbstrait> observateurList = new List<IObservateurAbstrait>();
 
         public void Attach(IObservateurAbstrait observer)
         {
@@ -27,6 +27,11 @@ namespace MetaSimulatorConsole
             {
                 o.Update();
             }
+        }
+
+        public List<IObservateurAbstrait> GetObservers()
+        {
+            return observateurList;
         }
     }
 }

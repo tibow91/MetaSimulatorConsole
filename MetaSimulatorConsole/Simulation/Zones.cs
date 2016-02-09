@@ -95,6 +95,7 @@ namespace MetaSimulatorConsole
         public abstract List<ObjetAbstrait> ObtenirObjets();
         public abstract bool AjouterPersonnage(PersonnageAbstract personnage);
         public abstract bool AjouterObjet(ObjetAbstrait objet);
+        public abstract void EnleverObjet(ObjetAbstrait objet);
         public abstract bool AjouterCase(Coordonnees coor);
         public bool ContientMemeInstance(ZoneAbstraite zone)
         {
@@ -184,6 +185,12 @@ namespace MetaSimulatorConsole
         {
             Console.WriteLine("Ajout d'Objet impossible sur les zones composite");
             return false;
+        }
+
+        public override void EnleverObjet(ObjetAbstrait objet)
+        {
+            Console.WriteLine("Suppression d'Objet impossible sur les zones composite");
+            return;
         }
         public override bool AjouterCase(Coordonnees coor)
         {
@@ -301,6 +308,8 @@ namespace MetaSimulatorConsole
             Console.WriteLine("Impossible de placer un objet dans une Zone Composite !");
             return false;
         }
+
+  
     }
 
 
@@ -372,6 +381,28 @@ namespace MetaSimulatorConsole
             Objets.Add(objet);
             new LinkCaseToObject().LinkObject(objet.Case, objet, Simulation.Tableau);
             return true;
+        }
+
+        public override void EnleverObjet(ObjetAbstrait objet)
+        {
+            if (objet == null) return;
+            foreach (var obj in Objets)
+            {
+                if (obj.Equals(objet))
+                {
+                    foreach (var observer in objet.GetObservers())
+                    {
+                        if (observer is Case)
+                        {
+                            var cell = (Case)observer;
+                            cell.SetObjectToObserve(null);
+                        }
+                        DeAttach(observer);
+                    }
+                    Objets.Remove(objet);
+                    return;
+                }
+            }
         }
 
         public override bool AjouterCase(Coordonnees coor)
@@ -574,6 +605,8 @@ namespace MetaSimulatorConsole
             }
             return true;
         }
+
+
     }
 
     public abstract class ZoneGenerale : ZoneComposite
