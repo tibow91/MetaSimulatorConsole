@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using MetaSimulatorConsole.Dijkstra;
+using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
@@ -41,6 +42,7 @@ namespace MetaSimulatorConsole
         }
         protected  override void DistribuerZones()
         {
+            var link = new LinkCaseToZone();
             for (int i = 0; i < GameManager.Longueur; ++i)
             {
                 for (int j = 0; j < GameManager.Largeur; ++j)
@@ -49,28 +51,31 @@ namespace MetaSimulatorConsole
                     {
                         if (j < GameManager.Largeur/2)
                         {
-                            ZoneExterne.AjouterCase(new Coordonnees(i, j));
-                            var node = (Node<Case>) Simulation.Tableau[i, j];
-                            node.Value.SetZoneToObserve(ZoneExterne);
+                            var coor = new Coordonnees(i, j);
+                            ZoneExterne.AjouterCase(coor);
+                            link.LinkObject(coor, ZoneExterne, Simulation.Tableau);
                         }
                         else
                         {
-                            CaissesClient.AjouterCase(new Coordonnees(i, j));
-                            var node = (Node<Case>)Simulation.Tableau[i, j];
-                            node.Value.SetZoneToObserve(CaissesClient);
+                            var coor = new Coordonnees(i, j);
+                            CaissesClient.AjouterCase(coor);
+                            link.LinkObject(coor, CaissesClient, Simulation.Tableau);
+
                         }
                     }
                     else
                     {
                         if (j < GameManager.Longueur/2)
                         {
-                            CaissesCuistots.AjouterCase(new Coordonnees(i, j));
-                            var node = (Node<Case>)Simulation.Tableau[i, j];
-                            node.Value.SetZoneToObserve(CaissesClient);
+                            var coor = new Coordonnees(i, j);
+                            CaissesCuistots.AjouterCase(coor);
+                            link.LinkObject(coor, CaissesCuistots, Simulation.Tableau);
                         }
                         else
                         {
-                            ZoneRepas.AjouterCase(new Coordonnees(i, j));
+                            var coor = new Coordonnees(i, j);
+                            ZoneRepas.AjouterCase(coor);
+                            link.LinkObject(coor, ZoneRepas, Simulation.Tableau);
                         }
                     }
                 }

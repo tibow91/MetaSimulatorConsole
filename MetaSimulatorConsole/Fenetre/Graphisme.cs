@@ -246,8 +246,8 @@ class Graphisme
         public void ChargerTextures()
         {
             Textures.Add(NomTexture.Herbe2, ChargerTexture("../res/grass2.png"));
-            Textures.Add(NomTexture.Ground1, ChargerTexture("../res/ground1.jpg"));
-            Textures.Add(NomTexture.Ground2, ChargerTexture("../res/ground2.jpg"));
+            Textures.Add(NomTexture.Ground1, ChargerTexture("../res/ground1.png"));
+            Textures.Add(NomTexture.Ground2, ChargerTexture("../res/ground2.png"));
             Textures.Add(NomTexture.Mozaic1, ChargerTexture("../res/mozaic1.jpg"));
 
 
@@ -260,8 +260,6 @@ class Graphisme
 
             Textures.Add(NomTexture.Plane1, ChargerTexture("../res/plane.png"));
             Textures.Add(NomTexture.Plane2, ChargerTexture("../res/planetexpress.png"));
-
-
         }
 
 

@@ -1,4 +1,5 @@
-﻿using MetaSimulatorConsole.Simulation;
+﻿using MetaSimulatorConsole.Dijkstra;
+using MetaSimulatorConsole.Simulation;
 using MetaSimulatorConsole.Simulation.Honeyland;
 using System;
 using System.Collections.Generic;
@@ -72,7 +73,6 @@ namespace MetaSimulatorConsole
         public abstract bool AjouterPersonnage(PersonnageAbstract personnage);
         public abstract bool AjouterObjet(ObjetAbstrait objet);
         public abstract bool AjouterCase(Coordonnees coor);
-
         public bool ContientMemeInstance(ZoneAbstraite zone)
         {
             if(Simulation == null) return false;
@@ -89,6 +89,7 @@ namespace MetaSimulatorConsole
  	         return "Zone " + nom;
         }
         public abstract bool ContientCoordonnees(Coordonnees coor);
+
     }
 
     public class ZoneComposite : ZoneAbstraite
@@ -327,6 +328,7 @@ namespace MetaSimulatorConsole
                 }
             }           
             Personnages.Add(personnage);
+            new LinkCaseToPersonnage().LinkObject(personnage.Case, personnage, Simulation.Tableau);
             return true;
         }
 
@@ -357,6 +359,7 @@ namespace MetaSimulatorConsole
                 }
             }  
             Objets.Add(objet);
+            new LinkCaseToObject().LinkObject(objet.Case, objet, Simulation.Tableau);
             return true;
         }
 

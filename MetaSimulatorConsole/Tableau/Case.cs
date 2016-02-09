@@ -31,13 +31,13 @@ namespace MetaSimulatorConsole
     public abstract class TextureDecorator : Texture // Assemblage de textures
     {
         protected Texture Decor;
-        public void SetTexture(Texture decor)
+        public void SetTextureDeBase(Texture decor)
         {
             Decor = decor;
         }
         public TextureDecorator(Texture decor)
         {
-            SetTexture(decor);
+            SetTextureDeBase(decor);
         }
 
         public override List<NomTexture> Name()
@@ -111,7 +111,10 @@ namespace MetaSimulatorConsole
     {
         public Texture Textures;
         private Texture ZoneTexture;
+        private TextureDecorator ObjectTexture,PersonnageTexture;
         private ZoneFinale ZoneToObserve;
+        private ObjetAbstrait ObjectToObserve;
+        private PersonnageAbstract PersonnageToObserve;
 
         public Case()
         {
@@ -133,12 +136,50 @@ namespace MetaSimulatorConsole
             Update();
         }
 
+        public void SetObjectToObserve(ObjetAbstrait obj)
+        {
+            ObjectToObserve = obj;
+            Update();
+        }
+
+        public void SetPersonnageToObserve(PersonnageAbstract perso)
+        {
+            PersonnageToObserve = perso;
+            Update();
+        }
+
         public override void Update()
         {
-            if (ZoneToObserve == null) return;
-            ZoneTexture = ZoneToObserve.Texture;
-            if (ZoneTexture == null) return;
-            SetTextures(ZoneTexture);
+            if (ZoneToObserve != null)  ZoneTexture = ZoneToObserve.Texture;
+            if (ObjectToObserve != null) ObjectTexture = ObjectToObserve.Texture;
+            if (PersonnageTexture == null)
+            {
+                // BASE
+                if (ObjectTexture == null) SetTextures(ZoneTexture);
+                else
+                {
+                    // OBJET + BASE
+                    ObjectTexture.SetTextureDeBase(ZoneTexture);
+                    this.SetTextures(ObjectTexture);
+                }
+            }
+            else
+            {
+                if (ObjectTexture == null)
+                {
+                    // PERSO + BASE
+                    PersonnageTexture.SetTextureDeBase(ZoneTexture);
+                    this.SetTextures(PersonnageTexture);
+                }
+                else
+                {
+                    // PERSO + OBJET + BASE
+                    ObjectTexture.SetTextureDeBase(ZoneTexture);
+                    PersonnageTexture.SetTextureDeBase(ObjectTexture);
+                    this.SetTextures(PersonnageTexture);
+                }
+            }
+   
         }
     }
 

@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole
 {
-    public abstract class ObjetAbstrait : IEquatable<ObjetAbstrait>
+    public abstract class ObjetAbstrait : SujetObserveAbstrait,IEquatable<ObjetAbstrait>
     {
         public EGame TypeSimulation;
         public string Nom { get; set; }
         public Coordonnees Case { get; set; }
+        public TextureDecorator Texture { get; set; }
 
-
-        protected ObjetAbstrait(EGame nomdujeu)
+        protected ObjetAbstrait(string nom, EGame nomdujeu,TextureDecorator texture)
         {
             TypeSimulation = nomdujeu;
-            Nom = "Objet Sans nom";
+            Nom = "nom";
+            Texture = texture;
         }
         public abstract bool EstValide();
         public override string ToString()
@@ -38,5 +39,6 @@ namespace MetaSimulatorConsole
             }
             return false;
         }
+
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="Fenetre\Graphisme.cs" />
     <Compile Include="Serialize.cs" />
     <Compile Include="Simulation\Honeyland\ZoneGeneraleHoneyland.cs" />
+    <Compile Include="Simulation\LinkCase.cs" />
     <Compile Include="Simulation\Objet.cs" />
     <Compile Include="Observateur.cs" />
     <Compile Include="Simulation\AgeOfKebab\AgeOfKebab.cs" />

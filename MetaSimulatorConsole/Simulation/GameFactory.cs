@@ -23,6 +23,7 @@ namespace MetaSimulatorConsole
         {
             Gestionnaire = manager;
             this.Tableau = grille;
+            //RemplirGrille();
             ConstruireZones();
         }
 

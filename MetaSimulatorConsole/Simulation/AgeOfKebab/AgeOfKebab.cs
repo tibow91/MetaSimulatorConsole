@@ -29,7 +29,7 @@ namespace MetaSimulatorConsole.Simulation
             : base(manager,grille)
         {
             NomDuJeu = EGame.AgeOfKebab;
-            RemplirGrille();
+            //RemplirGrille();
         }
 
         public override void UpdateView()

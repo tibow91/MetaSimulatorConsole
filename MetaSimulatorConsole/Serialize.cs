@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole
 {
-    abstract class SerializerFacade // PATTERN FACADE
+    abstract class SerializerTemplate // PATTERN TEMPLATE
     {
         protected bool EvaluateFilename(string filename)
         {
@@ -83,7 +83,7 @@ namespace MetaSimulatorConsole
   
     }
 
-    class CoordonneesSerializer : SerializerFacade
+    class CoordonneesSerializer : SerializerTemplate
     {
         protected override XmlSerializer GetXMLSerializer()
         {
@@ -96,7 +96,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class ZoneSerializer : SerializerFacade
+    class ZoneSerializer : SerializerTemplate
     {
 
         protected override XmlSerializer GetXMLSerializer()
