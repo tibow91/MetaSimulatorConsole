@@ -4,8 +4,8 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
 {
     public class Avion : PersonnageAbstract
     {
-        public Avion(EGame simulation)
-            : base(simulation)
+        public Avion()
+            : base("Avion",EGame.CDGSimulator,new TexturePlane1())
         {
         }
         public override void Ajoute(PersonnageAbstract c)

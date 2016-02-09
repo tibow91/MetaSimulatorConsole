@@ -4,8 +4,8 @@ namespace MetaSimulatorConsole.Simulation.Honeyland
 {
     public class Bee : PersonnageAbstract
     {
-        public Bee(EGame simulation)
-            : base(simulation)
+        public Bee()
+            : base("Abeille",EGame.Honeyland,new TextureBee())
         {
         }
         public override void Ajoute(PersonnageAbstract c)

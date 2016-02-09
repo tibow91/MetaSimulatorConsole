@@ -49,35 +49,48 @@ namespace MetaSimulatorConsole
                 {
                     if (i < GameManager.Longueur/2)
                     {
-                        if (j < GameManager.Largeur/2)
+                        if (j < GameManager.Largeur/3)
                         {
+                            // ZONE DEHORS
+                            var coor = new Coordonnees(i, j);
+                            ZoneExterne.AjouterCase(coor);
+                            link.LinkObject(coor, ZoneExterne, Simulation.Tableau);
+
+                        }
+                        else if (j < (3*GameManager.Largeur/4))
+                        {
+                            // CAISSES CLIENTS
+                            var coor = new Coordonnees(i, j);
+                            CaissesClient.AjouterCase(coor);
+                            link.LinkObject(coor, CaissesClient, Simulation.Tableau);
+                        }
+                        else
+                        {
+                            // CAISSES CUISTOTS
+                            var coor = new Coordonnees(i, j);
+                            CaissesCuistots.AjouterCase(coor);
+                            link.LinkObject(coor, CaissesCuistots, Simulation.Tableau);
+                        }
+
+                    }
+                    else
+                    {
+                        if (j < GameManager.Largeur/3)
+                        {
+                            // ZONE EXTERNE
                             var coor = new Coordonnees(i, j);
                             ZoneExterne.AjouterCase(coor);
                             link.LinkObject(coor, ZoneExterne, Simulation.Tableau);
                         }
                         else
                         {
-                            var coor = new Coordonnees(i, j);
-                            CaissesClient.AjouterCase(coor);
-                            link.LinkObject(coor, CaissesClient, Simulation.Tableau);
-
-                        }
-                    }
-                    else
-                    {
-                        if (j < GameManager.Longueur/2)
-                        {
-                            var coor = new Coordonnees(i, j);
-                            CaissesCuistots.AjouterCase(coor);
-                            link.LinkObject(coor, CaissesCuistots, Simulation.Tableau);
-                        }
-                        else
-                        {
+                            // ZONE REPAS
                             var coor = new Coordonnees(i, j);
                             ZoneRepas.AjouterCase(coor);
                             link.LinkObject(coor, ZoneRepas, Simulation.Tableau);
                         }
                     }
+                   
                 }
             }
         }
