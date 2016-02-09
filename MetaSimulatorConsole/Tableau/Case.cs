@@ -31,6 +31,7 @@ namespace MetaSimulatorConsole
     public abstract class TextureDecorator : Texture // Assemblage de textures
     {
         protected Texture Decor;
+
         public void SetTextureDeBase(Texture decor)
         {
             Decor = decor;
@@ -152,6 +153,8 @@ namespace MetaSimulatorConsole
         {
             if (ZoneToObserve != null)  ZoneTexture = ZoneToObserve.Texture;
             if (ObjectToObserve != null) ObjectTexture = ObjectToObserve.Texture;
+            if (PersonnageToObserve != null) PersonnageTexture = PersonnageToObserve.Texture;
+
             if (PersonnageTexture == null)
             {
                 // BASE

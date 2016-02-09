@@ -11,10 +11,13 @@ namespace MetaSimulatorConsole.Simulation
         public EtatAbstract Etat { get; set; }
 
         public Coordonnees Case { get; set; }
-        protected PersonnageAbstract(EGame simulation)
+        public TextureDecorator Texture { get; set; }
+
+        protected PersonnageAbstract(string nom,EGame simulation,TextureDecorator texture)
         {
             Simulation = simulation;
-            Nom = "Personnage Sans nom";
+            Nom = nom;
+            Texture = texture;
             PointsDeVie = 100;
             SeuilCritique = 50;
             Etat = null;
@@ -51,5 +54,6 @@ namespace MetaSimulatorConsole.Simulation
         {
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";
         }
+
     }
 }
