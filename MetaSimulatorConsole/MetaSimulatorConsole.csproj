@@ -70,6 +70,7 @@
     <Compile Include="Simulation\Honeyland\Etats\Etat_Full.cs" />
     <Compile Include="Simulation\Honeyland\Honeyland.cs" />
     <Compile Include="Simulation\Personnage.cs" />
+    <Compile Include="Simulation\SpawnPoint.cs" />
     <Compile Include="Simulation\Textures.cs" />
     <Compile Include="Tableau\Case.cs" />
     <Compile Include="Gestion\AppuiClavier.cs" />

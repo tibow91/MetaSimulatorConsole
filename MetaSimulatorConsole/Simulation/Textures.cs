@@ -11,11 +11,11 @@ namespace MetaSimulatorConsole.Simulation
     {
         Herbe, Herbe2, Ground1, Pikachu,
         Bee, Beehive, Flower,Plane1, Plane2,
-        Ground2,Mozaic1,WoodPlatform1,WoodPlatform2
+        Ground2,Mozaic1,WoodPlatform1,WoodPlatform2,CrossedCircle
     }
 
     [XmlInclude(typeof(TextureWoodPlatformHorizontal)), XmlInclude(typeof(TextureWoodPlatformVertical))]
-    [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe))]
+    [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe)),XmlInclude(typeof(TextureCrossedCircle))]
     [XmlInclude(typeof(TextureMozaic1)), XmlInclude(typeof(TextureGround2)),XmlInclude(typeof(TextureGround1))]
     [XmlInclude(typeof(TextureDecorator))]
     public abstract class Texture // Texture Unique
@@ -131,6 +131,22 @@ namespace MetaSimulatorConsole.Simulation
 
             var textures = Decor.Name();
             textures.Add(NomTexture.WoodPlatform2);
+            return textures;
+        }
+    }
+
+    public class TextureCrossedCircle : TextureDecorator
+    {
+        public TextureCrossedCircle() : base(null) { }
+
+        public TextureCrossedCircle(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.CrossedCircle };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.CrossedCircle);
             return textures;
         }
     }

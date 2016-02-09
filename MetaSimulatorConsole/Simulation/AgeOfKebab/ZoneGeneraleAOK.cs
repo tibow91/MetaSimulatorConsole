@@ -97,11 +97,17 @@ namespace MetaSimulatorConsole
 
         protected override void PlacerAccessPoints()
         {
+            // POINTS D'ACCES
             AccessPoint.PlacerPoint(ZoneExterne, CaissesClient);
             AccessPoint.PlacerPoint( ZoneExterne, ZoneRepas); 
             AccessPoint.PlacerPoint( CaissesClient, CaissesCuistots); 
             AccessPoint.PlacerPoint( CaissesClient, CaissesCuistots); 
             AccessPoint.PlacerPoint(CaissesClient,ZoneRepas);
+
+            // POINTS D'APPARITION
+            SpawnPoint.PlacerPoint(ZoneExterne);
+            SpawnPoint.PlacerPoint(ZoneExterne);
+
         }
 
     }
