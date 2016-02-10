@@ -1,14 +1,16 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using MetaSimulatorConsole.Simulation;
+  using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole
 {
     [XmlInclude(typeof(AccessPoint)), XmlInclude(typeof(SpawnPoint)),XmlInclude(typeof(GatherPoint))]
+    [XmlInclude(typeof(Caisse))]
     public abstract class ObjetAbstrait : SujetObserveAbstrait,IEquatable<ObjetAbstrait>
     {
         [XmlAttribute]

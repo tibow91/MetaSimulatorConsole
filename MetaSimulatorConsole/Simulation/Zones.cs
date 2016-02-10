@@ -313,7 +313,7 @@ namespace MetaSimulatorConsole
     }
 
 
-    public class ZoneFinale :  ZoneAbstraite
+    public class ZoneFinale :  ZoneAbstraite,IEquatable<ZoneFinale>
     {
         public List<PersonnageAbstract> Personnages = new List<PersonnageAbstract>();
         public List<ObjetAbstrait> Objets = new List<ObjetAbstrait>();
@@ -607,6 +607,17 @@ namespace MetaSimulatorConsole
         }
 
 
+
+        public bool Equals(ZoneFinale other)
+        {
+            if (other == null) return false;
+
+            if (Simulation == other.Simulation) // Même Simulation
+            {
+                if (nom == other.nom) return true;
+            }
+            return false;
+        }
     }
 
     public abstract class ZoneGenerale : ZoneComposite
@@ -623,13 +634,13 @@ namespace MetaSimulatorConsole
             ConstruireZones();
             DistribuerZones();
             HierarchiserZones();
-            PlacerAccessPoints();
+            PlacerObjets();
         }
 
         protected abstract void ConstruireZones();
         protected abstract void HierarchiserZones();
         protected abstract void DistribuerZones();
-        protected abstract void PlacerAccessPoints();
+        protected abstract void PlacerObjets();
 
     }
 

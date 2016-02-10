@@ -10,15 +10,16 @@ namespace MetaSimulatorConsole.Simulation
     public enum NomTexture
     {
         Herbe, Herbe2, Ground1, Pikachu,
-        Bee, Beehive, Flower,Plane1, Plane2,
-        Ground2,Mozaic1,WoodPlatform1,WoodPlatform2,CrossedCircle,
-        Feet
+        Bee, Beehive, Flower, Plane1, Plane2,
+        Ground2, Mozaic1, WoodPlatform1, WoodPlatform2, CrossedCircle,
+        Feet,
+        Dollar3D
     }
 
     [XmlInclude(typeof(TextureWoodPlatformHorizontal)), XmlInclude(typeof(TextureWoodPlatformVertical))]
     [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe)),XmlInclude(typeof(TextureCrossedCircle))]
     [XmlInclude(typeof(TextureMozaic1)), XmlInclude(typeof(TextureGround2)),XmlInclude(typeof(TextureGround1))]
-    [XmlInclude(typeof(TextureDecorator)), XmlInclude(typeof(TextureFootIcon))]
+    [XmlInclude(typeof(TextureDecorator)), XmlInclude(typeof(TextureFootIcon)),XmlInclude(typeof(TextureDollar3D))]
     public abstract class Texture // Texture Unique
     {
         public abstract List<NomTexture> Name();
@@ -148,6 +149,22 @@ namespace MetaSimulatorConsole.Simulation
 
             var textures = Decor.Name();
             textures.Add(NomTexture.CrossedCircle);
+            return textures;
+        }
+    }
+
+    public class TextureDollar3D : TextureDecorator
+    {
+        public TextureDollar3D() : base(null) { }
+
+        public TextureDollar3D(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.Dollar3D };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.Dollar3D);
             return textures;
         }
     }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using MetaSimulatorConsole.Dijkstra;
 using MetaSimulatorConsole.Simulation;
+using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole
 {
@@ -95,7 +96,7 @@ namespace MetaSimulatorConsole
             }
         }
 
-        protected override void PlacerAccessPoints()
+        protected override void PlacerObjets()
         {
             // POINTS D'ACCES
             AccessPoint.PlacerPoint(ZoneExterne, CaissesClient);
@@ -109,6 +110,50 @@ namespace MetaSimulatorConsole
 
             // POINTS DE RASSEMBLEMENT
             GatherPoint.PlacerPoint(ZoneExterne);
+            PlacerCaisses();
+
+        }
+
+        private void PlacerCaisses()
+        {
+            // Enlever les points d'accès des caisses client vers les zones du personnel (caisses cuistots)
+            var list = new List<ObjetAbstrait>(CaissesClient.Objets);
+            var listCoor = new List<Coordonnees>();
+            foreach (var obj in list) // pour chaque objet
+            {
+                if (obj is AccessPoint)
+                {
+                    AccessPoint point = (AccessPoint) obj;
+                    if (point.ZoneAnnexes.Contains(CaissesCuistots)) // si pt d'accès vers caisses cuistots
+                    {
+                        listCoor.Add(obj.Case);
+                        CaissesClient.EnleverObjet(obj);
+                    }
+                }
+            }
+
+            // Remplacer aux mêmes coordonnées par des objets de type Caisse
+            int i = 1;
+            foreach (var coor in listCoor)
+            {
+                var caisse = new Caisse("Caisse" + i, coor);
+                CaissesClient.AjouterObjet(caisse);
+                ++i;
+            }
+
+            // Enlever les points d'accès de la zone caisse cuistot vers caisses clients
+            list = new List<ObjetAbstrait>(CaissesCuistots.Objets);
+            foreach (var obj in list)
+            {
+                if (obj is AccessPoint)
+                {
+                    AccessPoint point = (AccessPoint) obj;
+                    if (point.ZoneAnnexes.Contains(CaissesClient))
+                    {
+                        CaissesCuistots.EnleverObjet(obj);
+                    }
+                }
+            }
 
         }
 
