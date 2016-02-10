@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
@@ -10,7 +11,7 @@ namespace MetaSimulatorConsole
 
     public enum EGame { AgeOfKebab, CDGSimulator, Honeyland}
 
-    public abstract class Game : IEquatable<Game>
+    public abstract class Game : SujetObserveAbstrait, IEquatable<Game>
     {
         public EGame NomDuJeu;
         public bool Stop { get; set; }
@@ -19,9 +20,15 @@ namespace MetaSimulatorConsole
         public Grille Tableau;
         protected GameManager Gestionnaire;
         public ZoneComposite ZoneGenerale;
+        [XmlIgnore]
+        public QuartierGeneralAbstrait QG;
         protected Game(GameManager manager,Grille grille)
         {
+            QG = new QuartierGeneralAOK(this);
+            Attach(QG);
             Gestionnaire = manager;
+            Attach(Gestionnaire);
+
             this.Tableau = grille;
             //RemplirGrille();
             ConstruireZones();
@@ -78,7 +85,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    abstract class GameObservable : Game,IObservateurView
+    abstract class GameObservable : Game
     {
         protected GameObservable(GameManager manager,Grille grille) : base(manager,grille) { }
 
@@ -92,6 +99,8 @@ namespace MetaSimulatorConsole
 
         public abstract override void ConstruireZones();
 
+
+        public void Update(){}
     }
    
 

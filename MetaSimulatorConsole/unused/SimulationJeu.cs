@@ -91,13 +91,13 @@ namespace MetaSimulatorConsole
         private void EnvoyerOrdreGuerre()
         {
             EtatMajor.ModeFonctionnement = eMode.Guerre;
-            EtatMajor.Update();
+            EtatMajor.UpdateObservers();
         }
 
         private void EnvoyerOrdrePaix()
         {
             EtatMajor.ModeFonctionnement = eMode.Paix;
-            EtatMajor.Update();
+            EtatMajor.UpdateObservers();
         }
         public SimulationJeu()
         {

@@ -25,8 +25,8 @@ namespace MetaSimulatorConsole
 
         protected  override void ConstruireZones()
         {
-            ZoneInterne = new ZoneComposite("Zone Interne ", Simulation);
-            ZoneExterne = new ZoneFinale("Zone Externe ", new TextureHerbe(), Simulation);
+            ZoneInterne = new ZoneComposite("Zone Interne", Simulation);
+            ZoneExterne = new ZoneFinale("Zone Externe", new TextureHerbe(), Simulation);
             CaissesClient = new ZoneFinale("Caisses client",new TextureGround2(),  Simulation);
             CaissesCuistots = new ZoneFinale("Caisses cuistots", new TextureGround1(), Simulation);
             ZoneRepas = new ZoneFinale("Zone Repas ",new TextureMozaic1(),  Simulation);
@@ -98,6 +98,7 @@ namespace MetaSimulatorConsole
 
         protected override void PlacerObjets()
         {
+            
             // POINTS D'ACCES
             AccessPoint.PlacerPoint(ZoneExterne, CaissesClient);
             AccessPoint.PlacerPoint( ZoneExterne, ZoneRepas); 
@@ -117,6 +118,7 @@ namespace MetaSimulatorConsole
 
         private void PlacerCaisses()
         {
+
             // Enlever les points d'accès des caisses client vers les zones du personnel (caisses cuistots)
             var list = new List<ObjetAbstrait>(CaissesClient.Objets);
             var listCoor = new List<Coordonnees>();

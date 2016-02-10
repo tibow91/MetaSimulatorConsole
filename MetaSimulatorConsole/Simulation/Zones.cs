@@ -116,7 +116,7 @@ namespace MetaSimulatorConsole
         public abstract bool ContientCoordonnees(Coordonnees coor);
 
     }
-
+    
     public class ZoneComposite : ZoneAbstraite
     {
         public readonly List<ZoneAbstraite> Zones = new List<ZoneAbstraite>();
@@ -619,6 +619,7 @@ namespace MetaSimulatorConsole
             return false;
         }
     }
+
 
     public abstract class ZoneGenerale : ZoneComposite
     {

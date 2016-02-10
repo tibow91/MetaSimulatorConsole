@@ -101,9 +101,22 @@ namespace MetaSimulatorConsole
 
         protected override XmlSerializer GetXMLSerializer()
         {
-            return new XmlSerializer(typeof(ZoneAbstraite));
+            return new XmlSerializer(typeof (ZoneAbstraite));
         }
 
+    }
+
+    class ZoneGeneraleAOKSerializer : SerializerTemplate
+    {
+
+        protected override XmlSerializer GetXMLSerializer()
+        {
+            return new XmlSerializer(typeof(ZoneGeneraleAOK));
+        }
+        protected override void serialize(TextWriter writer, XmlSerializer serializer, object obj)
+        {
+            serializer.Serialize(writer, (ZoneGeneraleAOK)obj);
+        }
     }
 
 }

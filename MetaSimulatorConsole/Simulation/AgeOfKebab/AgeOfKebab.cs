@@ -42,14 +42,14 @@ namespace MetaSimulatorConsole.Simulation
             Stop = false;
             Started = true;
             Console.WriteLine("Simulation lancée");
-            Gestionnaire.Update();
+            UpdateObservers();
             while (!Stop)
             {
 
             }
             Started = false;
             Console.WriteLine("Simulation arrêtée");
-            Gestionnaire.Update();
+            UpdateObservers();
             var node = (Node<Case>)Tableau[24, 24];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
         }
@@ -57,7 +57,8 @@ namespace MetaSimulatorConsole.Simulation
         public override void ConstruireZones()
         {
             ZoneGenerale = new ZoneMaker().ConstruireZonesAgeOfKebab(this);
-            new ZoneSerializer().Serialize(ZoneGenerale,"ZoneGenerale");
+            UpdateObservers(); // pour mettre à jour le QG sur les zones
+            new ZoneGeneraleAOKSerializer().Serialize(ZoneGenerale,"ZoneGenerale");
         }
     }
 }

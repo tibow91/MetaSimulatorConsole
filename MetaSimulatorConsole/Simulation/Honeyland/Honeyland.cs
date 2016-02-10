@@ -43,14 +43,14 @@ namespace MetaSimulatorConsole.Simulation
             Stop = false;
             Started = true;
             Console.WriteLine("Simulation lancée");
-            Gestionnaire.Update();
+            Gestionnaire.UpdateObservers();
             while (!Stop)
             {
 
             }
             Started = false;
             Console.WriteLine("Simulation arrêtée");
-            Gestionnaire.Update();
+            Gestionnaire.UpdateObservers();
             var node = (Node<Case>)Tableau[49, 49];
             node.Value.SetTextures(new TexturePikachuSurHerbe());
         }

@@ -10,7 +10,7 @@ namespace MetaSimulatorConsole
     public enum NomJeu  { AgeOfKebab, CDGSimulator, Honeyland };
     public enum EMenu { Principal, Creation, Chargement, Simulation  };
 
-    public class GameManager : SujetObserveAbstrait
+    public class GameManager : SujetObserveAbstrait,IObservateurAbstrait
     {
         public static readonly int Longueur = 50;
         public static readonly int Largeur = 50;
@@ -37,7 +37,7 @@ namespace MetaSimulatorConsole
             set
             {
                 _simulation = value;
-                Update();
+                UpdateObservers();
             }
         }
 
@@ -209,6 +209,12 @@ namespace MetaSimulatorConsole
             }
             Thread workerThread = new Thread(Simulation.LancerSimulation);
             workerThread.Start();
+        }
+
+
+        public void Update()
+        {
+            UpdateObservers();
         }
     }
 

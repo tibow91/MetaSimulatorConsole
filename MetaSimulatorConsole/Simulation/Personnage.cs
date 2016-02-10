@@ -4,15 +4,15 @@ using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    [XmlInclude(typeof(Client))]
+//    [XmlInclude(typeof(Client)), XmlInclude(typeof(Serveur))]
     public abstract class PersonnageAbstract : SujetObserveAbstrait, IEquatable<PersonnageAbstract>
     {
         public EGame Simulation;
         public string Nom { get; set; }
         protected int PointsDeVie { get; set; }
         protected int SeuilCritique { get; set; }
-        public EtatAbstract Etat { get; set; }
 
+        public EtatAbstract Etat { get; set; }
         public Coordonnees Case { get; set; }
         public TextureDecorator Texture { get; set; }
 
@@ -81,6 +81,7 @@ namespace MetaSimulatorConsole.Simulation
         {
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";
         }
+
 
     }
 }

@@ -98,7 +98,7 @@ namespace MetaSimulatorConsole
             return toucheEchap;
         }
 
-        public override void Update()
+        public void Update()
         {
             foreach (var commande in commandes)
             {

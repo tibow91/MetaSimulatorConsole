@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole
 {
-    public abstract class IObservateurAbstrait
+    public interface IObservateurAbstrait
     {
-        public abstract void Update();
+        void Update();
     }
 
     public abstract class SujetObserveAbstrait
@@ -21,7 +22,7 @@ namespace MetaSimulatorConsole
             observateurList.Remove(observer);
         }
 
-        public void Update()
+        public void UpdateObservers()
         {
             foreach (IObservateurAbstrait o in observateurList)
             {

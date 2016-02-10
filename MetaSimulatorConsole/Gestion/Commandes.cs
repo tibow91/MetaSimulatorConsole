@@ -18,7 +18,7 @@ namespace MetaSimulatorConsole
         }
         public abstract void Execute();
 
-        public override void Update()
+        public virtual void Update()
         {
         }
     }
@@ -33,7 +33,7 @@ namespace MetaSimulatorConsole
             if(Simulation != null)
                 Simulation.Stop = true;
         }
-        public override void Update()
+        public void Update()
         {
             if (gestionnaire != null )
                 Simulation = gestionnaire.Simulation;
