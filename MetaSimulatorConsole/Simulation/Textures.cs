@@ -13,9 +13,11 @@ namespace MetaSimulatorConsole.Simulation
         Bee, Beehive, Flower, Plane1, Plane2,
         Ground2, Mozaic1, WoodPlatform1, WoodPlatform2, CrossedCircle,
         Feet,
-        Dollar3D
+        Dollar3D,
+        Table
     }
 
+    [XmlInclude(typeof(TextureTable))]
     [XmlInclude(typeof(TextureWoodPlatformHorizontal)), XmlInclude(typeof(TextureWoodPlatformVertical))]
     [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe)),XmlInclude(typeof(TextureCrossedCircle))]
     [XmlInclude(typeof(TextureMozaic1)), XmlInclude(typeof(TextureGround2)),XmlInclude(typeof(TextureGround1))]
@@ -165,6 +167,22 @@ namespace MetaSimulatorConsole.Simulation
 
             var textures = Decor.Name();
             textures.Add(NomTexture.Dollar3D);
+            return textures;
+        }
+    }
+
+    public class TextureTable : TextureDecorator
+    {
+        public TextureTable() : base(null) { }
+
+        public TextureTable(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.Table };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.Table);
             return textures;
         }
     }

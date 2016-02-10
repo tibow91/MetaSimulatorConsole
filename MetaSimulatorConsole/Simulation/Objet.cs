@@ -10,7 +10,7 @@ using MetaSimulatorConsole.Simulation;
 namespace MetaSimulatorConsole
 {
     [XmlInclude(typeof(AccessPoint)), XmlInclude(typeof(SpawnPoint)),XmlInclude(typeof(GatherPoint))]
-    [XmlInclude(typeof(Caisse))]
+    [XmlInclude(typeof(Caisse)),XmlInclude(typeof(Table))]
     public abstract class ObjetAbstrait : SujetObserveAbstrait,IEquatable<ObjetAbstrait>
     {
         [XmlAttribute]

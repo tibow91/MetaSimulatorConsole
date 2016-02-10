@@ -111,6 +111,7 @@ namespace MetaSimulatorConsole
             // POINTS DE RASSEMBLEMENT
             GatherPoint.PlacerPoint(ZoneExterne);
             PlacerCaisses();
+            PlacerTables();
 
         }
 
@@ -156,6 +157,12 @@ namespace MetaSimulatorConsole
             }
 
         }
+
+        private void PlacerTables()
+        {
+            
+        }
+
 
     }
 }
