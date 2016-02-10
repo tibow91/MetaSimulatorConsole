@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Xml.Serialization;
+using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
 {
+    [XmlInclude(typeof(Client))]
     public abstract class PersonnageAbstract : SujetObserveAbstrait, IEquatable<PersonnageAbstract>
     {
         public EGame Simulation;
@@ -31,6 +34,11 @@ namespace MetaSimulatorConsole.Simulation
         public abstract void AnalyserSituation();
         public abstract void Execution();
 
+        public void SetCoordonnees(Coordonnees coor)
+        {
+            Case = coor;
+        }
+
         public bool Equals(PersonnageAbstract other)
         {
             if (other == null) return false;
@@ -49,7 +57,26 @@ namespace MetaSimulatorConsole.Simulation
         
         public abstract void Ajoute(PersonnageAbstract c);
         public abstract void Retire(PersonnageAbstract c);
-        public abstract bool EstValide();
+
+        public virtual bool EstValide()
+        {
+            if (!Case.EstValide())
+            {
+                Console.WriteLine("Personnage " + this + " invalide car la case " + Case + " n'est pas valide !");
+                return false;
+            }
+            if (Texture == null)
+            {
+                Console.WriteLine("Personnage " + this + " invalide: Texture nulle !");
+                return false;
+            }
+            if (Etat == null)
+            {
+                Console.WriteLine("Personnage " + this + " invalide: Etat nul !");
+                return false;
+            }
+            return true;
+        }
         public override string ToString()
         {
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";

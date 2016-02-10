@@ -14,10 +14,11 @@ namespace MetaSimulatorConsole.Simulation
         Ground2, Mozaic1, WoodPlatform1, WoodPlatform2, CrossedCircle,
         Feet,
         Dollar3D,
-        Table
+        Table,
+        Player
     }
 
-    [XmlInclude(typeof(TextureTable))]
+    [XmlInclude(typeof(TextureTable)),XmlInclude(typeof(TexturePlayer))]
     [XmlInclude(typeof(TextureWoodPlatformHorizontal)), XmlInclude(typeof(TextureWoodPlatformVertical))]
     [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe)),XmlInclude(typeof(TextureCrossedCircle))]
     [XmlInclude(typeof(TextureMozaic1)), XmlInclude(typeof(TextureGround2)),XmlInclude(typeof(TextureGround1))]
@@ -183,6 +184,22 @@ namespace MetaSimulatorConsole.Simulation
 
             var textures = Decor.Name();
             textures.Add(NomTexture.Table);
+            return textures;
+        }
+    }
+
+    public class TexturePlayer : TextureDecorator
+    {
+        public TexturePlayer() : base(null) { }
+
+        public TexturePlayer(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.Player };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.Player);
             return textures;
         }
     }

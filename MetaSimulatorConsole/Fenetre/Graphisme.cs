@@ -256,6 +256,7 @@ class Graphisme
             Textures.Add(NomTexture.Feet, ChargerTexture("../res/foot_icon.png"));
             Textures.Add(NomTexture.Dollar3D, ChargerTexture("../res/dollar_3d_green.png"));
             Textures.Add(NomTexture.Table, ChargerTexture("../res/table.png"));
+            Textures.Add(NomTexture.Player, ChargerTexture("../res/player.png"));
 
 
             Textures.Add(NomTexture.Herbe, ChargerTexture("../res/grass.png"));
