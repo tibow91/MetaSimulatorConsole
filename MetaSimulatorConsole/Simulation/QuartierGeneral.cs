@@ -50,14 +50,13 @@ namespace MetaSimulatorConsole.Simulation
         public abstract void Update();
     }
 
+    [XmlInclude(typeof(QuartierGeneralAOK))]
     public abstract class QuartierGeneralAbstrait : QuartierGeneralObserve
     {
-        // Il doit prendre en charge une zone composite (Zone générale de préférence)
-        // Et charger automatiquement tous les personnages de type Client
-        // Il faudra gérer également l'insertion des personnages dans la zone de jeu
         // Songer aussi à placer le module de statistique à l'intérieur
         private readonly  Game Simulation;
         protected ZoneGenerale ZonePrincipale;
+        public int PersonnagesToInsert { get; set; }
         public override void Update()
         {
             DeAttacherTousLesPersonnagesMobilises();
@@ -85,6 +84,14 @@ namespace MetaSimulatorConsole.Simulation
             }
         }
 
+        public void GererUnTour()
+        {
+            MobiliserPersonnages();
+            InsererPersonnagesRestants();
+        }
+
+        protected abstract void InsererPersonnagesRestants();
+
     }
 
     public class QuartierGeneralAOK : QuartierGeneralAbstrait
@@ -93,6 +100,11 @@ namespace MetaSimulatorConsole.Simulation
         {
         }
 
+
+        protected override void InsererPersonnagesRestants()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
