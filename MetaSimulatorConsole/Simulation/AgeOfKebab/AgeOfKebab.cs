@@ -58,7 +58,7 @@ namespace MetaSimulatorConsole.Simulation
         {
             ZoneGenerale = new ZoneMaker().ConstruireZonesAgeOfKebab(this);
             UpdateObservers(); // pour mettre à jour le QG sur les zones
-            new ZoneGeneraleAOKSerializer().Serialize(ZoneGenerale,"ZoneGenerale");
+            new ZoneSerializer().Serialize(ZoneGenerale,"ZoneGenerale");
         }
     }
 }

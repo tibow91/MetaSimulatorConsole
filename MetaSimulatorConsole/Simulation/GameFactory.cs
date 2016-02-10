@@ -19,7 +19,7 @@ namespace MetaSimulatorConsole
 
         public Grille Tableau;
         protected GameManager Gestionnaire;
-        public ZoneComposite ZoneGenerale;
+        public ZoneGenerale ZoneGenerale;
         [XmlIgnore]
         public QuartierGeneralAbstrait QG;
         protected Game(GameManager manager,Grille grille)

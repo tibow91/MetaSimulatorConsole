@@ -82,6 +82,5 @@ namespace MetaSimulatorConsole.Simulation
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";
         }
 
-
     }
 }

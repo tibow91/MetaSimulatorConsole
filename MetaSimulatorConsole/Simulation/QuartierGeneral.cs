@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
 {
@@ -12,9 +13,9 @@ namespace MetaSimulatorConsole.Simulation
         void Mobiliser();
     }
 
-    public abstract class QuartierGeneralAbstrait : IObservateurAbstrait
+    public abstract class QuartierGeneralObserve : IObservateurAbstrait
     {
-        protected QuartierGeneralAbstrait() { }
+        protected QuartierGeneralObserve() { }
         private List<IPersonnageAMobiliser> PersonnagesMobilises = new List<IPersonnageAMobiliser>();
 
         public void AttacherPersonnage(IPersonnageAMobiliser observer)
@@ -26,6 +27,12 @@ namespace MetaSimulatorConsole.Simulation
         {
             PersonnagesMobilises.Remove(observer);
         }
+
+        public void DeAttacherTousLesPersonnagesMobilises()
+        {
+            PersonnagesMobilises.Clear();
+        }
+
 
         public void MobiliserPersonnages()
         {
@@ -43,25 +50,49 @@ namespace MetaSimulatorConsole.Simulation
         public abstract void Update();
     }
 
-    public class QuartierGeneralAOK : QuartierGeneralAbstrait
+    public abstract class QuartierGeneralAbstrait : QuartierGeneralObserve
     {
-        // Il doit prendre en charge une zone composite (Zone générale AOK de préférence)
+        // Il doit prendre en charge une zone composite (Zone générale de préférence)
         // Et charger automatiquement tous les personnages de type Client
         // Il faudra gérer également l'insertion des personnages dans la zone de jeu
         // Songer aussi à placer le module de statistique à l'intérieur
         private readonly  Game Simulation;
-//        private Zone ZoneGenerale;
+        protected ZoneGenerale ZonePrincipale;
         public override void Update()
         {
-//            if(Simulation != null) ZoneGenerale = (ZoneGeneraleAOK) Simulation.ZoneGenerale;
+            DeAttacherTousLesPersonnagesMobilises();
+            if(Simulation != null) ZonePrincipale = Simulation.ZoneGenerale;
+            ChargerPersonnagesAMobiliser();
         }
 
-        public QuartierGeneralAOK(Game simu)
+        protected QuartierGeneralAbstrait(Game simu)
         {
             Simulation = simu;
             Update(); // Pour mettre à jour la ZoneGénérale
         }
-        
+
+        protected void ChargerPersonnagesAMobiliser()
+        {
+            if (ZonePrincipale == null) return;
+            var list = ZonePrincipale.ObtenirPersonnages();
+            foreach (var perso in list)
+            {
+                var observer = perso as IPersonnageAMobiliser;
+                if (observer != null)
+                {
+                    AttacherPersonnage(observer);
+                }
+            }
+        }
+
+    }
+
+    public class QuartierGeneralAOK : QuartierGeneralAbstrait
+    {
+        public QuartierGeneralAOK(Game simu) : base(simu)
+        {
+        }
+
     }
 
 }

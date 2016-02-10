@@ -91,9 +91,9 @@ namespace MetaSimulatorConsole
 
         public abstract void AjouterZone(ZoneAbstraite c);
         //public abstract void AfficherZones()
-        public abstract List<PersonnageAbstract> ObtenirPersonnages();
         public abstract List<ObjetAbstrait> ObtenirObjets();
         public abstract bool AjouterPersonnage(PersonnageAbstract personnage);
+        public abstract List<PersonnageAbstract> ObtenirPersonnages();
         public abstract bool AjouterObjet(ObjetAbstrait objet);
         public abstract void EnleverObjet(ObjetAbstrait objet);
         public abstract bool AjouterCase(Coordonnees coor);
