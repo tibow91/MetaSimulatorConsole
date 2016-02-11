@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using MetaSimulatorConsole.Dijkstra;
 using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
@@ -66,6 +67,7 @@ namespace MetaSimulatorConsole.Simulation
 
         protected QuartierGeneralAbstrait(Game simu)
         {
+            PersonnagesToInsert = 0;
             Simulation = simu;
             Update(); // Pour mettre à jour la ZoneGénérale
         }
@@ -96,14 +98,36 @@ namespace MetaSimulatorConsole.Simulation
 
     public class QuartierGeneralAOK : QuartierGeneralAbstrait
     {
-        public QuartierGeneralAOK(Game simu) : base(simu)
-        {
-        }
+        public QuartierGeneralAOK(Game simu) : base(simu){}
 
 
         protected override void InsererPersonnagesRestants()
         {
-            throw new NotImplementedException();
+            //Insertion Personnages: Trouver la zone et le lieu où se trouvent les SpawnPoints 
+            foreach (var zone in ZonePrincipale.ObtenirZonesFinales())
+            {
+                foreach (var objet in zone.Objets)
+                {
+                    if (objet is AccessPoint)
+                    {
+                        var casesAdjacentes = Coordonnees.ObtenirCasesAdjacentes(objet.Case);
+                        foreach (var coor in casesAdjacentes)
+                        {
+                            if (zone.ContientCoordonnees(coor))
+                            {
+                                var node = (Node<Case>) zone.Simulation.Tableau[coor.X, coor.Y];
+                                CaseAgeOfKebab c = node.Value as CaseAgeOfKebab;
+                                if (c == null) continue;
+                                if (c.Walkable) 
+                                {
+                                    //
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // et insérer dans une case adjacente si c’est “walkable”
         }
     }
 
