@@ -15,6 +15,11 @@ namespace MetaSimulatorConsole.Tableau
         {
             Tableau = tableau;
         }
+
+        protected virtual Case GetNewCase()
+        {
+            return new Case();
+        }
         private void ConstruireCases()
         {
             int longueur = GameManager.Longueur;
@@ -23,7 +28,7 @@ namespace MetaSimulatorConsole.Tableau
 
             for (int i = 0; i < longueur; ++i)
                 for (int j = 0; j < largeur; ++j)
-                    Tableau[i, j] = new Case();
+                    Tableau[i, j] = GetNewCase();
         }
         protected abstract void ConstruireGrilleDepuisZone(ZoneGenerale zoneGenerale);
 
@@ -45,6 +50,11 @@ namespace MetaSimulatorConsole.Tableau
 
     class ConstructionGrilleAOK : ConstructionGrilleStrategy
     {
+        protected override Case GetNewCase()
+        {
+            return new CaseAgeOfKebab();
+        }
+
         protected override void ConstruireGrilleDepuisZone(ZoneGenerale zonegenerale)
         {
             foreach (var zone in zonegenerale.Zones)

@@ -69,7 +69,10 @@ namespace MetaSimulatorConsole.Dijkstra
     {
         protected override bool TestValidNode(Node<T> node)
         {
-            return true;
+            CaseAgeOfKebab c = node.Value as CaseAgeOfKebab;
+            if (c == null) return true;
+            if (c.Walkable) return true;
+            return false;
         }
     }
 }

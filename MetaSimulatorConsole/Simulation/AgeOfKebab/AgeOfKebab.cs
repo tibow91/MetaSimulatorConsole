@@ -10,7 +10,26 @@ namespace MetaSimulatorConsole.Simulation
 {
     class CaseAgeOfKebab : Case
     {
+        public bool Walkable;
         public CaseAgeOfKebab() : base(new TexturePikachuSurHerbe()) { }
+        public override void SetObjectToObserve(ObjetAbstrait obj)
+        {
+            if (obj == null) Walkable = true;
+            else if ((obj is SpawnPoint) || (obj is GatherPoint))
+                Walkable = false;
+            else
+                Walkable = true;
+            base.SetObjectToObserve(obj);
+        }
+
+        public override void SetPersonnageToObserve(PersonnageAbstract perso)
+        {
+            if (perso == null)
+                Walkable = true;
+            else
+                Walkable = false;
+            base.SetPersonnageToObserve(perso);
+        }
     }
     class GameAgeOfKebab : GameObservable
     {

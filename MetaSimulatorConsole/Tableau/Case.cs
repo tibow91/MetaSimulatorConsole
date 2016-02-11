@@ -9,7 +9,6 @@ using MetaSimulatorConsole.Simulation;
 namespace MetaSimulatorConsole
 {
     
-
     public class Case : IObservateurAbstrait
     {
         public Texture Textures;
@@ -39,13 +38,13 @@ namespace MetaSimulatorConsole
             Update();
         }
 
-        public void SetObjectToObserve(ObjetAbstrait obj)
+        public virtual void SetObjectToObserve(ObjetAbstrait obj)
         {
             ObjectToObserve = obj;
             Update();
         }
 
-        public void SetPersonnageToObserve(PersonnageAbstract perso)
+        public virtual void SetPersonnageToObserve(PersonnageAbstract perso)
         {
             PersonnageToObserve = perso;
             Update();
