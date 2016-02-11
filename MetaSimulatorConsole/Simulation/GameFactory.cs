@@ -104,7 +104,6 @@ namespace MetaSimulatorConsole
         public abstract override void ConstruireZones();
 
 
-        public void Update(){}
     }
    
 

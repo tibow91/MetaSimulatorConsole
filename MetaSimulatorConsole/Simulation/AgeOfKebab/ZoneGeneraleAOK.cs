@@ -15,7 +15,7 @@ namespace MetaSimulatorConsole
         [XmlIgnore]
         private ZoneComposite ZoneInterne;
         [XmlIgnore]
-        private ZoneFinale ZoneExterne, CaissesClient, CaissesCuistots, ZoneRepas;
+        public ZoneFinale ZoneExterne, CaissesClient, CaissesCuistots, ZoneRepas;
 
         public ZoneGeneraleAOK() : base("Zone Générale Age Of kebab", null) { }
         public ZoneGeneraleAOK(Game simu) 

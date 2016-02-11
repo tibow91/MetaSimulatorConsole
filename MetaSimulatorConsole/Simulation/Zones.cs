@@ -97,6 +97,13 @@ namespace MetaSimulatorConsole
         public abstract bool AjouterObjet(ObjetAbstrait objet);
         public abstract void EnleverObjet(ObjetAbstrait objet);
         public abstract bool AjouterCase(Coordonnees coor);
+        public void RelierAuTableauDeJeu()
+        {
+            DelierDuTableauDeJeu();
+            LierAuTableauDeJeu();
+        }
+        public abstract void LierAuTableauDeJeu();
+        public abstract void DelierDuTableauDeJeu();
         public bool ContientMemeInstance(ZoneAbstraite zone)
         {
             if(Simulation == null) return false;
@@ -309,16 +316,33 @@ namespace MetaSimulatorConsole
             return false;
         }
 
-  
+
+
+        public override void LierAuTableauDeJeu()
+        {
+            foreach (var zone in Zones)
+            {
+                zone.LierAuTableauDeJeu();
+            }
+        }
+
+        public override void DelierDuTableauDeJeu()
+        {
+            foreach(var zone in Zones)
+            {
+                zone.DelierDuTableauDeJeu();
+            }
+        }
+
     }
 
 
     public class ZoneFinale :  ZoneAbstraite,IEquatable<ZoneFinale>
     {
+        public Texture Texture;
         public List<PersonnageAbstract> Personnages = new List<PersonnageAbstract>();
         public List<ObjetAbstrait> Objets = new List<ObjetAbstrait>();
         public List<Coordonnees> Cases = new List<Coordonnees>();
-        public Texture Texture;
         public ZoneFinale() : base("Zone Finale générique",null) { }
         public ZoneFinale(string name,Texture texture,Game simu)
             : base(name,simu)
@@ -617,6 +641,16 @@ namespace MetaSimulatorConsole
                 if (nom == other.nom) return true;
             }
             return false;
+        }
+
+        public override void LierAuTableauDeJeu()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void DelierDuTableauDeJeu()
+        {
+            throw new NotImplementedException();
         }
     }
 

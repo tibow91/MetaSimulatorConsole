@@ -19,8 +19,8 @@ namespace MetaSimulatorConsole.Simulation
         {
             NomDuJeu = EGame.AgeOfKebab;
             //RemplirGrille();
-            manager.TableauDeJeu = new GrilleAOK();
             ConstruireZones();
+            Tableau.ConstruireGrilleDepuis(ZoneGenerale);
             QG = new QuartierGeneralAOK(this);
             Attach(QG);
         }
@@ -68,60 +68,4 @@ namespace MetaSimulatorConsole.Simulation
         }
     }
 
-
-    class GrilleAOK : Grille
-    {
-        public GrilleAOK() : base(50, 50) { }
-        public override void ConstruireGrille()
-        {
-            Console.WriteLine("GrilleAOK: Construction de la Grille ({0},{1})", Longueur, Largeur);
-
-            for (int i = 0; i < Longueur; ++i)
-            {
-                for (int j = 0; j < Largeur; ++j)
-                {
-                    this[i, j] = new Case();
-                }
-            }
-
-            var verticalIt = CreateIterator();
-
-            for (; verticalIt.CurrentItem() != null; verticalIt.Bas())
-            {
-                var It = verticalIt.Clone();
-                for (; It.CurrentItem() != null; It.Droite())
-                {
-                    var node = (Vertex)It.CurrentItem();
-
-                    if (It.ItGauche().CurrentItem() != null)
-                    {
-                        // Ajouter Le noeud de gauche parmi les edges
-                        node.Edges.Add(new Edge((Vertex)It.ItGauche().CurrentItem(), 1));
-                    }
-                    if (It.ItDroite().CurrentItem() != null)
-                    {
-                        // Ajouter Le noeud de droite parmi les edges
-                        node.Edges.Add(new Edge((Vertex)It.ItDroite().CurrentItem(), 1));
-                    }
-                    if (It.ItHaut().CurrentItem() != null)
-                    {
-                        // Ajouter Le noeud du haut parmi les edges
-                        node.Edges.Add(new Edge((Vertex)It.ItHaut().CurrentItem(), 1));
-                    }
-                    if (It.ItBas().CurrentItem() != null)
-                    {
-                        // Ajouter Le noeud du bas parmi les edges
-                        node.Edges.Add(new Edge((Vertex)It.ItBas().CurrentItem(), 1));
-                    }
-                }
-            }
-            Console.WriteLine("Fin de la Construction");
-        }
-
-        public ConstruireGrille(ZoneGenerale zone)
-        {
-
-        }
-
-    }
 }
