@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
@@ -203,6 +204,31 @@ namespace MetaSimulatorConsole
             if (gestionnaire != null && gestionnaire.Fenetre != null)
                 ShowInterface = gestionnaire.Fenetre.ShowInterface;
             Console.WriteLine("Mise à jour de la commande MontrerCacherInterface");
+        }
+    }
+
+    class LancerUnTourDeJeu : CommandGameManager
+    {
+        protected Game Simulation;
+        protected QuartierGeneralAbstrait QG;
+        public LancerUnTourDeJeu(GameManager manager) : base(manager) { Update(); }
+
+        public override void Execute()
+        {
+            if (QG != null)
+            {
+                Console.WriteLine("Vous avez demandé à lancer un tour de jeu");
+                QG.GererUnTour();
+            }
+            else throw new NullReferenceException("QG is Null");
+        }
+
+
+        public override void Update()
+        {
+            if (gestionnaire != null) Simulation = gestionnaire.Simulation;
+            if (Simulation != null) QG = Simulation.QG;
+            Console.WriteLine("Mise à jour de la commande 'LancerUnTourDeJeu'");
         }
     }
 

@@ -70,6 +70,7 @@ namespace MetaSimulatorConsole
             manager.Fenetre.TextMenu.Add("Lancer la simulation", "Touche 0");
             manager.Fenetre.TextMenu.Add("Arrêter la simulation", "Touche 1");
             manager.Fenetre.TextMenu.Add("Cacher l'interface de commandes ", "Touche 2");
+            manager.Fenetre.TextMenu.Add("Lancer Un Tour De Jeu", "Touche 3");
             manager.Fenetre.TextMenu.Add("Retour au menu principal", "Touche Precedent");
         }
 

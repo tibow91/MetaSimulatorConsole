@@ -71,7 +71,7 @@ namespace MetaSimulatorConsole.Simulation
         protected abstract PersonnageAbstract PersonnageToInsertAt(Coordonnees coor);
         protected QuartierGeneralAbstrait(Game simu)
         {
-            PersonnagesToInsert = 0;
+            PersonnagesToInsert = 10;
             Simulation = simu;
             Update(); // Pour mettre à jour la ZoneGénérale
         }
@@ -92,6 +92,12 @@ namespace MetaSimulatorConsole.Simulation
 
         public void GererUnTour()
         {
+            // Si une simulation continue est en cours, impossible !
+            if (Simulation.Started)
+            {
+                Console.WriteLine("GererUnTour: Impossible de lancer un tour manuellement, car la simulation est en cours !");
+                return;
+            }
             MobiliserPersonnages();
             InsererPersonnagesRestants();
         }
@@ -117,16 +123,19 @@ namespace MetaSimulatorConsole.Simulation
             {
                 foreach (var objet in zone.Objets) // Pour chaque objet de cette zone finale
                 {
-                    if (objet is AccessPoint) // Si c'est un pt d'accès
+                    if (objet is SpawnPoint) // Si c'est un pt d'apparition
                     {
+                        Console.WriteLine("Objet SpawnPoint trouvé " + objet + " dans la zone " + zone);
                         var casesAdjacentes = Coordonnees.ObtenirCasesAdjacentes(objet.Case);
                         foreach (var coor in casesAdjacentes) // Pour chaque case adjacente à ce pt d'accès
                         {
                             if (zone.ContientCoordonnees(coor)) // De cette zone !
                             {
-                                var node = (Node<Case>) zone.Simulation.Tableau[coor.X, coor.Y];
+                                Console.WriteLine("Case adjacente  trouvée: " + coor + " dans la " + zone);
+                                var node = (Node<Case>)zone.Simulation.Tableau[coor.X, coor.Y];
                                 CaseAgeOfKebab c = node.Value as CaseAgeOfKebab;
-                                if (c == null) continue;
+                                if (c == null)
+                                    throw new InvalidCastException("La case n'est pas au format CaseAgeOfKebab");
                                 if (c.Walkable) // Si un personnage peut aller dans cette case, alors ..
                                 {
                                     if (PersonnagesToInsert > 0)
@@ -139,6 +148,10 @@ namespace MetaSimulatorConsole.Simulation
                                             AttacherPersonnage((Client) perso);
                                         }
                                     }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Cette Case n'est pas Walkable !");
                                 }
                             }
                         }

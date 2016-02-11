@@ -10,7 +10,7 @@ namespace MetaSimulatorConsole.Simulation
 {
     class CaseAgeOfKebab : Case
     {
-        public bool Walkable;
+        public bool Walkable = true;
         public CaseAgeOfKebab() : base(new TexturePikachuSurHerbe()) { }
         public override void SetObjectToObserve(ObjetAbstrait obj)
         {
