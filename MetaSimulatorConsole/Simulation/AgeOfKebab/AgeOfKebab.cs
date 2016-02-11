@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MetaSimulatorConsole.Dijkstra;
+using MetaSimulatorConsole.Tableau;
 
 namespace MetaSimulatorConsole.Simulation
 {
@@ -20,6 +21,7 @@ namespace MetaSimulatorConsole.Simulation
             NomDuJeu = EGame.AgeOfKebab;
             //RemplirGrille();
             ConstruireZones();
+            Tableau.SetAlgoConstruction(new ConstructionGrilleAOK(Tableau));
             Tableau.ConstruireGrilleDepuis(ZoneGenerale);
             QG = new QuartierGeneralAOK(this);
             Attach(QG);

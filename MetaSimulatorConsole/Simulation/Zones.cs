@@ -645,12 +645,40 @@ namespace MetaSimulatorConsole
 
         public override void LierAuTableauDeJeu()
         {
-            throw new NotImplementedException();
+            var linkZone = new LinkCaseToZone();
+            foreach (var coor in Cases)
+                linkZone.LinkObject(coor, this, Simulation.Tableau);
+
+            var linkObject = new LinkCaseToObject();
+            foreach (var obj in Objets)
+            {
+                linkObject.LinkObject(obj.Case, obj, Simulation.Tableau);
+            }
+
+            var linkPersonnage = new LinkCaseToPersonnage();
+            foreach (var perso in Personnages)
+            {
+                linkPersonnage.LinkObject(perso.Case, perso, Simulation.Tableau);
+            }
         }
 
         public override void DelierDuTableauDeJeu()
         {
-            throw new NotImplementedException();
+            var unlinkZone = new UnLinkCaseFromZone();
+            foreach (var coor in Cases)
+                unlinkZone.LinkObject(coor, null, Simulation.Tableau);
+
+            var unlinkObject = new UnLinkCaseFromObject();
+            foreach (var obj in Objets)
+            {
+                unlinkObject.LinkObject(obj.Case, null, Simulation.Tableau);
+            }
+
+            var unlinkPersonnage = new UnLinkCaseFromPersonnage();
+            foreach (var perso in Personnages)
+            {
+                unlinkPersonnage.LinkObject(perso.Case, null, Simulation.Tableau);
+            }
         }
     }
 

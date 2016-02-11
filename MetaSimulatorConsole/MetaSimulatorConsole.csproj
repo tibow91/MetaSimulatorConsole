@@ -83,6 +83,7 @@
     <Compile Include="Gestion\AppuiClavier.cs" />
     <Compile Include="Gestion\Commandes.cs" />
     <Compile Include="Simulation\GameFactory.cs" />
+    <Compile Include="Tableau\ConstructionGrille.cs" />
     <Compile Include="unused\MVC\GameController.cs" />
     <Compile Include="unused\MVC\GameView.cs" />
     <Compile Include="Tableau\Grille.cs" />

@@ -16,16 +16,22 @@ namespace MetaSimulatorConsole.Simulation
 
          protected abstract void AttachObject(Node<Case> node, SujetObserveAbstrait obj);
 
+        protected virtual bool TestNullObject(SujetObserveAbstrait obj)
+        {
+            if (obj == null)
+            {
+                Console.WriteLine("LinkObject: Impossible car l'object est nul !");
+                return true;
+            }
+            return false;
+        }
+
         public void LinkObject(Coordonnees coor, SujetObserveAbstrait obj, Grille grille)
         {
             if (coor == null) return;
             if (!coor.EstValide()) return;
             if(grille == null) return;
-            if (obj == null) 
-            {
-                Console.WriteLine("LinkObject: Impossible car l'object est nul !");
-                return;
-            }
+            if (TestNullObject(obj)) return;
             var node = GetNode(coor,grille);
              if (node == null)
              {
@@ -33,7 +39,7 @@ namespace MetaSimulatorConsole.Simulation
                  return;
              }
              AttachObject(node, obj);
-             obj.Attach(node.Value);
+             if(obj != null) obj.Attach(node.Value);
         }
     }
 
@@ -43,8 +49,21 @@ namespace MetaSimulatorConsole.Simulation
         {
             node.Value.SetZoneToObserve((ZoneFinale) obj);
         }
+
     }
 
+    class UnLinkCaseFromZone : LinkCaseTemplate
+    {
+        protected override bool TestNullObject(SujetObserveAbstrait obj)
+        {
+            return false;
+        }
+
+        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        {
+            node.Value.SetZoneToObserve(null);
+        }
+    }
     class LinkCaseToObject : LinkCaseTemplate
     {
         protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
@@ -53,11 +72,37 @@ namespace MetaSimulatorConsole.Simulation
         }
     }
 
+    class UnLinkCaseFromObject : LinkCaseTemplate
+    {
+        protected override bool TestNullObject(SujetObserveAbstrait obj)
+        {
+            return false;
+        }
+
+        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        {
+            node.Value.SetObjectToObserve(null);
+        }
+    }
+
     class LinkCaseToPersonnage : LinkCaseTemplate
     {
         protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
         {
-            node.Value.SetObjectToObserve((ObjetAbstrait)obj);
+            node.Value.SetPersonnageToObserve((PersonnageAbstract)obj);
+        }
+    }
+
+    class UnLinkCaseFromPersonnage: LinkCaseTemplate
+    {
+        protected override bool TestNullObject(SujetObserveAbstrait obj)
+        {
+            return false;
+        }
+
+        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        {
+            node.Value.SetPersonnageToObserve(null);
         }
     }
 }
