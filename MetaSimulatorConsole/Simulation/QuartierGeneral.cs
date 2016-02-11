@@ -48,7 +48,7 @@ namespace MetaSimulatorConsole.Simulation
             return PersonnagesMobilises;
         }
 
-        public abstract void Update();
+        public abstract void UpdateDataFromPersonnage();
     }
 
     [XmlInclude(typeof(QuartierGeneralAOK))]
@@ -61,7 +61,7 @@ namespace MetaSimulatorConsole.Simulation
 
         public int PersonnagesInseres;
         public int PersonnagesToInsert { get; set; }
-        public override void Update()
+        public override void UpdateDataFromPersonnage()
         {
             DeAttacherTousLesPersonnagesMobilises();
             if(Simulation != null) ZonePrincipale = Simulation.ZoneGenerale;
@@ -71,9 +71,9 @@ namespace MetaSimulatorConsole.Simulation
         protected abstract PersonnageAbstract PersonnageToInsertAt(Coordonnees coor);
         protected QuartierGeneralAbstrait(Game simu)
         {
-            PersonnagesToInsert = 10;
+            PersonnagesToInsert = 1;
             Simulation = simu;
-            Update(); // Pour mettre à jour la ZoneGénérale
+            UpdateDataFromPersonnage(); // Pour mettre à jour la ZoneGénérale
         }
 
         protected void ChargerPersonnagesAMobiliser()

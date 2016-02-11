@@ -83,7 +83,7 @@ namespace MetaSimulatorConsole
             return true;
         }
 
-        public void Update()
+        public void UpdateDataFromPersonnage()
         {
             Tableau = Gestionnaire.TableauDeJeu;
         }

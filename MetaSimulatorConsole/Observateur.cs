@@ -3,9 +3,9 @@ using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole
 {
-    public interface IObservateurAbstrait
+    public interface IObservateurAbstrait 
     {
-        void Update();
+        void UpdateDataFromPersonnage();
     }
 
     public abstract class SujetObserveAbstrait
@@ -26,7 +26,7 @@ namespace MetaSimulatorConsole
         {
             foreach (IObservateurAbstrait o in observateurList)
             {
-                o.Update();
+                o.UpdateDataFromPersonnage();
             }
         }
 

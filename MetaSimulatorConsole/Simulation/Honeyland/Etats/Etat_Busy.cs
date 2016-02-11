@@ -8,11 +8,11 @@ namespace MetaSimulatorConsole.Simulation.Honeyland.Etats
         {
         }
 
-        public override string ModifieEtat(PersonnageAbstract p)
+        public override void ModifieEtat(PersonnageMobilisable p)
         {
             p.Etat = new Etat_Busy();
 
-            return String.Format("{0} est maintenant {1}", p.Nom, this.Nom);
+            Console.WriteLine(String.Format("{0} est maintenant {1}", p.Nom, this.Nom));
         }
     }
 }

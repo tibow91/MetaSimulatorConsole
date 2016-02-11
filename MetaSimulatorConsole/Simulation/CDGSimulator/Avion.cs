@@ -8,10 +8,6 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
             : base("Avion",EGame.CDGSimulator,new TexturePlane1())
         {
         }
-        public override void Ajoute(PersonnageAbstract c)
-        {
-            throw new NotImplementedException();
-        }
 
         public override void AnalyserSituation()
         {
@@ -19,11 +15,6 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
         }
 
         public override void Execution()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Retire(PersonnageAbstract c)
         {
             throw new NotImplementedException();
         }

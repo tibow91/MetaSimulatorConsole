@@ -53,7 +53,9 @@
     <Compile Include="Simulation\AccessPoint.cs" />
     <Compile Include="Simulation\AgeOfKebab\Caisses.cs" />
     <Compile Include="Simulation\AgeOfKebab\Client.cs" />
+    <Compile Include="Simulation\AgeOfKebab\ComportementsClient.cs" />
     <Compile Include="Simulation\AgeOfKebab\EtatClient.cs" />
+    <Compile Include="Simulation\PersonnageBehavior.cs" />
     <Compile Include="Simulation\AgeOfKebab\Serveur.cs" />
     <Compile Include="Simulation\AgeOfKebab\Table.cs" />
     <Compile Include="Simulation\GatherPoint.cs" />

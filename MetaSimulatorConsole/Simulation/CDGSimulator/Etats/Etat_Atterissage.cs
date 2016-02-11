@@ -9,11 +9,11 @@ namespace MetaSimulatorConsole.Simulation.CDGSimulator
         {
         }
 
-        public override string ModifieEtat(PersonnageAbstract p)
+        public override void ModifieEtat(PersonnageMobilisable p)
         {
             p.Etat = new Etat_Atterissage();
 
-            return String.Format("{0} est maintenant {1}", p.Nom, this.Nom);
+            Console.WriteLine(String.Format("{0} est maintenant {1}", p.Nom, this.Nom));
         }
     }
 }

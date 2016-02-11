@@ -19,14 +19,14 @@ namespace MetaSimulatorConsole
         }
         public abstract void Execute();
 
-        public virtual void Update()
+        public virtual void UpdateDataFromPersonnage()
         {
         }
     }
 
     class StopSimulation : CommandGameManager
     {
-        public StopSimulation(GameManager manager) : base(manager){ Update();}
+        public StopSimulation(GameManager manager) : base(manager){ UpdateDataFromPersonnage();}
         private Game Simulation;
         public override void Execute()
         {
@@ -34,7 +34,7 @@ namespace MetaSimulatorConsole
             if(Simulation != null)
                 Simulation.Stop = true;
         }
-        public override void Update()
+        public override void UpdateDataFromPersonnage()
         {
             if (gestionnaire != null )
                 Simulation = gestionnaire.Simulation;
@@ -174,7 +174,7 @@ namespace MetaSimulatorConsole
 
     class MontrerCacherInterface : CommandGameManager
     {
-        public MontrerCacherInterface(GameManager manager) : base(manager) { Update(); }
+        public MontrerCacherInterface(GameManager manager) : base(manager) { UpdateDataFromPersonnage(); }
         private bool _showInterface;
 
         private bool ShowInterface
@@ -199,7 +199,7 @@ namespace MetaSimulatorConsole
                 }
             }
         }
-        public override void Update()
+        public override void UpdateDataFromPersonnage()
         {
             if (gestionnaire != null && gestionnaire.Fenetre != null)
                 ShowInterface = gestionnaire.Fenetre.ShowInterface;
@@ -211,7 +211,7 @@ namespace MetaSimulatorConsole
     {
         protected Game Simulation;
         protected QuartierGeneralAbstrait QG;
-        public LancerUnTourDeJeu(GameManager manager) : base(manager) { Update(); }
+        public LancerUnTourDeJeu(GameManager manager) : base(manager) { UpdateDataFromPersonnage(); }
 
         public override void Execute()
         {
@@ -224,7 +224,7 @@ namespace MetaSimulatorConsole
         }
 
 
-        public override void Update()
+        public override void UpdateDataFromPersonnage()
         {
             if (gestionnaire != null) Simulation = gestionnaire.Simulation;
             if (Simulation != null) QG = Simulation.QG;

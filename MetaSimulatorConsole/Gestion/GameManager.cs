@@ -223,7 +223,7 @@ namespace MetaSimulatorConsole
         }
 
 
-        public void Update()
+        public void UpdateDataFromPersonnage()
         {
             UpdateObservers();
         }

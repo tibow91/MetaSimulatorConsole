@@ -8,7 +8,7 @@ namespace MetaSimulatorConsole.Simulation
         {
             Nom = nom;
         }
-        public abstract string ModifieEtat(PersonnageAbstract p);
+        public abstract void ModifieEtat(PersonnageMobilisable p);
         public override string ToString()
         {
             return Nom;

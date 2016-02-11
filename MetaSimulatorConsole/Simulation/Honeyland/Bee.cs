@@ -8,10 +8,7 @@ namespace MetaSimulatorConsole.Simulation.Honeyland
             : base("Abeille",EGame.Honeyland,new TextureBee())
         {
         }
-        public override void Ajoute(PersonnageAbstract c)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public override void AnalyserSituation()
         {
@@ -22,13 +19,6 @@ namespace MetaSimulatorConsole.Simulation.Honeyland
         {
             throw new NotImplementedException();
         }
-
-        public override void Retire(PersonnageAbstract c)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
         public override bool EstValide()
         {

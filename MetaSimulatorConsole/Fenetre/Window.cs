@@ -69,7 +69,7 @@ namespace MetaSimulatorConsole
             return observers;
         }
 
-        public void Update()
+        public void UpdateDataFromPersonnage()
         {
             Tableau = Gestionnaire.TableauDeJeu;
         }

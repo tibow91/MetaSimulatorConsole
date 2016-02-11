@@ -102,14 +102,14 @@ namespace MetaSimulatorConsole
             return toucheEchap;
         }
 
-        public void Update()
+        public void UpdateDataFromPersonnage()
         {
             foreach (var commande in commandes)
             {
-                commande.Value.Update();
+                commande.Value.UpdateDataFromPersonnage();
             }
             if(CommandeSuivante != null)
-                CommandeSuivante.Update();
+                CommandeSuivante.UpdateDataFromPersonnage();
         }
     }
 

@@ -9,8 +9,8 @@ namespace MetaSimulatorConsole.Simulation
     {
         public EGame Simulation;
         public string Nom { get; set; }
-        protected int PointsDeVie { get; set; }
-        protected int SeuilCritique { get; set; }
+        public int PointsDeVie { get; set; }
+        public int SeuilCritique { get; set; }
 
         public EtatAbstract Etat { get; set; }
         public Coordonnees Case { get; set; }
@@ -55,8 +55,6 @@ namespace MetaSimulatorConsole.Simulation
             return false;
         }
         
-        public abstract void Ajoute(PersonnageAbstract c);
-        public abstract void Retire(PersonnageAbstract c);
 
         public virtual bool EstValide()
         {
@@ -82,5 +80,29 @@ namespace MetaSimulatorConsole.Simulation
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";
         }
 
+    }
+
+
+    public abstract class PersonnageMobilisable : PersonnageAbstract,IPersonnageAMobiliser
+    {
+        public PersonnageBehavior Comportement;
+        [XmlIgnore]
+        public ZoneGenerale ZonePrincipale;
+        [XmlIgnore]
+        public ZoneFinale ZoneActuelle;
+        protected PersonnageMobilisable(string nom,EGame simulation,TextureDecorator texture)
+            : base(nom, simulation, texture) { }
+        public void SetZones(ZoneGenerale zonegenerale,ZoneFinale zoneactuelle) // définit le contexte d'exécution
+        {
+            ZonePrincipale = zonegenerale;
+            ZoneActuelle = zoneactuelle;
+            if(Comportement != null) Comportement.UpdateDataFromPersonnage();
+        }
+        
+        public override abstract void AnalyserSituation();
+
+        public override abstract void Execution();
+
+        public abstract void Mobiliser();
     }
 }

@@ -6,34 +6,37 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
-    public class Client: PersonnageAbstract,IPersonnageAMobiliser
+    
+    public class Client: PersonnageMobilisable
     {
         public Client(string nom,Coordonnees coor)
             : base(nom, EGame.AgeOfKebab, new TexturePlayer())
         {
             SetCoordonnees(coor);
+            Etat = new EtatClientEnAttenteDeFaim();
+            Etat.ModifieEtat(this);
         }
 
+        /* ici on analyse si l'état du personnage convient selon ses paramètres
+         * et on change l'état selon les conclusions, qui se chargera
+         * de changer le comportement à associer automatiquement */
         public override void AnalyserSituation()
         {
-            throw new NotImplementedException();
+            if (Comportement != null) Comportement.AnalyserSituation();
+
         }
 
+        /* Ici on exécute le comportement paramétré, qui lui aura un algorithme de recherche 
+         * différent prédéfini pour chaque état */
         public override void Execution()
         {
-            throw new NotImplementedException();
+            if (Etat is EtatClientEnAttenteDeFaim)
+            {
+                // Décrémenter points de vie
+                // S'il est dans la zone externe, il doit atteindre le point de rassemblement
+            }
         }
-
-        public override void Ajoute(PersonnageAbstract c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Retire(PersonnageAbstract c)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Coordonnees AtteindreGatherPoint(ZoneFinale zone)
         {
             return null;
@@ -61,9 +64,10 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
             return null;
         }
 
-        public void Mobiliser()
+        public override void Mobiliser()
         {
-            throw new NotImplementedException();
+            AnalyserSituation();
+            Execution();
         }
     }
 }
