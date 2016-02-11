@@ -33,7 +33,7 @@ namespace MetaSimulatorConsole
             if(Simulation != null)
                 Simulation.Stop = true;
         }
-        public void Update()
+        public override void Update()
         {
             if (gestionnaire != null )
                 Simulation = gestionnaire.Simulation;

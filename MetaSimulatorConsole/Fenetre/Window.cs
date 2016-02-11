@@ -14,7 +14,7 @@ using OpenTK.Input;
 namespace MetaSimulatorConsole
 {
 
-    public class Window : GameWindow
+    public class Window : GameWindow,IObservateurAbstrait
     {
         private Graphisme Graphismes;
         public Clavier Touches;
@@ -26,13 +26,15 @@ namespace MetaSimulatorConsole
 
         public Grille Tableau
         {
-           get { return tableau; }
+            get { return tableau; }
+            set { tableau = value; }
         }
 
         public Window(int width, int height, GameManager manager)
             : base(width, height)
         {
             Gestionnaire = manager;
+            manager.Attach(this);
             tableau = Gestionnaire.TableauDeJeu;
             Touches = new Clavier(this);
             Graphismes = new Graphisme(this);
@@ -65,6 +67,11 @@ namespace MetaSimulatorConsole
                 observers.Add(o);
             }
             return observers;
+        }
+
+        public void Update()
+        {
+            Tableau = Gestionnaire.TableauDeJeu;
         }
     }
 

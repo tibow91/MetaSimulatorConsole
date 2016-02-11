@@ -28,8 +28,19 @@ namespace MetaSimulatorConsole
 
         Dictionary<NomJeu, Game> Jeux = new Dictionary<NomJeu, Game>(){};
         public Window Fenetre { get; set; }
-
-        public Grille TableauDeJeu;
+        private Grille tableauDeJeu;
+        public Grille TableauDeJeu
+        {
+            get
+            {
+                return tableauDeJeu;
+            }
+            set
+            {
+                tableauDeJeu = value;
+                UpdateObservers();
+            }
+        }
         private Game _simulation;
         public Game Simulation
         {

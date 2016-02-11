@@ -33,7 +33,7 @@ namespace MetaSimulatorConsole
         {
             ConstruireGrille();
         }
-        private void ConstruireGrille()
+        public virtual void ConstruireGrille()
         {
             Console.WriteLine("Construction de la Grille ({0},{1})",Longueur,Largeur);
 
