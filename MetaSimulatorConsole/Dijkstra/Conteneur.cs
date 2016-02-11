@@ -88,14 +88,22 @@ namespace MetaSimulatorConsole.Dijkstra
 
     public class ConteneurParcourable<T> : Conteneur<T>
     {
+        private ComputePathsStrategy<T> AlgoComputePath;
         public ConteneurParcourable(int longueur, int largeur)
             : base(longueur, largeur)
         {
+            SetAlgoComputePath(new ComputePathDefault<T>());
+        }
+
+        public void SetAlgoComputePath(ComputePathsStrategy<T> algo)
+        {
+            AlgoComputePath = algo;
         }
         public void computePaths(Node<T> source, Node<T> dest)
         {
+            AlgoComputePath.ComputePaths(source,dest);
             source.minDistance = 0;
-            //  visit each vertex u, always visiting vertex with smallest minDistance first
+         /*   //  visit each vertex u, always visiting vertex with smallest minDistance first
 
             PriorityQueue<Node<T>> vertexQueue = new PriorityQueue<Node<T>>();
             vertexQueue.add(source);
@@ -132,7 +140,7 @@ namespace MetaSimulatorConsole.Dijkstra
 
                 //            System.out.println("IDijkstraNode u = " + u);
             }
-            source.previous = null;
+            source.previous = null;*/
         }
 
         public ArrayList getShortestPathTo(Vertex target)

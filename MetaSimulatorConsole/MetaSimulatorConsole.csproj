@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dijkstra\ComputePaths.cs" />
     <Compile Include="Dijkstra\Conteneur.cs" />
     <Compile Include="Fenetre\Clavier.cs" />
     <Compile Include="Fenetre\Graphisme.cs" />

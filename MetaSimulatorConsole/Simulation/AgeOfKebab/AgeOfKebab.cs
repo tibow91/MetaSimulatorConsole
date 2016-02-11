@@ -22,6 +22,7 @@ namespace MetaSimulatorConsole.Simulation
             //RemplirGrille();
             ConstruireZones();
             Tableau.SetAlgoConstruction(new ConstructionGrilleAOK(Tableau));
+            Tableau.SetAlgoComputePath(new ComputePathsAOK<Case>());
             Tableau.ConstruireGrilleDepuis(ZoneGenerale);
             QG = new QuartierGeneralAOK(this);
             Attach(QG);

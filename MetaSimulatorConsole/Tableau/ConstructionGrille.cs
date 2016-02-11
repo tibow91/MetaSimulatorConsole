@@ -7,11 +7,11 @@ using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole.Tableau
 {
-    public abstract class ConstructionGrille // PATTERN STRATEGIE + TEMPLATE
+    public abstract class ConstructionGrilleStrategy // PATTERN STRATEGIE + TEMPLATE
     {
         protected Grille Tableau;
 
-        protected ConstructionGrille(Grille tableau)
+        protected ConstructionGrilleStrategy(Grille tableau)
         {
             Tableau = tableau;
         }
@@ -43,7 +43,7 @@ namespace MetaSimulatorConsole.Tableau
 
     }
 
-    class ConstructionGrilleAOK : ConstructionGrille
+    class ConstructionGrilleAOK : ConstructionGrilleStrategy
     {
         protected override void ConstruireGrilleDepuisZone(ZoneGenerale zonegenerale)
         {

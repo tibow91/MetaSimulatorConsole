@@ -13,7 +13,7 @@ namespace MetaSimulatorConsole
     public class Grille : ConteneurParcourable<Case> 
     {
         private static Grille instance;
-        protected ConstructionGrille AlgoConstruction;
+        protected ConstructionGrilleStrategy AlgoConstruction;
 
         public static bool HasInstance()
         {
@@ -21,7 +21,7 @@ namespace MetaSimulatorConsole
             return true;
         }
 
-        public void SetAlgoConstruction(ConstructionGrille algo)
+        public void SetAlgoConstruction(ConstructionGrilleStrategy algo)
         {
             AlgoConstruction = algo;
         }
