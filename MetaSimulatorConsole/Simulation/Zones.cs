@@ -89,6 +89,7 @@ namespace MetaSimulatorConsole
             Simulation = simulation;
         }
 
+        public abstract List<ZoneFinale> ObtenirZonesFinales();
         public abstract void AjouterZone(ZoneAbstraite c);
         //public abstract void AfficherZones()
         public abstract List<ObjetAbstrait> ObtenirObjets();
@@ -160,15 +161,23 @@ namespace MetaSimulatorConsole
         }
 
 
+        public override List<ZoneFinale> ObtenirZonesFinales()
+        {
+            var list = new List<ZoneFinale>();
+            foreach (var zone in Zones)
+            {
+                var item = zone as ZoneFinale;
+                if (item != null) 
+                    list.Add(item);
+                else
+                    list.AddRange(zone.ObtenirZonesFinales());
+            }
+            return list;
+        }
+
         public override List<PersonnageAbstract> ObtenirPersonnages()
         {
-            var liste = new List<PersonnageAbstract>();
-            foreach (ZoneAbstraite zone in Zones)
-            {
-                foreach(var personnage in zone.ObtenirPersonnages())
-                    liste.Add(personnage);
-            }
-            return liste;
+            return Zones.SelectMany(zone => zone.ObtenirPersonnages()).ToList();
         }
 
         public override List<ObjetAbstrait> ObtenirObjets()
@@ -333,6 +342,7 @@ namespace MetaSimulatorConsole
                 zone.DelierDuTableauDeJeu();
             }
         }
+
 
     }
 
@@ -679,6 +689,11 @@ namespace MetaSimulatorConsole
             {
                 unlinkPersonnage.LinkObject(perso.Case, null, Simulation.Tableau);
             }
+        }
+
+        public override List<ZoneFinale> ObtenirZonesFinales()
+        {
+            return new List<ZoneFinale>(){ this};
         }
     }
 

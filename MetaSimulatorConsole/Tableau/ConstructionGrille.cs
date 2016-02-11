@@ -50,62 +50,63 @@ namespace MetaSimulatorConsole.Tableau
 
     class ConstructionGrilleAOK : ConstructionGrilleStrategy
     {
+        public ConstructionGrilleAOK(Grille tableau) : base(tableau) { }
+
         protected override Case GetNewCase()
         {
             return new CaseAgeOfKebab();
         }
-
+        
         protected override void ConstruireGrilleDepuisZone(ZoneGenerale zonegenerale)
         {
-            foreach (var zone in zonegenerale.Zones)
+            var zones = zonegenerale.ObtenirZonesFinales();
+            foreach (var zone in zones)
             {
-                if (zone is ZoneFinale) // On lie toutes les cases adjacentes de la zone entre elles
-                {
-                    ZoneFinale zonecast = (ZoneFinale)zone;
-                    foreach (var coor1 in zonecast.Cases)
-                    {
-                        foreach (var coor2 in zonecast.Cases)
-                        {
-                            if (coor1.Equals(coor2)) continue;
-                            if (coor1.EstAdjacent(coor2))
-                            {
-                                var node = (Vertex)Tableau[coor1.X, coor2.Y];
-                                node.Edges.Add(new Edge((Vertex)Tableau[coor2.X, coor2.Y], 1));
-                            }
-                        }
-                    }
-                    foreach (var zone2 in zonegenerale.Zones)
-                    {
-                        if (zone2 is ZoneFinale) // On lie tous les points d'accès adjacents dans des zones différentes
-                        {
-                            ZoneFinale zonecast2 = (ZoneFinale)zone2;
-                            if (zonecast.Equals(zonecast2)) continue;
-                            // on compare mtn les pts d'accès entre eux
-                            foreach (var obj in zonecast.Objets)
-                            {
-                                if (obj is AccessPoint)
-                                {
-                                    foreach (var obj2 in zonecast2.Objets)
-                                    {
-                                        if (obj2 is AccessPoint)
-                                        {
-                                            if (obj.Case.EstAdjacent(obj2.Case))
-                                            {
-                                                var node = (Vertex)Tableau[obj.Case.X, obj.Case.Y];
-                                                node.Edges.Add(new Edge((Vertex)Tableau[obj2.Case.X, obj2.Case.Y], 1));
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                if (zone == null) continue;
+                // On lie toutes les cases adjacentes de la zone entre elles
 
+                foreach (var coor1 in zone.Cases)
+                {
+                    foreach (var coor2 in zone.Cases)
+                    {
+                        if (coor1.Equals(coor2)) continue;
+                        if (coor1.EstAdjacent(coor2))
+                        {
+                            var node = (Vertex)Tableau[coor1.X, coor2.Y];
+                            node.Edges.Add(new Edge((Vertex)Tableau[coor2.X, coor2.Y], 1));
                         }
                     }
                 }
+                foreach (var zone2 in zones)
+                {
+                    if (zone2 == null) continue;
+                     // On lie tous les points d'accès adjacents dans des zones différentes
+                    
+                    if (zone.Equals(zone2)) continue;
+                    // on compare mtn les pts d'accès entre eux
+                    foreach (var obj in zone.Objets)
+                    {
+                        if (obj is AccessPoint)
+                        {
+                            foreach (var obj2 in zone2.Objets)
+                            {
+                                if (obj2 is AccessPoint)
+                                {
+                                    if (obj.Case.EstAdjacent(obj2.Case))
+                                    {
+                                        var node = (Vertex)Tableau[obj.Case.X, obj.Case.Y];
+                                        node.Edges.Add(new Edge((Vertex)Tableau[obj2.Case.X, obj2.Case.Y], 1));
+                                    }
+                                }
+                            }
+                        }
+                    }
 
+                }
             }
-        }
+         }
 
-        public ConstructionGrilleAOK(Grille tableau) : base(tableau){}
+
     }
+    
 }
