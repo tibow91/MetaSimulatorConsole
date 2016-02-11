@@ -18,7 +18,7 @@ namespace MetaSimulatorConsole.Tableau
 
         protected virtual Case GetNewCase()
         {
-            return new Case();
+            return new CaseAgeOfKebabFactory().CreerCase();
         }
         private void ConstruireCases()
         {
