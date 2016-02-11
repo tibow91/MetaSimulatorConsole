@@ -8,9 +8,10 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
     public class Client: PersonnageAbstract,IPersonnageAMobiliser
     {
-        public Client(string nom)
+        public Client(string nom,Coordonnees coor)
             : base(nom, EGame.AgeOfKebab, new TexturePlayer())
         {
+            SetCoordonnees(coor);
         }
 
         public override void AnalyserSituation()

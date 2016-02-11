@@ -14,7 +14,7 @@ namespace MetaSimulatorConsole.Simulation
         void Mobiliser();
     }
 
-    public abstract class QuartierGeneralObserve : IObservateurAbstrait
+    public abstract class QuartierGeneralObserve :  IObservateurAbstrait
     {
         protected QuartierGeneralObserve() { }
         private List<IPersonnageAMobiliser> PersonnagesMobilises = new List<IPersonnageAMobiliser>();
@@ -57,6 +57,9 @@ namespace MetaSimulatorConsole.Simulation
         // Songer aussi à placer le module de statistique à l'intérieur
         private readonly  Game Simulation;
         protected ZoneGenerale ZonePrincipale;
+
+
+        public int PersonnagesInseres;
         public int PersonnagesToInsert { get; set; }
         public override void Update()
         {
@@ -65,6 +68,7 @@ namespace MetaSimulatorConsole.Simulation
             ChargerPersonnagesAMobiliser();
         }
 
+        protected abstract PersonnageAbstract PersonnageToInsertAt(Coordonnees coor);
         protected QuartierGeneralAbstrait(Game simu)
         {
             PersonnagesToInsert = 0;
@@ -101,34 +105,48 @@ namespace MetaSimulatorConsole.Simulation
         public QuartierGeneralAOK(Game simu) : base(simu){}
 
 
+        protected override PersonnageAbstract PersonnageToInsertAt(Coordonnees coor)
+        {
+            return new Client("Client " + (PersonnagesInseres+1),coor);
+        }
+
         protected override void InsererPersonnagesRestants()
         {
             //Insertion Personnages: Trouver la zone et le lieu où se trouvent les SpawnPoints 
             foreach (var zone in ZonePrincipale.ObtenirZonesFinales())
             {
-                foreach (var objet in zone.Objets)
+                foreach (var objet in zone.Objets) // Pour chaque objet de cette zone finale
                 {
-                    if (objet is AccessPoint)
+                    if (objet is AccessPoint) // Si c'est un pt d'accès
                     {
                         var casesAdjacentes = Coordonnees.ObtenirCasesAdjacentes(objet.Case);
-                        foreach (var coor in casesAdjacentes)
+                        foreach (var coor in casesAdjacentes) // Pour chaque case adjacente à ce pt d'accès
                         {
-                            if (zone.ContientCoordonnees(coor))
+                            if (zone.ContientCoordonnees(coor)) // De cette zone !
                             {
                                 var node = (Node<Case>) zone.Simulation.Tableau[coor.X, coor.Y];
                                 CaseAgeOfKebab c = node.Value as CaseAgeOfKebab;
                                 if (c == null) continue;
-                                if (c.Walkable) 
+                                if (c.Walkable) // Si un personnage peut aller dans cette case, alors ..
                                 {
-                                    //
+                                    if (PersonnagesToInsert > 0)
+                                    {
+                                        var perso = PersonnageToInsertAt(coor);
+                                        if (zone.AjouterPersonnage(perso))
+                                        {
+                                            ++PersonnagesInseres;
+                                            --PersonnagesToInsert;
+                                            AttacherPersonnage((Client) perso);
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-            // et insérer dans une case adjacente si c’est “walkable”
         }
+
     }
 
 }

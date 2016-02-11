@@ -78,8 +78,6 @@ namespace MetaSimulatorConsole.Simulation
             Started = false;
             Console.WriteLine("Simulation arrêtée");
             UpdateObservers();
-            var node = (Node<Case>)Tableau[24, 24];
-            node.Value.SetTextures(new TexturePikachuSurHerbe());
         }
 
         public override void ConstruireZones()
