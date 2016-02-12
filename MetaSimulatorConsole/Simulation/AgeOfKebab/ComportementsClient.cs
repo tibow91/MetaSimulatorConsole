@@ -17,22 +17,37 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
         {
             if(Personnage == null) throw new NullReferenceException("Personnage is null !");
             if(EtatPersonnage == null) throw new NullReferenceException("EtatPersonnage is null !");
+            if (Personnage.PointsDeVie <= 0)
+            {
+                // Faire un état mort
+                Personnage.Etat = null;
+                Personnage.Comportement = null;
+                // Changer la texture du personnage
+                return;
+            }
+
             if (EtatPersonnage is EtatClientEnAttenteDeFaim)
             {
                 if (Personnage.PointsDeVie > Personnage.SeuilCritique) return;
                 if (EtatPersonnage == null)
                 {
                     Personnage.Etat = new EtatClientVaCommander();
-                    UpdateDataFromPersonnage();
                 }
             }
         }
 
+        /* Ici on exécute le comportement paramétré, qui lui aura un algorithme de recherche 
+         * différent prédéfini pour chaque état */
         public override void Execution()
         {
-            throw new NotImplementedException();
-        }
 
+            if (EtatPersonnage is EtatClientEnAttenteDeFaim)
+            {
+     
+                // Décrémenter points de vie
+                // S'il est dans la zone externe, il doit atteindre le point de rassemblement
+            }
+        }
         protected override Coordonnees CaseSuivante()
         {
             throw new NotImplementedException();

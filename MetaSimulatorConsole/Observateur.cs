@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole
 {
-    public interface IObservateurAbstrait 
+    public interface IObservateurAbstrait  
     {
         void UpdateDataFromPersonnage();
     }
@@ -17,11 +17,16 @@ namespace MetaSimulatorConsole
             observateurList.Add(observer);
         }
 
+       
         public void DeAttach(IObservateurAbstrait observer)
         {
             observateurList.Remove(observer);
         }
 
+        public void DeAttachAll()
+        {
+            observateurList.Clear();
+        }
         public void UpdateObservers()
         {
             foreach (IObservateurAbstrait o in observateurList)

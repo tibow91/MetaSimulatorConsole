@@ -39,7 +39,9 @@ namespace MetaSimulatorConsole.Simulation
                  return;
              }
              AttachObject(node, obj);
-             if(obj != null) obj.Attach(node.Value);
+             if (obj != null) obj.Attach(node.Value);
+             // else // Dettacher l'objet !
+             else obj.DeAttachAll();
         }
     }
 

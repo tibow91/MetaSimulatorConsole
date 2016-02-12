@@ -12,9 +12,17 @@ namespace MetaSimulatorConsole.Simulation
         public int PointsDeVie { get; set; }
         public int SeuilCritique { get; set; }
 
-        public EtatAbstract Etat { get; set; }
         public Coordonnees Case { get; set; }
-        public TextureDecorator Texture { get; set; }
+        private TextureDecorator texture;
+        public TextureDecorator Texture 
+        {
+            get { return texture; }
+            set
+            {
+                texture = value;
+                UpdateObservers();
+            }
+        }
 
         protected PersonnageAbstract(string nom,EGame simulation,TextureDecorator texture)
         {
@@ -23,7 +31,6 @@ namespace MetaSimulatorConsole.Simulation
             Texture = texture;
             PointsDeVie = 100;
             SeuilCritique = 50;
-            Etat = null;
         }
 
         public void BaisserPointsDeVie()
@@ -68,16 +75,12 @@ namespace MetaSimulatorConsole.Simulation
                 Console.WriteLine("Personnage " + this + " invalide: Texture nulle !");
                 return false;
             }
-            if (Etat == null)
-            {
-                Console.WriteLine("Personnage " + this + " invalide: Etat nul !");
-                return false;
-            }
+
             return true;
         }
         public override string ToString()
         {
-            return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() +")";
+            return "Personnage " + Nom + ", " + PointsDeVie + " XP, " + Case + " (Jeu " + Simulation.ToString() +")";
         }
 
     }
@@ -85,13 +88,53 @@ namespace MetaSimulatorConsole.Simulation
 
     public abstract class PersonnageMobilisable : PersonnageAbstract,IPersonnageAMobiliser
     {
+        private EtatAbstract etat;
+        public EtatAbstract Etat
+        {
+            get
+            {
+                return etat;
+            }
+            set
+            {
+                etat = value;
+                if (etat != null) etat.ModifieEtat(this);
+                if (Comportement != null) Comportement.UpdateDataFromPersonnage();
+            }
+        }
+
         public PersonnageBehavior Comportement;
+        private ZoneGenerale _zonegenerale;
         [XmlIgnore]
-        public ZoneGenerale ZonePrincipale;
+        public ZoneGenerale ZonePrincipale
+        {
+            get
+            {
+                return _zonegenerale;
+            }
+            set
+            {
+                _zonegenerale = value;
+                if (Comportement != null) Comportement.UpdateDataFromPersonnage();
+            }
+        }
+        private ZoneFinale _zoneactuelle;
+
         [XmlIgnore]
-        public ZoneFinale ZoneActuelle;
+        public ZoneFinale ZoneActuelle
+        {
+            get { return _zoneactuelle;  }
+            set
+            {
+                _zoneactuelle = value;
+                if (Comportement != null) Comportement.UpdateDataFromPersonnage();
+            }
+        }
         protected PersonnageMobilisable(string nom,EGame simulation,TextureDecorator texture)
-            : base(nom, simulation, texture) { }
+            : base(nom, simulation, texture)
+        {
+            Etat = null;
+        }
         public void SetZones(ZoneGenerale zonegenerale,ZoneFinale zoneactuelle) // définit le contexte d'exécution
         {
             ZonePrincipale = zonegenerale;
@@ -104,5 +147,10 @@ namespace MetaSimulatorConsole.Simulation
         public override abstract void Execution();
 
         public abstract void Mobiliser();
+        public override string ToString()
+        {
+            return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() + ")";
+        }
+
     }
 }

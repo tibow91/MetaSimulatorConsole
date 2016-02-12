@@ -14,7 +14,6 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
         {
             SetCoordonnees(coor);
             Etat = new EtatClientEnAttenteDeFaim();
-            Etat.ModifieEtat(this);
         }
 
         /* ici on analyse si l'état du personnage convient selon ses paramètres
@@ -30,11 +29,7 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
          * différent prédéfini pour chaque état */
         public override void Execution()
         {
-            if (Etat is EtatClientEnAttenteDeFaim)
-            {
-                // Décrémenter points de vie
-                // S'il est dans la zone externe, il doit atteindre le point de rassemblement
-            }
+            if (Comportement != null) Comportement.Execution();
         }
         
         public Coordonnees AtteindreGatherPoint(ZoneFinale zone)
