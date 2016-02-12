@@ -55,6 +55,7 @@
     <Compile Include="Simulation\AgeOfKebab\Client.cs" />
     <Compile Include="Simulation\AgeOfKebab\ComportementsClient.cs" />
     <Compile Include="Simulation\AgeOfKebab\EtatClient.cs" />
+    <Compile Include="Simulation\ChercherChemin.cs" />
     <Compile Include="Simulation\PersonnageBehavior.cs" />
     <Compile Include="Simulation\AgeOfKebab\Serveur.cs" />
     <Compile Include="Simulation\AgeOfKebab\Table.cs" />

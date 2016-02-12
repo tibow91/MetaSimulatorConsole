@@ -8,7 +8,8 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
     public abstract class PersonnageBehavior : IObservateurAbstrait
     {
-        protected PersonnageMobilisable Personnage;
+        protected virtual PersonnageMobilisable Personnage { get; set; }
+
         protected ZoneGenerale ZonePrincipale;
         protected ZoneFinale ZoneActuelle;
         protected EtatAbstract EtatPersonnage;
@@ -21,7 +22,6 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 
         public abstract void AnalyserSituation();
         public abstract void Execution();
-        protected abstract Coordonnees CaseSuivante();
         public void UpdateDataFromPersonnage()
         {
             if (Personnage != null)
@@ -31,6 +31,8 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
                 EtatPersonnage = Personnage.Etat;
             }            
         }    
+
+
     }
 
 }

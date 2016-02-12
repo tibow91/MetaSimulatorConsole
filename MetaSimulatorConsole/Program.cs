@@ -19,11 +19,11 @@ namespace MetaSimulatorConsole
             //Manager.ChoisirJeu(NomJeu.CDGSimulator);
             //Manager.CreerNouveauJeu();
             //var tableau = Manager.TableauDeJeu;
-            //var path = tableau.Route(tableau[0, 0], tableau[4, 4]);
-            //foreach (Vertex elem in path)
-            //{
-            //    Console.WriteLine(elem.ToString());
-            //}
+//            var path = tableau.Route(tableau[0, 0], tableau[4, 4]);
+//            foreach (Vertex elem in path)
+//            {
+//                Console.WriteLine(elem.ToString());
+//            }
             //Thread workerThread = new Thread(Manager.Simulation.LancerSimulation);
             //workerThread.Start();
             var serveur = new KebabDirecteur();

@@ -7,22 +7,18 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    abstract class LinkCaseTemplate // PATTE TEMPLATE
+    public abstract class LinkCaseTemplate // PATTE TEMPLATE
     {
          private Node<Case> GetNode(Coordonnees coor, Grille grille)
          {
              return (Node<Case>)grille[coor.X, coor.Y];     
          }
 
-         protected abstract void AttachObject(Node<Case> node, SujetObserveAbstrait obj);
+         protected abstract void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj);
 
-        protected virtual bool TestNullObject(SujetObserveAbstrait obj)
+        private bool TestNullObject(SujetObserveAbstrait obj)
         {
-            if (obj == null)
-            {
-                Console.WriteLine("LinkObject: Impossible car l'object est nul !");
-                return true;
-            }
+            if (obj == null) throw  new NullReferenceException("L'objet à relier est null !");
             return false;
         }
 
@@ -33,78 +29,91 @@ namespace MetaSimulatorConsole.Simulation
             if(grille == null) return;
             if (TestNullObject(obj)) return;
             var node = GetNode(coor,grille);
-             if (node == null)
-             {
-                 Console.WriteLine("LinkCaseToZone: Impossible de récupérer une node viable en " + coor);
-                 return;
-             }
-             AttachObject(node, obj);
-             if (obj != null) obj.Attach(node.Value);
-             // else // Dettacher l'objet !
-             else obj.DeAttachAll();
+            if (node == null)
+            {
+                Console.WriteLine("LinkCaseToZone: Impossible de récupérer une node viable en " + coor);
+                return;
+            }
+            AttachObjectToCase(node, obj);
+            AttachCaseToObject(node, obj);
         }
+
+        protected virtual void AttachCaseToObject(Node<Case> node, SujetObserveAbstrait obj)
+        {
+            if (obj != null) obj.Attach(node.Value);
+        }
+    }
+
+    public abstract class UnLinkCaseTemplate : LinkCaseTemplate
+    {
+        protected abstract override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj);
+        protected sealed override void AttachCaseToObject(Node<Case> node, SujetObserveAbstrait obj)
+        {
+            //obj.DeAttachAll(); // L'objet,La zone et le personnages ne doivent avoir que la case comme IObserverAbstrait !
+            /* Retire les objets cases parmi les observers */
+            var list = obj.GetObservers();
+            int count = list.Count;
+            for (int i=0; i< count; ++i)
+            {
+                if (list[i] is Case)
+                {
+                    list.RemoveAt(i);
+                    --i;
+                    --count;
+                }
+            }
+        }
+
     }
 
     class LinkCaseToZone : LinkCaseTemplate
     {
-        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        protected override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj)
         {
             node.Value.SetZoneToObserve((ZoneFinale) obj);
         }
-
     }
 
-    class UnLinkCaseFromZone : LinkCaseTemplate
+    class UnLinkCaseFromZone : UnLinkCaseTemplate
     {
-        protected override bool TestNullObject(SujetObserveAbstrait obj)
-        {
-            return false;
-        }
-
-        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        protected override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj)
         {
             node.Value.SetZoneToObserve(null);
         }
     }
+
     class LinkCaseToObject : LinkCaseTemplate
     {
-        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        protected override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj)
         {
             node.Value.SetObjectToObserve((ObjetAbstrait)obj);
         }
     }
 
-    class UnLinkCaseFromObject : LinkCaseTemplate
+    class UnLinkCaseFromObject : UnLinkCaseTemplate
     {
-        protected override bool TestNullObject(SujetObserveAbstrait obj)
-        {
-            return false;
-        }
 
-        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        protected override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj)
         {
             node.Value.SetObjectToObserve(null);
         }
+ 
     }
 
-    class LinkCaseToPersonnage : LinkCaseTemplate
+    public class LinkCaseToPersonnage : LinkCaseTemplate
     {
-        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        protected override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj)
         {
             node.Value.SetPersonnageToObserve((PersonnageAbstract)obj);
         }
     }
 
-    class UnLinkCaseFromPersonnage: LinkCaseTemplate
+    public class UnLinkCaseFromPersonnage: UnLinkCaseTemplate
     {
-        protected override bool TestNullObject(SujetObserveAbstrait obj)
-        {
-            return false;
-        }
-
-        protected override void AttachObject(Node<Case> node, SujetObserveAbstrait obj)
+        protected override void AttachObjectToCase(Node<Case> node, SujetObserveAbstrait obj)
         {
             node.Value.SetPersonnageToObserve(null);
         }
+
     }
 }

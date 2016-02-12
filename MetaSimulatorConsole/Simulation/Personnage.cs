@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Serialization;
+using MetaSimulatorConsole.Dijkstra;
 using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
@@ -11,8 +12,14 @@ namespace MetaSimulatorConsole.Simulation
         public string Nom { get; set; }
         public int PointsDeVie { get; set; }
         public int SeuilCritique { get; set; }
+  
+        private Coordonnees _case;
+        public virtual Coordonnees Case
+        {
+            get { return _case;  }
+            set { _case = value; }
+        } 
 
-        public Coordonnees Case { get; set; }
         private TextureDecorator texture;
         public TextureDecorator Texture 
         {
@@ -88,6 +95,27 @@ namespace MetaSimulatorConsole.Simulation
 
     public abstract class PersonnageMobilisable : PersonnageAbstract,IPersonnageAMobiliser
     {
+        protected UnLinkCaseFromPersonnage UnLink = new UnLinkCaseFromPersonnage();
+        protected LinkCaseToPersonnage Link = new LinkCaseToPersonnage();
+        public override Coordonnees Case
+        {
+            get { return base.Case; }
+            set
+            {
+                if (base.Case != null && base.Case.EstValide() && ZonePrincipale == null)
+                    throw new NullReferenceException("La Zone générale du personnage est nulle !");
+                if (ZonePrincipale == null)
+                {
+                    base.Case = value;
+                    return;
+                }
+                UnLink.LinkObject(base.Case, this, ZonePrincipale.Simulation.Tableau);
+                base.Case = value;
+                Link.LinkObject(base.Case,this,ZonePrincipale.Simulation.Tableau);
+            }
+        }
+
+  
         private EtatAbstract etat;
         public EtatAbstract Etat
         {
@@ -146,7 +174,36 @@ namespace MetaSimulatorConsole.Simulation
 
         public override abstract void Execution();
 
-        public abstract void Mobiliser();
+        public virtual void Mobiliser()
+        {
+//            Console.WriteLine("Route entre (0,0) et (4,4) :");
+//                var path = ZonePrincipale.Simulation.Tableau.Route(new Coordonnees(0, 0), new Coordonnees(4, 4)) ;
+//                foreach (Vertex elem in path)
+//                {
+//                    Console.WriteLine(elem.ToString());
+//                }
+//                ZonePrincipale.Simulation.Tableau.ReinitialiserMinDistances();
+
+
+            Console.WriteLine("Mobilisation du personnage " + this);
+            AnalyserSituation();
+            Execution();
+//            AfficherCasesNonWalkable();
+
+        }
+        private void AfficherCasesNonWalkable()
+        {
+            var tableau = ZonePrincipale.Simulation.Tableau;
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    var node = (Node<Case>)tableau[i, j];
+                    CaseAgeOfKebab c = (CaseAgeOfKebab)node.Value;
+                    if (!c.Walkable) Console.WriteLine("La case " + new Coordonnees(i, j) + " n'est pas Walkable !");
+                }
+            }
+        }
         public override string ToString()
         {
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() + ")";

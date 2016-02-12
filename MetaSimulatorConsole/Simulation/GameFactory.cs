@@ -31,6 +31,7 @@ namespace MetaSimulatorConsole
             this.Tableau = grille;
             //RemplirGrille();
             //ConstruireZones();
+
         }
 
         protected abstract void RemplirGrille();

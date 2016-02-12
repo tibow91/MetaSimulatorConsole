@@ -217,6 +217,8 @@ namespace MetaSimulatorConsole
         {
             if (QG != null)
             {
+                Console.WriteLine("");
+                Console.WriteLine("");
                 Console.WriteLine("Vous avez demandé à lancer un tour de jeu");
                 QG.GererUnTour();
             }

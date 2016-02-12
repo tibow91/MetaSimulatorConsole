@@ -16,15 +16,17 @@ namespace MetaSimulatorConsole.Dijkstra
             set { _value = value; }
         }
 
-        public Node(string name)
-            : base(name)
-        {
+        public Coordonnees Coor;
 
+        public Node(Coordonnees coor)
+            : base(coor.ToString())
+        {
+            Coor = coor;
         }
 
         public bool Equals(Node<T> other)
         {
-            if (this.CompareTo(other) == 0) return true;
+            if (other.Coor.Equals(Coor)) return true;
             return false;
         }
     }
@@ -53,7 +55,7 @@ namespace MetaSimulatorConsole.Dijkstra
             {
                 for (int j = 0; j < Largeur; j++)
                 {
-                    noeuds[i, j] = new Node<T>(i + "-" + j);
+                    noeuds[i, j] = new Node<T>(new Coordonnees(i,j));
                 }
             }
         }
@@ -79,6 +81,12 @@ namespace MetaSimulatorConsole.Dijkstra
             }
         }
 
+        public object ElementAt(Coordonnees coor)
+        {
+            if (!coor.EstValide()) return null;
+            return this[coor.X, coor.Y];
+        }
+
         public override IIterateur CreateIterator()
         {
             return new Iterateur<T>(this);
@@ -92,7 +100,7 @@ namespace MetaSimulatorConsole.Dijkstra
         public ConteneurParcourable(int longueur, int largeur)
             : base(longueur, largeur)
         {
-            SetAlgoComputePath(new ComputePathDefault<T>());
+            SetAlgoComputePath(new ComputePathDefault<T>(this));
         }
 
         public void SetAlgoComputePath(ComputePathsStrategy<T> algo)
@@ -103,44 +111,7 @@ namespace MetaSimulatorConsole.Dijkstra
         {
             AlgoComputePath.ComputePaths(source,dest);
             source.minDistance = 0;
-         /*   //  visit each vertex u, always visiting vertex with smallest minDistance first
 
-            PriorityQueue<Node<T>> vertexQueue = new PriorityQueue<Node<T>>();
-            vertexQueue.add(source);
-            bool firststep = true;
-
-
-            while (vertexQueue.peek() != null)
-            {
-                Node<T> u = vertexQueue.remove();
-                if (u == dest)
-                {
-                    source.previous = null;
-                    return;
-                }
-                // Visit each edge exiting u
-                foreach (Edge e in u.Edges)
-                {
-                    Node<T> v = (Node<T>)e.Target;
-                    //if(v.is_arrival() && dest != v) continue;
-                    //if(firststep && !v.is_Walkable()) continue;
-                    int weight = e.weight;
-                    int distance = u.minDistance + weight;
-                    if (distance < v.minDistance)
-                    {
-                        vertexQueue.remove(v);
-                        v.minDistance = distance;
-                        v.previous = u;
-                        vertexQueue.add(v);
-                        //				    System.out.println("<");
-                    }
-                    //				System.out.println("edge");
-                }
-                firststep = false;
-
-                //            System.out.println("IDijkstraNode u = " + u);
-            }
-            source.previous = null;*/
         }
 
         public ArrayList getShortestPathTo(Vertex target)
@@ -157,17 +128,12 @@ namespace MetaSimulatorConsole.Dijkstra
             return path;
         }
 
-        public ArrayList Route(object paris, object marseille)
+        public ArrayList Route(Coordonnees paris, Coordonnees marseille)
         {
-            if (paris is Node<T> && marseille is Node<T>)
-            {
-                computePaths((Node<T>)paris, (Node<T>)marseille);
-                return getShortestPathTo((Vertex)marseille);
-            }
-            else
-            {
-                throw new InvalidCastException();
-            }
+            if(!paris.EstValide()) throw new InvalidOperationException("Route: Les coordonnées choisies sont invalides !");
+            if (!marseille.EstValide()) throw new InvalidOperationException("Route: Les coordonnées choisies sont invalides !");
+            computePaths((Node<T>)this[paris.X,paris.Y], (Node<T>)this[marseille.X,marseille.Y]);
+            return getShortestPathTo((Vertex)this[marseille.X,marseille.Y]);
         }
     }
 }

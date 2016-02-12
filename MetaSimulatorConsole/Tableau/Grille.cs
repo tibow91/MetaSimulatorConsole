@@ -14,7 +14,6 @@ namespace MetaSimulatorConsole
     {
         private static Grille instance;
         protected ConstructionGrilleStrategy AlgoConstruction;
-
         public static bool HasInstance()
         {
             if (instance == null) return false;
@@ -95,6 +94,43 @@ namespace MetaSimulatorConsole
             }
             AlgoConstruction.ConstruireGrilleDepuis(zonegenerale);
         }
+
+        /* Réinitialiser les vertex pour pour pouvoir réétablir des routes !  */ 
+        public void ReinitialiserMinDistances()
+        {
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    var node = (Node<Case>) this[i, j];
+                    node.minDistance = int.MaxValue;
+                    node.previous = null;
+//                    foreach (var edge in node.Edges)
+//                    {
+//                        e
+//                    }
+                }
+            }
+        }
+
+        public void Afficher()
+        {
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    var node = (Node<Case>) ElementAt(new Coordonnees(i, j));
+                    Console.Write("Edges de " + node +": ");
+                    foreach (Edge e in node.Edges)
+                    {
+                        Console.Write(e.Target +", ");
+                    }
+                    Console.WriteLine("");
+                }
+            }
+        }
+
+
 
     }
 

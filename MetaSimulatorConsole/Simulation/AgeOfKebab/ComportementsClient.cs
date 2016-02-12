@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
-    public class ComportementEnAttenteDeFaim : PersonnageBehavior
+    public abstract class ClientBehavior : PersonnageBehavior
+    {
+        protected Client PersonnageClient
+        {
+            get { return (Client) Personnage; }
+            set { Personnage = value; }
+        }
+        protected ClientBehavior(Client perso) : base(perso)
+        {
+
+        }
+    }
+    public class ComportementEnAttenteDeFaim : ClientBehavior
     {
         public ComportementEnAttenteDeFaim(Client perso) : base(perso) { }
 
@@ -15,42 +27,50 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
          * de changer le comportement à associer automatiquement */
         public override void AnalyserSituation()
         {
-            if(Personnage == null) throw new NullReferenceException("Personnage is null !");
+//            Console.WriteLine("Le personnage analyse la situation ...");
+            if(PersonnageClient == null) throw new NullReferenceException("Personnage is null !");
             if(EtatPersonnage == null) throw new NullReferenceException("EtatPersonnage is null !");
-            if (Personnage.PointsDeVie <= 0)
+            if (PersonnageClient.PointsDeVie <= 0)
             {
+                Console.WriteLine("Le personnage " + PersonnageClient + " est mort !");
                 // Faire un état mort
-                Personnage.Etat = null;
-                Personnage.Comportement = null;
+                PersonnageClient.Etat = null;
+                PersonnageClient.Comportement = null;
                 // Changer la texture du personnage
                 return;
             }
 
             if (EtatPersonnage is EtatClientEnAttenteDeFaim)
             {
-                if (Personnage.PointsDeVie > Personnage.SeuilCritique) return;
-                if (EtatPersonnage == null)
-                {
-                    Personnage.Etat = new EtatClientVaCommander();
-                }
+                if (PersonnageClient.PointsDeVie > PersonnageClient.SeuilCritique) return; // Pas de changement
+                    PersonnageClient.Etat = new EtatClientVaCommander();
             }
+            else throw new InvalidOperationException("L'état du personnage ne correspond pas !!");
         }
 
         /* Ici on exécute le comportement paramétré, qui lui aura un algorithme de recherche 
          * différent prédéfini pour chaque état */
         public override void Execution()
         {
-
+//            Console.WriteLine("Le personnage s'apprête à effectuer une action ...");
             if (EtatPersonnage is EtatClientEnAttenteDeFaim)
             {
-     
                 // Décrémenter points de vie
                 // S'il est dans la zone externe, il doit atteindre le point de rassemblement
+
+                if(PersonnageClient.PointsDeVie > 0) --PersonnageClient.PointsDeVie;
+                if (ZoneActuelle.nom == "Zone Externe")
+                {
+                    var coor = PersonnageClient.AtteindreGatherPoint(ZoneActuelle);
+                    if (coor != null && coor.EstValide())
+                    {
+                        Console.WriteLine("Déplacement du personnage de " + PersonnageClient.Case +"  vers " + coor + ", direction pt de Rassemblement");
+                        PersonnageClient.Case = coor;
+                    }
+                }
+                else throw new InvalidOperationException("Le personnage n'est pas dans la zone externe ..");
             }
-        }
-        protected override Coordonnees CaseSuivante()
-        {
-            throw new NotImplementedException();
+            else throw new InvalidCastException("Le comportement ne correspond pas à l'état du personnage !");
         }
     }
 }

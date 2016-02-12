@@ -38,6 +38,7 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
             if (p == null) throw new NullReferenceException("Personnage is null !");
             if (p.Comportement is ComportementEnAttenteDeFaim) return;
             p.Comportement = new ComportementEnAttenteDeFaim(p);
+//            Console.WriteLine("Le comportement En attente de faim du personnage a été chargé");
         }
 
         public EtatClientEnAttenteDeFaim()

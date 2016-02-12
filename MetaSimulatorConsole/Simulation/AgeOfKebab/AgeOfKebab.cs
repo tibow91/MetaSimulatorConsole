@@ -8,7 +8,7 @@ using MetaSimulatorConsole.Tableau;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    class CaseAgeOfKebab : Case
+    public class CaseAgeOfKebab : Case
     {
         public bool Walkable = true;
         public CaseAgeOfKebab() : base(new TexturePikachuSurHerbe()) { }
@@ -41,7 +41,7 @@ namespace MetaSimulatorConsole.Simulation
             //RemplirGrille();
             ConstruireZones();
             Tableau.SetAlgoConstruction(new ConstructionGrilleAOK(Tableau));
-            Tableau.SetAlgoComputePath(new ComputePathsAOK<Case>());
+            Tableau.SetAlgoComputePath(new ComputePathsAOK(Tableau));
             Tableau.ConstruireGrilleDepuis(ZoneGenerale);
             QG = new QuartierGeneralAOK(this);
             Attach(QG);

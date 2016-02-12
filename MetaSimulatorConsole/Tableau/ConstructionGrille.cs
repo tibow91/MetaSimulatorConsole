@@ -37,12 +37,27 @@ namespace MetaSimulatorConsole.Tableau
             zoneGenerale.LierAuTableauDeJeu();
         }
 
+
         public void ConstruireGrilleDepuis(ZoneGenerale zonegenerale)
         {
             ConstruireCases();
+            ReinitialiserNodes();
             if (zonegenerale == null) return;
             ConstruireGrilleDepuisZone(zonegenerale);
             LierZoneAuTableau(zonegenerale);
+//            zonegenerale.Simulation.Tableau.Afficher();
+        }
+
+        private void ReinitialiserNodes()
+        {
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    Vertex v = (Vertex) Tableau[i, j];
+                    v.Edges.Clear();
+                }
+            }
         }
 
 
@@ -72,8 +87,8 @@ namespace MetaSimulatorConsole.Tableau
                         if (coor1.Equals(coor2)) continue;
                         if (coor1.EstAdjacent(coor2))
                         {
-                            var node = (Vertex)Tableau[coor1.X, coor2.Y];
-                            node.Edges.Add(new Edge((Vertex)Tableau[coor2.X, coor2.Y], 1));
+                            var node = (Vertex)Tableau.ElementAt(coor1);
+                            node.Edges.Add(new Edge((Vertex)Tableau.ElementAt(coor2), 1));
                         }
                     }
                 }
@@ -94,8 +109,8 @@ namespace MetaSimulatorConsole.Tableau
                                 {
                                     if (obj.Case.EstAdjacent(obj2.Case))
                                     {
-                                        var node = (Vertex)Tableau[obj.Case.X, obj.Case.Y];
-                                        node.Edges.Add(new Edge((Vertex)Tableau[obj2.Case.X, obj2.Case.Y], 1));
+                                        var node = (Vertex)Tableau.ElementAt(obj.Case);
+                                        node.Edges.Add(new Edge((Vertex)Tableau.ElementAt(obj2.Case), 1));
                                     }
                                 }
                             }

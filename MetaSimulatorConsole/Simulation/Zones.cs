@@ -66,6 +66,7 @@ namespace MetaSimulatorConsole
         {
             return "(" + X + "," + Y + ")";
         }
+        
 
     }
     [XmlInclude(typeof(ZoneGeneraleAOK))]
@@ -676,18 +677,18 @@ namespace MetaSimulatorConsole
         {
             var unlinkZone = new UnLinkCaseFromZone();
             foreach (var coor in Cases)
-                unlinkZone.LinkObject(coor, null, Simulation.Tableau);
+                unlinkZone.LinkObject(coor, this, Simulation.Tableau);
 
             var unlinkObject = new UnLinkCaseFromObject();
             foreach (var obj in Objets)
             {
-                unlinkObject.LinkObject(obj.Case, null, Simulation.Tableau);
+                unlinkObject.LinkObject(obj.Case, obj, Simulation.Tableau);
             }
 
             var unlinkPersonnage = new UnLinkCaseFromPersonnage();
             foreach (var perso in Personnages)
             {
-                unlinkPersonnage.LinkObject(perso.Case, null, Simulation.Tableau);
+                unlinkPersonnage.LinkObject(perso.Case, perso, Simulation.Tableau);
             }
         }
 

@@ -68,10 +68,10 @@ namespace MetaSimulatorConsole.Simulation
             ChargerPersonnagesAMobiliser();
         }
 
-        protected abstract PersonnageAbstract PersonnageToInsertAt(Coordonnees coor);
+        protected abstract PersonnageMobilisable PersonnageToInsertAt(Coordonnees coor);
         protected QuartierGeneralAbstrait(Game simu)
         {
-            PersonnagesToInsert = 1;
+            PersonnagesToInsert = 5;
             Simulation = simu;
             UpdateDataFromPersonnage(); // Pour mettre à jour la ZoneGénérale
         }
@@ -100,6 +100,21 @@ namespace MetaSimulatorConsole.Simulation
             }
             MobiliserPersonnages();
             InsererPersonnagesRestants();
+//            AfficherCasesNonWalkable();
+        }
+
+        private void AfficherCasesNonWalkable()
+        {
+            var tableau = ZonePrincipale.Simulation.Tableau;
+            for (int i = 0; i < GameManager.Longueur; ++i)
+            {
+                for (int j = 0; j < GameManager.Largeur; ++j)
+                {
+                    var node = (Node<Case>) tableau[i, j];
+                    CaseAgeOfKebab c = (CaseAgeOfKebab)node.Value;
+                    if(!c.Walkable) Console.WriteLine("La case " + new Coordonnees(i,j) + " n'est pas Walkable !");
+                }
+            }
         }
 
         protected abstract void InsererPersonnagesRestants();
@@ -111,13 +126,18 @@ namespace MetaSimulatorConsole.Simulation
         public QuartierGeneralAOK(Game simu) : base(simu){}
 
 
-        protected override PersonnageAbstract PersonnageToInsertAt(Coordonnees coor)
+        protected override PersonnageMobilisable PersonnageToInsertAt(Coordonnees coor)
         {
             return new Client("Client " + (PersonnagesInseres+1),coor);
         }
 
         protected override void InsererPersonnagesRestants()
         {
+            if (PersonnagesToInsert <= 0)
+            {
+                Console.WriteLine("Il ne reste plus de personnages à insérer");
+                return;
+            }
             //Insertion Personnages: Trouver la zone et le lieu où se trouvent les SpawnPoints 
             foreach (var zone in ZonePrincipale.ObtenirZonesFinales())
             {
@@ -125,13 +145,13 @@ namespace MetaSimulatorConsole.Simulation
                 {
                     if (objet is SpawnPoint) // Si c'est un pt d'apparition
                     {
-                        Console.WriteLine("Objet SpawnPoint trouvé " + objet + " dans la zone " + zone);
+//                        Console.WriteLine("Objet SpawnPoint trouvé " + objet + " dans la zone " + zone);
                         var casesAdjacentes = Coordonnees.ObtenirCasesAdjacentes(objet.Case);
                         foreach (var coor in casesAdjacentes) // Pour chaque case adjacente à ce pt d'accès
                         {
                             if (zone.ContientCoordonnees(coor)) // De cette zone !
                             {
-                                Console.WriteLine("Case adjacente  trouvée: " + coor + " dans la " + zone);
+//                                Console.WriteLine("Case adjacente  trouvée: " + coor + " dans la " + zone);
                                 var node = (Node<Case>)zone.Simulation.Tableau[coor.X, coor.Y];
                                 CaseAgeOfKebab c = node.Value as CaseAgeOfKebab;
                                 if (c == null)
@@ -143,6 +163,8 @@ namespace MetaSimulatorConsole.Simulation
                                         var perso = PersonnageToInsertAt(coor);
                                         if (zone.AjouterPersonnage(perso))
                                         {
+                                            Console.WriteLine("Insertion du personnage " + perso);
+                                            perso.SetZones(ZonePrincipale, zone);
                                             ++PersonnagesInseres;
                                             --PersonnagesToInsert;
                                             AttacherPersonnage((Client) perso);
