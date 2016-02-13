@@ -127,7 +127,7 @@ namespace MetaSimulatorConsole.Simulation
             {
                 etat = value;
                 if (etat != null) etat.ModifieEtat(this);
-                if (Comportement != null) Comportement.UpdateDataFromPersonnage();
+                if (Comportement != null) Comportement.Update();
             }
         }
 
@@ -143,7 +143,7 @@ namespace MetaSimulatorConsole.Simulation
             set
             {
                 _zonegenerale = value;
-                if (Comportement != null) Comportement.UpdateDataFromPersonnage();
+                if (Comportement != null) Comportement.Update();
             }
         }
         private ZoneFinale _zoneactuelle;
@@ -155,7 +155,7 @@ namespace MetaSimulatorConsole.Simulation
             set
             {
                 _zoneactuelle = value;
-                if (Comportement != null) Comportement.UpdateDataFromPersonnage();
+                if (Comportement != null) Comportement.Update();
             }
         }
         protected PersonnageMobilisable(string nom,EGame simulation,TextureDecorator texture)
@@ -167,7 +167,7 @@ namespace MetaSimulatorConsole.Simulation
         {
             ZonePrincipale = zonegenerale;
             ZoneActuelle = zoneactuelle;
-            if(Comportement != null) Comportement.UpdateDataFromPersonnage();
+            if(Comportement != null) Comportement.Update();
         }
         
         public override abstract void AnalyserSituation();

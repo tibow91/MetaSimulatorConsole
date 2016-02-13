@@ -86,8 +86,9 @@ namespace MetaSimulatorConsole.Dijkstra
             CaseAgeOfKebab c = (CaseAgeOfKebab)node.Value;
 //            CaseAgeOfKebab c = node.Value as CaseAgeOfKebab;
             if (c == null) throw new NullReferenceException("Le type de case ne correspond pas !!");
-            if (!c.Walkable) {
-                Console.WriteLine("Cette case n'est pas Walkable ! " + node.Coor);
+            if (!c.Walkable)
+            {
+                //Console.WriteLine("Cette case n'est pas Walkable ! " + node.Coor);
                 return false; // la case n'est pas valide si elle n'est pas Walkable !
             }
             return true;

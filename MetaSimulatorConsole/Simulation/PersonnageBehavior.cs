@@ -17,12 +17,12 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
         protected PersonnageBehavior(PersonnageMobilisable perso)
         {
             Personnage = perso;
-            UpdateDataFromPersonnage();
+            Update();
         }
 
         public abstract void AnalyserSituation();
         public abstract void Execution();
-        public void UpdateDataFromPersonnage()
+        public void Update()
         {
             if (Personnage != null)
             {

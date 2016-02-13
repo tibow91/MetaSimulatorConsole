@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetaSimulatorConsole.Gestion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,8 @@ namespace MetaSimulatorConsole
 
     public class GameManager : SujetObserveAbstrait,IObservateurAbstrait
     {
-        public static readonly int Longueur = 50;
-        public static readonly int Largeur = 50;
+        public static readonly int Longueur = 25;
+        public static readonly int Largeur = 25;
 
         private static GameManager instance;
 
@@ -75,7 +76,7 @@ namespace MetaSimulatorConsole
         {
             if (MenuCourant is MenuSimulation)
             {
-                if (Simulation.Started)
+                if (Simulation.Running)
                 {
                     Console.WriteLine("Veuillez arrêter la simulation pour revenir au menu principal");
                     return;
@@ -130,30 +131,6 @@ namespace MetaSimulatorConsole
             }
         }
 
-        public void DemanderJeuAChoisir()
-        {
-            
-            int k = 0,i;
-            do
-            {
-                i = 1;
-                foreach (var jeu in ListeJeux)
-                {
-                    Console.WriteLine(i + ": " + jeu);
-                    ++i;
-                }
-                string answer = "";
-                do
-                {
-                    Console.WriteLine("Entrez le numéro du jeu que vous souhaitez simuler");
-                    answer = Console.ReadLine();
-                } while (String.IsNullOrEmpty(answer));
-                k = Int32.Parse(answer);
-            } while (k <= 0 || k >  ListeJeux.Count);
-            ChoisirJeu(ListeJeux[k-1]);            
-
-        }
-
         private Game creerJeu() // Poids mouche
         {
             NomJeu nomjeu = JeuChoisi;
@@ -180,28 +157,26 @@ namespace MetaSimulatorConsole
         private void CreerTableauDeJeu()
         {
             if (Grille.HasInstance()) return;
-            //Console.WriteLine("Quelles Dimensions pour le tableau de jeu ? Longueur = ?");
-            //var ans = Console.ReadLine();
-            //if (ans != null) longueur = Int32.Parse(ans);
-            //Console.WriteLine("Largeur ?");
-            //ans = Console.ReadLine();
-            //if (ans != null) largeur = Int32.Parse(ans);
             TableauDeJeu = (Grille)Grille.Instance(Longueur, Largeur);
             this.Fenetre = new Window(600,600,this);
         }
 
-        private Game chargerJeu(NomJeu nomjeu) // + données XML en param
-        {
-            //Jeux[nomJeu] = new Game(DataXML)
-            return null;
-        }
 
         private void ChoisirJeu(NomJeu nomjeu)
         {
             JeuChoisi = nomjeu;
             Console.WriteLine("Jeu choisi: {0}", JeuChoisi);
         }
-        public void chargerFichierXML(){} // Doit Permettre de restaurer ces instances de jeu depuis les fichiers XML
+        public void chargerFichierXML(EGame game) // Doit Permettre de restaurer ces instances de jeu depuis les fichiers XML
+        {
+            switch(game)
+            {
+                case EGame.AgeOfKebab: new LoadGameAOK(this).ChargerJeuDepuisXML(); break;
+                case EGame.CDGSimulator: new LoadGameCDGSimulator(this).ChargerJeuDepuisXML(); break;
+                case EGame.Honeyland: new LoadGameHoneyland(this).ChargerJeuDepuisXML(); break;
+                default: break;
+            }
+        } 
 
         public void save() { } // Sauvegarde les instances de jeu dans les XML
 
@@ -213,7 +188,7 @@ namespace MetaSimulatorConsole
                 Console.WriteLine("Pas de simulation chargée");
                 return;
             }
-            if (Simulation.Started)
+            if (Simulation.Running)
             {
                 Console.WriteLine("Il y a déja une simulation en cours !");
                 return;
@@ -223,9 +198,9 @@ namespace MetaSimulatorConsole
         }
 
 
-        public void UpdateDataFromPersonnage()
+        public void Update()
         {
-            UpdateObservers();
+            UpdateObservers(); // Initialise la mise à jour de ses propres observers
         }
     }
 

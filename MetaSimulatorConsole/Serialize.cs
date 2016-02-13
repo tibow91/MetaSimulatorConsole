@@ -106,5 +106,15 @@ namespace MetaSimulatorConsole
 
     }
 
+    class GameSerializer : SerializerTemplate
+    {
+
+        protected override XmlSerializer GetXMLSerializer()
+        {
+            return new XmlSerializer(typeof(Game));
+        }
+
+    }
+
 
 }

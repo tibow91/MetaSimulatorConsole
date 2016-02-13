@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using MetaSimulatorConsole.Simulation;
+using MetaSimulatorConsole.Gestion;
 
 namespace MetaSimulatorConsole
 {
@@ -19,14 +20,14 @@ namespace MetaSimulatorConsole
         }
         public abstract void Execute();
 
-        public virtual void UpdateDataFromPersonnage()
+        public virtual void Update()
         {
         }
     }
 
     class StopSimulation : CommandGameManager
     {
-        public StopSimulation(GameManager manager) : base(manager){ UpdateDataFromPersonnage();}
+        public StopSimulation(GameManager manager) : base(manager){ Update();}
         private Game Simulation;
         public override void Execute()
         {
@@ -34,7 +35,7 @@ namespace MetaSimulatorConsole
             if(Simulation != null)
                 Simulation.Stop = true;
         }
-        public override void UpdateDataFromPersonnage()
+        public override void Update()
         {
             if (gestionnaire != null )
                 Simulation = gestionnaire.Simulation;
@@ -174,7 +175,7 @@ namespace MetaSimulatorConsole
 
     class MontrerCacherInterface : CommandGameManager
     {
-        public MontrerCacherInterface(GameManager manager) : base(manager) { UpdateDataFromPersonnage(); }
+        public MontrerCacherInterface(GameManager manager) : base(manager) { Update(); }
         private bool _showInterface;
 
         private bool ShowInterface
@@ -199,7 +200,7 @@ namespace MetaSimulatorConsole
                 }
             }
         }
-        public override void UpdateDataFromPersonnage()
+        public override void Update()
         {
             if (gestionnaire != null && gestionnaire.Fenetre != null)
                 ShowInterface = gestionnaire.Fenetre.ShowInterface;
@@ -211,7 +212,7 @@ namespace MetaSimulatorConsole
     {
         protected Game Simulation;
         protected QuartierGeneralAbstrait QG;
-        public LancerUnTourDeJeu(GameManager manager) : base(manager) { UpdateDataFromPersonnage(); }
+        public LancerUnTourDeJeu(GameManager manager) : base(manager) { Update(); }
 
         public override void Execute()
         {
@@ -226,7 +227,7 @@ namespace MetaSimulatorConsole
         }
 
 
-        public override void UpdateDataFromPersonnage()
+        public override void Update()
         {
             if (gestionnaire != null) Simulation = gestionnaire.Simulation;
             if (Simulation != null) QG = Simulation.QG;
@@ -234,4 +235,36 @@ namespace MetaSimulatorConsole
         }
     }
 
+    class ChargerLeJeuAOK : CommandGameManager
+    {
+        public ChargerLeJeuAOK(GameManager manager) : base(manager) {  }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à charger le jeu Age Of Kebab");
+            new LoadAOKAdapter(gestionnaire).Load();
+        }
+    }
+
+    class ChargerLeJeuCDGSimulator : CommandGameManager
+    {
+        public ChargerLeJeuCDGSimulator(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à charger le jeu CDG Simulator");
+            new LoadCDGSimulatorAdapter(gestionnaire).Load();
+        }
+    }
+
+    class ChargerLeJeuHoneyland : CommandGameManager
+    {
+        public ChargerLeJeuHoneyland(GameManager manager) : base(manager) { }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à charger le jeu HoneyLand");
+            new LoadHoneylandAdapter(gestionnaire).Load();
+        }
+    }
 }

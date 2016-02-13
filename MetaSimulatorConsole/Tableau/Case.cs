@@ -35,22 +35,22 @@ namespace MetaSimulatorConsole
         public void SetZoneToObserve(ZoneFinale zone)
         {
             ZoneToObserve = zone;
-            UpdateDataFromPersonnage();
+            Update();
         }
 
         public virtual void SetObjectToObserve(ObjetAbstrait obj)
         {
             ObjectToObserve = obj;
-            UpdateDataFromPersonnage();
+            Update();
         }
 
         public virtual void SetPersonnageToObserve(PersonnageAbstract perso)
         {
             PersonnageToObserve = perso;
-            UpdateDataFromPersonnage();
+            Update();
         }
 
-        public void UpdateDataFromPersonnage()
+        public void Update()
         {
             if (ZoneToObserve != null) ZoneTexture = ZoneToObserve.Texture;
             else ZoneTexture = null;

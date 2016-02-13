@@ -38,7 +38,7 @@ namespace MetaSimulatorConsole
             Son = son;
         }
 
-        public void UpdateDataFromPersonnage()
+        public void Update()
         {
             if (Observer != null) EtatFonctionnement = Observer.ModeFonctionnement;
             Console.WriteLine("Observeur {0} : nouvel Etat est {1}", Nom, EtatFonctionnement);

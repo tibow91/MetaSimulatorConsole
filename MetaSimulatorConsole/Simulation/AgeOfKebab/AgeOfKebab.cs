@@ -68,14 +68,14 @@ namespace MetaSimulatorConsole.Simulation
         protected override void LancerMoteurSimulation()
         {
             Stop = false;
-            Started = true;
+            Running = true;
             Console.WriteLine("Simulation lancée");
             UpdateObservers();
             while (!Stop)
             {
 
             }
-            Started = false;
+            Running = false;
             Console.WriteLine("Simulation arrêtée");
             UpdateObservers();
         }

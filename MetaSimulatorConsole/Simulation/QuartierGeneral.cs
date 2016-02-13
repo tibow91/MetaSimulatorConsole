@@ -48,7 +48,7 @@ namespace MetaSimulatorConsole.Simulation
             return PersonnagesMobilises;
         }
 
-        public abstract void UpdateDataFromPersonnage();
+        public abstract void Update();
     }
 
     [XmlInclude(typeof(QuartierGeneralAOK))]
@@ -57,11 +57,10 @@ namespace MetaSimulatorConsole.Simulation
         // Songer aussi à placer le module de statistique à l'intérieur
         private readonly  Game Simulation;
         protected ZoneGenerale ZonePrincipale;
-
-
+       
         public int PersonnagesInseres;
         public int PersonnagesToInsert { get; set; }
-        public override void UpdateDataFromPersonnage()
+        public override void Update()
         {
             DeAttacherTousLesPersonnagesMobilises();
             if(Simulation != null) ZonePrincipale = Simulation.ZoneGenerale;
@@ -73,7 +72,7 @@ namespace MetaSimulatorConsole.Simulation
         {
             PersonnagesToInsert = 5;
             Simulation = simu;
-            UpdateDataFromPersonnage(); // Pour mettre à jour la ZoneGénérale
+            Update(); // Pour mettre à jour la ZoneGénérale
         }
 
         protected void ChargerPersonnagesAMobiliser()
@@ -93,28 +92,14 @@ namespace MetaSimulatorConsole.Simulation
         public void GererUnTour()
         {
             // Si une simulation continue est en cours, impossible !
-            if (Simulation.Started)
+            if (Simulation.Running)
             {
                 Console.WriteLine("GererUnTour: Impossible de lancer un tour manuellement, car la simulation est en cours !");
                 return;
             }
+            else Simulation.Started = true;
             MobiliserPersonnages();
             InsererPersonnagesRestants();
-//            AfficherCasesNonWalkable();
-        }
-
-        private void AfficherCasesNonWalkable()
-        {
-            var tableau = ZonePrincipale.Simulation.Tableau;
-            for (int i = 0; i < GameManager.Longueur; ++i)
-            {
-                for (int j = 0; j < GameManager.Largeur; ++j)
-                {
-                    var node = (Node<Case>) tableau[i, j];
-                    CaseAgeOfKebab c = (CaseAgeOfKebab)node.Value;
-                    if(!c.Walkable) Console.WriteLine("La case " + new Coordonnees(i,j) + " n'est pas Walkable !");
-                }
-            }
         }
 
         protected abstract void InsererPersonnagesRestants();

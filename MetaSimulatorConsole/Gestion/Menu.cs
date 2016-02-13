@@ -52,6 +52,9 @@ namespace MetaSimulatorConsole
         {
             manager.MenuCourant = this;
             manager.Fenetre.TextMenu.Clear();
+            manager.Fenetre.TextMenu.Add("Charger le jeu Age Of Kebab", "Touche 0");
+            manager.Fenetre.TextMenu.Add("Charger le jeu CDG Simulator", "Touche 1");
+            manager.Fenetre.TextMenu.Add("Charger le jeu Honeyland", "Touche 2");
             manager.Fenetre.TextMenu.Add("Retour", "Precedent");
         }
 

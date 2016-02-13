@@ -11,13 +11,28 @@ namespace MetaSimulatorConsole
 
     public enum EGame { AgeOfKebab, CDGSimulator, Honeyland}
 
+    [XmlInclude(typeof(GameAgeOfKebab)), XmlInclude(typeof(GameCDGSimulator)), XmlInclude(typeof(GameHoneyland))]
     public abstract class Game : SujetObserveAbstrait, IEquatable<Game>,IObservateurAbstrait
     {
         public EGame NomDuJeu;
-        public bool Stop { get; set; }
-        public bool Started { get; set; }
+        private bool _started;
+        public bool Started
+        {
+            get{ return _started; }
+            set
+            {
+                if (value == false) throw new InvalidOperationException("L'état vrai du champ Started est irréversible");
+                Started = true;
+            }
+        }
+        [XmlIgnore]
+        public bool Stop { get; set; } // Permet d'arrêter la simulation
+        [XmlIgnore]
+        public bool Running { get; set; } // Indique si la simulation est en cours
+        [XmlIgnore]
 
         public Grille Tableau;
+        [XmlIgnore]
         protected GameManager Gestionnaire;
         public ZoneGenerale ZoneGenerale;
         [XmlIgnore]
@@ -48,6 +63,7 @@ namespace MetaSimulatorConsole
                 Console.WriteLine("La simulation ne peut être lancée car les zones ne sont pas conformes !");
                 return;
             }
+            Started = true;
             LancerMoteurSimulation();
         }
 
@@ -84,7 +100,7 @@ namespace MetaSimulatorConsole
             return true;
         }
 
-        public void UpdateDataFromPersonnage()
+        public void Update()
         {
             Tableau = Gestionnaire.TableauDeJeu;
         }

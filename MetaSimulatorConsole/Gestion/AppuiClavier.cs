@@ -102,14 +102,14 @@ namespace MetaSimulatorConsole
             return toucheEchap;
         }
 
-        public void UpdateDataFromPersonnage()
+        public void Update()
         {
             foreach (var commande in commandes)
             {
-                commande.Value.UpdateDataFromPersonnage();
+                commande.Value.Update();
             }
             if(CommandeSuivante != null)
-                CommandeSuivante.UpdateDataFromPersonnage();
+                CommandeSuivante.Update();
         }
     }
 
@@ -121,6 +121,7 @@ namespace MetaSimulatorConsole
             AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire), EMenu.Principal);
             AjouterCommande(new CreerJeuAgeOfKebab(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new StartSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new ChargerLeJeuAOK(fenetre.Gestionnaire), EMenu.Chargement);
         }
 
         public override void Traitement()
@@ -137,6 +138,7 @@ namespace MetaSimulatorConsole
             AjouterCommande(new PasserAuMenuDeCreation(fenetre.Gestionnaire), EMenu.Principal );
             AjouterCommande(new CreerJeuAgeOfKebab(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new StartSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new ChargerLeJeuAOK(fenetre.Gestionnaire), EMenu.Chargement);
         }
 
         public override void Traitement()
@@ -153,6 +155,7 @@ namespace MetaSimulatorConsole
             AjouterCommande(new PasserAuMenuDeChargement(fenetre.Gestionnaire), EMenu.Principal);
             AjouterCommande(new CreerJeuCDGSimulator(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new StopSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new ChargerLeJeuCDGSimulator(fenetre.Gestionnaire), EMenu.Chargement);
         }
 
         public override void Traitement()
@@ -169,12 +172,28 @@ namespace MetaSimulatorConsole
             AjouterCommande(new PasserAuMenuDeChargement(fenetre.Gestionnaire), EMenu.Principal);
             AjouterCommande(new CreerJeuCDGSimulator(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new StopSimulation(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new ChargerLeJeuCDGSimulator(fenetre.Gestionnaire), EMenu.Chargement);
         }
 
         public override void Traitement()
         {
             TraitementGenerique(Key.Keypad1);            
         }  
+    }
+
+    class AppuiClavierToucheNumber2 : AppuiClavier
+    {
+        public AppuiClavierToucheNumber2(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire), EMenu.Creation);
+            AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new ChargerLeJeuHoneyland(fenetre.Gestionnaire), EMenu.Chargement);
+        }
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number2);
+        }
     }
 
     class AppuiClavierToucheKeypad2 : AppuiClavier
@@ -184,6 +203,7 @@ namespace MetaSimulatorConsole
         {
             AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire), EMenu.Creation);
             AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new ChargerLeJeuHoneyland(fenetre.Gestionnaire), EMenu.Chargement);
         }
         public override void Traitement()
         {
@@ -204,19 +224,7 @@ namespace MetaSimulatorConsole
         }
     }
 
-    class AppuiClavierToucheNumber2 : AppuiClavier
-    {
-        public AppuiClavierToucheNumber2(Window fenetre)
-            : base(fenetre)
-        {
-            AjouterCommande(new CreerJeuHoneyland(fenetre.Gestionnaire), EMenu.Creation);
-            AjouterCommande(new MontrerCacherInterface(fenetre.Gestionnaire), EMenu.Simulation);
-        }
-        public override void Traitement()
-        {
-            TraitementGenerique(Key.Number2);
-        }
-    }
+
 
     class AppuiClavierToucheNumber3 : AppuiClavier
     {

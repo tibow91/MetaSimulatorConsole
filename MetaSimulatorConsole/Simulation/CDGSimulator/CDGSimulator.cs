@@ -43,14 +43,14 @@ namespace MetaSimulatorConsole.Simulation
         protected override void LancerMoteurSimulation()
         {
             Stop = false;
-            Started = true;
+            Running = true;
             Console.WriteLine("Simulation lancée");
             Gestionnaire.UpdateObservers();
             while (!Stop)
             {
 
             }
-            Started = false;
+            Running = false;
             Console.WriteLine("Simulation arrêtée");
             Gestionnaire.UpdateObservers();
             var node = (Node<Case>)Tableau[0, 0];

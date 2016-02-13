@@ -6,7 +6,7 @@ namespace MetaSimulatorConsole
 {
     public interface IObservateurAbstrait  
     {
-        void UpdateDataFromPersonnage();
+        void Update();
     }
 
     public abstract class SujetObserveAbstrait
@@ -32,7 +32,7 @@ namespace MetaSimulatorConsole
         {
             foreach (IObservateurAbstrait o in observateurList)
             {
-                o.UpdateDataFromPersonnage();
+                o.Update();
             }
         }
 
