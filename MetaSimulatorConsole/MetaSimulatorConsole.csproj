@@ -50,6 +50,7 @@
     <Compile Include="Fenetre\Clavier.cs" />
     <Compile Include="Fenetre\Graphisme.cs" />
     <Compile Include="Gestion\LoadGame.cs" />
+    <Compile Include="Gestion\SaveGame.cs" />
     <Compile Include="Serialize.cs" />
     <Compile Include="Simulation\AccessPoint.cs" />
     <Compile Include="Simulation\AgeOfKebab\Caisses.cs" />

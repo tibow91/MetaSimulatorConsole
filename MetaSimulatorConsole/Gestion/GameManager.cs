@@ -17,7 +17,10 @@ namespace MetaSimulatorConsole
         public static readonly int Largeur = 25;
 
         private static GameManager instance;
-
+        public static void TestInstance()
+        {
+            if (instance == null) throw new NullReferenceException("Gestionnaire est null !");
+        }
         public static List<NomJeu> ListeJeux = new List<NomJeu>()
         {
             { NomJeu.AgeOfKebab },
@@ -176,9 +179,22 @@ namespace MetaSimulatorConsole
                 case EGame.Honeyland: new LoadGameHoneyland(this).ChargerJeuDepuisXML(); break;
                 default: break;
             }
-        } 
+        }
 
-        public void save() { } // Sauvegarde les instances de jeu dans les XML
+
+        public void SauvegarderSimulation() // Sauvegarde les instances de jeu dans les XML
+        {
+            if (Simulation == null) throw new InvalidOperationException("La sauvegarde ne doit pouvoir s'effectuer que si une partie est en cours");
+            if (Simulation.Running) new StopSimulation(this).Execute();
+            switch(JeuChoisi)
+            {
+                case NomJeu.AgeOfKebab: new SaveGameAOK(this).Sauvegarder(); break;
+                case NomJeu.CDGSimulator: new SaveGameCDGSimulator(this).Sauvegarder(); break;
+                case NomJeu.Honeyland: new SaveGameHoneyland(this).Sauvegarder(); break;
+                default: break;
+            }
+
+        } 
 
 
         internal void LancerSimulation()

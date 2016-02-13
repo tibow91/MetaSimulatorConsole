@@ -112,7 +112,7 @@ class Graphisme
                 string input = elem.Value;
                 if (!TextTextures.ContainsKey(text))
                     TextTextures[text] = GenererTextTexture(text + " (" + input + ")");
-                AfficherReverseQuad(0f, 1f + i * 0.2f, 1f, 1f, TextTextures[text]);
+                AfficherReverseQuad(0f, 1f + i * 0.15f, 1f, 1f, TextTextures[text]);
                 ++i;
             }
 

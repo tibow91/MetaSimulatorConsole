@@ -69,20 +69,25 @@ namespace MetaSimulatorConsole
             AppuiClavier toucheK1 = new AppuiClavierToucheKeypad1(fenetre);
             AppuiClavier toucheK2 = new AppuiClavierToucheKeypad2(fenetre);
             AppuiClavier toucheK3 = new AppuiClavierToucheKeypad3(fenetre);
+            AppuiClavier toucheK4 = new AppuiClavierToucheKeypad4(fenetre);
 
             AppuiClavier toucheN0 = new AppuiClavierToucheNumber0(fenetre);
             AppuiClavier toucheN1 = new AppuiClavierToucheNumber1(fenetre);
             AppuiClavier toucheN2 = new AppuiClavierToucheNumber2(fenetre);
             AppuiClavier toucheN3 = new AppuiClavierToucheNumber3(fenetre);
+            AppuiClavier toucheN4 = new AppuiClavierToucheNumber4(fenetre);
 
             toucheK0.SetCommandeSuivante(toucheK1);
             toucheK1.SetCommandeSuivante(toucheK2);
             toucheK2.SetCommandeSuivante(toucheK3);
-            toucheK3.SetCommandeSuivante(toucheN0);
+            toucheK3.SetCommandeSuivante(toucheK4);
+            toucheK4.SetCommandeSuivante(toucheN0);
+
             toucheN0.SetCommandeSuivante(toucheN1);
             toucheN1.SetCommandeSuivante(toucheN2);
             toucheN2.SetCommandeSuivante(toucheN3);
-            toucheN3.SetCommandeSuivante(null);
+            toucheN3.SetCommandeSuivante(toucheN4);
+            toucheN4.SetCommandeSuivante(null);
 
             //fileLogger.setNextLogger(consoleLogger);
 
@@ -211,6 +216,21 @@ namespace MetaSimulatorConsole
         }
     }
 
+    class AppuiClavierToucheNumber3 : AppuiClavier
+    {
+        public AppuiClavierToucheNumber3(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new LancerUnTourDeJeu(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number3);
+        }
+    }
+
+
     class AppuiClavierToucheKeypad3 : AppuiClavier
     {
         public AppuiClavierToucheKeypad3(Window fenetre)
@@ -224,20 +244,36 @@ namespace MetaSimulatorConsole
         }
     }
 
-
-
-    class AppuiClavierToucheNumber3 : AppuiClavier
+    class AppuiClavierToucheNumber4 : AppuiClavier
     {
-        public AppuiClavierToucheNumber3(Window fenetre)
+        public AppuiClavierToucheNumber4(Window fenetre)
             : base(fenetre)
         {
-            AjouterCommande(new LancerUnTourDeJeu(fenetre.Gestionnaire), EMenu.Simulation);
+            AjouterCommande(new SauvegarderSimulationEnCours(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number4);
+        }
+    }
+
+
+    class AppuiClavierToucheKeypad4 : AppuiClavier
+    {
+        public AppuiClavierToucheKeypad4(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new SauvegarderSimulationEnCours(fenetre.Gestionnaire), EMenu.Simulation);
         }
         public override void Traitement()
         {
-            TraitementGenerique(Key.Number3);
+            TraitementGenerique(Key.Keypad4);
         }
     }
+
+
+
 
 
     class AppuiClavierToucheEchap : AppuiClavier

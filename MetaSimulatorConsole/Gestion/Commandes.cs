@@ -267,4 +267,15 @@ namespace MetaSimulatorConsole
             new LoadHoneylandAdapter(gestionnaire).Load();
         }
     }
+
+    class SauvegarderSimulationEnCours : CommandGameManager
+    {
+        public SauvegarderSimulationEnCours(GameManager manager) : base(manager) { }
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à sauvegarder la simulation en cours !");
+            GameManager.TestInstance();
+            if (gestionnaire != null) gestionnaire.SauvegarderSimulation();
+        }
+    }
 }

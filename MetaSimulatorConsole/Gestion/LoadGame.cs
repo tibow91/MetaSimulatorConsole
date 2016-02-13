@@ -85,8 +85,13 @@ namespace MetaSimulatorConsole.Gestion
             if (!CheckFileExistence())  return;
             var game = CastDeserialization();
             TestInstance();
-            if (game != null) Gestionnaire.Simulation = game;
+            if (game != null)
+            {
+                Gestionnaire.Simulation = game;
+                new PasserAuMenuDeSimulation(Gestionnaire);
+            }
             else throw new InvalidOperationException("Erreur rencontrée lors du chargement du jeu");
+           
 
         }
 
@@ -122,7 +127,7 @@ namespace MetaSimulatorConsole.Gestion
     {
         protected readonly string NomFichier;
 
-        public LoadGameAOK(GameManager manager) : base(manager,"_savegame_AgeOfKebab")        {        }
+        public LoadGameAOK(GameManager manager) : base(manager,"savegame_AgeOfKebab")        {        }
         protected override Game CastDeserialization()
         {
             return (GameAgeOfKebab)new GameSerializer().Deserialize(NomFichier);
@@ -132,7 +137,7 @@ namespace MetaSimulatorConsole.Gestion
     class LoadGameCDGSimulator : LoadGameTemplateAdapterAbstrait
     {
 
-        public LoadGameCDGSimulator(GameManager manager) : base(manager, "_savegame_CDGSimulator") { }
+        public LoadGameCDGSimulator(GameManager manager) : base(manager, "savegame_CDGSimulator") { }
 
         protected override Game CastDeserialization()
         {
@@ -143,7 +148,7 @@ namespace MetaSimulatorConsole.Gestion
     class LoadGameHoneyland : LoadGameTemplateAdapterAbstrait
     {
 
-        public LoadGameHoneyland(GameManager manager) : base(manager, "_savegame_Honeyland") { }
+        public LoadGameHoneyland(GameManager manager) : base(manager, "savegame_Honeyland") { }
         protected override Game CastDeserialization()
         {
             return (GameHoneyland)new GameSerializer().Deserialize(NomFichier);
