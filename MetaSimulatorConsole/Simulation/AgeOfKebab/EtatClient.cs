@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
-
-    abstract class EtatClient : EtatAbstract
+    [XmlInclude(typeof(EtatClientEnAttenteDeCommande)), XmlInclude(typeof(EtatClientEnAttenteDeFaim))]
+    [XmlInclude(typeof(EtatClientVaCommander)), XmlInclude(typeof(EtatClientEstServi))]
+    public abstract class EtatClient : EtatAbstract
     {
         public override void ModifieEtat(PersonnageMobilisable p)
         {
@@ -22,17 +24,14 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 
         public virtual string AfficherEtat()
         {
-            return "Etat " + nom;
-        }
-        protected EtatClient(string nom) : base(nom)
-        {
+            return "Etat " + Nom;
         }
 
-        public string nom { get; set; }
+        public EtatClient() : base("Etat Client non défini") { }
+        protected EtatClient(string nom) : base(nom) { }
     }
-    class EtatClientEnAttenteDeFaim : EtatClient
+    public class EtatClientEnAttenteDeFaim : EtatClient
     {
-
         public override void ModifieEtat(Client p)
         {
             if (p == null) throw new NullReferenceException("Personnage is null !");
@@ -41,57 +40,38 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 //            Console.WriteLine("Le comportement En attente de faim du personnage a été chargé");
         }
 
-        public EtatClientEnAttenteDeFaim()
-            : base("En Attente de Faim")
-        {
-        }
+        public EtatClientEnAttenteDeFaim() : base("En Attente de faim") { }
+
     }
 
-    class EtatClientVaCommander : EtatClient
+    public class EtatClientVaCommander : EtatClient
     {
-
-
-
-        public EtatClientVaCommander()
-            : base("Va Passer une commande")
-        {
-        }
-
         public override void ModifieEtat(Client p)
         {
             if (p == null) throw new NullReferenceException("Personnage is null !");
             if (p.Comportement is ComportementEnAttenteDeFaim) return;
             p.Comportement = new ComportementEnAttenteDeFaim(p);
         }
+        public EtatClientVaCommander() : base("Va Passer une commande") { }
+
     }
 
-    class EtatClientEnAttenteDeCommande : EtatClient
+    public class EtatClientEnAttenteDeCommande : EtatClient
     {
-
-
-        public EtatClientEnAttenteDeCommande()
-            : base("En attente pour passer une commande")
-        {
-        }
-
         public override void ModifieEtat(Client p)
         {
             throw new NotImplementedException();
         }
+        public EtatClientEnAttenteDeCommande() : base("En attente pour passer une commande") { }
+
     }
 
-    class EtatClientEstServi : EtatClient
+    public class EtatClientEstServi : EtatClient
     {
-
-
-        public EtatClientEstServi()
-            : base("Est Servi")
-        {
-        }
-
         public override void ModifieEtat(Client p)
         {
             throw new NotImplementedException();
         }
+        public EtatClientEstServi() : base("Est Servi") { }
     }
 }

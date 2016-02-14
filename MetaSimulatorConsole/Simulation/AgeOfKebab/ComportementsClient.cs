@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
+    [XmlInclude(typeof(ComportementEnAttenteDeFaim))]
     public abstract class ClientBehavior : PersonnageBehavior
     {
         protected Client PersonnageClient
@@ -13,6 +15,7 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
             get { return (Client) Personnage; }
             set { Personnage = value; }
         }
+        public ClientBehavior() : base() { }
         protected ClientBehavior(Client perso) : base(perso)
         {
 
@@ -20,6 +23,7 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
     }
     public class ComportementEnAttenteDeFaim : ClientBehavior
     {
+        public ComportementEnAttenteDeFaim() : base() { }
         public ComportementEnAttenteDeFaim(Client perso) : base(perso) { }
 
         /* ici on analyse si l'état du personnage convient selon ses paramètres

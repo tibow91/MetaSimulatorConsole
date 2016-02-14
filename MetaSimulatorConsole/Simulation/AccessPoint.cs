@@ -14,10 +14,10 @@ namespace MetaSimulatorConsole.Simulation
         public List<ZoneFinale> ZoneAnnexes = new List<ZoneFinale>();
 
         public AccessPoint() : base("AccessPoint générique",new TextureWoodPlatformVertical()) {}
-        public AccessPoint(string nom, EGame nomdujeu, ZoneFinale zone)
+        public AccessPoint(string nom, EGame nomdujeu, ZoneFinale zoneannexe)
             : base(nom, nomdujeu, new TextureWoodPlatformVertical())
         {
-            AddZoneAnnexe(zone);
+            AddZoneAnnexe(zoneannexe);
         }
 
         public override bool EstValide()
@@ -96,7 +96,7 @@ namespace MetaSimulatorConsole.Simulation
                             if (obj.Case.Equals(coorReverse))
                             {
                                 var objAccess = (AccessPoint) obj;
-                                objAccess.AddZoneAnnexe(zonearrivee);
+                                objAccess.AddZoneAnnexe(zonearrivee); // Cas où le point d'accès est relié à plusieurs zones (>= 3)
                                 return true;
                             }
                         }

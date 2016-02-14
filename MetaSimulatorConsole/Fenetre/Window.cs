@@ -61,6 +61,7 @@ namespace MetaSimulatorConsole
 
         public List<IObservateurAbstrait> Observers()
         {
+            Console.WriteLine("Mise à jour des commandes de jeu");
             List<IObservateurAbstrait> observers = new List<IObservateurAbstrait>();
             foreach (var o in Touches.Observers())
             {

@@ -5,12 +5,17 @@ using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
 {
-//    [XmlInclude(typeof(Client)), XmlInclude(typeof(Serveur))]
+    [XmlInclude(typeof(Client))]
+    [XmlInclude(typeof(PersonnageMobilisable))]
     public abstract class PersonnageAbstract : SujetObserveAbstrait, IEquatable<PersonnageAbstract>
     {
+        [XmlAttribute]
         public EGame Simulation;
+        [XmlAttribute]
         public string Nom { get; set; }
+        [XmlAttribute]
         public int PointsDeVie { get; set; }
+        [XmlAttribute]
         public int SeuilCritique { get; set; }
   
         private Coordonnees _case;
@@ -30,7 +35,10 @@ namespace MetaSimulatorConsole.Simulation
                 UpdateObservers();
             }
         }
-
+        protected PersonnageAbstract(string nom)
+        {
+            Nom = nom;
+        }
         protected PersonnageAbstract(string nom,EGame simulation,TextureDecorator texture)
         {
             Simulation = simulation;
@@ -127,7 +135,11 @@ namespace MetaSimulatorConsole.Simulation
             {
                 etat = value;
                 if (etat != null) etat.ModifieEtat(this);
-                if (Comportement != null) Comportement.Update();
+                if (Comportement != null)
+                {
+                    RechargerComportement();
+                    Comportement.Update();
+                }
             }
         }
 
@@ -158,6 +170,8 @@ namespace MetaSimulatorConsole.Simulation
                 if (Comportement != null) Comportement.Update();
             }
         }
+        public PersonnageMobilisable(string nom) : base(nom) { }
+
         protected PersonnageMobilisable(string nom,EGame simulation,TextureDecorator texture)
             : base(nom, simulation, texture)
         {
@@ -170,6 +184,11 @@ namespace MetaSimulatorConsole.Simulation
             if(Comportement != null) Comportement.Update();
         }
         
+        public void RechargerComportement()
+        {
+            if (Comportement == null) throw new NullReferenceException("Ce personnage mobilisable n'a pas de comportement assigné !");
+            Comportement.SetPersonnage(this);
+        }
         public override abstract void AnalyserSituation();
 
         public override abstract void Execution();

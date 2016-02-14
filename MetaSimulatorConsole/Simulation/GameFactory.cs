@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 using MetaSimulatorConsole.Simulation;
+using System.Threading;
 
 namespace MetaSimulatorConsole
 {
@@ -15,16 +16,7 @@ namespace MetaSimulatorConsole
     public abstract class Game : SujetObserveAbstrait, IEquatable<Game>,IObservateurAbstrait
     {
         public EGame NomDuJeu;
-        private bool _started;
-        public bool Started
-        {
-            get{ return _started; }
-            set
-            {
-                if (value == false) throw new InvalidOperationException("L'état vrai du champ Started est irréversible");
-                Started = true;
-            }
-        }
+
         [XmlIgnore]
         public bool Stop { get; set; } // Permet d'arrêter la simulation
         [XmlIgnore]
@@ -35,43 +27,92 @@ namespace MetaSimulatorConsole
         [XmlIgnore]
         protected GameManager Gestionnaire;
         public ZoneGenerale ZoneGenerale;
-        [XmlIgnore]
         public QuartierGeneralAbstrait QG;
-        protected Game(GameManager manager,Grille grille)
+        private bool AttachedToManager,QGSet,PersoLoaded;
+        public Game() {       }
+
+        protected void DetacherAncienQG()
         {
-
-            Gestionnaire = manager;
-            Attach(Gestionnaire); // Le gestionnaire met à jours les classes système selon le jeu
-            Gestionnaire.Attach(this); // Le jeu met à jour son tableau selon le gestionnaire
-            this.Tableau = grille;
-            //RemplirGrille();
-            //ConstruireZones();
-
+            DeAttachAll();
         }
-
-        protected abstract void RemplirGrille();
-        public void LancerSimulation()
+        protected abstract void ConstruireQG();
+        public bool EstValide()
         {
             // si la zone générale est pas valide   // ne pas lancer la simulation
             if (!ZoneGenerale.EstValide())
             {
                 Console.WriteLine("La simulation ne peut être lancée car la zone générale n'est pas valide !");
-                return;
+                return false;
             }
             if (!VerifierValiditeZones())
             {
                 Console.WriteLine("La simulation ne peut être lancée car les zones ne sont pas conformes !");
-                return;
+                return false;
             }
-            Started = true;
+            return true;
+        }
+
+        public void LancerSimulation()
+        {
+            if (!EstValide()) return;
             LancerMoteurSimulation();
         }
 
-        protected abstract void LancerMoteurSimulation();
-
-        public void AfficherGrille()
+        protected void AttachToGameManager(GameManager manager)
         {
-            RemplirGrille();
+            Gestionnaire = manager;
+            Tableau = manager.TableauDeJeu;
+            if (Tableau == null) throw new NullReferenceException("La grille est nulle !");
+            if (!QGSet){
+                QG.Simulation = this;
+                QGSet = true;
+            }
+            if (AttachedToManager) return;
+            Attach(Gestionnaire); // Le gestionnaire met à jours les classes système selon le jeu
+            Gestionnaire.Attach(this); // Le jeu met à jour son tableau selon le gestionnaire
+        }
+
+
+        public virtual void CreerUneNouvellePartie(GameManager manager) // Doit charger les éléments par défault des zones
+        {
+            ConstruireQG(); // Détacher l'ancien QG d'abord s'il y a
+            AttachToGameManager(manager);
+            ConstruireZones();
+            QGSet = true;
+            RechargerLaPartie(manager);
+        }
+        public virtual void RechargerLaPartie(GameManager manager)
+        {
+            AttachToGameManager(manager);            
+            ChargerAlgorithmes();
+            if (ZoneGenerale == null) throw new NullReferenceException("La zone générale est nulle !");
+            ZoneGenerale.AttacherAuJeu(this);
+            if(!PersoLoaded){
+                ZoneGenerale.LierZonesAuxPersonnages(ZoneGenerale);
+                ZoneGenerale.RattacherAccessPoints();
+                PersoLoaded = true;
+            }
+            Tableau.ConstruireGrilleDepuis(ZoneGenerale);
+            UpdateObservers(); // pour mettre à jour le QG sur les zones
+        }
+
+        protected abstract void ChargerAlgorithmes();
+
+        private void LancerMoteurSimulation()
+        {
+            Stop = false;
+            Running = true;
+            Console.WriteLine("Simulation lancée");
+            UpdateObservers();
+            while (!Stop)
+            {
+                if (QG == null) throw new NullReferenceException("QG is null !");
+                QG.GererUnTour(true);
+                Thread.Sleep(2000);
+            }
+            Running = false;
+            Console.WriteLine("Simulation arrêtée");
+            UpdateObservers();
         }
 
         public bool Equals(Game other)
@@ -104,52 +145,35 @@ namespace MetaSimulatorConsole
         {
             Tableau = Gestionnaire.TableauDeJeu;
         }
-    }
-
-    abstract class GameObservable : Game
-    {
-        protected GameObservable(GameManager manager,Grille grille) : base(manager,grille) { }
-
-        public virtual void UpdateView()
-        {
-        }
-
-        protected override void RemplirGrille(){}
-        
-        protected abstract override void LancerMoteurSimulation();
-
-        public abstract override void ConstruireZones();
-
 
     }
-   
-
+    
     abstract class GameFactory 
     {
-        public abstract Game CreerJeu(GameManager manager, Grille grille);
+        public abstract Game CreerJeu();
     }
 
     class GameAgeOfKebabFactory : GameFactory
     {
-        public override Game CreerJeu(GameManager manager, Grille grille) 
+        public override Game CreerJeu() 
         {
-            return new GameAgeOfKebab(manager,grille);
+            return new GameAgeOfKebab();
         }
     }
 
     class GameCDGSimulatorFactory : GameFactory
     {
-        public override Game CreerJeu(GameManager manager, Grille grille) 
+        public override Game CreerJeu() 
         {
-            return new GameCDGSimulator(manager,grille);
+            return new GameCDGSimulator();
         }
     }
 
     class GameHoneylandFactory : GameFactory
     {
-        public override Game CreerJeu(GameManager manager, Grille grille) 
+        public override Game CreerJeu() 
         {
-            return new GameHoneyland(manager,grille);
+            return new GameHoneyland();
         }
     }
 
@@ -160,9 +184,9 @@ namespace MetaSimulatorConsole
         {
             switch(nomjeu)
             {
-                case NomJeu.AgeOfKebab: return new GameAgeOfKebabFactory().CreerJeu(manager,grille);
-                case NomJeu.CDGSimulator: return new GameCDGSimulatorFactory().CreerJeu(manager,grille);
-                case NomJeu.Honeyland: return new GameHoneylandFactory().CreerJeu(manager,grille); 
+                case NomJeu.AgeOfKebab: return new GameAgeOfKebabFactory().CreerJeu();
+                case NomJeu.CDGSimulator: return new GameCDGSimulatorFactory().CreerJeu();
+                case NomJeu.Honeyland: return new GameHoneylandFactory().CreerJeu(); 
             }
 
             return null;

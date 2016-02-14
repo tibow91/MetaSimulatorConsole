@@ -90,8 +90,6 @@
     <Compile Include="Gestion\Commandes.cs" />
     <Compile Include="Simulation\GameFactory.cs" />
     <Compile Include="Tableau\ConstructionGrille.cs" />
-    <Compile Include="unused\MVC\GameController.cs" />
-    <Compile Include="unused\MVC\GameView.cs" />
     <Compile Include="Tableau\Grille.cs" />
     <Compile Include="Dijkstra\Iterateur.cs" />
     <Compile Include="Gestion\Menu.cs" />
@@ -120,7 +118,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="unused\MVC\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

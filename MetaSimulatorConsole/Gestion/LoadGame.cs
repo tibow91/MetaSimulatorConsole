@@ -11,7 +11,7 @@ namespace MetaSimulatorConsole.Gestion
     // ADAPTER
     public interface LoadGameAdapter
     {
-        void Load();
+        bool Load();
     }
 
     abstract class LoadGameAdapterAbstrait : LoadGameAdapter
@@ -21,7 +21,7 @@ namespace MetaSimulatorConsole.Gestion
         {
             Gestionnaire = manager;
         }
-        public abstract void Load();
+        public abstract bool Load();
         protected void TestInstance()
         {
             if (Gestionnaire == null) throw new NullReferenceException("Gestionnaire est null !");
@@ -31,10 +31,10 @@ namespace MetaSimulatorConsole.Gestion
     class LoadAOKAdapter : LoadGameAdapterAbstrait
     {
         public LoadAOKAdapter(GameManager manager) : base(manager)        {        }
-        public override void Load()
+        public override bool Load()
         {
             TestInstance();
-            Gestionnaire.chargerFichierXML(EGame.AgeOfKebab);
+           return Gestionnaire.chargerFichierXML(EGame.AgeOfKebab);
         }
     }
 
@@ -42,10 +42,10 @@ namespace MetaSimulatorConsole.Gestion
     {
         public LoadCDGSimulatorAdapter(GameManager manager) : base(manager) { }
 
-        public override void Load()
+        public override bool Load()
         {
             TestInstance();
-            Gestionnaire.chargerFichierXML(EGame.CDGSimulator);
+            return Gestionnaire.chargerFichierXML(EGame.CDGSimulator);
         }
     }
 
@@ -53,10 +53,10 @@ namespace MetaSimulatorConsole.Gestion
     {
         public LoadHoneylandAdapter(GameManager manager) : base(manager) { }
 
-        public override void Load()
+        public override bool Load()
         {
             TestInstance();
-            Gestionnaire.chargerFichierXML(EGame.Honeyland);
+            return Gestionnaire.chargerFichierXML(EGame.Honeyland);
         }
     }
 
@@ -79,20 +79,19 @@ namespace MetaSimulatorConsole.Gestion
             Gestionnaire = manager;
             NomFichier = filename;
         }
-        public void ChargerJeuDepuisXML()
+        public bool ChargerJeuDepuisXML()
         {
-            if(CheckSimulationRunning()) return;
-            if (!CheckFileExistence())  return;
+            if(CheckSimulationRunning()) return false;
+            if (!CheckFileExistence())  return false;
             var game = CastDeserialization();
             TestInstance();
             if (game != null)
             {
                 Gestionnaire.Simulation = game;
-                new PasserAuMenuDeSimulation(Gestionnaire);
+                Gestionnaire.Simulation.RechargerLaPartie(Gestionnaire);
             }
             else throw new InvalidOperationException("Erreur rencontrée lors du chargement du jeu");
-           
-
+            return true;
         }
 
         protected virtual Game CastDeserialization()
@@ -112,7 +111,9 @@ namespace MetaSimulatorConsole.Gestion
         }
         private bool CheckFileExistence()
         {
-            if (!File.Exists(NomFichier))
+            string path = @"C:\XML\" + NomFichier + ".xml";
+
+            if (!File.Exists(path))
             {
                 Console.WriteLine("Chargement du jeu AgeOfKebab Impossible car '" + NomFichier + ".xml : est inexistant");
                 return false;
@@ -125,7 +126,6 @@ namespace MetaSimulatorConsole.Gestion
 
     class LoadGameAOK : LoadGameTemplateAdapterAbstrait
     {
-        protected readonly string NomFichier;
 
         public LoadGameAOK(GameManager manager) : base(manager,"savegame_AgeOfKebab")        {        }
         protected override Game CastDeserialization()

@@ -71,8 +71,8 @@ namespace MetaSimulatorConsole
     }
     [XmlInclude(typeof(ZoneGeneraleAOK))]
     [XmlInclude(typeof(ZoneGenerale))]
-    [XmlInclude(typeof(ZoneComposite))]
     [XmlInclude(typeof(ZoneFinale))]
+    [XmlInclude(typeof(ZoneComposite))]
     public abstract class ZoneAbstraite : SujetObserveAbstrait
     {
         [XmlAttribute]
@@ -89,7 +89,9 @@ namespace MetaSimulatorConsole
             nom = unNom;
             Simulation = simulation;
         }
-
+        public abstract void AttacherAuJeu(Game simulation);
+        public abstract void LierZonesAuxPersonnages(ZoneGenerale zonegenerale);
+        
         public abstract List<ZoneFinale> ObtenirZonesFinales();
         public abstract void AjouterZone(ZoneAbstraite c);
         //public abstract void AfficherZones()
@@ -191,6 +193,7 @@ namespace MetaSimulatorConsole
             }
             return liste;
         }
+
 
         public override bool AjouterPersonnage(PersonnageAbstract personnage)
         {
@@ -344,7 +347,22 @@ namespace MetaSimulatorConsole
             }
         }
 
+        public override void AttacherAuJeu(Game simulation)
+        {
+            Simulation = simulation;
+            foreach(var zone in Zones)
+            {
+                zone.AttacherAuJeu(simulation);
+            }
+        }
 
+        public override void LierZonesAuxPersonnages(ZoneGenerale zonegenerale)
+        {
+            foreach(var zone in Zones)
+            {
+                zone.LierZonesAuxPersonnages(zonegenerale);
+            }
+        }
     }
 
 
@@ -507,13 +525,17 @@ namespace MetaSimulatorConsole
                     return false;
                 }
             }
-
             // pour chacun de ses objets
             foreach(var objet in Objets)
             {
                 if (!objet.EstValide())  // si n'est pas valide, alors c'est pas valide
                 {
                     Console.WriteLine("EstValide: Zone " + this + " - Objet " + objet + " non valide");
+                    return false;
+                }
+                if (!ContientCoordonnees(objet.Case))
+                {
+                    Console.WriteLine("Erreur de placement " + objet + " n'est pas dans la zone " + this + " !!");
                     return false;
                 }
             }
@@ -525,6 +547,11 @@ namespace MetaSimulatorConsole
                 if(!personnage.EstValide())// si un n'est pas valide, alors c'est pas valide
                 {
                     Console.WriteLine("EstValide: Zone " + this + " - Personnage " + personnage + " non valide");
+                    return false;
+                }
+                if (!ContientCoordonnees(personnage.Case))
+                {
+                    Console.WriteLine("EstValide: Zone " + this + " - personnage " + personnage + " n'est pas ici !");
                     return false;
                 }
             }
@@ -696,12 +723,30 @@ namespace MetaSimulatorConsole
         {
             return new List<ZoneFinale>(){ this};
         }
+
+        public override void AttacherAuJeu(Game simulation)
+        {
+            Simulation = simulation;
+        }
+
+        public override void LierZonesAuxPersonnages(ZoneGenerale zonegenerale)
+        {
+            foreach(var personnage in Personnages)
+            {
+                if(personnage is PersonnageMobilisable)
+                {
+                    var perso = (PersonnageMobilisable)personnage;
+                    perso.SetZones(zonegenerale, this);
+                    perso.RechargerComportement();
+                }
+            }
+        }
     }
 
 
     public abstract class ZoneGenerale : ZoneComposite
     {
-        protected ZoneGenerale() : base("Zone Générale générique", null) { }
+        public ZoneGenerale() : base("Zone Générale générique", null) { }
         protected ZoneGenerale(string name,Game simu)
             : base(name, simu)
         {
@@ -714,6 +759,42 @@ namespace MetaSimulatorConsole
             DistribuerZones();
             HierarchiserZones();
             PlacerObjets();
+        }
+
+        public void RattacherAccessPoints()
+        {
+
+            foreach (var zone in ObtenirZonesFinales())
+            {
+                var acpoints = new List<AccessPoint>();
+                foreach (var obj in zone.ObtenirObjets())
+                {
+                    if (obj is AccessPoint)
+                        acpoints.Add((AccessPoint)obj);   // On récupère les points d'accès de la première zone         
+                }
+
+                foreach (var zone2 in ObtenirZonesFinales())
+                {
+                    if (zone.Equals(zone2)) continue;
+                    foreach (var obj in zone2.ObtenirObjets())
+                    {
+                        if (obj is AccessPoint) // Chaque point d'accès de la première zone est comparé à la seconde
+                        {
+                            foreach (var acpoint in acpoints)
+                            {
+                                if (acpoint.Case.EstAdjacent(obj.Case))
+                                {
+                                    acpoint.AddZoneAnnexe(zone2);
+                                    var acpoint2 = (AccessPoint)obj;
+                                    acpoint2.AddZoneAnnexe(zone);
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
         }
 
         protected abstract void ConstruireZones();

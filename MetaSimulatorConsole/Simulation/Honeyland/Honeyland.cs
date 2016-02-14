@@ -12,52 +12,25 @@ namespace MetaSimulatorConsole.Simulation
         public CaseHoneyland() : base(new TextureHerbe()) { }
     }
 
-    class GameHoneyland : GameObservable
+    public class GameHoneyland : Game
     {
-        public GameHoneyland(GameManager manager, Grille grille)
-            : base(manager,grille)
-        {
-            NomDuJeu = EGame.Honeyland;
-            RemplirGrille();
-        }
-        public override void UpdateView()
-        {
-            throw new NotImplementedException();
-        }
+        public GameHoneyland() : base() { NomDuJeu = EGame.Honeyland; }
 
-        protected override void RemplirGrille()
-        {
-            // pour chaque element de la grille
-            // Inscrire une texture avec pikachu
-            for (int i = 0; i < Tableau.Longueur; ++i)
-            {
-                for (int j = 0; j < Tableau.Largeur; ++j)
-                {
-                    Tableau[i, j] = new CaseHoneylandFactory().CreerCase();
-                }
-            }
-        }
-
-        protected override void LancerMoteurSimulation()
-        {
-            Stop = false;
-            Running = true;
-            Console.WriteLine("Simulation lancée");
-            Gestionnaire.UpdateObservers();
-            while (!Stop)
-            {
-
-            }
-            Running = false;
-            Console.WriteLine("Simulation arrêtée");
-            Gestionnaire.UpdateObservers();
-            var node = (Node<Case>)Tableau[49, 49];
-            node.Value.SetTextures(new TexturePikachuSurHerbe());
-        }
 
         public override void ConstruireZones()
         {
             ZoneGenerale = new ZoneMaker().ConstruireZonesHoneyland(this); // A compléter
+        }
+
+
+        protected override void ChargerAlgorithmes()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void ConstruireQG()
+        {
+            throw new NotImplementedException();
         }
     }
 }

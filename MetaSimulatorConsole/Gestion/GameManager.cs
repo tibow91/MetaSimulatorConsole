@@ -79,7 +79,7 @@ namespace MetaSimulatorConsole
         {
             if (MenuCourant is MenuSimulation)
             {
-                if (Simulation.Running)
+                if (Simulation != null && Simulation.Running)
                 {
                     Console.WriteLine("Veuillez arrêter la simulation pour revenir au menu principal");
                     return;
@@ -92,18 +92,21 @@ namespace MetaSimulatorConsole
         {
             if(MenuCourant is MenuPrincipal)
                 PasserAuMenu(EMenu.Creation);
+            else throw new InvalidCastException("Cette comande est indisponible dans le menu proposé");
         }
 
         public void PasserAuMenuDeChargement()
         {
             if (MenuCourant is MenuPrincipal)
                 PasserAuMenu(EMenu.Chargement);
+            else throw new InvalidCastException("Cette comande est indisponible dans le menu proposé");
         }
 
         public void PasserAuMenuDeSimulation()
         {
-            if (MenuCourant is MenuCreation)
+            if (MenuCourant is MenuCreation || MenuCourant is MenuChargement)
                 PasserAuMenu(EMenu.Simulation);
+            else throw new InvalidCastException("Cette comande est indisponible dans le menu proposé");
         }
 
         
@@ -134,27 +137,25 @@ namespace MetaSimulatorConsole
             }
         }
 
-        private Game creerJeu() // Poids mouche
+        private void creerJeu() // Poids mouche
         {
             NomJeu nomjeu = JeuChoisi;
             if (Jeux.ContainsKey(nomjeu))
             {
                 Simulation = Jeux[nomjeu];
-                Simulation.AfficherGrille();
-                return Jeux[nomjeu];
+                Simulation.CreerUneNouvellePartie(this);
+                return;
             }
-            CreerTableauDeJeu();
-              Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, this,TableauDeJeu);
-
+            Jeux[nomjeu] = GameFactorySelect.CreerJeu(nomjeu, this,TableauDeJeu);
             Console.WriteLine("Creation du jeu : " + nomjeu);
             Simulation = Jeux[nomjeu];
-            return Jeux[nomjeu];
+            Simulation.CreerUneNouvellePartie(this);
         }
        
-        public Game CreerJeu(NomJeu nomjeu)
+        public void CreerJeu(NomJeu nomjeu)
         {
             ChoisirJeu(nomjeu);
-            return creerJeu();
+            creerJeu();
         }
 
         private void CreerTableauDeJeu()
@@ -170,15 +171,17 @@ namespace MetaSimulatorConsole
             JeuChoisi = nomjeu;
             Console.WriteLine("Jeu choisi: {0}", JeuChoisi);
         }
-        public void chargerFichierXML(EGame game) // Doit Permettre de restaurer ces instances de jeu depuis les fichiers XML
+        public bool chargerFichierXML(EGame game) // Doit Permettre de restaurer ces instances de jeu depuis les fichiers XML
         {
+            bool success = false ;
             switch(game)
             {
-                case EGame.AgeOfKebab: new LoadGameAOK(this).ChargerJeuDepuisXML(); break;
-                case EGame.CDGSimulator: new LoadGameCDGSimulator(this).ChargerJeuDepuisXML(); break;
-                case EGame.Honeyland: new LoadGameHoneyland(this).ChargerJeuDepuisXML(); break;
+                case EGame.AgeOfKebab: success = new LoadGameAOK(this).ChargerJeuDepuisXML(); break;
+                case EGame.CDGSimulator: success = new LoadGameCDGSimulator(this).ChargerJeuDepuisXML(); break;
+                case EGame.Honeyland: success = new LoadGameHoneyland(this).ChargerJeuDepuisXML(); break;
                 default: break;
             }
+            return success;
         }
 
 

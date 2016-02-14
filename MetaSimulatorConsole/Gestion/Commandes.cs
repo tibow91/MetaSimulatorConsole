@@ -39,7 +39,7 @@ namespace MetaSimulatorConsole
         {
             if (gestionnaire != null )
                 Simulation = gestionnaire.Simulation;
-            Console.WriteLine("Mise à jour de la commande Stop Simulation");
+            //Console.WriteLine("Mise à jour de la commande Stop Simulation");
         }
     }
 
@@ -204,7 +204,7 @@ namespace MetaSimulatorConsole
         {
             if (gestionnaire != null && gestionnaire.Fenetre != null)
                 ShowInterface = gestionnaire.Fenetre.ShowInterface;
-            Console.WriteLine("Mise à jour de la commande MontrerCacherInterface");
+            //Console.WriteLine("Mise à jour de la commande MontrerCacherInterface");
         }
     }
 
@@ -231,7 +231,7 @@ namespace MetaSimulatorConsole
         {
             if (gestionnaire != null) Simulation = gestionnaire.Simulation;
             if (Simulation != null) QG = Simulation.QG;
-            Console.WriteLine("Mise à jour de la commande 'LancerUnTourDeJeu'");
+            //Console.WriteLine("Mise à jour de la commande 'LancerUnTourDeJeu'");
         }
     }
 
@@ -242,7 +242,8 @@ namespace MetaSimulatorConsole
         public override void Execute()
         {
             Console.WriteLine("Vous avez demandé à charger le jeu Age Of Kebab");
-            new LoadAOKAdapter(gestionnaire).Load();
+            if(new LoadAOKAdapter(gestionnaire).Load())
+                new PasserAuMenuDeSimulation(gestionnaire).Execute();
         }
     }
 
@@ -253,7 +254,8 @@ namespace MetaSimulatorConsole
         public override void Execute()
         {
             Console.WriteLine("Vous avez demandé à charger le jeu CDG Simulator");
-            new LoadCDGSimulatorAdapter(gestionnaire).Load();
+            if(new LoadCDGSimulatorAdapter(gestionnaire).Load())
+                new PasserAuMenuDeSimulation(gestionnaire);
         }
     }
 
@@ -264,7 +266,8 @@ namespace MetaSimulatorConsole
         public override void Execute()
         {
             Console.WriteLine("Vous avez demandé à charger le jeu HoneyLand");
-            new LoadHoneylandAdapter(gestionnaire).Load();
+            if(new LoadHoneylandAdapter(gestionnaire).Load())
+                new PasserAuMenuDeSimulation(gestionnaire);
         }
     }
 

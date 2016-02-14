@@ -55,19 +55,26 @@ namespace MetaSimulatorConsole.Simulation
     public abstract class QuartierGeneralAbstrait : QuartierGeneralObserve
     {
         // Songer aussi à placer le module de statistique à l'intérieur
-        private readonly  Game Simulation;
+        private Game _simulation { get; set; }
+        [XmlIgnore]
+        public  Game Simulation
+        {
+            get { return _simulation;  }
+            set { 
+                    _simulation = value;
+                     _simulation.Attach(this);
+                }
+        }
         protected ZoneGenerale ZonePrincipale;
        
+        [XmlAttribute]
         public int PersonnagesInseres;
+        [XmlAttribute]
         public int PersonnagesToInsert { get; set; }
-        public override void Update()
-        {
-            DeAttacherTousLesPersonnagesMobilises();
-            if(Simulation != null) ZonePrincipale = Simulation.ZoneGenerale;
-            ChargerPersonnagesAMobiliser();
-        }
+
 
         protected abstract PersonnageMobilisable PersonnageToInsertAt(Coordonnees coor);
+        public QuartierGeneralAbstrait() { }
         protected QuartierGeneralAbstrait(Game simu)
         {
             PersonnagesToInsert = 5;
@@ -75,6 +82,12 @@ namespace MetaSimulatorConsole.Simulation
             Update(); // Pour mettre à jour la ZoneGénérale
         }
 
+        public override void Update()
+        {
+            DeAttacherTousLesPersonnagesMobilises();
+            if (Simulation != null) ZonePrincipale = Simulation.ZoneGenerale;
+            ChargerPersonnagesAMobiliser();
+        }
         protected void ChargerPersonnagesAMobiliser()
         {
             if (ZonePrincipale == null) return;
@@ -89,25 +102,39 @@ namespace MetaSimulatorConsole.Simulation
             }
         }
 
-        public void GererUnTour()
+        public void GererUnTour(bool ignore)
         {
+            if (Simulation == null) throw new NullReferenceException("Le QG n'est pas rattaché à une simulation !");
             // Si une simulation continue est en cours, impossible !
-            if (Simulation.Running)
+            if (!ignore && Simulation.Running)
             {
                 Console.WriteLine("GererUnTour: Impossible de lancer un tour manuellement, car la simulation est en cours !");
                 return;
             }
-            else Simulation.Started = true;
+            if (!Simulation.EstValide())
+            {
+                Console.WriteLine("La simulation n'est pas valide, impossible donc de mobiliser les personnages");
+                return;
+            }
             MobiliserPersonnages();
             InsererPersonnagesRestants();
         }
 
+        public void GererUnTour()
+        {
+            GererUnTour(false);
+        }
+
+
         protected abstract void InsererPersonnagesRestants();
+
 
     }
 
     public class QuartierGeneralAOK : QuartierGeneralAbstrait
     {
+        public QuartierGeneralAOK() : base()
+        { }
         public QuartierGeneralAOK(Game simu) : base(simu){}
 
 

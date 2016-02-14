@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MetaSimulatorConsole.Dijkstra;
 using MetaSimulatorConsole.Tableau;
+using System.Threading;
 
 namespace MetaSimulatorConsole.Simulation
 {
@@ -31,61 +32,35 @@ namespace MetaSimulatorConsole.Simulation
             base.SetPersonnageToObserve(perso);
         }
     }
-    class GameAgeOfKebab : GameObservable
+    public class GameAgeOfKebab : Game
     {
-
-        public GameAgeOfKebab(GameManager manager,Grille grille)
-            : base(manager,grille)
+        public GameAgeOfKebab() : base() 
         {
             NomDuJeu = EGame.AgeOfKebab;
-            //RemplirGrille();
-            ConstruireZones();
-            Tableau.SetAlgoConstruction(new ConstructionGrilleAOK(Tableau));
-            Tableau.SetAlgoComputePath(new ComputePathsAOK(Tableau));
-            Tableau.ConstruireGrilleDepuis(ZoneGenerale);
+            ZoneGenerale = new ZoneGeneraleAOK();
+        }
+
+        protected override void ConstruireQG()
+        {
+            DetacherAncienQG();
             QG = new QuartierGeneralAOK(this);
             Attach(QG);
         }
-
-        protected override void RemplirGrille()
-        {
-            // pour chaque element de la grille
-            // Inscrire une texture avec pikachu
-            for (int i = 0; i < Tableau.Longueur; ++i)
-            {
-                for (int j = 0; j < Tableau.Largeur; ++j)
-                {
-                    Tableau[i, j] = new CaseAgeOfKebabFactory().CreerCase();
-                }
-            }
-        }
-
-        public override void UpdateView()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void LancerMoteurSimulation()
-        {
-            Stop = false;
-            Running = true;
-            Console.WriteLine("Simulation lancée");
-            UpdateObservers();
-            while (!Stop)
-            {
-
-            }
-            Running = false;
-            Console.WriteLine("Simulation arrêtée");
-            UpdateObservers();
-        }
-
+        
+        
         public override void ConstruireZones()
         {
             ZoneGenerale = new ZoneMaker().ConstruireZonesAgeOfKebab(this);
-            UpdateObservers(); // pour mettre à jour le QG sur les zones
-            new ZoneSerializer().Serialize(ZoneGenerale,"ZoneGenerale");
         }
+
+
+        protected override void ChargerAlgorithmes()
+        {
+            if (Tableau == null) throw new NullReferenceException("La grille est nulle !");
+            Tableau.SetAlgoConstruction(new ConstructionGrilleAOK(Tableau));
+            Tableau.SetAlgoComputePath(new ComputePathsAOK(Tableau));
+        }
+
     }
 
 }

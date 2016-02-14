@@ -9,6 +9,7 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
     
     public class Client: PersonnageMobilisable
     {
+        public Client() : base("Client générique",EGame.AgeOfKebab,new TexturePlayer()) { }
         public Client(string nom,Coordonnees coor)
             : base(nom, EGame.AgeOfKebab, new TexturePlayer())
         {

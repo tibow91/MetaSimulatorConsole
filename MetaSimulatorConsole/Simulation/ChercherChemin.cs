@@ -24,7 +24,7 @@ namespace MetaSimulatorConsole.Simulation
                 list.Add(chemin);
             }
             return list; 
-            return objets.Select(obj => grille.Route(casedepart, obj.Case)).ToList();
+            //return objets.Select(obj => grille.Route(casedepart, obj.Case)).ToList();
 
         }
 
