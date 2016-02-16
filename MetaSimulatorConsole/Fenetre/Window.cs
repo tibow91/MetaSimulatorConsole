@@ -10,6 +10,7 @@ using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
+using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole
 {
@@ -20,10 +21,25 @@ namespace MetaSimulatorConsole
         public Clavier Touches;
         private Grille tableau;
         public GameManager Gestionnaire;
-        public bool ShowInterface = true;
-
+        public bool ShowInterface = true,ShowStats;
+        public QuartierGeneralAbstrait Stats;
         public Dictionary<string, string> TextMenu = new Dictionary<string, string>();
+        public Dictionary<string, int> TextMenuStats = new Dictionary<string, int>();
 
+        private Menu _etatMenu;
+        private Menu EtatMenu
+        {
+            get{ return _etatMenu;}
+            set
+            {
+                _etatMenu = value;
+                if (_etatMenu is MenuSimulation)
+                    printStats = true;                
+                else
+                    printStats = false;
+            }
+        }
+        public bool printStats;
         public Grille Tableau
         {
             get { return tableau; }
@@ -72,7 +88,23 @@ namespace MetaSimulatorConsole
 
         public void Update()
         {
+            if (Gestionnaire == null) throw new NullReferenceException("Le gestionnaire est null !");
             Tableau = Gestionnaire.TableauDeJeu;
+            EtatMenu = Gestionnaire.MenuCourant;
+            if (Gestionnaire.Simulation == null) Stats = null;
+            Stats = Gestionnaire.Simulation.QG;
+            UpdateStatsOnScreen();
+        }
+
+        private void UpdateStatsOnScreen()
+        {
+            TextMenuStats.Clear();
+            if (!printStats) return;
+            if (Stats == null) throw new NullReferenceException("Pas de stats à afficher car l'objet est null !");
+            TextMenuStats.Add("Tour", Stats.Tour);
+            TextMenuStats.Add("Personnages insérés", Stats.PersonnagesInseres);
+            TextMenuStats.Add("Personnages à insérer", Stats.PersonnagesToInsert);
+            TextMenuStats.Add("Personnages ayant atteint leur objectif", Stats.PersonnagesToInsert);
         }
     }
 

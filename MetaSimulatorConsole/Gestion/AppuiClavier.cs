@@ -70,24 +70,30 @@ namespace MetaSimulatorConsole
             AppuiClavier toucheK2 = new AppuiClavierToucheKeypad2(fenetre);
             AppuiClavier toucheK3 = new AppuiClavierToucheKeypad3(fenetre);
             AppuiClavier toucheK4 = new AppuiClavierToucheKeypad4(fenetre);
+            AppuiClavier toucheK5 = new AppuiClavierToucheKeypad5(fenetre);
+
 
             AppuiClavier toucheN0 = new AppuiClavierToucheNumber0(fenetre);
             AppuiClavier toucheN1 = new AppuiClavierToucheNumber1(fenetre);
             AppuiClavier toucheN2 = new AppuiClavierToucheNumber2(fenetre);
             AppuiClavier toucheN3 = new AppuiClavierToucheNumber3(fenetre);
             AppuiClavier toucheN4 = new AppuiClavierToucheNumber4(fenetre);
+            AppuiClavier toucheN5 = new AppuiClavierToucheNumber5(fenetre);
+
 
             toucheK0.SetCommandeSuivante(toucheK1);
             toucheK1.SetCommandeSuivante(toucheK2);
             toucheK2.SetCommandeSuivante(toucheK3);
             toucheK3.SetCommandeSuivante(toucheK4);
-            toucheK4.SetCommandeSuivante(toucheN0);
+            toucheK4.SetCommandeSuivante(toucheK5);
+            toucheK5.SetCommandeSuivante(toucheN0);
 
             toucheN0.SetCommandeSuivante(toucheN1);
             toucheN1.SetCommandeSuivante(toucheN2);
             toucheN2.SetCommandeSuivante(toucheN3);
             toucheN3.SetCommandeSuivante(toucheN4);
-            toucheN4.SetCommandeSuivante(null);
+            toucheN4.SetCommandeSuivante(toucheN5);
+            toucheN5.SetCommandeSuivante(null);
 
             //fileLogger.setNextLogger(consoleLogger);
 
@@ -269,6 +275,34 @@ namespace MetaSimulatorConsole
         public override void Traitement()
         {
             TraitementGenerique(Key.Keypad4);
+        }
+    }
+
+    class AppuiClavierToucheNumber5 : AppuiClavier
+    {
+        public AppuiClavierToucheNumber5(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new MontrerCacherStats(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Number5);
+        }
+    }
+
+
+    class AppuiClavierToucheKeypad5 : AppuiClavier
+    {
+        public AppuiClavierToucheKeypad5(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new MontrerCacherStats(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Keypad5);
         }
     }
 

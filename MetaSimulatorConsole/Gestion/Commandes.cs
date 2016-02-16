@@ -208,6 +208,38 @@ namespace MetaSimulatorConsole
         }
     }
 
+    class MontrerCacherStats : CommandGameManager
+    {
+        public MontrerCacherStats(GameManager manager) : base(manager) { }
+        private bool _showStats;
+
+        private bool ShowStats
+        {
+            get { return _showStats; }
+            set
+            {
+                gestionnaire.Fenetre.ShowStats = value;
+                _showStats = value;
+            }
+        }
+
+        public override void Execute()
+        {
+            Console.WriteLine("Vous avez demandé à montrer les statistiques de la simulation");
+            if (gestionnaire == null) throw new NullReferenceException("Gestionnaire is null !");            
+            ShowStats = !ShowStats;        
+        }
+
+        public override void Update()
+        {
+            if (gestionnaire == null) throw new NullReferenceException("Gestionnaire is null !");
+            if (gestionnaire.Fenetre == null) throw new NullReferenceException("La Fenêtre est null !");
+            _showStats = gestionnaire.Fenetre.ShowStats;
+            //Console.WriteLine("Mise à jour de la commande MontrerCacherInterface");
+        }
+
+    }
+
     class LancerUnTourDeJeu : CommandGameManager
     {
         protected Game Simulation;

@@ -12,10 +12,15 @@ namespace MetaSimulatorConsole.Simulation
     public interface IPersonnageAMobiliser
     {
         void Mobiliser();
+        void SetQG(QuartierGeneralAbstrait qg);
+        void InformerObjectifAtteint();
+        void InformerObjetRecupere();
+        void InformerPersonnageMort();
+
     }
 
-    public abstract class QuartierGeneralObserve :  IObservateurAbstrait
-    {
+    public abstract class QuartierGeneralObserve :  SujetObserveAbstrait,IObservateurAbstrait
+    {       
         protected QuartierGeneralObserve() { }
         private List<IPersonnageAMobiliser> PersonnagesMobilises = new List<IPersonnageAMobiliser>();
 
@@ -31,6 +36,8 @@ namespace MetaSimulatorConsole.Simulation
 
         public void DeAttacherTousLesPersonnagesMobilises()
         {
+            foreach(var perso in PersonnagesMobilises)            
+                perso.SetQG(null);            
             PersonnagesMobilises.Clear();
         }
 
@@ -66,11 +73,72 @@ namespace MetaSimulatorConsole.Simulation
                 }
         }
         protected ZoneGenerale ZonePrincipale;
-       
+        private int _tour;
         [XmlAttribute]
-        public int PersonnagesInseres;
+        public int Tour
+        {
+            get { return _tour; }
+            set
+            {
+                _tour = value;
+                if (Simulation != null) Simulation.UpdateObservers(); // pour mettre à jour les stats de la fenêtre
+            }
+        }
         [XmlAttribute]
-        public int PersonnagesToInsert { get; set; }
+        private int _persoInseres;
+        public int PersonnagesInseres
+        {
+            get { return _persoInseres; }
+            set 
+            {
+                _persoInseres = value;
+                if (Simulation != null) Simulation.UpdateObservers(); // pour mettre à jour les stats de la fenêtre
+            }
+        }
+        [XmlAttribute]
+        private int _persoToInsert;
+        public int PersonnagesToInsert
+        {
+            get { return _persoToInsert; }
+            set
+            {
+                _persoToInsert = value;
+                if (Simulation != null) Simulation.UpdateObservers(); // pour mettre à jour les stats de la fenêtre
+            }
+        }
+
+        private int _persoQuiOntAtteintLeurBut;
+        public int PersoQuiOntAtteintLeurBut
+        {
+            get { return _persoQuiOntAtteintLeurBut; }
+            set
+            {
+                _persoQuiOntAtteintLeurBut = value;
+                if (Simulation != null) Simulation.UpdateObservers(); // pour mettre à jour les stats de la fenêtre
+            }
+        }
+
+        private int _persoQuiOntRecupereObjet;
+        public int PersoQuiOntRecuperObjet
+        {
+            get { return _persoQuiOntRecupereObjet; }
+            set
+            {
+                _persoQuiOntRecupereObjet = value;
+                if (Simulation != null) Simulation.UpdateObservers(); // pour mettre à jour les stats de la fenêtre
+            }
+        }
+
+        private int _persoQuiSontMorts;
+        public int PersoQuiSontMorts
+        {
+            get { return _persoQuiSontMorts; }
+            set
+            {
+                _persoQuiSontMorts = value;
+                if (Simulation != null) Simulation.UpdateObservers(); // pour mettre à jour les stats de la fenêtre
+            }
+        }
 
 
         protected abstract PersonnageMobilisable PersonnageToInsertAt(Coordonnees coor);
@@ -98,6 +166,7 @@ namespace MetaSimulatorConsole.Simulation
                 if (observer != null)
                 {
                     AttacherPersonnage(observer);
+                    observer.SetQG(this);
                 }
             }
         }
@@ -116,6 +185,7 @@ namespace MetaSimulatorConsole.Simulation
                 Console.WriteLine("La simulation n'est pas valide, impossible donc de mobiliser les personnages");
                 return;
             }
+            ++Tour;
             MobiliserPersonnages();
             InsererPersonnagesRestants();
         }

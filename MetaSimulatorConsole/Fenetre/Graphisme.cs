@@ -63,6 +63,8 @@ class Graphisme
             Partie.RenderFrame += Partie.InitRender;
             Partie.RenderFrame += RenderQuads;
             Partie.RenderFrame += RenderTexts;
+            Partie.RenderFrame += RenderStats;
+
             Partie.RenderFrame += Partie.SwapBuffers;
         }
 
@@ -113,6 +115,32 @@ class Graphisme
                 if (!TextTextures.ContainsKey(text))
                     TextTextures[text] = GenererTextTexture(text + " (" + input + ")");
                 AfficherReverseQuad(0f, 1f + i * 0.15f, 1f, 1f, TextTextures[text]);
+                ++i;
+            }
+
+        }
+
+        public void RenderStats(object sender, FrameEventArgs e)
+        {
+
+            if (Partie.Gestionnaire.MenuCourant is MenuSimulation)
+            {
+                if (Partie.ShowInterface) return; // Ne peut s'afficher que si l'interface est cachée
+                if (!Partie.ShowStats) return; // Ne peut s'affiche que si l'utilisateur l'a demandé
+            }
+            else return;
+            int i = 0;
+            foreach (var elem in Partie.TextMenuStats)
+            {
+                string text = elem.Key;
+                int input = elem.Value;
+                if (!TextTextures.ContainsKey(text))
+                    TextTextures[text] = GenererTextTexture(text + ": ", Color.Orange);
+                if (!TextTextures.ContainsKey(input.ToString()))
+                    TextTextures[input.ToString()] = GenererTextTexture(input.ToString(),Color.Red);
+                AfficherReverseQuad(0f, 1f + i * 0.15f, 1f, 1f, TextTextures[text]);
+                AfficherReverseQuad(0.75f, 1f + i * 0.15f, 1f, 1f, TextTextures[input.ToString()]);
+
                 ++i;
             }
 
@@ -204,7 +232,7 @@ class Graphisme
             return textureId;
         }
 
-        private int GenererTextTexture(string text)
+        private int GenererTextTexture(string text,Color textColor)
         {
             Bitmap bitmap = new Bitmap(Partie.Width, Partie.Height);
 
@@ -218,7 +246,7 @@ class Graphisme
             //GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, text_bmp.Width, text_bmp.Height, 0,
             //    OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, IntPtr.Zero); // just allocate memory, so we can update efficiently using TexSubImage2D
 
-            ChargerTexte(bitmap, text);
+            ChargerTexte(bitmap, text,textColor);
 
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
@@ -227,15 +255,22 @@ class Graphisme
 
             return textureId;
         }
-        public void ChargerTexte(Bitmap textBitmap, string text)
+
+        private int GenererTextTexture(string text)
         {
+            return GenererTextTexture(text,Color.Gray);
+        }
+        public void ChargerTexte(Bitmap textBitmap, string text, Color textColor)
+        {
+            Color color = textColor;
+            if (color == null) color = Color.Gray;
             using (Graphics gfx = Graphics.FromImage(textBitmap))
             {
                 gfx.Clear(Color.Transparent);
 
                 // Create font and brush.
                 Font drawFont = new Font("Comic Sans MS", 16);
-                SolidBrush drawBrush = new SolidBrush(Color.FromArgb(128, Color.Gray));
+                SolidBrush drawBrush = new SolidBrush(Color.FromArgb(128, color));
                 gfx.DrawString(text, drawFont, drawBrush, 0, 0);
             }
             // Do this only when text changes.
@@ -243,6 +278,11 @@ class Graphisme
             GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, textBitmap.Width, textBitmap.Height, 0,
                OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
             textBitmap.UnlockBits(data);
+        }
+
+        public void ChargerTexte(Bitmap textBitmap, string text)
+        {
+            ChargerTexte(textBitmap, text, Color.Gray);
         }
         public void ChargerTextures()
         {

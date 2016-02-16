@@ -44,7 +44,6 @@ namespace MetaSimulatorConsole.Simulation
         {
             DetacherAncienQG();
             QG = new QuartierGeneralAOK(this);
-            Attach(QG);
         }
         
         

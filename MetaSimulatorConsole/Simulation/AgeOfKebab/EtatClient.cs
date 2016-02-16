@@ -74,4 +74,14 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
         }
         public EtatClientEstServi() : base("Est Servi") { }
     }
+
+    public class EtatMort : EtatClient
+    {
+
+        public override void ModifieEtat(Client p)
+        {
+            throw new NotImplementedException();
+            // client.InformerPersonnageMort
+        }
+    }
 }

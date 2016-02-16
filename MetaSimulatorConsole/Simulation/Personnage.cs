@@ -170,6 +170,8 @@ namespace MetaSimulatorConsole.Simulation
                 if (Comportement != null) Comportement.Update();
             }
         }
+
+        protected QuartierGeneralAbstrait QG;
         public PersonnageMobilisable(string nom) : base(nom) { }
 
         protected PersonnageMobilisable(string nom,EGame simulation,TextureDecorator texture)
@@ -228,5 +230,30 @@ namespace MetaSimulatorConsole.Simulation
             return "Personnage " + Nom + ", " + PointsDeVie + " XP, Etat " + Etat + " " + Case + " (Jeu " + Simulation.ToString() + ")";
         }
 
+    
+
+        public void SetQG(QuartierGeneralAbstrait qg)
+        {
+            QG = qg;
+        }
+
+
+        public void InformerObjectifAtteint()
+        {
+            if (QG == null) throw new NullReferenceException("QG is null !");
+            QG.PersoQuiOntAtteintLeurBut++;
+        }
+
+        public void InformerObjetRecupere()
+        {
+            if (QG == null) throw new NullReferenceException("QG is null !");
+            QG.PersoQuiOntRecuperObjet++;        
+        }
+
+        public void InformerPersonnageMort()
+        {
+            if (QG == null) throw new NullReferenceException("QG is null !");
+            QG.PersoQuiSontMorts++;
+        }
     }
 }
