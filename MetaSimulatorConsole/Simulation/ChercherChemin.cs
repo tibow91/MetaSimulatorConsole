@@ -99,4 +99,15 @@ namespace MetaSimulatorConsole.Simulation
             return false;
         }
     }
+    /*
+    class ChercherCheminVersRestaurant : ChercherCheminTemplate
+    {
+        protected override List<ObjetAbstrait> RecupererListeObjets(ZoneFinale zone)
+        {
+            // chercher les points d'accès vers les zones du kebab (pr l'instant faire zone caisses clients)
+            // Charger les points d'accès de la zone et choisir celui qui va vers caisses clients (en zonne annexe)
+            // Retourner la  case adjacente qui se trouve dans la zone annexe
+        }
+
+    }*/
 }

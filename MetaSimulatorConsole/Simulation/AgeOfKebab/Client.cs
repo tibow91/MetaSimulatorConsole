@@ -41,6 +41,10 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
             // Aller vers celui qui est le moins long
             return new ChercherCheminVersGatherPoint().CaseSuivante(this);
         }
+        public Coordonnees RentrerDansLeRestaurant(ZoneFinale zone)
+        {
+            return null;
+        }
 
         public Coordonnees SortirDuRestaurant(ZoneFinale zone)
         {
@@ -51,10 +55,7 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
             //return new ChercherCheminVersRestaurant().CaseSuivante(this);
             return null;
         }
-        public Coordonnees RentrerDansLeRestaurant(ZoneFinale zone)
-        {
-            return null;
-        }
+
 
         public Coordonnees RejoindreCaisse(ZoneFinale zone)
         {
