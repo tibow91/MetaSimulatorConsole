@@ -22,14 +22,14 @@ namespace MetaSimulatorConsole.Simulation
     public abstract class QuartierGeneralObserve :  SujetObserveAbstrait,IObservateurAbstrait
     {       
         protected QuartierGeneralObserve() { }
-        private List<IPersonnageAMobiliser> PersonnagesMobilises = new List<IPersonnageAMobiliser>();
+        private List<PersonnageMobilisable> PersonnagesMobilises = new List<PersonnageMobilisable>();
 
-        public void AttacherPersonnage(IPersonnageAMobiliser observer)
+        public void AttacherPersonnage(PersonnageMobilisable observer)
         {
             PersonnagesMobilises.Add(observer);
         }
 
-        public void DeAttacherPersonnage(IPersonnageAMobiliser observer)
+        public void DeAttacherPersonnage(PersonnageMobilisable observer)
         {
             PersonnagesMobilises.Remove(observer);
         }
@@ -44,13 +44,19 @@ namespace MetaSimulatorConsole.Simulation
 
         public void MobiliserPersonnages()
         {
-            foreach (IPersonnageAMobiliser o in PersonnagesMobilises)
+            for (int i = 0; i < PersonnagesMobilises.Count; ++i )
             {
-                o.Mobiliser();
+                var perso = PersonnagesMobilises[i];
+                if (perso == null) throw new NullReferenceException("Ne peut pas mobiliser un personnage non instancié");
+                perso.Mobiliser();
             }
+                //foreach (var o in PersonnagesMobilises)
+                //{
+                //    o.Mobiliser();
+                //}
         }
 
-        public List<IPersonnageAMobiliser> ObtenirPersonnageMobilises()
+        public List<PersonnageMobilisable> ObtenirPersonnageMobilises()
         {
             return PersonnagesMobilises;
         }
@@ -162,7 +168,7 @@ namespace MetaSimulatorConsole.Simulation
             var list = ZonePrincipale.ObtenirPersonnages();
             foreach (var perso in list)
             {
-                var observer = perso as IPersonnageAMobiliser;
+                var observer = perso as PersonnageMobilisable;
                 if (observer != null)
                 {
                     AttacherPersonnage(observer);

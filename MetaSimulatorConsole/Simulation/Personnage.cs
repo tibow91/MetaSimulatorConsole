@@ -44,8 +44,8 @@ namespace MetaSimulatorConsole.Simulation
             Simulation = simulation;
             Nom = nom;
             Texture = texture;
-            PointsDeVie = 100;
-            SeuilCritique = 50;
+            PointsDeVie = 20;
+            SeuilCritique = 10;
         }
 
         public void BaisserPointsDeVie()

@@ -163,6 +163,7 @@ namespace MetaSimulatorConsole
             if (Grille.HasInstance()) return;
             TableauDeJeu = (Grille)Grille.Instance(Longueur, Largeur);
             this.Fenetre = new Window(600,600,this);
+            //Attach(Fenetre);
         }
 
 

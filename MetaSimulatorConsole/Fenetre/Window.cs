@@ -21,7 +21,16 @@ namespace MetaSimulatorConsole
         public Clavier Touches;
         private Grille tableau;
         public GameManager Gestionnaire;
-        public bool ShowInterface = true,ShowStats;
+        public bool ShowInterface = true;
+        private bool _showStats;
+        public bool ShowStats
+        {
+            get { return _showStats; }
+            set {
+                    _showStats = value;
+                    Update();   
+                }
+        }
         public QuartierGeneralAbstrait Stats;
         public Dictionary<string, string> TextMenu = new Dictionary<string, string>();
         public Dictionary<string, int> TextMenuStats = new Dictionary<string, int>();
@@ -104,7 +113,11 @@ namespace MetaSimulatorConsole
             TextMenuStats.Add("Tour", Stats.Tour);
             TextMenuStats.Add("Personnages insérés", Stats.PersonnagesInseres);
             TextMenuStats.Add("Personnages à insérer", Stats.PersonnagesToInsert);
-            TextMenuStats.Add("Personnages ayant atteint leur objectif", Stats.PersonnagesToInsert);
+            TextMenuStats.Add("Personnages ayant atteint leur objectif", Stats.PersoQuiOntAtteintLeurBut);
+            TextMenuStats.Add("Personnages ayant récupéré leur objet", Stats.PersoQuiOntRecuperObjet);
+            TextMenuStats.Add("Personnages qui sont morts", Stats.PersoQuiSontMorts);
+
+            //Console.WriteLine("Mise à jour des statiques terminée");
         }
     }
 

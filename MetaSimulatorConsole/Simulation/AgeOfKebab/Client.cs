@@ -44,6 +44,11 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 
         public Coordonnees SortirDuRestaurant(ZoneFinale zone)
         {
+            if (zone == null) throw new NullReferenceException("La zone de travail est nulle !");
+            // Chercher les objets Gather Point dans la zone
+            // Etablir les chemins pour y aller
+            // Aller vers celui qui est le moins long
+            //return new ChercherCheminVersRestaurant().CaseSuivante(this);
             return null;
         }
         public Coordonnees RentrerDansLeRestaurant(ZoneFinale zone)

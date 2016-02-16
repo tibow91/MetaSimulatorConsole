@@ -15,10 +15,11 @@ namespace MetaSimulatorConsole.Simulation
         Feet,
         Dollar3D,
         Table,
-        Player
+        Player,
+        Skull
     }
 
-    [XmlInclude(typeof(TextureTable)),XmlInclude(typeof(TexturePlayer))]
+    [XmlInclude(typeof(TextureTable)), XmlInclude(typeof(TexturePlayer)), XmlInclude(typeof(TextureSkull))]
     [XmlInclude(typeof(TextureWoodPlatformHorizontal)), XmlInclude(typeof(TextureWoodPlatformVertical))]
     [XmlInclude(typeof(TextureHerbe2)), XmlInclude(typeof(TextureHerbe)),XmlInclude(typeof(TextureCrossedCircle))]
     [XmlInclude(typeof(TextureMozaic1)), XmlInclude(typeof(TextureGround2)),XmlInclude(typeof(TextureGround1))]
@@ -168,6 +169,22 @@ namespace MetaSimulatorConsole.Simulation
 
             var textures = Decor.Name();
             textures.Add(NomTexture.Dollar3D);
+            return textures;
+        }
+    }
+
+    public class TextureSkull : TextureDecorator
+    {
+        public TextureSkull() : base(null) { }
+
+        public TextureSkull(Texture decor) : base(decor) { }
+        public override List<NomTexture> Name()
+        {
+            if (Decor == null)
+                return new List<NomTexture>() { NomTexture.Skull };
+
+            var textures = Decor.Name();
+            textures.Add(NomTexture.Skull);
             return textures;
         }
     }

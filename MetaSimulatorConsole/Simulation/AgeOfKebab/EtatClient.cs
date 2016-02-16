@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 {
     [XmlInclude(typeof(EtatClientEnAttenteDeCommande)), XmlInclude(typeof(EtatClientEnAttenteDeFaim))]
-    [XmlInclude(typeof(EtatClientVaCommander)), XmlInclude(typeof(EtatClientEstServi))]
+    [XmlInclude(typeof(EtatClientVaCommander)), XmlInclude(typeof(EtatClientEstServi)), XmlInclude(typeof(EtatMort))]
     public abstract class EtatClient : EtatAbstract
     {
         public override void ModifieEtat(PersonnageMobilisable p)
@@ -49,8 +49,8 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
         public override void ModifieEtat(Client p)
         {
             if (p == null) throw new NullReferenceException("Personnage is null !");
-            if (p.Comportement is ComportementEnAttenteDeFaim) return;
-            p.Comportement = new ComportementEnAttenteDeFaim(p);
+            if (p.Comportement is ComportementVaCommander) return;
+            p.Comportement = new ComportementVaCommander(p);
         }
         public EtatClientVaCommander() : base("Va Passer une commande") { }
 
@@ -77,11 +77,15 @@ namespace MetaSimulatorConsole.Simulation.AgeOfKebab
 
     public class EtatMort : EtatClient
     {
+        public EtatMort() : base("Est Mort") { }
 
         public override void ModifieEtat(Client p)
         {
-            throw new NotImplementedException();
-            // client.InformerPersonnageMort
-        }
+            if (p == null) throw new NullReferenceException("Personnage is null !");
+            if (p.Comportement is ComportementClientEtatMort) return;
+            p.Comportement = new ComportementClientEtatMort(p);
+            p.InformerPersonnageMort();
+            p.Texture = new TextureSkull();
+        }        
     }
 }
