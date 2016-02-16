@@ -1,28 +1,28 @@
-﻿using System;
+﻿using MetaSimulatorConsole.Simulation.Honeyland.Etats;
+using System;
 
 namespace MetaSimulatorConsole.Simulation.Honeyland
 {
-    public class Bee : PersonnageAbstract
+    public class Bee : PersonnageMobilisable
     {
-        public Bee()
-            : base("Abeille",EGame.Honeyland,new TextureBee())
+        public Bee(): base("Abeille",EGame.Honeyland,new TextureBee()){ }
+        public Bee(string nom,Coordonnees coor)
+            : base("Abeille", EGame.Honeyland, new TextureBee())
         {
+            SetCoordonnees(coor);
+            Etat = new Etat_Free();
         }
-
 
         public override void AnalyserSituation()
         {
-            throw new NotImplementedException();
+            if (Comportement != null)
+                Comportement.AnalyserSituation();
         }
 
         public override void Execution()
         {
-            throw new NotImplementedException();
-        }
-
-        public override bool EstValide()
-        {
-            throw new NotImplementedException();
+            if (Comportement != null)
+                Comportement.Execution();
         }
     }
 }
