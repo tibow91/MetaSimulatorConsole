@@ -1,0 +1,1305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c1a3e75d-0851-4619-a0ba-756b00790b3a" name="SerializeTemplate" linkedPackageId="de877fba-841d-461a-86b7-5e8d4286a26b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="2383b467-88c2-4d21-92f2-9a522d4bf435">
+      <profileInstance Id="98711b65-f519-4747-80b8-120ba9d1f716" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="855cf67d-ed07-4c0e-a78f-fb024d5c478a">
+      <profileInstance Id="7d8165fb-e649-4bf7-8947-3d86d9c21e6b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9a44764d-c1d3-4861-8e73-3bc4e0bda380">
+      <profileInstance Id="3ffbe0c6-5ca6-4c85-93a9-4e2721e87f98" name="CSharpProfile">
+        <elementDefinition Id="5a9fc76c-d477-456c-b881-7d8034d14d50" />
+      </profileInstance>
+      <elementDefinition Id="b78eaf80-9686-4882-854b-ba70c92c2552" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="114aba72-9851-40f7-a190-c3566e9e72ca" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="37734562-63eb-4f48-8a30-ed450068ce55" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="697a0c82-c760-40c1-982e-e75282048073" name="XmlSerializer" isAbstract="false" isLeaf="false" cachedFullName="UML::System::Xml::Serialization::XmlSerializer">
+        <elementDefinition Id="5586e798-9f36-4d43-937b-db05789dd1ca" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cc006803-ffec-462a-95aa-081eb4fb504f" name="Object" isAbstract="false" isLeaf="false" cachedFullName="UML::System::Object">
+        <elementDefinition Id="dae41b5a-d380-43f7-ad66-80d02cf82a98" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0ce682b1-21c0-43b6-b4ef-ec4e8e37b561" name="TextWriter" isAbstract="false" isLeaf="false" cachedFullName="UML::System::IO::TextWriter">
+        <elementDefinition Id="ea7ec3b5-f128-4dfc-96aa-94e468df1a83" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8ffcffd8-4278-424b-bdd0-2492f4b53bbf" name="SerializerTemplate1" visibility="Package" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="d6489fca-cedc-46b3-973d-b1afb572be5d" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate" tag="ViewCode">
+            <elementDefinition Id="7e690925-f988-4603-8651-f23077186f7c" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="5fded5c8-71f6-4a2b-b8e7-188f6b56e5ae" name="class" profile="CSharpProfile">
+            <elementDefinition Id="cca164f9-f318-496e-8a7a-aae0b625fd54" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="15a9bf60-f086-408b-9892-342e547b8aa4">
+                <propertyInstance Id="19b928a8-baa0-40bd-95c8-f5ab41239aea" name="ClrAttributes">
+                  <elementDefinition Id="3036c498-cb30-49f4-87b3-55f4fb455080" />
+                </propertyInstance>
+                <elementDefinition Id="1b1af68b-72dd-4cd5-aca1-4aa63146fed5" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="24239f12-f33b-4df1-a79a-fcc8eb2be2b6">
+                <propertyInstance Id="649ebf1e-f690-4ef7-b890-beb320ea44fb" name="IsPartial" value="false">
+                  <elementDefinition Id="1ed9f2e9-7695-4802-8f6d-8476ad64ea20" />
+                </propertyInstance>
+                <elementDefinition Id="126c0b88-b126-4f1e-9c85-fce984368047" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="d65eac28-4761-43de-afc1-a66180fd37e5">
+                <propertyInstance Id="f9174d4c-ccae-4897-896a-edc0a620fa81" name="IsStatic" value="False">
+                  <elementDefinition Id="e30d9c1c-a8a6-4355-bdbb-9334a4956fd4" />
+                </propertyInstance>
+                <elementDefinition Id="c9211d47-bd64-47d5-b5cb-a9b9f82b5071" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="9a15b992-b6f6-4290-9014-15a75e0edd89">
+                <propertyInstance Id="ede0b624-f4e0-45e3-a306-922712d55333" name="IsUnsafe" value="false">
+                  <elementDefinition Id="81816ff4-725c-455d-94f3-9f2218660693" />
+                </propertyInstance>
+                <elementDefinition Id="7c97acec-e6b5-48be-8d68-e75abafceabd" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="126138e6-af8c-4a04-93ad-3cc42fb6b8f6">
+                <propertyInstance Id="ef15d242-4915-4bfc-9fa2-e25a421d3f02" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="ca2257d8-b74a-4a42-858d-16bde28b39ae" />
+                </propertyInstance>
+                <elementDefinition Id="4b653f52-b63e-4957-9a5f-99ed8e812e8a" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="dac82086-c59a-4f37-9712-a4f3443b2a28" />
+        <ownedOperationsInternal>
+          <operation Id="fc723a90-332f-4f48-b9a2-0d7ebbb6b292" name="EvaluateFilename" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="29fd06b6-247c-4bcf-879a-a432e802bb38" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DEvaluateFilename OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])" tag="ViewCode">
+                <elementDefinition Id="f25319c9-a76f-46c8-adbc-6b910eb84bcf" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="0daf039c-4515-465f-a1ff-a364a7c2ebbe" name="method" profile="CSharpProfile">
+                <elementDefinition Id="dd2a9176-e532-4e6b-8536-86951a2b50d2" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6957b771-6f7e-4f18-a7f9-9fc99522b88b">
+                    <propertyInstance Id="95553f41-12f7-4933-967e-a812415a6114" name="ClrAttributes">
+                      <elementDefinition Id="adf95048-d648-498e-82b2-656428d6bbd4" />
+                    </propertyInstance>
+                    <elementDefinition Id="bd2f9232-74b0-491f-8771-663ff6e319e5" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b0babcf8-3d4c-4077-8d3d-94be9bb5da3c">
+                    <propertyInstance Id="9ed7c98e-aa77-468b-994c-c9c46f2e9ae7" name="IsPartial" value="false">
+                      <elementDefinition Id="4067a084-7345-4acc-8059-c0ee8a7d79ef" />
+                    </propertyInstance>
+                    <elementDefinition Id="d09bf630-96f0-4ae9-984e-676ab94d3e72" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="54d5c7e4-5be4-4ea1-b96e-8c385de13c09">
+                    <propertyInstance Id="7763f330-e1a3-4d1c-ab41-027d49171d46" name="IsUnsafe" value="false">
+                      <elementDefinition Id="c729a83f-7a4f-49c7-8116-1b20c813211a" />
+                    </propertyInstance>
+                    <elementDefinition Id="48ace098-7fee-45b3-b0bd-3405561a334c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ca09c7a1-9f00-40d6-8ee1-7262dac795ad">
+                    <propertyInstance Id="62060734-1f2d-4e83-a400-8f1142044931" name="Inheritance" value="none">
+                      <elementDefinition Id="0c597354-bd87-410d-a8d9-3a8baaf44e8d" />
+                    </propertyInstance>
+                    <elementDefinition Id="62767c02-dcbd-4d8c-80ab-bcd5c2a7f2a9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="44581a3f-2fc2-4e08-93c4-99d168fcc2ff">
+                    <propertyInstance Id="90ae777e-1135-4bb3-b01b-716d8050574f" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="360a7889-388f-4afa-92a1-9ea1218632bd" />
+                    </propertyInstance>
+                    <elementDefinition Id="9961d3f3-296a-404c-ab52-447d65e524f8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e7721a81-b0af-4346-a8ef-f109847bbe45">
+                    <propertyInstance Id="95b21dc5-2730-49fa-90db-5496f13bbe1d" name="params" value="false">
+                      <elementDefinition Id="3cb51319-e929-4a04-ab1d-474c888e802c" />
+                    </propertyInstance>
+                    <elementDefinition Id="a6fedc4e-49cb-4537-b1a3-9c22988e1571" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="81fcb6ed-b859-4ba6-8c4c-830b9c5acaac" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="70cbf00b-6c8e-4738-b1cc-72961c607284" direction="Return">
+                  <elementDefinition Id="39c2d196-08e5-4f55-9870-9dba64a0eebf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="114aba72-9851-40f7-a190-c3566e9e72ca" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a821935e-ddb3-4d07-9121-945795992d58" name="filename" direction="In">
+                  <referencesInternal>
+                    <reference Id="591feb51-bd2a-4676-a27a-8a82b05a13d8" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DEvaluateFilename OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dfilename" tag="ViewCode">
+                      <elementDefinition Id="264366fc-a4fb-41a7-8a45-f13ce109e1f7" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="a55b96e4-2dcc-4990-9d46-4140275f0067" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37734562-63eb-4f48-8a30-ed450068ce55" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bf2b1998-02e0-4dae-8602-1b3776fbd8b2" name="GetXMLSerializer" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="408a174c-2c05-4991-9b8c-daabf5be8721" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3DGetXMLSerializer" tag="ViewCode">
+                <elementDefinition Id="97bb112f-8e83-4a6f-a928-f2f0cba1c656" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="83559d8b-6644-4a81-b847-0dfdb6fbfd0d" name="method" profile="CSharpProfile">
+                <elementDefinition Id="7772ecad-5bde-4fbf-b2f4-01fb1a68a84c" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="af444174-19f8-4539-b551-0984fe7fc4b2">
+                    <propertyInstance Id="5430a81b-8532-4a3f-9726-226efea4bffe" name="ClrAttributes">
+                      <elementDefinition Id="698c37e0-f448-4d38-9fe4-e9fc8c2ceeb1" />
+                    </propertyInstance>
+                    <elementDefinition Id="f62ca522-8059-4d98-8969-ebb5173d262b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="926ab822-1c67-4362-b1c3-1c2213b8d971">
+                    <propertyInstance Id="c1eca551-d928-4962-9cb0-6f48834adb32" name="IsPartial" value="false">
+                      <elementDefinition Id="3029e8d4-537a-42c4-976b-894607f0e4cc" />
+                    </propertyInstance>
+                    <elementDefinition Id="2b746b69-aa08-4249-9e22-b88e57e87922" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9d5fdce6-ff77-4f33-baab-7eea529468eb">
+                    <propertyInstance Id="04f950f1-4cac-4a14-a666-0c6c66503ea8" name="IsUnsafe" value="false">
+                      <elementDefinition Id="333d83ac-725c-4bb1-a1b5-8f77666f3ee9" />
+                    </propertyInstance>
+                    <elementDefinition Id="646ed5a4-a2d5-4616-ba7c-345c6b8f5043" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a0d3e951-c462-40d0-bed6-79c0b89ee58a">
+                    <propertyInstance Id="6193e093-2a63-4335-af45-9a165b152136" name="Inheritance" value="none">
+                      <elementDefinition Id="0e42b2ec-21b0-43c4-9f5d-05665d79f74f" />
+                    </propertyInstance>
+                    <elementDefinition Id="93286ffd-79c9-40df-869a-760328e94e83" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="74ce3abb-f0a7-4eba-b970-560a33a6a111">
+                    <propertyInstance Id="5f8e96b7-bdaf-4f63-a1e5-2b5b3e443cc0" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="a47d3f22-8c42-4b0b-abad-2dce33a2b141" />
+                    </propertyInstance>
+                    <elementDefinition Id="dd593284-3d5e-4da2-a719-03d24660f3e8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1d9b6062-8eeb-4ffe-b0e3-580ca3e8d399">
+                    <propertyInstance Id="a5d42487-fcbb-4191-af28-230f10e532b0" name="params" value="false">
+                      <elementDefinition Id="61cc964e-3f86-4430-b360-75904aaf7c2f" />
+                    </propertyInstance>
+                    <elementDefinition Id="143f75b5-d027-4f7a-948a-2400a5f3dd31" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="949cba98-98ef-40da-b3ef-44714269e5e2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2ed9d74b-5965-45c0-a33f-2c3c2b31ccdc" direction="Return">
+                  <elementDefinition Id="f9eaeb9d-d2f1-495d-afe4-bc0dee5563c6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3061daa0-53e7-41ef-8a16-3bd4fdbb23e6" name="ReadFrom" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="03bb31c5-705c-4a51-8d82-54e125b9024f" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DReadFrom OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)])" tag="ViewCode">
+                <elementDefinition Id="63242d76-6ec7-4c67-b321-d9f033b05e94" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="3403c968-7ded-42f8-b10b-9cad760402ac" name="method" profile="CSharpProfile">
+                <elementDefinition Id="748e5445-83ef-4a45-8b3a-d26316a4fac1" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dc8ce835-7b47-4f0f-a289-d91739bea010">
+                    <propertyInstance Id="6d9ec493-58db-4cf5-b62b-7807d4864d93" name="ClrAttributes">
+                      <elementDefinition Id="6b53d8f7-2844-4482-9968-d6d8b955dae0" />
+                    </propertyInstance>
+                    <elementDefinition Id="595e82de-b250-43da-a783-b69174305b54" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b810529e-cbd1-44d7-a1eb-94e1a95ef97f">
+                    <propertyInstance Id="a39996d0-87d1-4db2-b12f-87e7164566a8" name="IsPartial" value="false">
+                      <elementDefinition Id="4a5db50f-646a-4705-aa3c-99cb7e41a3d4" />
+                    </propertyInstance>
+                    <elementDefinition Id="1c2202fc-6a46-4877-8fdb-cfb98fa1cae2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0f87d04a-21a7-4285-b764-7f7ca490c984">
+                    <propertyInstance Id="2b131422-9b74-44fd-91df-26857ceffca5" name="IsUnsafe" value="false">
+                      <elementDefinition Id="4587ad1a-709f-412c-8900-ba09f3b33879" />
+                    </propertyInstance>
+                    <elementDefinition Id="6d650f0b-a5cc-425e-9538-97c6f92c4fc1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4670b5e1-fdfa-4d35-9cce-28f3ad93b1b3">
+                    <propertyInstance Id="c86d1b6a-7677-4274-9863-ad2226e06855" name="Inheritance" value="none">
+                      <elementDefinition Id="76d99a27-7cfe-4b99-8e2d-72e585ea6874" />
+                    </propertyInstance>
+                    <elementDefinition Id="f71a16ee-f4b0-40eb-a0a4-d6b3e0243654" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="202f544b-1aa7-438f-b6e8-02c86b41dd5d">
+                    <propertyInstance Id="764ea8fc-4b70-4b11-9623-5b7608cd6964" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="efc84c54-bc1f-4b29-a375-529a15051b18" />
+                    </propertyInstance>
+                    <elementDefinition Id="f9964b0d-a9dd-443e-9cf0-8b282f276505" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1e289785-c2ae-4eee-bb12-6a872ae28bfe">
+                    <propertyInstance Id="4179412c-9023-455e-9639-384461c64332" name="params" value="false">
+                      <elementDefinition Id="009165bf-08a5-4e30-aaff-898e42037705" />
+                    </propertyInstance>
+                    <elementDefinition Id="ecc981d0-1722-4458-8781-ff8b4b1b623a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="2421ca5a-e4f3-4549-aa2c-a5b239bbb18f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="024f0242-37f9-4071-977e-e0afeb6a50bb" direction="Return">
+                  <elementDefinition Id="3e5a5917-e8a7-4e4f-9af6-835e6e7f738f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc006803-ffec-462a-95aa-081eb4fb504f" LastKnownName="Object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ab5172b6-bbd6-4359-ae3c-5357e5f7e32f" name="filename" direction="In">
+                  <referencesInternal>
+                    <reference Id="9a7b1b58-e4b0-4a65-b701-bdaeddb7dacd" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DReadFrom OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)]) ParameterIdentifier%3Dfilename" tag="ViewCode">
+                      <elementDefinition Id="da621f8b-faaf-451e-bf3a-b5be6d0f094d" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="580475f0-5886-487f-bb43-545f93c987a8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37734562-63eb-4f48-8a30-ed450068ce55" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="78a06f9a-b8fe-43cf-839b-360d968ac984" name="deserializer" direction="In">
+                  <referencesInternal>
+                    <reference Id="cc2a6578-6f0c-428f-8af5-d2f02063d17d" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DReadFrom OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)]) ParameterIdentifier%3Ddeserializer" tag="ViewCode">
+                      <elementDefinition Id="78c088a0-b59d-4024-9ca4-e599e27677bb" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="c4a80b3b-8c13-43db-b136-e602823ff1b4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="fb834bba-fc12-4af8-b4c7-9cbc90742d7c" name="serialize" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="3b482a5b-29d2-4562-a326-427e516c0699" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])" tag="ViewCode">
+                <elementDefinition Id="3d91600b-9ae8-4896-a17f-a1c86ffd27f9" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="26d95e56-310c-436b-97fa-e30da3af6288" name="method" profile="CSharpProfile">
+                <elementDefinition Id="2d539d07-549a-4a9e-9650-2bcadc0aca39" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="202ef414-7bfa-4a15-b9de-5a7a66cdecc4">
+                    <propertyInstance Id="4158e981-af8a-4418-a8a0-489709739035" name="ClrAttributes">
+                      <elementDefinition Id="94f659af-d8dd-488a-84ad-c1f7b610a4cc" />
+                    </propertyInstance>
+                    <elementDefinition Id="c1c70a8a-b1fd-43d4-9175-b3aa05dce3db" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d50b13e0-138c-4a90-97d0-95b237f70a4a">
+                    <propertyInstance Id="f7f3b495-8a63-4429-962d-293c5d3598a4" name="IsPartial" value="false">
+                      <elementDefinition Id="87519d4b-2f13-4317-965f-0cca7acacd31" />
+                    </propertyInstance>
+                    <elementDefinition Id="9184f8f6-f6a9-47ca-a601-14a4562ee3a1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="84e2a5d7-f783-4f8e-bb67-b59766cd30e9">
+                    <propertyInstance Id="18dd7850-3491-478e-9e13-0cfe9959bbd5" name="IsUnsafe" value="false">
+                      <elementDefinition Id="28c2d52e-c760-4b99-857c-c0223837fefd" />
+                    </propertyInstance>
+                    <elementDefinition Id="36b6edf0-fd0e-47a5-8943-8eab55bfc018" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="07f414e2-f7e1-4b08-b7fd-bd017d47ecbe">
+                    <propertyInstance Id="0cfbe498-8f0c-46ec-b296-c70ccf4aedd9" name="Inheritance" value="none">
+                      <elementDefinition Id="b44a7437-5ab3-4e25-816c-22289f82ea1c" />
+                    </propertyInstance>
+                    <elementDefinition Id="0b41b97b-2974-4307-9d6f-9b7c445118b0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="56b65996-d363-459a-aecd-38a181f4775c">
+                    <propertyInstance Id="6a9f1167-e050-4488-8d0d-49ec1837535d" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="09ab9195-e8f6-4a5e-82bc-d6d70badd069" />
+                    </propertyInstance>
+                    <elementDefinition Id="59675101-c8ba-4aad-b401-32e6f8e52c4a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a9da1ca5-22f6-4ab2-9bb4-dcac9a2b2a36">
+                    <propertyInstance Id="a43912cd-c918-4510-ae47-c98353432af7" name="params" value="false">
+                      <elementDefinition Id="e9c1de47-d092-4143-a038-fc939df65386" />
+                    </propertyInstance>
+                    <elementDefinition Id="7dbbe0c0-b9e7-4dcd-ac06-6f2f5b011a28" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="ec2f50b9-403f-4231-848b-d505e182697e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d3196c68-e2e6-4b7c-b80d-5e84a820854b" name="writer" direction="In">
+                  <referencesInternal>
+                    <reference Id="0fff2093-a3b7-40ba-b3be-3a89c48691fa" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dwriter" tag="ViewCode">
+                      <elementDefinition Id="8ec3f0db-ebe9-46ae-95a9-3d268445fb36" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="b9e88289-cc20-458a-8888-76de8d7ae37b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0ce682b1-21c0-43b6-b4ef-ec4e8e37b561" LastKnownName="TextWriter" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d9ef9203-7ee8-48dc-bd71-08efed37e624" name="serializer" direction="In">
+                  <referencesInternal>
+                    <reference Id="9304138e-797f-4aea-bf0c-c0dc6c1735b7" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dserializer" tag="ViewCode">
+                      <elementDefinition Id="ed85a242-13b2-46af-831e-9fa4e7d75b19" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="545b4cf6-cf99-4c38-bb0d-b6420387d77f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="58e5ce47-e44e-4c54-a70f-c777fe4c2559" name="obj" direction="In">
+                  <referencesInternal>
+                    <reference Id="89415ae9-cb0f-4b85-b053-3e92799dd822" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dobj" tag="ViewCode">
+                      <elementDefinition Id="50ef3916-1e6f-4ab9-bb3a-1c2271a5880c" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="ad6a3dd5-4d8a-4701-9240-41843807c81a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc006803-ffec-462a-95aa-081eb4fb504f" LastKnownName="Object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b97113cf-9d2b-4bd8-bc84-1c122edef669" name="Write" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c7551cb4-28bd-4706-a992-1d4ff9f0631f" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DWrite OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)])" tag="ViewCode">
+                <elementDefinition Id="2528a716-704b-43a2-aa76-0cec8fe6cbf2" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="13b33282-7705-49b8-9702-729f8a99f79a" name="method" profile="CSharpProfile">
+                <elementDefinition Id="0b20ef45-79f6-4d2f-89b5-d41aac17ef88" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6d4bddc2-3946-488c-8b5a-287141ddbcf5">
+                    <propertyInstance Id="271b0666-a40c-4d8e-aac5-95477a5032cc" name="ClrAttributes">
+                      <elementDefinition Id="e989dad5-964e-4881-bc3d-ad7917fec78d" />
+                    </propertyInstance>
+                    <elementDefinition Id="459d91c0-64a4-4af0-8bc6-5964b8f2f239" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="285eabdc-1306-4023-aaf1-85d706445f1d">
+                    <propertyInstance Id="c503dde7-2502-4cf5-81c4-01c75f2a752f" name="IsPartial" value="false">
+                      <elementDefinition Id="2774684b-1d52-4a96-aa89-0fcf2334cf4d" />
+                    </propertyInstance>
+                    <elementDefinition Id="6c36332d-4323-43fd-9bc1-380bf8c96a0a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="52a8ec50-475b-4abd-9c4e-1e9fb6c40b16">
+                    <propertyInstance Id="b1b980bd-af34-4fcf-8947-c4674aee6fa8" name="IsUnsafe" value="false">
+                      <elementDefinition Id="ea85e013-ac4e-4bac-b370-6968291425ba" />
+                    </propertyInstance>
+                    <elementDefinition Id="20b506fc-5ad6-4fab-a104-e891737ce747" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2783d1fe-386a-45d0-a093-7a127fd37bb1">
+                    <propertyInstance Id="9898d084-1fe0-4f1e-8d3b-1b7b95a8d141" name="Inheritance" value="none">
+                      <elementDefinition Id="d253d189-af45-4b30-be30-3514e8639edf" />
+                    </propertyInstance>
+                    <elementDefinition Id="1c867bc5-1d34-4463-8beb-1e7fd983db3c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="53a115dc-84ef-4ac6-abae-3dbc771c0e2f">
+                    <propertyInstance Id="48b9a521-78a8-41be-9e4b-ac0717c1a8ec" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="71db30cb-4816-4562-8aab-43a1d9b76a30" />
+                    </propertyInstance>
+                    <elementDefinition Id="3acf2339-cc50-4d5c-adc9-3b082665705b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="87bf8c24-a248-4354-8224-b9cacd0e7439">
+                    <propertyInstance Id="06169ff2-6fd9-4c7e-92db-5dea995de4ab" name="params" value="false">
+                      <elementDefinition Id="c62db197-aa6b-45e0-9567-3e793d399e8a" />
+                    </propertyInstance>
+                    <elementDefinition Id="36799c38-4839-416a-acde-0b3869e53d0d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="d37ae9a1-99e6-4184-9d9b-438ced347748" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="da6a34c7-00a7-42bd-89b6-f9c5cf758fe7" name="obj" direction="In">
+                  <referencesInternal>
+                    <reference Id="1e8c9559-7e67-4093-b5f1-1540664e89ab" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DWrite OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)]) ParameterIdentifier%3Dobj" tag="ViewCode">
+                      <elementDefinition Id="713d5f47-5772-44a9-8edc-632b9f5d2523" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="28d8c8f6-3c44-4f8d-a5d7-7a792ce3e0c4" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc006803-ffec-462a-95aa-081eb4fb504f" LastKnownName="Object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5e20db34-f4af-4212-b7ae-7b8d3a9f9d7b" name="filename" direction="In">
+                  <referencesInternal>
+                    <reference Id="09c55dfa-343f-46c1-b792-7aedbedc3040" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DWrite OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)]) ParameterIdentifier%3Dfilename" tag="ViewCode">
+                      <elementDefinition Id="3b8e5fd3-9768-4ecc-8c83-64e61db86ec1" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="b1d9ef19-5762-4b73-b42a-d85ca8fb1e7c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37734562-63eb-4f48-8a30-ed450068ce55" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="171a233b-8dbc-45ae-8187-528ca233e122" name="serializer" direction="In">
+                  <referencesInternal>
+                    <reference Id="90cd4985-9961-41c5-aa88-6d8773882be6" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DWrite OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)]) ParameterIdentifier%3Dserializer" tag="ViewCode">
+                      <elementDefinition Id="f890b772-a9d8-468a-8ab7-873cedaf8b48" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="c95c0cab-d924-40d8-bbee-89f7660c361c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e58ca982-6a4c-4f34-9a6f-8fbdd35fcc89" name="Deserialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="51f4d1e6-dd63-4712-82ac-8e1dce8b0d12" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DDeserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])" tag="ViewCode">
+                <elementDefinition Id="fb0d7ac1-6618-4b8a-9cae-34e67e3f5d07" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="a9310138-a29b-4659-8f44-1519c44a17db" name="method" profile="CSharpProfile">
+                <elementDefinition Id="03a2431d-dde1-4f02-b33c-a38960db8eb3" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="08c91cc5-baab-4534-9014-243f8614b1c6">
+                    <propertyInstance Id="ad5572fa-3620-46bc-8348-14895d59b7e1" name="ClrAttributes">
+                      <elementDefinition Id="c16aeb57-6e16-423a-aa66-8b77472d8082" />
+                    </propertyInstance>
+                    <elementDefinition Id="317cb780-2f38-49c6-b494-c9af80d9062b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="74aaa0dd-91dd-414f-981b-9c444f62d7a1">
+                    <propertyInstance Id="a967c5aa-f563-4dcd-9db9-ba123252d4da" name="IsPartial" value="false">
+                      <elementDefinition Id="f85252e0-ff2d-45d9-a5a3-ef2339d9f9d6" />
+                    </propertyInstance>
+                    <elementDefinition Id="5ea47df6-9fda-4985-880d-9fc77bd8fbb6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="30da7fda-15c5-43cc-b78f-5ad0e64aaae3">
+                    <propertyInstance Id="ce8aad5f-57f3-4794-af1e-0fb2d61d4255" name="IsUnsafe" value="false">
+                      <elementDefinition Id="59227a2c-587a-4bf8-b1f7-829a5be8fc68" />
+                    </propertyInstance>
+                    <elementDefinition Id="44a7b32f-2b62-4094-a62e-f8c557104be9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8ed776be-c9ab-4af8-9dd1-0a21716cfb36">
+                    <propertyInstance Id="cb11ac8d-1bc7-4de5-8bcc-fe9757717727" name="Inheritance" value="none">
+                      <elementDefinition Id="5ac9e184-ff45-4493-826b-919374063267" />
+                    </propertyInstance>
+                    <elementDefinition Id="adcbfc04-88e6-4f2d-b5f8-6a91321f77a2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="31f8450a-f666-420a-91c6-249a5e59d05a">
+                    <propertyInstance Id="22fb6ae1-c8f8-41b8-9dc0-f084fecd2fbc" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="3cfbdbfc-471d-4250-959c-6172c1d9fa90" />
+                    </propertyInstance>
+                    <elementDefinition Id="26c5a5ce-f951-44fc-923d-a3c9568b58ca" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a3d253ce-385c-4d87-8674-1b64d7e521ca">
+                    <propertyInstance Id="f6800a54-69e2-4936-a1d1-60ced9e54e2c" name="params" value="false">
+                      <elementDefinition Id="4165f72f-43e8-4b24-985e-fa08fc23ea30" />
+                    </propertyInstance>
+                    <elementDefinition Id="b7e63dd9-3ccd-45bf-aae2-6a08dec11993" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="32d469e6-d1ab-4cfd-9f1a-27ecbe739406" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9b2dbe72-f9a1-4161-bfe9-f4cb49b91260" direction="Return">
+                  <elementDefinition Id="69b7743c-851c-4eed-b746-a89e212a0938" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc006803-ffec-462a-95aa-081eb4fb504f" LastKnownName="Object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0aa4d515-d01a-4c65-a074-d54a6079a322" name="filename" direction="In">
+                  <referencesInternal>
+                    <reference Id="6595bdb2-97a4-49c9-9e00-d9b4ab7719ef" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DDeserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dfilename" tag="ViewCode">
+                      <elementDefinition Id="356cb197-81d2-40a0-89eb-7024f499d5d5" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="690160a0-fc4a-495a-8a71-511df150cadd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37734562-63eb-4f48-8a30-ed450068ce55" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b405eef6-7490-4b74-93ea-56875f6e2549" name="Serialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="0854f0ae-742f-4089-9a0c-90028c72dbb9" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DSerialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])" tag="ViewCode">
+                <elementDefinition Id="d71f1564-190b-4f6c-ad52-af91a56655d6" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="8942e26b-a757-4ad9-aba9-328189b6b80b" name="method" profile="CSharpProfile">
+                <elementDefinition Id="0b9cd907-e7dd-4f97-94d1-c9381f8fd847" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f4ec7a41-f182-49cb-90f1-cf85682274dc">
+                    <propertyInstance Id="98a0f25b-106b-4454-8870-863e2e4c0b6b" name="ClrAttributes">
+                      <elementDefinition Id="a75f6326-49ed-4724-9c96-e9e15fac6f84" />
+                    </propertyInstance>
+                    <elementDefinition Id="cb04c3b4-087c-435c-87fc-1e289a48c2d2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="eda2f338-2aea-4038-a7b0-acdbdef5a465">
+                    <propertyInstance Id="e4025939-49fb-4a79-bc94-d65ae09e02b4" name="IsPartial" value="false">
+                      <elementDefinition Id="30fc6962-befe-4db5-b7cf-2f7b90a5cfe8" />
+                    </propertyInstance>
+                    <elementDefinition Id="140350dd-1197-40b7-bb4f-eb6b396b68e3" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a7275c67-8d77-4b47-b803-f70a1d084d91">
+                    <propertyInstance Id="385a0551-ed57-4885-92fa-224be1668e09" name="IsUnsafe" value="false">
+                      <elementDefinition Id="3d8f9721-f582-4b0f-a41e-5b2a9858a41b" />
+                    </propertyInstance>
+                    <elementDefinition Id="58aab7e9-a027-4cb8-b4b2-5a74902ae9a2" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9dfa884f-da67-492a-ae1f-65e0a20bea79">
+                    <propertyInstance Id="913b2d02-f734-453f-b665-4b2a81bcbf7a" name="Inheritance" value="none">
+                      <elementDefinition Id="3a177c20-19f6-4917-ac74-1f2fdcf1ad72" />
+                    </propertyInstance>
+                    <elementDefinition Id="006deaa3-e24e-4f08-b2a8-b076812e72f9" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="98e9d1a1-5c4f-4315-a627-9ace14b731d2">
+                    <propertyInstance Id="ab9b45f4-e980-4277-a9cb-c58052025f4e" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="a4495aca-bba1-4926-9acf-9c9f044949ef" />
+                    </propertyInstance>
+                    <elementDefinition Id="846a9a99-83e5-4f04-b983-1080bb56643a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="697d8763-00c9-41d2-8676-3ac2a5f61b18">
+                    <propertyInstance Id="2cea34cc-6d94-4f67-b809-c2352092f9cb" name="params" value="false">
+                      <elementDefinition Id="b9ef5fa7-03f4-4d9c-802b-97343ea7a932" />
+                    </propertyInstance>
+                    <elementDefinition Id="f277547e-f9ae-48f6-aa75-c9e847dcbd4b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="3569cb18-ebfd-47e1-bc04-3cc9b4339ad0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c6e930d8-238b-485f-aef1-1a660f87864a" name="obj" direction="In">
+                  <referencesInternal>
+                    <reference Id="d07651b3-1816-4353-b6a9-a32f93fd9c36" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DSerialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dobj" tag="ViewCode">
+                      <elementDefinition Id="83270826-d60e-4c7f-916b-704d4765ef72" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="1b0d3ccd-f04b-48c8-b9f4-e1fb601199a3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc006803-ffec-462a-95aa-081eb4fb504f" LastKnownName="Object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="93ed9d58-b4c3-46d9-942c-d733d1daac2a" name="filename" direction="In">
+                  <referencesInternal>
+                    <reference Id="bed4b413-da20-468a-ab9c-f5988e92fe4c" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D(Name%3DSerialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dfilename" tag="ViewCode">
+                      <elementDefinition Id="86a27da4-7d30-47ea-847b-9760df8d18e2" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="273791ad-e03a-4cc3-9cdc-cc306437195b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="37734562-63eb-4f48-8a30-ed450068ce55" LastKnownName="String" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="be369d36-3043-4492-9fa1-3090c5223ea0" name="SerializerTemplate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="31be119e-ee9f-4ddb-8d90-f6fb899c955a" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSerializerTemplate Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="70f96c64-a89a-43d1-ae9b-c9c758a98b46" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="cdc461a9-f819-4f08-b1bf-827c09ca38ce" name="method" profile="CSharpProfile">
+                <elementDefinition Id="1dc2f688-9059-4d94-af4e-2aace1d47227" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="dc104f7d-b417-464b-a021-43712f57e2a7">
+                    <propertyInstance Id="4783bd14-568d-4ecd-9c36-3d3f9538c6a1" name="ClrAttributes">
+                      <elementDefinition Id="e47c82ce-706a-4ec0-b26a-7ed82952141d" />
+                    </propertyInstance>
+                    <elementDefinition Id="8696187a-31a9-4af6-953b-c36b6127053b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="427066b9-a89d-4824-98c3-13f5e1b4bff0">
+                    <propertyInstance Id="3be181dc-1881-4797-b71b-6af4dee07cb6" name="IsPartial" value="false">
+                      <elementDefinition Id="51292f52-c47b-43d3-8139-b3cd8136e194" />
+                    </propertyInstance>
+                    <elementDefinition Id="e3db28e4-788e-45eb-a849-72bdf98d427b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e5207981-f392-4a9d-aa6c-808de242cb13">
+                    <propertyInstance Id="f54ec602-836b-4ff1-b2c6-ae34508cacd8" name="IsUnsafe" value="false">
+                      <elementDefinition Id="8f91d2ee-d87d-4ec5-83c8-28f3c62ba670" />
+                    </propertyInstance>
+                    <elementDefinition Id="9c5cbe35-cb38-4c7a-85b4-83536cc32b81" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="cfc206a7-d8ee-4a14-8614-fa8a6a4c0d1d">
+                    <propertyInstance Id="3c601257-4a3a-4336-bfc1-6e1c2251a174" name="Inheritance" value="none">
+                      <elementDefinition Id="d8fdeb20-429e-40fa-855a-236aec49ac17" />
+                    </propertyInstance>
+                    <elementDefinition Id="2a093f45-d859-446c-b4b4-948414411e7b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="70598fb4-9192-40af-b3e3-e4fdc373e8ab">
+                    <propertyInstance Id="0919bca6-546d-42b8-823a-169c04cbda41" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="f21464bf-41af-4c85-abb7-1d866f394224" />
+                    </propertyInstance>
+                    <elementDefinition Id="0c37291e-d633-4c55-875b-1d0a91a67724" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="4e424144-c0a3-4a8d-abe6-d042757cec47">
+                    <propertyInstance Id="725f892f-a8cf-44f0-8340-39520c0a4c17" name="params" value="false">
+                      <elementDefinition Id="f0e6223d-7e62-4488-b6d5-353c8c4825d9" />
+                    </propertyInstance>
+                    <elementDefinition Id="c7c034b4-6be5-479f-b0cc-c8b3b6ba4462" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="47270437-6889-46fe-8c98-97f82b3faa70" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f788fd9a-b38f-4637-b361-b30dc771ced9" name="CoordonneesSerializer" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="12a1adfe-f0c6-414a-90b4-5dba9987470c" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer" tag="ViewCode">
+            <elementDefinition Id="d89dc4ed-ac02-4d5e-98a4-34bf5cab46cb" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="57f1581d-9533-4cb9-9b21-4cd1771c12ef" name="class" profile="CSharpProfile">
+            <elementDefinition Id="3b499392-ef02-4992-b51d-3df457f7759b" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="ea456bc5-2df0-4233-a626-f13e9b12b361">
+                <propertyInstance Id="0ee9db99-ea02-451f-973e-83dfa0324bf1" name="ClrAttributes">
+                  <elementDefinition Id="ab3db96b-9712-4ffb-bb68-0c3679d7e281" />
+                </propertyInstance>
+                <elementDefinition Id="f466808b-8a73-48a9-9f1e-ec8279fc824f" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="6f3ed211-e69f-4d67-b1ab-56d36927ac0f">
+                <propertyInstance Id="5b9741db-4910-47e5-beac-e8259f8faa21" name="IsPartial" value="false">
+                  <elementDefinition Id="760eefee-ee02-4445-9a73-e0e4a790e850" />
+                </propertyInstance>
+                <elementDefinition Id="950b0001-2e59-4bf0-83aa-2982838ad3cd" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="7aff23ef-a13d-41bd-924b-cf943a0d8d3e">
+                <propertyInstance Id="5456b762-b22e-469a-92f1-764acf27287f" name="IsStatic" value="False">
+                  <elementDefinition Id="5618ea6a-bf4f-404b-bfbc-12155b023587" />
+                </propertyInstance>
+                <elementDefinition Id="5cf40f93-35f5-468a-8111-c9da118d1ddc" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="f523e6c3-0a1d-4f1a-b732-98416da11bb6">
+                <propertyInstance Id="a6ce457e-1e7d-43b9-9db9-712bdde115b4" name="IsUnsafe" value="false">
+                  <elementDefinition Id="09742246-8e20-48a9-8241-991070c4826d" />
+                </propertyInstance>
+                <elementDefinition Id="f606a16f-d9a6-41f6-b933-04c606bcb07f" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="6b63f962-9d60-4843-8378-c71861ef2237">
+                <propertyInstance Id="9f5251f0-c3ec-4e1a-ae2e-20968cb3d724" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="4a9f40c3-1126-4bef-8adb-d4006dcab88c" />
+                </propertyInstance>
+                <elementDefinition Id="7ca2660a-1cfb-496f-895c-92ca4de7797d" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="436ddb3c-c99c-49b4-bcfc-b56be3f26d3a" />
+        <generalsInternal>
+          <generalization Id="b8729d6b-7a1e-4c4c-9c39-4c8311ad6976" isSubstitutable="false">
+            <classMoniker Id="8ffcffd8-4278-424b-bdd0-2492f4b53bbf" LastKnownName="SerializerTemplate1" />
+            <elementDefinition Id="157e4b60-a114-4544-b4b0-0ec700d83cdd" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="8973c5f3-2f54-4d00-8076-1ad2865a746a" name="GetXMLSerializer" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="400576ad-6275-4ff3-b527-6152d599b996" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer Member%3DGetXMLSerializer" tag="ViewCode">
+                <elementDefinition Id="f317f9a4-f918-4899-b106-539c5f4e5cb3" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="baf612f9-29fe-46ff-ac44-eb01605c321e" name="method" profile="CSharpProfile">
+                <elementDefinition Id="fd34dbc8-cc5b-43f5-acff-962d5af2ee61" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e6ef5402-2f43-4319-b393-722edb2a1e28">
+                    <propertyInstance Id="23be4a12-e6e6-4d43-bbe4-d7c5307aa9f8" name="ClrAttributes">
+                      <elementDefinition Id="1f30bf71-d32f-491b-a091-edcfe95c54f2" />
+                    </propertyInstance>
+                    <elementDefinition Id="4aa44f20-0eeb-4975-95ed-686a63b64d1a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8d676683-f757-412c-b023-812426312c0f">
+                    <propertyInstance Id="698c412e-7580-48eb-b8fd-9a7076aeaa13" name="IsPartial" value="false">
+                      <elementDefinition Id="b66d3fe6-d8e0-4967-acc5-058c681ef0e9" />
+                    </propertyInstance>
+                    <elementDefinition Id="13b07dbf-54ac-4450-9b2f-9b6b73e84b2c" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8ba188e2-4494-4a36-911c-34641c29179d">
+                    <propertyInstance Id="535c3974-d523-44e1-bd44-336c223ff3e7" name="IsUnsafe" value="false">
+                      <elementDefinition Id="a1f8e573-685c-4c00-a2ef-5d93cc7ae0d6" />
+                    </propertyInstance>
+                    <elementDefinition Id="856cc9e0-8429-43a1-9a6e-a83b32e4ecff" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7fa291cf-123b-4c94-af42-91d20e524d01">
+                    <propertyInstance Id="afc00aae-6b43-483a-8863-12fac023f89f" name="Inheritance" value="none">
+                      <elementDefinition Id="fb93546a-2e1b-4528-b1f6-09b4f440eab1" />
+                    </propertyInstance>
+                    <elementDefinition Id="793e1629-bde7-4874-b5e6-383e9f3d4daf" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c320f362-0332-4fd9-ad59-7b6a653ccc19">
+                    <propertyInstance Id="0108e26f-f908-4a44-9765-a8837c3c4a8c" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="24ea078d-d1c3-41c1-9f17-ec16dfd59d0f" />
+                    </propertyInstance>
+                    <elementDefinition Id="816b90d1-3a0b-4c15-8293-2b5339180010" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c427cc6d-de08-4afd-b514-4036359a3585">
+                    <propertyInstance Id="6a5aeb88-f27a-4945-9be1-f52a9f5f2a6b" name="params" value="false">
+                      <elementDefinition Id="d7413bb2-19bc-4609-be87-8bb7474b7369" />
+                    </propertyInstance>
+                    <elementDefinition Id="fc8e8e58-c28b-4d8b-8960-341933f4f46e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="2ab968f3-bd53-4e82-9332-4b14db2d723c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7724866e-00d6-4b8c-81ff-1d69ec24709c" direction="Return">
+                  <elementDefinition Id="efada268-31bb-4bb0-9305-bca140176bc0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d1acd68e-8dc5-4308-87f4-f79cdf07ea2c" name="serialize" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="1833213d-c7fa-442a-866a-9df33b68516d" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)])" tag="ViewCode">
+                <elementDefinition Id="8a589207-9784-4109-8184-32567cdeae6e" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="e85d46dd-d5a1-4fb9-9e76-5c4a9d030f5f" name="method" profile="CSharpProfile">
+                <elementDefinition Id="a51c210b-7c7b-4c77-850f-59d78f4f6071" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3b7e6823-d40a-4daa-9ef5-cd7f83348f86">
+                    <propertyInstance Id="8efe352d-0ce9-4225-b626-1418ec9ee369" name="ClrAttributes">
+                      <elementDefinition Id="5db51105-1ddd-4f96-a9a3-ac1bbc2703dd" />
+                    </propertyInstance>
+                    <elementDefinition Id="6c0690fe-db6c-40c2-97bc-8bdc185d0c0f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="9b089502-3d6f-4d1f-b5e3-6e1e03415500">
+                    <propertyInstance Id="94b802b6-e7b2-4a96-af3a-32bc2e8f1358" name="IsPartial" value="false">
+                      <elementDefinition Id="ffc20c3c-e730-4742-9b0c-32d488e90fe2" />
+                    </propertyInstance>
+                    <elementDefinition Id="fbecde0a-cef4-4002-b95b-663d0e6c1837" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6cdc8c24-6372-490f-ab0f-ddbc64cafd9a">
+                    <propertyInstance Id="ecf46aa3-0b34-407f-bedc-e34e8f6ba378" name="IsUnsafe" value="false">
+                      <elementDefinition Id="3be618e3-dbdd-41e9-8bea-4496cc26cb8d" />
+                    </propertyInstance>
+                    <elementDefinition Id="e1d388e4-d1c8-4f9b-95ca-347dcef7b1ed" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="5fa75573-7dd5-400b-bf12-1ee0bdbe8445">
+                    <propertyInstance Id="eda2e0c2-7dd3-4d93-9356-63f152e8ed19" name="Inheritance" value="none">
+                      <elementDefinition Id="12787c38-dd47-42d7-813a-8c0fb07d4ab4" />
+                    </propertyInstance>
+                    <elementDefinition Id="edd33055-ea5b-4241-aefb-2498ef0dc820" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f0523fd5-efe2-4e2f-848a-d0248baa2d23">
+                    <propertyInstance Id="5fd4fc97-05ff-44c7-93ab-9778b3a746a9" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="f45fd2c3-89e5-41b5-b8f0-4d4efdbc295a" />
+                    </propertyInstance>
+                    <elementDefinition Id="20dfde7c-13f2-44d1-b6f8-6adaf1e9f2af" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2d191676-a657-4382-86ec-be2a928984fc">
+                    <propertyInstance Id="f2000430-74a6-4e8f-bb0f-b5ff01ae64a4" name="params" value="false">
+                      <elementDefinition Id="17845625-091c-4c19-a3d0-65bb1a76591e" />
+                    </propertyInstance>
+                    <elementDefinition Id="ee85a90f-4654-4e95-a1b3-88347f9b9d01" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="116705db-e9c0-4e20-94c4-a6cf4ce19dd9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cc9fbf3e-6211-4ee6-a278-15e3c4db3d9e" name="writer" direction="In">
+                  <referencesInternal>
+                    <reference Id="b8719d5f-6aab-4eba-8ec3-779c30a2eae3" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dwriter" tag="ViewCode">
+                      <elementDefinition Id="caffb251-008e-4cf3-9e1e-098b27237c4b" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="d2486090-dcd1-4124-84e0-2382ca4989ee" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0ce682b1-21c0-43b6-b4ef-ec4e8e37b561" LastKnownName="TextWriter" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="883039f7-39f4-465b-bd16-2c58b910f6f1" name="serializer" direction="In">
+                  <referencesInternal>
+                    <reference Id="6829fbaf-fa22-47b0-a3f4-ab6a3ea93377" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dserializer" tag="ViewCode">
+                      <elementDefinition Id="f11ae9d4-c870-4912-8e68-ec1f7f5f3072" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="db4e943e-2075-4379-942f-097c6668f622" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d5c7313b-3bd1-4b81-a820-8f3a00d64731" name="obj" direction="In">
+                  <referencesInternal>
+                    <reference Id="6eaac9fe-ecc5-49de-8b84-16e2e4ec0e75" handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer Member%3D(Name%3Dserialize OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem.IO Type%3DTextWriter)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2FSystem.Xml.dll&quot; Namespace%3DSystem.Xml.Serialization Type%3DXmlSerializer)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DObject)]) ParameterIdentifier%3Dobj" tag="ViewCode">
+                      <elementDefinition Id="a0210d97-2819-4768-9cfa-9e4c076465d9" />
+                    </reference>
+                  </referencesInternal>
+                  <elementDefinition Id="4af9575d-41ba-476e-8d01-db011f60ea1d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cc006803-ffec-462a-95aa-081eb4fb504f" LastKnownName="Object" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5d6bbb38-0893-44cf-aedc-e24310057cf8" name="CoordonneesSerializer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="78cfc11a-561b-41c4-a570-052b51d76448" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonneesSerializer Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="6fdb2ddd-864d-4cd6-b179-bb856df3d51c" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="9689c176-7db5-443e-a034-1712a4d5dc4b" name="method" profile="CSharpProfile">
+                <elementDefinition Id="6c67f275-f76c-424e-a9ab-5e4200c63ff8" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2bcfa575-d28e-4367-bf02-6f9ebde2805f">
+                    <propertyInstance Id="1285ef1e-2bd1-4304-b144-f3736c3fd0b8" name="ClrAttributes">
+                      <elementDefinition Id="4f92e4f7-6ec3-4621-886e-806854647bcb" />
+                    </propertyInstance>
+                    <elementDefinition Id="5c6af7a6-3c50-4ce5-884c-1e848f91d832" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="fa451339-ae5e-4996-bf19-83d6b3a97f89">
+                    <propertyInstance Id="f6735f46-aa87-4037-a295-53e6a4d95dc7" name="IsPartial" value="false">
+                      <elementDefinition Id="1a2a85fd-975b-4ed6-8e46-30dc58a8b59b" />
+                    </propertyInstance>
+                    <elementDefinition Id="d6ab5bb6-9d4e-43c7-9be5-bb4892179414" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3092ed03-5c99-417a-882f-708d60d18e46">
+                    <propertyInstance Id="d067591c-e06f-4349-a026-f15bc441ae5d" name="IsUnsafe" value="false">
+                      <elementDefinition Id="72f66fa9-6737-44c1-b8c7-5eb8abaca17d" />
+                    </propertyInstance>
+                    <elementDefinition Id="c011d40d-c7ec-4234-a51b-39418b2958cc" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b3620a72-acb8-47d3-8b3e-7a97f315c78e">
+                    <propertyInstance Id="bde09c43-6796-493a-9fda-769faf59fea8" name="Inheritance" value="none">
+                      <elementDefinition Id="b8a7e76f-dcb6-4aa1-977d-4c8f8a39b41b" />
+                    </propertyInstance>
+                    <elementDefinition Id="65df68d3-979e-4857-9698-11bb363f00d0" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6926fe2f-b239-4f8c-aba6-b3ec25586a40">
+                    <propertyInstance Id="64f59f3e-a93e-431b-aadf-73fad92eb2e2" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="a9aae04d-bdf8-4b59-a473-c4103f7af240" />
+                    </propertyInstance>
+                    <elementDefinition Id="273033f9-3479-47d8-b914-5448bc0ea8ab" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a78260d9-ccf1-4d7d-a38c-9e8d7e0390f5">
+                    <propertyInstance Id="b9cc826b-ac40-41f6-ab04-715833c0b8f7" name="params" value="false">
+                      <elementDefinition Id="f8c14cf7-eb04-4811-9bad-666856991220" />
+                    </propertyInstance>
+                    <elementDefinition Id="62b95539-5762-4830-9ecf-a2974b1ab5bb" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="e0544ce1-189b-4c36-bf2f-87ed0e1fdf02" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f1c3dadf-9f0f-4ac8-b62e-49627cab77e2" name="ZoneSerializer" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="4a6177e3-fe33-4f55-93c8-fff915f6371c" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneSerializer" tag="ViewCode">
+            <elementDefinition Id="563ceb88-a38b-40e9-a518-1b49cc7cfc1c" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="8c25ec92-3b09-46b5-8c10-7e540a7b9b32" name="class" profile="CSharpProfile">
+            <elementDefinition Id="68b34b50-9ab4-4f05-8762-30fb659c5e35" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="f5ffab5d-84ce-4208-923c-95e1db0569e0">
+                <propertyInstance Id="48edf26c-f5dd-4831-994f-e18fe5dc67a7" name="ClrAttributes">
+                  <elementDefinition Id="a19f483f-a551-4c0e-ad74-7760b1896775" />
+                </propertyInstance>
+                <elementDefinition Id="7e75784a-c1bb-4791-8fc7-c36d6c759037" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="80fb885b-9299-42d2-b41d-7042b6657ad1">
+                <propertyInstance Id="db75f357-2abf-4538-890f-4f77f302dc1e" name="IsPartial" value="false">
+                  <elementDefinition Id="698a279c-5d5f-46b8-abce-f16834890281" />
+                </propertyInstance>
+                <elementDefinition Id="54118ce4-e77e-46ff-83fc-5b4fbee762a0" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="b846fb64-1bfa-432d-a6a2-66e1257b252c">
+                <propertyInstance Id="fb22560b-b001-48a7-b093-27fbefd6fcba" name="IsStatic" value="False">
+                  <elementDefinition Id="1957d7ec-ac91-4cd0-a63e-f642f638ec19" />
+                </propertyInstance>
+                <elementDefinition Id="ed55de3e-b442-4c81-9c46-bf6837ea18e9" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="8b9d545c-5d20-4045-9768-446f1de3f829">
+                <propertyInstance Id="8bebaaf6-aa3b-4862-be10-dfcc0ccd45cf" name="IsUnsafe" value="false">
+                  <elementDefinition Id="84a51735-d8a4-4a08-9eea-6349588481f9" />
+                </propertyInstance>
+                <elementDefinition Id="8025e986-0e28-4c8c-bf65-e80cb1a9733e" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="db2daf9e-2e69-4894-a5b9-320faeaf84eb">
+                <propertyInstance Id="f6c55eba-08ec-4090-8c09-37b7de7b6ac2" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="2dc9d645-f8c4-48b3-b535-b284c82f5c5a" />
+                </propertyInstance>
+                <elementDefinition Id="da2697f2-a0d3-462f-b444-d352bae2f252" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="6c13de89-832b-4a49-a1d4-2c9a42f248b9" />
+        <generalsInternal>
+          <generalization Id="a4b309b7-6665-434c-b680-80ae91f8d18b" isSubstitutable="false">
+            <classMoniker Id="8ffcffd8-4278-424b-bdd0-2492f4b53bbf" LastKnownName="SerializerTemplate1" />
+            <elementDefinition Id="63c9a862-69f1-4de9-bb85-955be66b8687" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="1ba0ca5d-8ffd-4860-bfb2-6adcadd2c0a8" name="GetXMLSerializer" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c69b66e9-5dfc-4f66-9094-824455d39f96" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneSerializer Member%3DGetXMLSerializer" tag="ViewCode">
+                <elementDefinition Id="78a89e22-c970-40b2-807b-15151dcccb0f" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="b546301d-c9ba-4e9f-b549-c1e09d04d30a" name="method" profile="CSharpProfile">
+                <elementDefinition Id="4338fc89-306f-48c9-951b-c276768aa243" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="ad01a20f-3a1d-4b2c-8ca8-735ca2e0f596">
+                    <propertyInstance Id="911cb2f2-1d91-4434-9435-91a6b4ae091a" name="ClrAttributes">
+                      <elementDefinition Id="edc10375-99a5-4ae0-802e-254198790ae1" />
+                    </propertyInstance>
+                    <elementDefinition Id="aeb74d2e-b09c-4fe6-be96-922dbb42bf18" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="60260bbf-a8a4-4f19-a41d-dddc76bf65c2">
+                    <propertyInstance Id="b21e59e2-7ced-4422-8b31-ba7544f6295c" name="IsPartial" value="false">
+                      <elementDefinition Id="5a5d8549-2e07-4ec5-90e0-591033f4cec6" />
+                    </propertyInstance>
+                    <elementDefinition Id="95870109-5a45-4ade-bfdb-891dff1eec6e" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="bc214186-d43b-4d1a-b772-40c64acd86dc">
+                    <propertyInstance Id="e21773c3-6ff9-4ed6-8ecd-2c4e392361c9" name="IsUnsafe" value="false">
+                      <elementDefinition Id="3ec98136-095c-446c-ae0b-4faa3c4386b5" />
+                    </propertyInstance>
+                    <elementDefinition Id="557c4c2b-fe4f-49a3-851d-9ee61c189810" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="1342e652-22b0-4071-8f47-6b36cf51119a">
+                    <propertyInstance Id="3d6312bd-eeaf-4888-8917-dc2845f1c03c" name="Inheritance" value="none">
+                      <elementDefinition Id="a8fc920f-71ff-42df-b35d-8ae909445512" />
+                    </propertyInstance>
+                    <elementDefinition Id="7ad8c1ea-58bd-49fb-8ea9-0592deb7afee" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="6b9b6882-7dba-49bd-bb5f-230d70ee4f8f">
+                    <propertyInstance Id="d2b6b1df-0e3d-4540-99ac-fcf6d9f3d4c9" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="73a27cfd-1670-425b-b826-63039058f304" />
+                    </propertyInstance>
+                    <elementDefinition Id="c7c5845b-d1a3-4a04-b400-7276ccf2d76f" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="82538aaf-36be-48c6-a6f5-0fa04952c840">
+                    <propertyInstance Id="95532989-4bad-4f1a-937c-3cfac001ad1f" name="params" value="false">
+                      <elementDefinition Id="01f4c323-2cde-454b-9213-e88c95fb2888" />
+                    </propertyInstance>
+                    <elementDefinition Id="4663bb14-542c-4985-94be-50113eec1b74" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="daeaf32b-c93d-4c78-8de8-60b2fd9cc418" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b2802c96-e232-412e-b118-a75784f30e14" direction="Return">
+                  <elementDefinition Id="d88fc75c-9350-452a-ac5f-3c86ba9e250f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="dc58598f-b88c-458e-84ac-1f7b125f82f3" name="ZoneSerializer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="c5d59c80-cb0c-492c-87db-7979c6858230" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneSerializer Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="be2272d0-922f-46ca-ab02-9c56219c663d" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="ad9b78cb-9f06-4b77-8d54-0241bbe06096" name="method" profile="CSharpProfile">
+                <elementDefinition Id="db3dcc86-0f6c-4d64-961a-97b014845658" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="e0ad186c-21d2-4ace-bcb1-afd69422e98b">
+                    <propertyInstance Id="6356ed53-03af-4089-b721-d776bffe4d19" name="ClrAttributes">
+                      <elementDefinition Id="bb59840d-7eba-4948-ac2e-16c1a22651dd" />
+                    </propertyInstance>
+                    <elementDefinition Id="d466406e-aafa-43c0-be0c-f56e3780336d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="28f6e950-74dd-433c-9865-e87281f1a873">
+                    <propertyInstance Id="8ddeaa70-f43e-41dd-b7e1-54e094cfd9a8" name="IsPartial" value="false">
+                      <elementDefinition Id="546a7d22-87da-4b0a-9fa9-2aa37a2b9084" />
+                    </propertyInstance>
+                    <elementDefinition Id="46ddc861-2536-4bbf-b9b5-5e9eea2810da" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="855f2f08-f65c-4a4b-88b5-728a26eb08b2">
+                    <propertyInstance Id="5ca06e7b-57a3-4f80-8f03-52ce610bc9dc" name="IsUnsafe" value="false">
+                      <elementDefinition Id="d05a7b46-e850-4d11-8176-7d588de3d4ad" />
+                    </propertyInstance>
+                    <elementDefinition Id="65b9597e-51e3-4d86-94d4-89c58729a2ef" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="b8aadbf2-9668-4861-9374-7deb79e54ff0">
+                    <propertyInstance Id="69c4963e-8d3f-4df5-90fd-37b21761c31c" name="Inheritance" value="none">
+                      <elementDefinition Id="e88bd7e6-ab39-41b8-af9e-7a906105332f" />
+                    </propertyInstance>
+                    <elementDefinition Id="5703aeda-e630-4f65-bfb4-46118e47fa06" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="a975d755-87cc-41e1-b306-16583d31ee65">
+                    <propertyInstance Id="73d87d61-277c-46a7-8754-fe52ea4e83de" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="ce5cdb66-bc1b-4442-b387-b1b7ae301c9e" />
+                    </propertyInstance>
+                    <elementDefinition Id="21f37b9a-c219-4984-8f8a-5fb7090573ac" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="0810b178-fa7d-4522-9f1e-4ca17e47ebb1">
+                    <propertyInstance Id="9fb2b986-f5cf-4573-8729-efc56a87a76b" name="params" value="false">
+                      <elementDefinition Id="e65f48e0-ece6-49f4-81db-88a84e4d762a" />
+                    </propertyInstance>
+                    <elementDefinition Id="f76f1ad0-6a1f-4a0b-b2fa-3506595d545d" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="d564da65-e7c2-4f69-9fdc-23baf1a29e09" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e3e2c7a5-1367-42c7-b411-6eeeec7af6b9" name="GameSerializer" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <referencesInternal>
+          <reference Id="d1c62e4a-9655-441c-93bb-00e44f1c6515" handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameSerializer" tag="ViewCode">
+            <elementDefinition Id="dde730a0-b7e4-4f30-930a-55d176cdf8c0" />
+          </reference>
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="23294cdd-2691-43bf-909c-41817916f414" name="class" profile="CSharpProfile">
+            <elementDefinition Id="b0e529a3-4ef6-4abe-b0f6-2e591ba4495a" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="5d6571e4-1518-4328-9f93-1547a53b9d71">
+                <propertyInstance Id="902e8924-e752-41e9-84fe-159e0da8454f" name="ClrAttributes">
+                  <elementDefinition Id="115ebd25-4453-48db-856a-81a610fb65fb" />
+                </propertyInstance>
+                <elementDefinition Id="b34618b0-4033-4782-a735-0faeb4dca638" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="39a14d8e-f766-4120-926a-31b58378140c">
+                <propertyInstance Id="178c5f28-a81f-4b08-b37d-5dd0db839fef" name="IsPartial" value="false">
+                  <elementDefinition Id="ca5bffb8-d85a-487a-b6e1-260ace70142b" />
+                </propertyInstance>
+                <elementDefinition Id="37615ce5-9a09-480b-8b3e-ed4ab98822c1" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="300ebb4f-c88a-47ea-bb62-acca1384bff1">
+                <propertyInstance Id="b04d7828-ecd3-4881-913b-901c1aae40a8" name="IsStatic" value="False">
+                  <elementDefinition Id="fc0db3ba-1da2-486d-8bef-f0d54d9e08f4" />
+                </propertyInstance>
+                <elementDefinition Id="c9125461-9e20-47f8-aab2-d84c7662a678" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="95559681-6d0c-4ea8-81dc-f962c0a802de">
+                <propertyInstance Id="02933cc5-10c6-44cb-ab40-5fffbde71bcf" name="IsUnsafe" value="false">
+                  <elementDefinition Id="c3e5b80f-5d94-48c8-a465-c627c2a11890" />
+                </propertyInstance>
+                <elementDefinition Id="7d5d81de-a991-4114-8cb0-4ca8acb295f0" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="8181bb7f-c535-498b-9516-842cf31340a8">
+                <propertyInstance Id="9d156d2f-9212-435a-b140-58a0fc893dd7" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="6a630568-a53f-4e92-8fd2-3ce1a477c1ec" />
+                </propertyInstance>
+                <elementDefinition Id="308225b1-a140-467e-b0e1-380928c14f25" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="cc8d0571-0b66-4e3d-8f91-0d1447324406" />
+        <generalsInternal>
+          <generalization Id="029ad975-2122-49f4-b7a1-b878417750f2" isSubstitutable="false">
+            <classMoniker Id="8ffcffd8-4278-424b-bdd0-2492f4b53bbf" LastKnownName="SerializerTemplate1" />
+            <elementDefinition Id="2a841e71-b45c-4a24-8be3-aa9693ef1915" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="19561bfa-28bd-4e0d-a5b7-24770a5f9253" name="GetXMLSerializer" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="7ce52556-b693-4506-9d86-56743013ec03" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameSerializer Member%3DGetXMLSerializer" tag="ViewCode">
+                <elementDefinition Id="809104f4-6795-45bf-97a0-6d673e572691" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="1b465313-dae0-4074-baad-d8148c174b83" name="method" profile="CSharpProfile">
+                <elementDefinition Id="1e5200c5-2e19-4d57-95a3-2d7be153b455" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="7719e36a-097d-48f8-9919-c010806de2f7">
+                    <propertyInstance Id="3bdce126-a1fc-4705-b413-934b94a4bab7" name="ClrAttributes">
+                      <elementDefinition Id="5c1e4f3b-8717-4d19-a989-f248215e0fea" />
+                    </propertyInstance>
+                    <elementDefinition Id="c8e4d5f1-0d56-456c-85c9-4139e51bb659" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="85f1e315-2dee-4ea7-92b6-c0d9e934218e">
+                    <propertyInstance Id="e153d80b-233f-43e4-be9f-092462bad8ed" name="IsPartial" value="false">
+                      <elementDefinition Id="5ea1d7c4-b19a-4d05-b130-f61fd0a75c2f" />
+                    </propertyInstance>
+                    <elementDefinition Id="c78fe26c-1be8-4f68-a22b-14fc23f77bfd" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="daeb07de-6531-4cb4-9cdd-91b0652aea63">
+                    <propertyInstance Id="4d188ce4-8448-4bc8-8198-b6ee9fc67033" name="IsUnsafe" value="false">
+                      <elementDefinition Id="bc8abf5f-bd40-4a68-a595-f4a4aa96d64d" />
+                    </propertyInstance>
+                    <elementDefinition Id="94ba2ce3-eb6f-4f84-b5d6-720555a0ada1" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="d44971eb-f2c9-4d6b-8cab-08387f8beb22">
+                    <propertyInstance Id="976fb818-5123-4761-93f0-11b95ad56a96" name="Inheritance" value="none">
+                      <elementDefinition Id="9c8cc2e3-5707-49bc-b220-9e5f17be830f" />
+                    </propertyInstance>
+                    <elementDefinition Id="791e5646-b5e9-4060-8262-918701f9d8a6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="35eb32a6-2ede-48ee-a276-2ee50a176a0f">
+                    <propertyInstance Id="8420f0f6-19c0-4dc4-8d91-f3a809261679" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="9640bf27-5b7f-47b7-91ee-66aa3d356c9e" />
+                    </propertyInstance>
+                    <elementDefinition Id="9f2617c4-53d0-4322-8a9d-bd167ee41b2a" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="c0186c78-e3ce-4b04-b6d2-a00b4fdcc43d">
+                    <propertyInstance Id="7ff480ff-7e98-4556-ae06-db98a7864590" name="params" value="false">
+                      <elementDefinition Id="d0be40c4-f9ab-4f81-befd-5dd2af2a7961" />
+                    </propertyInstance>
+                    <elementDefinition Id="c3ef489d-c8a8-4db8-9de2-d9a570785dff" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="307aad81-b788-46ab-99fc-c7d4e6361f99" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="804c3f7f-9621-4a29-8c4c-609641eea73f" direction="Return">
+                  <elementDefinition Id="02372a9b-93a2-45eb-80ef-94ea44707f3b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="697a0c82-c760-40c1-982e-e75282048073" LastKnownName="XmlSerializer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="295cac0b-43e5-4cff-8726-fe87270c9766" name="GameSerializer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <referencesInternal>
+              <reference Id="03fa6448-9acc-43bf-a75a-b7ca3f0ffc24" handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameSerializer Member%3D.ctor" tag="ViewCode">
+                <elementDefinition Id="87af8a5a-7bd5-4e21-b6b2-865c73bbd738" />
+              </reference>
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance Id="fb17ae9b-9b36-4cc0-b070-1cbad0d1ac11" name="method" profile="CSharpProfile">
+                <elementDefinition Id="a375563c-7eb2-4cd9-883f-389f07e9f656" />
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="f5ea1b80-2934-4d0e-8262-361548aeeb6d">
+                    <propertyInstance Id="11fe2525-b9ac-472b-aab9-843cd6fece9d" name="ClrAttributes">
+                      <elementDefinition Id="6d7f640f-8b4b-42f6-9485-53180a9b432e" />
+                    </propertyInstance>
+                    <elementDefinition Id="18f01719-0877-4072-80fa-df2c0e6c6c93" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="8eeba782-7c33-4acc-8a4c-7f422877d6cf">
+                    <propertyInstance Id="958eeed7-5e41-491b-a844-56521a84175c" name="IsPartial" value="false">
+                      <elementDefinition Id="6fe10506-bdcd-4ba8-8571-7ad862b75dd7" />
+                    </propertyInstance>
+                    <elementDefinition Id="b5aa696f-4213-4ee8-8d8d-08f91cf5911b" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="3794ad58-7ca8-49d8-a9c4-8f7e2c0413e8">
+                    <propertyInstance Id="1b1f2a6a-b668-4d98-83b9-4744d0961810" name="IsUnsafe" value="false">
+                      <elementDefinition Id="45f357de-1044-4513-8e27-dc43856d564b" />
+                    </propertyInstance>
+                    <elementDefinition Id="da301def-6775-4688-94b6-31b32299f3b8" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="2551b7b2-094d-4ecf-bbc1-c342254fe7ad">
+                    <propertyInstance Id="70aa452a-26bc-47f5-ab71-9dcbec4d9900" name="Inheritance" value="none">
+                      <elementDefinition Id="80a77782-6798-4a3d-adf9-a7fe9ea347e4" />
+                    </propertyInstance>
+                    <elementDefinition Id="1e0bca00-9e37-4ba1-99d2-298a41cf0440" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="31037471-5236-46dc-b3bb-96750833ad6f">
+                    <propertyInstance Id="62bc4fb5-041a-467a-b633-e09aab42a516" name="PackageVisibility" value="internal">
+                      <elementDefinition Id="98654e5d-61dd-4649-a0c3-1adff1f1f34d" />
+                    </propertyInstance>
+                    <elementDefinition Id="90945463-1634-4370-a4e2-df5e2aca2c88" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances Id="155a6ecc-32ae-4c6a-bff4-6f533d16089c">
+                    <propertyInstance Id="8bd0d0e2-b20b-488e-a34d-eaf1a2c14aab" name="params" value="false">
+                      <elementDefinition Id="25b65101-6018-4dbd-86f0-eab1556248fb" />
+                    </propertyInstance>
+                    <elementDefinition Id="7ccf5fc2-f788-4d4c-9922-1d5248a2c1c6" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <elementDefinition Id="1c87fdb6-5edf-444b-9b3b-3278a68875a1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="de877fba-841d-461a-86b7-5e8d4286a26b" name="UML">
+    <elementDefinition Id="bd47c559-22c2-4b83-a4e0-5d9662366643" />
+  </package>
+</logicalClassDesignerModel>

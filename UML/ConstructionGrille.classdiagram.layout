@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ConstructionGrille">
+  <logicalClassDesignerModelMoniker Id="8db7f636-0b5c-45c8-9fdd-1f27deec397e" />
+  <nestedChildShapes>
+    <classShape Id="c700bfe5-a7bd-4550-b285-66b34b80e917" absoluteBounds="4.875, 0.5, 2.625, 2.3089293346802395" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="58a9972b-8bdf-4f48-b547-78eb72782abd" LastKnownName="ConstructionGrilleStrategy" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="2a6ed039-69ef-4401-9341-4b25bce7b153" absoluteBounds="4.89, 1.0153356393178306, 2.5949999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="1af8bee0-ed5e-4308-96ca-5f1a0878e8ec" absoluteBounds="4.89, 1.3866637519001961, 2.5949999999999998, 1.3222655827800434" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83e822bc-f7ff-405e-8697-31c7b8d5dbcd" absoluteBounds="1.75, 1.375, 2.75, 1.508148109515508" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="9b07bfc3-3d41-4c02-a612-1422e192cf36" LastKnownName="ConstructionGrilleAOK" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="8d00ff7d-25f6-413b-b15c-e106643b75e2" absoluteBounds="1.765, 1.8903356393178306, 2.7199999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="9b7daae5-ceca-4562-a400-d3022e0fda01" absoluteBounds="1.765, 2.1015075068672497, 2.7199999999999998, 0.6816406026482581" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(4.5 : 2.09196466734012); (4.875 : 2.09196466734012)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="cdff223d-560b-4759-84f8-5f7070f448ec" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="83e822bc-f7ff-405e-8697-31c7b8d5dbcd" />
+        <classShapeMoniker Id="c700bfe5-a7bd-4550-b285-66b34b80e917" />
+      </nodes>
+    </generalizationConnector>
+    <classShape Id="517bc150-d4ad-40cd-b25e-b0800d87e974" absoluteBounds="3, 3.375, 2.5, 1.3479918644825615" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="8d5b1dc8-0443-4975-b038-9046f5b548d4" LastKnownName="ConstructionGrilleCDGSimulator" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="2bda7fc5-66b7-4f12-99a3-f39b548f6517" absoluteBounds="3.015, 3.8903356393178306, 2.4699999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="a0327cd0-c05e-4fbc-a870-1f53bf16643e" absoluteBounds="3.015, 4.10150750686725, 2.4699999999999998, 0.521484357615312" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(4.25 : 3.375); (4.25 : 3.04892933468024); (6.1875 : 3.04892933468024); (6.1875 : 2.80892933468024)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="5d64d3a7-b33c-4907-9f66-bc2680b38d19" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="517bc150-d4ad-40cd-b25e-b0800d87e974" />
+        <classShapeMoniker Id="c700bfe5-a7bd-4550-b285-66b34b80e917" />
+      </nodes>
+    </generalizationConnector>
+    <classShape Id="78dfcbff-33ca-4d51-b9c7-a565c0c205d0" absoluteBounds="6.25, 3.375, 3, 1.3479918644825615" hideQualifiedName="false" increaseHeight="0.18800345897674561" customColor="181, 193, 223">
+      <classMoniker Id="c97b780c-4422-4963-b016-f56910cf0b0b" LastKnownName="ConstructionGrilleHoneyland" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="84668584-d536-47c9-a827-c6ee0803e4ab" absoluteBounds="6.2650000000000006, 3.89033563931783, 2.9699999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="a76af2ee-3555-499e-8771-85a9ee320280" absoluteBounds="6.2650000000000006, 4.10150750686725, 2.9699999999999998, 0.521484357615312" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(7.75 : 3.375); (7.75 : 3.10892933468024); (6.1875 : 3.10892933468024); (6.1875 : 2.80892933468024)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="6983ed28-0121-404b-99db-6d67ef062e23" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="78dfcbff-33ca-4d51-b9c7-a565c0c205d0" />
+        <classShapeMoniker Id="c700bfe5-a7bd-4550-b285-66b34b80e917" />
+      </nodes>
+    </generalizationConnector>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

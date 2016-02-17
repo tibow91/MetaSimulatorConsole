@@ -1308,5 +1308,83 @@
         </signatures>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="26bc3a29-5903-4f80-b8d3-ed0e42a4f910"
+        name="List&lt;PersonnageMobilisable‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="fd06a3fc-a540-404e-aca2-7192f404b0b0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="82559b6a-f9f8-4cb5-8151-d74f3a5192cf">
+                <propertyInstance
+                  Id="8bb829d6-b4d7-4077-966b-eca5bdf8c658"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e62d22f9-86c1-400e-8118-76b377135b88">
+                <propertyInstance
+                  Id="4ac2ac27-f86b-4601-8f53-7668df4ad86a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fd070152-ce9b-4594-ab66-5115b4161529">
+                <propertyInstance
+                  Id="462dd846-79a8-4b7d-b863-cae657583626"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccc7a389-785a-44fd-82be-0d7e20b26d59">
+                <propertyInstance
+                  Id="ba591308-d862-40ad-8b95-960eefc10892"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d1c54154-79a5-43fb-bacf-66b0bc1a11e7">
+                <propertyInstance
+                  Id="7e6e2ccf-88db-4f3c-9a90-c854f8b362c6"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="f11c869b-e34e-4cc3-ba5d-025e030e3e7f">
+            <redefinableTemplateSignatureMoniker
+              Id="178781e4-95e4-41e7-86c7-75b460840caa"
+              LastKnownLocation="Package3_1231.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="a52d5c56-004b-4130-915c-226ac6e3592b">
+                  <actuals>
+                    <classMoniker
+                      Id="1db59380-33b1-4f35-97e6-9292233b390f"
+                      LastKnownName="PersonnageMobilisable"
+                      LastKnownLocation="Package_1252.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="f868accb-e0d9-4011-9f4d-31d6c6e3270a"
+                      LastKnownLocation="Package3_1231.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

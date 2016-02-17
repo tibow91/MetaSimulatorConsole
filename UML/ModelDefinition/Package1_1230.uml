@@ -420,5 +420,17 @@
         </signatures>
       </Interface>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="fb918e49-1f63-4268-b9ef-4351540ce733"
+        LastKnownName="Xml"
+        LastKnownLocation="Package_1217.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1d2c1ddc-7c2b-4ec3-b941-651a1247426c"
+        LastKnownName="IO"
+        LastKnownLocation="Package2_1217.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

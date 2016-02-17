@@ -96,14 +96,14 @@ namespace MetaSimulatorConsole.Dijkstra
 
     public class ConteneurParcourable<T> : Conteneur<T>
     {
-        private ComputePathsStrategy<T> AlgoComputePath;
+        private ComputePathsTemplate<T> AlgoComputePath;
         public ConteneurParcourable(int longueur, int largeur)
             : base(longueur, largeur)
         {
             SetAlgoComputePath(new ComputePathDefault<T>(this));
         }
 
-        public void SetAlgoComputePath(ComputePathsStrategy<T> algo)
+        public void SetAlgoComputePath(ComputePathsTemplate<T> algo)
         {
             AlgoComputePath = algo;
         }

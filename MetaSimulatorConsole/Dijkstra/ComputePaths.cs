@@ -7,11 +7,11 @@ using MetaSimulatorConsole.Simulation;
 
 namespace MetaSimulatorConsole.Dijkstra
 {
-    public abstract class ComputePathsStrategy<T>
+    public abstract class ComputePathsTemplate<T>
     {
         protected ConteneurParcourable<T> Tableau;
 
-        protected ComputePathsStrategy(ConteneurParcourable<T> grille)
+        protected ComputePathsTemplate(ConteneurParcourable<T> grille)
         {
             Tableau = grille;
         }
@@ -63,7 +63,7 @@ namespace MetaSimulatorConsole.Dijkstra
 
     }
 
-    public class ComputePathDefault<T> : ComputePathsStrategy<T>
+    public class ComputePathDefault<T> : ComputePathsTemplate<T>
     {
         protected override bool TestValidNode(Coordonnees c)
         {
@@ -75,7 +75,7 @@ namespace MetaSimulatorConsole.Dijkstra
         }
     }
 
-    public class ComputePathsAOK : ComputePathsStrategy<Case>
+    public class ComputePathsAOK : ComputePathsTemplate<Case>
     {
         protected override bool TestValidNode(Coordonnees coor)
         {

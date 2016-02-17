@@ -123,5 +123,24 @@ namespace MetaSimulatorConsole.Tableau
 
 
     }
-    
+
+    class ConstructionGrilleCDGSimulator : ConstructionGrilleStrategy
+    {
+        public ConstructionGrilleCDGSimulator(Grille grille) : base(grille) {  }
+
+        protected override void ConstruireGrilleDepuisZone(ZoneGenerale zoneGenerale)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class ConstructionGrilleHoneyland : ConstructionGrilleStrategy
+    {
+        public ConstructionGrilleHoneyland(Grille grille) : base(grille) { }
+
+        protected override void ConstruireGrilleDepuisZone(ZoneGenerale zoneGenerale)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
