@@ -1230,5 +1230,83 @@
         </signatures>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="131593ae-1eb0-46fd-9d4c-c2c729507c62"
+        name="List&lt;ZoneFinale‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bc05b9e1-5523-4dcb-b65d-a50ccf8c1ce8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84addced-3e6c-4920-9297-283082ce9704">
+                <propertyInstance
+                  Id="209b874f-29fd-411a-bb24-4cff26089af1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="03a766eb-1fea-444f-89c1-f7d1577baa8f">
+                <propertyInstance
+                  Id="5bf40b48-c711-4d56-994d-842239d046f8"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="420f3bd3-1625-4f29-9f3b-21f21cf3fe9a">
+                <propertyInstance
+                  Id="65f7a005-4aaf-4dad-9bbf-a9660b012055"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="303d6f7c-5720-4a6f-8576-8c916e1b477e">
+                <propertyInstance
+                  Id="9e276cb6-571f-44f2-bfe2-39d7e69f4004"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1b1bfba6-6543-4314-9ba4-b65bf587da2b">
+                <propertyInstance
+                  Id="179e81da-558d-454a-ab1f-30260ac3a619"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="18f3aa11-5110-4ac1-9fef-83b19a12268a">
+            <redefinableTemplateSignatureMoniker
+              Id="178781e4-95e4-41e7-86c7-75b460840caa"
+              LastKnownLocation="Package3_1231.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="63657ef3-1696-4ad9-9751-bf3ed1b7f49b">
+                  <actuals>
+                    <classMoniker
+                      Id="b3014516-bfe4-4c36-850f-99aa69088e4d"
+                      LastKnownName="ZoneFinale"
+                      LastKnownLocation="Package_1230.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="f868accb-e0d9-4011-9f4d-31d6c6e3270a"
+                      LastKnownLocation="Package3_1231.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

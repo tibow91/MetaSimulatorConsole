@@ -15,7 +15,6 @@
       <class
         Id="dbcbbd3d-cdc5-4ff8-845c-675d0148c072"
         name="Clavier"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

@@ -51,7 +51,7 @@
     <Compile Include="Fenetre\Graphisme.cs" />
     <Compile Include="Gestion\LoadGame.cs" />
     <Compile Include="Gestion\SaveGame.cs" />
-    <Compile Include="Serialize.cs" />
+    <Compile Include="Outils\Serialize.cs" />
     <Compile Include="Simulation\AccessPoint.cs" />
     <Compile Include="Simulation\AgeOfKebab\Caisses.cs" />
     <Compile Include="Simulation\AgeOfKebab\Client.cs" />
@@ -65,7 +65,7 @@
     <Compile Include="Simulation\Honeyland\ZoneGeneraleHoneyland.cs" />
     <Compile Include="Simulation\LinkCase.cs" />
     <Compile Include="Simulation\Objet.cs" />
-    <Compile Include="Observateur.cs" />
+    <Compile Include="Outils\Observateur.cs" />
     <Compile Include="Simulation\AgeOfKebab\AgeOfKebab.cs" />
     <Compile Include="Simulation\AgeOfKebab\Kebab.cs" />
     <Compile Include="Simulation\AgeOfKebab\KebabBuilder.cs" />
@@ -95,19 +95,9 @@
     <Compile Include="Gestion\Menu.cs" />
     <Compile Include="Dijkstra\MyLinkedList.cs" />
     <Compile Include="Fenetre\Window.cs" />
-    <Compile Include="unused\Personnages\Archer.cs" />
-    <Compile Include="unused\Personnages\Chevalier.cs" />
-    <Compile Include="unused\Comportements\ComportementCombat.cs" />
-    <Compile Include="unused\Comportements\ComportementEmettreUnSon.cs" />
-    <Compile Include="unused\Deplacement.cs" />
-    <Compile Include="unused\Personnages\Fantassin.cs" />
-    <Compile Include="unused\Organisation.cs" />
-    <Compile Include="unused\Personnages\OldPersonnage.cs" />
-    <Compile Include="unused\Personnages\Princesse.cs" />
     <Compile Include="Dijkstra\PriorityQueue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="unused\SimulationJeu.cs" />
     <Compile Include="Gestion\GameManager.cs" />
     <Compile Include="Dijkstra\Vertex.cs" />
     <Compile Include="Simulation\Zones.cs" />
@@ -118,9 +108,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="unused\MVC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
