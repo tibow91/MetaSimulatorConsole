@@ -22,6 +22,7 @@ namespace MetaSimulatorConsole
         [XmlIgnore]
         public bool Running { get; set; } // Indique si la simulation est en cours
         [XmlIgnore]
+        public bool Started { get; set; } // Indique si la simulation est en cours
 
         public Grille Tableau;
         [XmlIgnore]

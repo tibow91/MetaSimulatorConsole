@@ -71,6 +71,7 @@ namespace MetaSimulatorConsole
             AppuiClavier toucheK3 = new AppuiClavierToucheKeypad3(fenetre);
             AppuiClavier toucheK4 = new AppuiClavierToucheKeypad4(fenetre);
             AppuiClavier toucheK5 = new AppuiClavierToucheKeypad5(fenetre);
+            AppuiClavier toucheK6 = new AppuiClavierToucheKeypad6(fenetre);
 
 
             AppuiClavier toucheN0 = new AppuiClavierToucheNumber0(fenetre);
@@ -86,7 +87,8 @@ namespace MetaSimulatorConsole
             toucheK2.SetCommandeSuivante(toucheK3);
             toucheK3.SetCommandeSuivante(toucheK4);
             toucheK4.SetCommandeSuivante(toucheK5);
-            toucheK5.SetCommandeSuivante(toucheN0);
+            toucheK5.SetCommandeSuivante(toucheK6);
+            toucheK6.SetCommandeSuivante(toucheN0);
 
             toucheN0.SetCommandeSuivante(toucheN1);
             toucheN1.SetCommandeSuivante(toucheN2);
@@ -306,6 +308,20 @@ namespace MetaSimulatorConsole
         }
     }
 
+
+
+    class AppuiClavierToucheKeypad6 : AppuiClavier
+    {
+        public AppuiClavierToucheKeypad6(Window fenetre)
+            : base(fenetre)
+        {
+            AjouterCommande(new augmenterNombrePersonnage(fenetre.Gestionnaire), EMenu.Simulation);
+        }
+        public override void Traitement()
+        {
+            TraitementGenerique(Key.Keypad6);
+        }
+    }
 
 
 

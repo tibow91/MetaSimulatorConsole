@@ -192,6 +192,7 @@ namespace MetaSimulatorConsole.Simulation
                 return;
             }
             ++Tour;
+            Simulation.Started = true;
             MobiliserPersonnages();
             InsererPersonnagesRestants();
         }

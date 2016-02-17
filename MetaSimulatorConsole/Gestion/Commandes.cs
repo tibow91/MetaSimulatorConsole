@@ -313,4 +313,28 @@ namespace MetaSimulatorConsole
             if (gestionnaire != null) gestionnaire.SauvegarderSimulation();
         }
     }
+
+    class augmenterNombrePersonnage : CommandGameManager
+    {
+        public Game Simulation;
+        public augmenterNombrePersonnage(GameManager manager) : base(manager)
+        {
+        }
+
+        public override void Execute()
+        {
+            if(!Simulation.Started)
+            Simulation.QG.PersonnagesToInsert++;
+            else 
+                Console.WriteLine("Impossible de modifier le nombre de personne car la simulation a déjà démarré !!!");
+        }
+
+        public override void Update()
+        {
+            if (gestionnaire != null)
+                Simulation = gestionnaire.Simulation;
+
+        }
+    }
 }
+
