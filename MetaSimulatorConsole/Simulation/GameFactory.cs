@@ -21,9 +21,8 @@ namespace MetaSimulatorConsole
         public bool Stop { get; set; } // Permet d'arrêter la simulation
         [XmlIgnore]
         public bool Running { get; set; } // Indique si la simulation est en cours
-        [XmlIgnore]
         public bool Started { get; set; } // Indique si la simulation est en cours
-
+        [XmlIgnore]
         public Grille Tableau;
         [XmlIgnore]
         protected GameManager Gestionnaire;
@@ -76,6 +75,7 @@ namespace MetaSimulatorConsole
 
         public virtual void CreerUneNouvellePartie(GameManager manager) // Doit charger les éléments par défault des zones
         {
+            Started = false;
             ConstruireQG(); // Détacher l'ancien QG d'abord s'il y a
             AttachToGameManager(manager);
             ConstruireZones();

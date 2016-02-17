@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Xml.Serialization;
+using MetaSimulatorConsole.Simulation.AgeOfKebab;
 
 namespace MetaSimulatorConsole.Simulation
 {
-    [XmlInclude(typeof(PersonnageBehavior))]
+    [XmlInclude(typeof(ClientBehavior))]
     public abstract class PersonnageBehavior : IObservateurAbstrait
     {
         private PersonnageMobilisable _personnage;

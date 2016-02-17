@@ -142,7 +142,6 @@ namespace MetaSimulatorConsole.Simulation
                 }
             }
         }
-
         public PersonnageBehavior Comportement;
         private ZoneGenerale _zonegenerale;
         [XmlIgnore]
