@@ -99,12 +99,26 @@
       <SubType>Content</SubType>
       <DependentUpon>Grille.classdiagram</DependentUpon>
     </Content>
+    <Content Include="KebabBuilder.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="KebabBuilder.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>KebabBuilder.classdiagram</DependentUpon>
+    </Content>
     <Content Include="LinkCaseTemplate.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="LinkCaseTemplate.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>LinkCaseTemplate.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="LoadGameAdapter.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LoadGameAdapter.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LoadGameAdapter.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1217.uml">
       <SubType>Content</SubType>
@@ -130,6 +144,9 @@
     <Content Include="ModelDefinition\Package_1555.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_2044.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package_2203.uml">
       <SubType>Content</SubType>
     </Content>
@@ -146,6 +163,13 @@
     <Content Include="QGObserver.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>QGObserver.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="QuartierGeneral.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="QuartierGeneral.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>QuartierGeneral.classdiagram</DependentUpon>
     </Content>
     <Content Include="SerializeTemplate.classdiagram">
       <SubType>Content</SubType>

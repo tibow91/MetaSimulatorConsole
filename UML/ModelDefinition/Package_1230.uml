@@ -9705,7 +9705,7 @@
         <referencesInternal>
           <reference
             Id="442de53d-5a09-4090-ab1e-b449c7af26e0"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -9779,20 +9779,20 @@
         </generalsInternal>
         <targetEnds>
           <association
-            Id="09c737f5-6be9-4451-a714-2ec8548e87f3"
+            Id="2e812ca4-bf58-4b28-bc2b-a7766dbfa5ed"
             isDerived="false"
             sourceEndRoleName="Game"
-            targetEndRoleName="ZoneComposite"
+            targetEndRoleName="ZoneGenerale"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="35479f3a-5fc7-4270-a774-5fd68e091da6"
-              LastKnownName="ZoneComposite"
+              Id="9d00954e-9707-49b0-9ff4-f32dac2833ed"
+              LastKnownName="ZoneGenerale"
               LastKnownLocation="Package_1230.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="f8bfa9b7-b834-47bc-99dc-488deb5a7477"
+                  Id="1456909a-654c-49bf-86eb-265fdb3d1b35"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -9805,8 +9805,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="168909c9-c763-46fc-8802-546327e45824"
-                  name="ZoneComposite"
+                  Id="8f0c7089-8549-4e92-9796-018b54b1dca8"
+                  name="ZoneGenerale"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -9818,20 +9818,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="908f0e8b-7f26-4441-a459-b2e9f9e47807"
+            Id="c1833856-5ae9-406d-9aed-eae560c264a6"
             isDerived="false"
             sourceEndRoleName="Game"
-            targetEndRoleName="Grille"
+            targetEndRoleName="QuartierGeneralAbstrait"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="fbc42235-5a65-487a-9964-267b935053bc"
-              LastKnownName="Grille"
-              LastKnownLocation="Package_1230.uml" />
+              Id="308062b3-ef6d-41a6-82fe-72adbbaa2dea"
+              LastKnownName="QuartierGeneralAbstrait"
+              LastKnownLocation="Package_1252.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="717947f1-8d72-4a45-90d1-fdc35a46fcca"
+                  Id="c7de21c8-4bc1-4833-a540-eea5c822ed69"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -9844,8 +9844,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="704d1a2d-0c1b-4091-9bd8-69399e008878"
-                  name="Grille"
+                  Id="b7dfcb91-a125-4131-a42a-9ad48b30aa67"
+                  name="QuartierGeneralAbstrait"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -9871,7 +9871,7 @@
             <referencesInternal>
               <reference
                 Id="d985452c-3806-4387-80b6-4449aa7c7654"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DStop"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DStop"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -9951,7 +9951,7 @@
             <referencesInternal>
               <reference
                 Id="938098b4-23be-46a6-8a4c-19ea58689b7a"
-                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DStarted"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DStarted"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10021,7 +10021,6 @@
           <property
             Id="3a480c03-c120-49f7-9f68-6342784724ea"
             name="Tableau"
-            visibility="Protected"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -10032,7 +10031,7 @@
             <referencesInternal>
               <reference
                 Id="5833c48a-dab6-447f-8666-ef1bca97852e"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DTableau"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DTableau"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10099,7 +10098,7 @@
             <referencesInternal>
               <reference
                 Id="6787ca9f-04cd-44a4-bce6-9d85c01514e8"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DGestionnaire"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DGestionnaire"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10165,7 +10164,7 @@
             <referencesInternal>
               <reference
                 Id="919380da-9617-44a0-b353-0ebd4adebe82"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DNomDuJeu"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DNomDuJeu"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10231,7 +10230,7 @@
             <referencesInternal>
               <reference
                 Id="740fecb1-6609-4284-a2e5-43134b6430b9"
-                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DZoneGenerale"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DZoneGenerale"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10279,17 +10278,363 @@
             </appliedStereotypesInternal>
             <type_NamedElement>
               <classMoniker
-                Id="35479f3a-5fc7-4270-a774-5fd68e091da6"
-                LastKnownName="ZoneComposite"
+                Id="9d00954e-9707-49b0-9ff4-f32dac2833ed"
+                LastKnownName="ZoneGenerale"
                 LastKnownLocation="Package_1230.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2ef3849a-a021-4190-8c1d-8c696ca67b27"
+            name="Running"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="52badc04-d9ee-4e28-9765-42f14f169319"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DRunning"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="65ee46be-3d1f-4900-927a-c72cc39f86b2"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc9dcdf6-d32d-4797-a40e-5c5b7ef7862a">
+                    <propertyInstance
+                      Id="0e84bd49-f205-4c7b-9912-fa35422c7057"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="13a5304d-6472-4b34-8dfb-217ad9a7cb64">
+                    <propertyInstance
+                      Id="84860067-99ce-4466-b176-2bae4197cb30"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0db0e3ba-dcfe-4785-b678-212d800d4ef8">
+                    <propertyInstance
+                      Id="1b757eb0-677d-4335-859d-baa7f9d4cf50"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ead5a917-05ad-4d5d-a8b5-2b0fad2572fb">
+                    <propertyInstance
+                      Id="5304ccca-7d0e-42e8-a628-c8da1d5dd24b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bbb1eb1-9d2d-4996-a874-5699344048da">
+                    <propertyInstance
+                      Id="719b777c-9fd6-40f5-b58c-37cfe0049de4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f18ebaf8-6cae-4fcc-b5b4-0e58934ccecc">
+                    <propertyInstance
+                      Id="e9967170-a075-49a2-9edc-45ff7a1af2e7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ddae8ed-eba0-46f6-b064-c4aa6286820f">
+                    <propertyInstance
+                      Id="6e431548-73a6-4bbb-9593-3ab10ee1c72f"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4e29b17d-b9cb-49f1-94a8-b5abcd7208d2"
+            name="QG"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="1f67cb65-57f8-4684-9ab1-553e935e974b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DQG"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="049af86c-e7c1-4f69-a48d-8b714d992374"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9082b38d-37a3-4b36-ad7a-c892fc2f7b14">
+                    <propertyInstance
+                      Id="0b774309-4645-4d52-a6bf-c24bf3bde045"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9eece838-a3dd-46c6-9ae9-2fd2b8c0e816">
+                    <propertyInstance
+                      Id="4c0ad38f-cb70-453f-a161-3a78f45400a7"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfdd9a3e-dcb1-46f0-8336-49edbdbef733">
+                    <propertyInstance
+                      Id="4330d20a-2360-4fce-8e86-64b2d36f9213"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52f2eb03-ccd8-40f1-a587-910c608e42be">
+                    <propertyInstance
+                      Id="217df399-05ff-4ca9-bb52-35ba67190e19"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9da60e07-81f2-4a36-b4ed-9d7ffb0fda68">
+                    <propertyInstance
+                      Id="04596b09-0901-4b64-b97f-a11f89141ab5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="308062b3-ef6d-41a6-82fe-72adbbaa2dea"
+                LastKnownName="QuartierGeneralAbstrait"
+                LastKnownLocation="Package_1252.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fa3d7865-6278-48f1-bc08-b3742bab9006"
+            name="AttachedToManager"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b26d92a7-ba66-4764-bd24-7266d0b91487"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DAttachedToManager"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="39f12ddd-0202-40b0-a294-e1534bf00097"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="598e95cc-ad0e-42b2-a215-2830b536c05e">
+                    <propertyInstance
+                      Id="bd99dbdb-80ea-429c-b556-daef0ddc7b56"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5aeccf01-5c8d-49ce-b8f7-4ca0c4164ba1">
+                    <propertyInstance
+                      Id="36da480e-64be-4008-91a4-ff0d23b02b56"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f673135-7154-42f2-a02a-5a82a188791a">
+                    <propertyInstance
+                      Id="092a5ee8-2903-4b26-a052-87697bab0533"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36dfa940-42ee-4991-b968-f057abcd182b">
+                    <propertyInstance
+                      Id="a47efe97-81f2-4775-9da2-3df49bbb8a8d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a107ac32-a5ec-45d8-969b-923a8bdffd2e">
+                    <propertyInstance
+                      Id="934922e9-ebf5-4bb2-bab1-3d38f5e79138"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="886cc921-4be9-4e5e-a437-cb6a4a654454"
+            name="QGSet"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="2b8f96c5-34dc-4427-8513-6fc3bb5898ad"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DQGSet"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1a6dbe9e-ea05-4a11-ac6f-9d6507ece673"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1c55901a-4169-439d-ad91-f4ced4150aff">
+                    <propertyInstance
+                      Id="06b2d6ff-3732-43a5-a6f2-7da98038c1a3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4de7bdd-79a6-4eea-a3e5-e4d34bfb3817">
+                    <propertyInstance
+                      Id="c65d7f39-798f-470c-aef6-f24a134760c4"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="211bb7eb-509c-47d3-8ff2-6b264613253e">
+                    <propertyInstance
+                      Id="5482470e-b28f-4114-b830-769d924d0ef7"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b65efa3e-129e-4cbb-a69d-f3c8fcb7775d">
+                    <propertyInstance
+                      Id="b0be0086-4129-405b-a83c-bcdb36bb3dcd"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="961a265e-1e3e-45c2-ba4c-e599544c78aa">
+                    <propertyInstance
+                      Id="05a84ab2-fde9-4498-bbe7-efac893e1958"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="931467b4-5825-4184-9a88-e0bef2cbadfc"
+            name="PersoLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a2a9cb0e-20af-49eb-b164-d54f1eb9b1f2"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DPersoLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="44418f99-06f7-4b95-bf0b-5c818346528c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54c047f8-85c6-4f22-995e-078d90d6de42">
+                    <propertyInstance
+                      Id="25d87479-4eee-4ed7-a38b-ed881b57b804"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8abcb362-d753-468f-a0ca-f3b38fc7229c">
+                    <propertyInstance
+                      Id="22c2bd12-af66-4ff9-9ad8-4cafa970a428"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="17646eef-9dab-44da-b653-cb2cc86651c3">
+                    <propertyInstance
+                      Id="cc8326aa-a95d-4730-8cf4-4d17f7f74072"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c3f23054-8fd9-4a2e-9bd3-35ba36df4d46">
+                    <propertyInstance
+                      Id="84ed4862-797b-4b9c-b59e-4d5c24306554"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9cba15f0-504f-4c40-bce9-b18676b8cf45">
+                    <propertyInstance
+                      Id="ea6b4b46-c14a-4324-8723-7e27fa124922"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="UML.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="a70adf19-48fe-41f1-a0bf-8d8b8c2145d7"
-            name="Game"
-            visibility="Protected"
+            Id="b8b63bac-e4da-4d75-a4b4-71f594404d7d"
+            name="LancerSimulation"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -10297,179 +10642,8 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="9547ce22-b4ed-4589-b488-6bc294ea3ee8"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGrille)])"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="a200a610-434f-41cc-88a2-ed5d8cdb8665"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="174dc3a3-e413-4e77-b780-240bf95184e9">
-                    <propertyInstance
-                      Id="93ce98c7-f34e-49cd-8b5f-275968df27fb"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="99ec7e66-a567-4903-81df-8af31e9beab3">
-                    <propertyInstance
-                      Id="2a6b4b40-137e-47dd-a25e-b94459e2c479"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6437d7b4-bf5d-4a9f-94c2-9cc48e201949">
-                    <propertyInstance
-                      Id="cbe44537-8d11-46d9-a462-0e78bd104aa8"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="196aebfc-bd8b-4f7e-9956-68fe73a66b44">
-                    <propertyInstance
-                      Id="69233b9e-fa16-42dc-b399-938059a3ce7a"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="8df34735-d282-4079-a616-f9866367c758">
-                    <propertyInstance
-                      Id="18fe4bf3-ecbe-4602-a282-e0e665f09993"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="fa6f71c1-6739-4b1e-b6a3-b36905e38977">
-                    <propertyInstance
-                      Id="106c6711-9325-49e2-a09c-9d17060ffce4"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="63e7abc9-5692-41b6-b15c-e97148e70545"
-                  name="manager"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="c752cefc-851b-4eb3-aa5f-fc34e0b3d87a"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGrille)]) ParameterIdentifier%3Dmanager"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="ec71897a-c76e-4627-b794-a181a354525d"
-                      LastKnownName="GameManager"
-                      LastKnownLocation="Package_1230.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="cf7c3d00-f172-4c26-88c5-fe141272eb03"
-                  name="grille"
-                  direction="In">
-                  <referencesInternal>
-                    <reference
-                      Id="69d5d370-f4e1-4cc0-88b4-c4c9cff709e8"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGrille)]) ParameterIdentifier%3Dgrille"
-                      tag="ViewCode" />
-                  </referencesInternal>
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="fbc42235-5a65-487a-9964-267b935053bc"
-                      LastKnownName="Grille"
-                      LastKnownLocation="Package_1230.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="4d6c7931-0d98-42c9-b3cf-19ae7ee38436"
-            name="RemplirGrille"
-            visibility="Protected"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="46237ebd-880f-4bfe-8e1e-a3611ba4aaff"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DRemplirGrille"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="d47937d3-dc4e-463a-865c-fc892061cd21"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6c1f9c4b-3ba8-429b-a57d-2fd2a282333a">
-                    <propertyInstance
-                      Id="e06fe832-2cdc-4ce4-bd10-73e7768f15fe"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="69ecc444-ec0b-483e-a724-a3af498e297c">
-                    <propertyInstance
-                      Id="c20b9e43-7f59-474c-928d-2c55a34eae9a"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="a06372f6-193e-4926-a9f3-f411cfaed187">
-                    <propertyInstance
-                      Id="613fb9da-9cb2-4864-b5b4-c30fd3488c8e"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="2fc652bc-b884-484c-bed8-53a032d1a536">
-                    <propertyInstance
-                      Id="0bc7f088-cd74-4051-8435-43c483c522b7"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="37a0e88d-6acc-455b-8146-bc1bcbbfd381">
-                    <propertyInstance
-                      Id="8028677a-02a3-4449-9b1d-0f061e9d268b"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="09707cf2-6b0f-4733-8b1f-17f51b6f5310">
-                    <propertyInstance
-                      Id="1964da5f-f019-49ca-b09c-bcfd3238d519"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
-            Id="b8b63bac-e4da-4d75-a4b4-71f594404d7d"
-            name="LancerSimulation"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
                 Id="6507fd3c-aa30-4e27-b921-8b05697c0a8a"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DLancerSimulation"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DLancerSimulation"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10524,71 +10698,6 @@
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="d29d0a6c-642a-4ef4-a4a2-4480264fbecc"
-            name="AfficherGrille"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <referencesInternal>
-              <reference
-                Id="3eeb5618-f158-454b-947e-f4d653a7e20c"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DAfficherGrille"
-                tag="ViewCode" />
-            </referencesInternal>
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="ef2b1a5c-b066-4b5e-a754-0dea8c3fa6bb"
-                name="method"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="31963cbb-339c-430e-b17d-ee3f93b12803">
-                    <propertyInstance
-                      Id="1141808f-7165-4ac8-93be-f1279f4b3918"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="614111d8-8312-47d8-bf40-8be936588629">
-                    <propertyInstance
-                      Id="5c2cb0bf-16e4-4e5d-bedd-5f492019ea2c"
-                      name="IsPartial"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="7d46a1cd-4ed6-4ab8-919e-19eeec74ebd0">
-                    <propertyInstance
-                      Id="798cd6eb-518c-4e37-baf1-1fad85817971"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="cbbd7feb-ad81-48d5-92b2-9fa626dee7d4">
-                    <propertyInstance
-                      Id="cc711bd7-feb6-4bde-a0bd-9150a51becfc"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="6fc1013e-5de1-4409-895a-7d91c5bbd0da">
-                    <propertyInstance
-                      Id="b3982781-97ac-4d0b-86eb-a55afaa0b4da"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="89a26c56-7a98-4923-89c5-abd61fc3dada">
-                    <propertyInstance
-                      Id="8a020f22-1ef5-4a37-b72d-2bb5da39236a"
-                      name="params"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </operation>
-          <operation
             Id="586c4549-5a27-4481-8c64-1d1d5e977ade"
             name="Equals"
             isLeaf="false"
@@ -10599,7 +10708,7 @@
             <referencesInternal>
               <reference
                 Id="94c6dd8f-c144-4e4f-b3e6-6514ce80848c"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DEquals OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)])"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DEquals OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)])"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10673,7 +10782,7 @@
                   <referencesInternal>
                     <reference
                       Id="bd28bfd1-fa7d-46ed-ac1d-2e36453a532e"
-                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DEquals OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)]) ParameterIdentifier%3Dother"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DEquals OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)]) ParameterIdentifier%3Dother"
                       tag="ViewCode" />
                   </referencesInternal>
                   <type_NamedElement>
@@ -10697,7 +10806,7 @@
             <referencesInternal>
               <reference
                 Id="252b6e68-1ec2-45c7-bddd-0949d9736ec5"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DConstruireZones"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DConstruireZones"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10756,13 +10865,13 @@
             name="VerifierValiditeZones"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
               <reference
                 Id="cbf70405-1441-43e1-94f9-d055ec757176"
-                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DVerifierValiditeZones"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DVerifierValiditeZones"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
@@ -10837,7 +10946,731 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="f41a28e4-edea-4abc-a046-693fd025ba46"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DUpdate"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2bef2a2e-b4c7-4d6d-8779-2439c498623a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11845307-941e-44a8-bd7e-52aaa2a3fb7d">
+                    <propertyInstance
+                      Id="b5928d9f-6237-46c7-a0a5-06a73e69bfbc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6b93f8c4-86cc-4353-ac89-da24ad3473ff">
+                    <propertyInstance
+                      Id="e323a33a-b837-4e56-bec7-30a996f1b77c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="263cf1c3-4852-453c-8341-5b1fb38ed4e6">
+                    <propertyInstance
+                      Id="e4ca5e1c-517f-418c-90d8-5789b6389c88"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18067568-3909-4ff2-9298-dd9f3e3862f7">
+                    <propertyInstance
+                      Id="b7d4037c-5664-4888-ae86-4817f85a6865"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f5057b3-ce57-46fc-b714-e21e31664c44">
+                    <propertyInstance
+                      Id="1194148f-779f-4224-b167-c87d160f384e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5a32a8e7-c4be-4619-84a3-bd90ef7d31de">
+                    <propertyInstance
+                      Id="97426f1d-e980-4067-b053-bbd66da11396"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f223cada-aaf7-46c1-8910-b7edc3a8cb02"
+            name="Game"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2c392d1c-e0e8-4aa8-bc15-0b984c221265"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f8f93642-c688-4d6f-8f4e-c60d285b7370"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6eeb7d4-9689-4437-9670-a5a519869d20">
+                    <propertyInstance
+                      Id="4101c12f-8b27-4d3d-b5f6-c14df00fb96b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c0c397b-31ca-4cda-a794-b4dd1b037b02">
+                    <propertyInstance
+                      Id="09e0b2a0-a098-4061-a18e-7f592794d6c3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="67da14f1-46fe-4732-b262-1d5acb28c4c9">
+                    <propertyInstance
+                      Id="e596e5d2-5faf-4728-bcc4-e50ede707523"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8afb9ae3-e7c6-4e10-b0a9-6bf1a82d6a78">
+                    <propertyInstance
+                      Id="9346cb9d-1260-4019-b7f5-dad602536fef"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d27d39f5-6cc9-4336-859d-80c79f3577a3">
+                    <propertyInstance
+                      Id="a206dbfe-4d86-477a-89f9-7b34c1ea949b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ab7e84f-4298-4c6b-82cc-48987193645b">
+                    <propertyInstance
+                      Id="41dc98fb-6d33-41ff-b459-ac27891f4bb2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="bd739fed-9ec0-4a61-86a9-13052aabb610"
+            name="DetacherAncienQG"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1a14de63-2d71-46fb-9b6c-8d7e19587214"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DDetacherAncienQG"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="53a5061e-d17d-4157-af1a-ff9dfc4c12cf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8942b5f-d975-475a-a8e7-b073f62b9291">
+                    <propertyInstance
+                      Id="3b389471-cab8-4477-b8b8-c3d48278aff1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="945b61f7-6d8b-4e89-8046-9fa3527391d4">
+                    <propertyInstance
+                      Id="ef7e44c2-a71c-4256-bd06-0b68259f4464"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a30629d3-6fe7-46a8-b2bf-9a772c96c1c8">
+                    <propertyInstance
+                      Id="64c05887-a332-43ef-a414-5bc01baed75f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1bddbd7d-7ba0-4c57-95db-520347ab5d9a">
+                    <propertyInstance
+                      Id="63c37f65-9cf5-4fb6-be55-5e804ae1a657"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66f97453-0c78-4c8d-a054-230cfd031545">
+                    <propertyInstance
+                      Id="d4d51670-0e50-42a2-83c5-2e77895a871f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d8e0606-4e15-4782-851d-06bb87b35917">
+                    <propertyInstance
+                      Id="3f74450e-d1d1-4f06-9d90-830e9a5bb7ce"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="23955441-cc93-441b-a517-39eff2095838"
+            name="ConstruireQG"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="939780a0-a559-41d0-8dad-dcc4a07bc1b4"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DConstruireQG"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f16eb38a-90de-4f12-bda8-d556ad3ece8f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f6091d4-dd94-4b80-bb72-049a41c03886">
+                    <propertyInstance
+                      Id="db11a760-181f-4293-a316-532377d760f5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9e662e1-871d-4315-8831-87e3bde27c7a">
+                    <propertyInstance
+                      Id="dbe8f47b-8e57-4d26-b509-e66b20e8a9de"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4290dce3-474f-49bd-b5f3-58e861804674">
+                    <propertyInstance
+                      Id="792763f6-ea2f-4d25-9d0e-4b8b753c8ca2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="770733b8-9b34-485e-bb6d-2dface5f5e53">
+                    <propertyInstance
+                      Id="c5e087c9-f5e5-4a4a-8a2e-79a4f16bd867"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f39b17c-34f9-44bc-9f7a-7fb72ba73a72">
+                    <propertyInstance
+                      Id="590d170f-b803-42cc-8d65-28cb2f047a75"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="356e9776-476d-4001-a25d-17f6c0d9cb96">
+                    <propertyInstance
+                      Id="f552bb7d-8015-4a90-9743-5d2aad200a23"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="e5cb174d-c55c-4ace-98da-5c97ea5ed310"
+            name="EstValide"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e118baf8-6e2c-4f77-8df0-7460023d531e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DEstValide"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8137b379-6ab5-4232-962b-f54a3a2ce4f7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28c5b7a5-8cf7-4c76-af2f-d8739af51320">
+                    <propertyInstance
+                      Id="6e0241e6-3988-4f0b-8bcf-6c2f226764ec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9c897da-d436-4ffc-bca8-23fe26b043c2">
+                    <propertyInstance
+                      Id="2b8ce4cd-5192-4bd7-bae2-6cc76cfbe256"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cfb4714-4b31-49fa-8c31-e3f9e37d618c">
+                    <propertyInstance
+                      Id="be0db24b-1887-47b3-a492-0d8c6bd5c248"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b5da1bc-9206-480f-8ac4-2a0ba58dee53">
+                    <propertyInstance
+                      Id="456bc9d9-f777-4de0-b7df-39c72072f52d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1dca8f2a-9699-4a23-b5f2-c49e74afc885">
+                    <propertyInstance
+                      Id="c918737d-84c5-4e82-bcee-e947d33ced13"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8fc5393b-7e1b-4942-b6fb-c97eba58a317">
+                    <propertyInstance
+                      Id="00307627-0717-4fdb-bb8b-0740a1c49c4c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="42c0888a-8f86-4532-8b70-10be2d6217d3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="62e9b792-fab4-4774-beaa-6bc8ad2c50b6"
+            name="AttachToGameManager"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="044d0a6a-6170-4146-8bc5-5bf94417d660"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DAttachToGameManager OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="25a21d80-2bb4-4e67-867e-d43d8380db66"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="edc2db0d-a5e9-4e0f-b004-850bbb5bdd90">
+                    <propertyInstance
+                      Id="79797ccd-a788-4359-adfd-e24bd0a0837d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6ec43ff-7e68-4902-8f44-b76c595dab8f">
+                    <propertyInstance
+                      Id="9450ac24-f3ff-4a0b-a856-d83072630c79"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d8feeba-f1ca-4354-b961-33579ed5c5cf">
+                    <propertyInstance
+                      Id="6805564b-fae5-4a9f-9e08-2aa5a882fd91"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46eeb4d3-5f86-49ad-abc8-68fb02fe6da4">
+                    <propertyInstance
+                      Id="19504a4b-15ca-4153-b922-4a0f2f5df44b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63e02b20-40bb-42ce-abbb-b378a2480cf8">
+                    <propertyInstance
+                      Id="7a2958af-e159-4e96-b2e6-3cc5779d4621"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ef080f28-0480-4972-b0fc-7f23293038c9">
+                    <propertyInstance
+                      Id="26062121-c26e-487e-9e20-12e7ab3199bd"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0c8c02b8-2a91-4128-9822-3156b4c94cff"
+                  name="manager"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="614e57be-a5ff-4777-925e-d3101b8359e6"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DAttachToGameManager OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)]) ParameterIdentifier%3Dmanager"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ec71897a-c76e-4627-b794-a181a354525d"
+                      LastKnownName="GameManager"
+                      LastKnownLocation="Package_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a65c8a2f-4611-461e-8ce6-444a2e7c6aee"
+            name="CreerUneNouvellePartie"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7ac9baef-fc93-4990-a88a-74a0bab527e3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DCreerUneNouvellePartie OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f05b148e-abef-41af-bb97-ec2060ef94a8"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f9ce4f6-7465-428e-8d4e-d3d2c92f3e53">
+                    <propertyInstance
+                      Id="0753b1c9-b953-4c9e-b05c-9b2af9541969"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d96c9d63-2bfd-43ec-a9dc-6eb18ce76761">
+                    <propertyInstance
+                      Id="0aba229c-445d-4f25-8047-06ad74a6d8b5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df9577b1-a781-4342-bcf0-bf2c246728bf">
+                    <propertyInstance
+                      Id="642e0bc6-00fa-4a55-a30c-8ffa8331adaf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a57ef1a2-23c5-4636-bb08-bbfc7abf6b2f">
+                    <propertyInstance
+                      Id="f31e3582-89bc-457e-a9d2-c9236269d373"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd5fd86d-3450-4618-8c2a-16b6ac46c0ef">
+                    <propertyInstance
+                      Id="53b4b67a-1635-4afa-9fc8-0c89295baca8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dd2eb3cc-233c-4c0e-9815-347613f832a7">
+                    <propertyInstance
+                      Id="4acbff3b-67d7-43d6-82ee-b2bfe080dbeb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a188692c-cf4a-48ba-9d51-24fbf2ce84f2"
+                  name="manager"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fd6a729c-c4c1-46c7-9e1c-2a0356a40f04"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DCreerUneNouvellePartie OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)]) ParameterIdentifier%3Dmanager"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ec71897a-c76e-4627-b794-a181a354525d"
+                      LastKnownName="GameManager"
+                      LastKnownLocation="Package_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b5dd0675-2ba3-49bf-b158-8aea4cc5b6f4"
+            name="RechargerLaPartie"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4cb6713b-7aec-425d-a8d2-dbc05d273715"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DRechargerLaPartie OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b43e722f-b579-4a96-bb8f-6ebf7b0b855c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce97409d-5238-4cc9-8adb-78d16a1031bf">
+                    <propertyInstance
+                      Id="015339a7-a57f-4fce-88f4-119072ae40db"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11af6cf6-f3a3-4398-bd35-af8dce989931">
+                    <propertyInstance
+                      Id="c075cad2-bdaa-489b-9a2f-9bb8c8e179c3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cebc4e63-6a46-4c9b-96d6-8d36d3845ed1">
+                    <propertyInstance
+                      Id="5912963b-c818-4b8c-9eb6-b419b68c9f0f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d10f1b7-e235-411c-b6f1-62e9f549c748">
+                    <propertyInstance
+                      Id="1a2db9ef-1c2b-456e-9a0e-be393a8ffc3e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="803074e1-ec04-4787-beba-34c78df9ca4c">
+                    <propertyInstance
+                      Id="3da16927-d101-4e5e-8e3f-d97df7462a43"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6877293-7a1b-4fa4-af78-b2c810c334d2">
+                    <propertyInstance
+                      Id="6775cfef-eae3-4545-9f88-e846e0bd4337"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="318b183f-fbab-4508-a24f-5e92fc186f70"
+                  name="manager"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="af493ac4-d8be-4b2d-9c41-7e27822f9ea4"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3D(Name%3DRechargerLaPartie OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGameManager)]) ParameterIdentifier%3Dmanager"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ec71897a-c76e-4627-b794-a181a354525d"
+                      LastKnownName="GameManager"
+                      LastKnownLocation="Package_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5bdf2dbc-b3e7-4393-be5d-79fb90cbbac1"
+            name="ChargerAlgorithmes"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b47d7de6-5fa3-408e-910a-c78364890170"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DChargerAlgorithmes"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a6a9d087-262f-48ca-b1be-95f79625bdf9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6af0610-842e-452a-b001-d63cbc63bb4e">
+                    <propertyInstance
+                      Id="f23cdbe7-afe8-49af-8003-56c2f9342d0f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad518339-971a-48be-ab4d-db1691e8e251">
+                    <propertyInstance
+                      Id="f191e6cb-69f1-4343-8f5e-95d5ec6ab57a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="579fe764-fa8d-4cb2-aa03-245da4c213e7">
+                    <propertyInstance
+                      Id="f51b4102-03eb-426c-9f76-defbc283b1e3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00ae4be6-b074-4800-8a0e-cc57be31802f">
+                    <propertyInstance
+                      Id="69a9f099-a142-4915-bf3d-3a3419870831"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f520ffd-0250-4473-bdfa-4b6eb13b81dc">
+                    <propertyInstance
+                      Id="11a8ae8d-7812-46c0-af88-ef95cea27d99"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dac62969-622a-40e8-82a6-355d7fed5647">
+                    <propertyInstance
+                      Id="0b0f396b-f680-4073-96da-543fe489c3ac"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="12a6e00a-aae1-4740-93cc-95597a9c7131"
+            name="LancerMoteurSimulation"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="04ad194f-04b9-4810-8a12-7b18ce276d46"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame Member%3DLancerMoteurSimulation"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f261d784-8cfd-407b-b96c-ef2a0bb25c2a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d537a555-15de-415c-a2ee-31c5a666962f">
+                    <propertyInstance
+                      Id="cb136e1b-effd-4e8e-a9a4-22007676794e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26248abd-ee9a-4ed7-9e29-fd7c3e0bec22">
+                    <propertyInstance
+                      Id="713888bd-fcf2-44c0-a73c-722f3b4b910c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9de0b79-6b41-4b62-856a-a13c91b879a7">
+                    <propertyInstance
+                      Id="c30c0d14-7dd8-4935-83b7-bc8b41ef6929"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b7a9167-af50-41c8-aaa3-ed8d9d004cce">
+                    <propertyInstance
+                      Id="9038d91f-63e2-41ce-b102-f2fac9123c84"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4fd7a94d-3db4-49ff-840b-32026e0b1eb1">
+                    <propertyInstance
+                      Id="dcb3aa96-0ab4-404a-b03b-beeb6af5cec8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b11e5a6d-885e-453e-b10f-88f574362df3">
+                    <propertyInstance
+                      Id="9172a11a-bbbd-4e10-a709-e09faf90734c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -12674,7 +13507,7 @@
         <referencesInternal>
           <reference
             Id="dc72e878-9d0e-4961-a9cf-44bb4c21d6f1"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGrille"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGrille"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -13197,7 +14030,7 @@
         <referencesInternal>
           <reference
             Id="2497cc7f-1f1a-40e7-8179-2b79e5d62148"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSujetObserveAbstrait"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DSujetObserveAbstrait"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -19648,7 +20481,7 @@
         <referencesInternal>
           <reference
             Id="88209ebe-cacb-43d9-aff9-ae7afb3f1edf"
-            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DEGame"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DEGame"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -19686,7 +20519,6 @@
       <class
         Id="35479f3a-5fc7-4270-a774-5fd68e091da6"
         name="ZoneComposite"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -23711,7 +24543,7 @@
         <referencesInternal>
           <reference
             Id="799c5ffa-2dda-407d-9483-6a1aae8abd4f"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneFinale"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneFinale"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -25473,7 +26305,7 @@
         <referencesInternal>
           <reference
             Id="03be2c34-13c9-4d52-9e30-b53a29789475"
-            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DIObservateurAbstrait"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DIObservateurAbstrait"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -25591,7 +26423,7 @@
         <referencesInternal>
           <reference
             Id="5cefb6ef-75c5-4579-adbb-f7b324eb357e"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonnees"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DCoordonnees"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -25649,7 +26481,7 @@
         <referencesInternal>
           <reference
             Id="ce8d8d5a-6353-42f5-aee3-fb06d881cf27"
-            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FMutaw%2FDocuments%2FCours%2F5A%2FC%2523%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale"
             tag="ViewCode" />
         </referencesInternal>
         <appliedStereotypesInternal>
@@ -25705,6 +26537,508 @@
               LastKnownLocation="Package_1230.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="65d334ec-e4fb-4d04-82e3-cbff862358d9"
+            name="ZoneGenerale"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1eefc7c2-d21f-4638-b64b-1fa6aef9ad5e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ab8e5847-99dd-44f7-b050-45631e2a4670"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="36f10a24-46f3-4a95-90ae-06aa8b7dba60">
+                    <propertyInstance
+                      Id="cf5b6b89-a133-4101-9d08-ac5c3f82ceca"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0735c9b6-c984-4d0c-85f4-2bb999c1c031">
+                    <propertyInstance
+                      Id="c60e52a7-d25d-40d5-938d-30e8420a5897"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f761b044-7bb9-42c1-950c-031935b66262">
+                    <propertyInstance
+                      Id="e94d0d2e-5d08-46e7-b572-9746ea8e5a8d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4980c779-0a42-4f7b-bbfc-788e4a527e90">
+                    <propertyInstance
+                      Id="c066abdf-ec7a-4b07-8af0-039ddc2b2e50"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dee9f0ec-6070-46bc-b672-ed932616bc00">
+                    <propertyInstance
+                      Id="e97c924f-c244-405a-a619-62768c592ce2"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b3337293-713d-4817-937b-a7a92bf0a94f">
+                    <propertyInstance
+                      Id="d5b33d61-dc54-4463-aea4-f5022aa7373a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8bb9310f-3b97-4ee8-a4fb-66269092a5c4"
+                  name="name"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d90a3c6c-3686-410a-8b22-9d30b6a08ded"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)]) ParameterIdentifier%3Dname"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="UML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="606d6745-50ae-458e-a117-b057000c0014"
+                  name="simu"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="097bd295-4c9f-4ea5-b4ab-321e34dbd8c5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DGame)]) ParameterIdentifier%3Dsimu"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="c24f00e2-9ecd-4cf6-9128-a5c39d33a295"
+                      LastKnownName="Game"
+                      LastKnownLocation="Package_1230.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f659318a-de1c-4a4c-afd4-42955439740b"
+            name="RattacherAccessPoints"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ca9bf6f1-4968-446a-8501-dc54ca993fab"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3DRattacherAccessPoints"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e2d82d5b-1178-4c85-98dc-c92c91890ebf"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26f1bc98-7423-4510-a1be-ca89b43a2765">
+                    <propertyInstance
+                      Id="1c249f38-e74b-409a-9ef8-e9bf8216ae69"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="676f3c5d-fdfd-4d13-a436-25b152e6b4b3">
+                    <propertyInstance
+                      Id="1e27bd23-0ce6-47b8-a7a6-bc8bf89a8743"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53d6bb65-d1c5-4f57-b53e-e22338e97106">
+                    <propertyInstance
+                      Id="da104aca-9a02-4f93-a49c-6f2258a926fb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61e1f648-c34b-43af-a10f-3c553ce04e40">
+                    <propertyInstance
+                      Id="7cf5fe15-7b3f-450e-bd27-4fdb70917727"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4bbed3a-2d6e-440d-ae40-87cfd4423bb6">
+                    <propertyInstance
+                      Id="6786fed1-f657-4e5d-bb50-b8edbd409613"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3efd0bb-7abd-470d-a21a-2c310dbcd283">
+                    <propertyInstance
+                      Id="bb8f2376-f64f-4c92-bd7c-d41e2841030b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8d6ec33b-1c01-4a11-bff1-0606aa9be193"
+            name="ConstruireZones"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c86ddbb8-52df-4559-a75a-123037e5ef51"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3DConstruireZones"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="38162490-2cd7-4ab6-aae4-638208fee766"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4450435c-78d2-4b8b-9ad3-ec393237fd7e">
+                    <propertyInstance
+                      Id="2e0850f8-0e65-41c0-8552-f2e4de2057d8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b834e47-7eaa-4ede-a0a6-92fe0d585206">
+                    <propertyInstance
+                      Id="41740f59-5cf8-440c-872d-e7c8263cf2dd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26b23e49-2c0c-4f46-a1c6-926384635e53">
+                    <propertyInstance
+                      Id="63ca33d6-fbb3-48fe-a5fd-5cbf174e02e2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4743656-2887-40f6-8ec3-a5659a7d27bf">
+                    <propertyInstance
+                      Id="d806c985-9a58-4c79-9939-4f7144b2f40b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35917cc8-f3da-48b2-b316-e47d251668ec">
+                    <propertyInstance
+                      Id="1bd287ab-2409-4b47-a41b-b1399afcc586"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d524f00b-e205-49a3-bc40-624d0af0f925">
+                    <propertyInstance
+                      Id="e803d37c-da64-43b8-95b2-bbb3d20a7ec8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="24726c83-6898-4df0-8593-9b761c6fadef"
+            name="HierarchiserZones"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8dff3017-faea-4d00-9000-f7951e7d4f2f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3DHierarchiserZones"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="53dbf096-7299-401d-a91f-13a293b32ce7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d88ce11-89b4-4ff6-ade5-2beb24ddfb43">
+                    <propertyInstance
+                      Id="56b9732c-c394-47cd-b684-79aedf4dc3e7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88799c4b-56ae-4c57-9a0a-68898dcbc533">
+                    <propertyInstance
+                      Id="d9ee7bbb-810c-4823-8c47-6d1924c4be19"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b0cf5b2-2806-4a61-b014-7b17718f8b62">
+                    <propertyInstance
+                      Id="4dcc170d-8199-4218-bda8-6e992eee4372"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2d9fad92-4f1c-43ba-9539-51f38a7b39ae">
+                    <propertyInstance
+                      Id="d038b643-b7b4-423a-b9f5-74652c146af4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f83ffada-9f12-4e12-9ce8-f3a99296e5c2">
+                    <propertyInstance
+                      Id="0daf399e-a9fe-4702-82f7-b4fb286b2020"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="287f8d2c-c921-4a3f-a81a-d6920edb7554">
+                    <propertyInstance
+                      Id="c8e0a15c-126d-4400-aaea-a64cfa1a776e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="37fd1b2e-8d26-45d0-b1e3-451b5c45ed87"
+            name="DistribuerZones"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c06352fc-6a75-4c1e-9219-b84451337435"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3DDistribuerZones"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="265a9499-c1b3-46fc-b1a1-6a7a18f8ef33"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fae10c0f-60e6-4205-a763-1cceab25ace6">
+                    <propertyInstance
+                      Id="285e1e25-865f-4107-b7ab-bb25a04b9293"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc0a65bf-cc31-47b3-9562-dcfa4b206022">
+                    <propertyInstance
+                      Id="8091a67f-0279-4933-b5eb-5f79caf4f8c4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb66c6e0-67d2-4edb-842e-7e9f523dc5a7">
+                    <propertyInstance
+                      Id="08192405-3e64-49be-9c63-b528f165a0b2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c023966f-b2eb-4b80-9450-a5429ec16330">
+                    <propertyInstance
+                      Id="d72982b2-70e9-4e75-a659-b3ccdd5f4bc1"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ca9bb4f-ee21-4c41-a6c3-9916eecc134a">
+                    <propertyInstance
+                      Id="50c8ee83-3853-40bc-8c4e-b3a04f8796b3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e90aa8e-9f5c-46bb-b3df-103d2f2ec859">
+                    <propertyInstance
+                      Id="7226c52f-f19a-49d0-9704-3be4d935b34d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f5bf12eb-9bdd-4f03-b28f-66e50805e21a"
+            name="PlacerObjets"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b3df2f56-fa60-423f-9bf1-1d1076433423"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3DPlacerObjets"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fbbcfdd1-fc14-4dfa-9bfb-6b9eae845c30"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d506af5-5ed2-4f98-beec-771082978b64">
+                    <propertyInstance
+                      Id="73b22f0c-db6e-4d74-8cc3-8f1bd7a36594"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c89c481f-ae08-42f8-b9ba-5bdce2e6a9f5">
+                    <propertyInstance
+                      Id="3ad848b7-6b0f-41eb-9f23-68b6ed3ebf00"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0466cc3b-6f6e-4136-ad16-d6e7944de4ee">
+                    <propertyInstance
+                      Id="52a04e73-dcc6-47da-8719-919479462b7c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4a6d860c-7b81-4258-8dfd-93b7ab706d99">
+                    <propertyInstance
+                      Id="fee1b601-5535-48e7-b47e-19563c86eebc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53471074-f1d6-46a6-8dda-3f1051b3c01e">
+                    <propertyInstance
+                      Id="de76cafd-35e3-49bf-8aa1-9714200b1d46"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f6c1fa8-d809-4ee7-ad7e-ee638836cd75">
+                    <propertyInstance
+                      Id="a8d88f40-484e-4e4f-98af-191d4e3cdb86"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5dbc1ecb-5c46-44b4-9743-c38273f84481"
+            name="ZoneGenerale"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c7bedccd-0875-4239-a641-f4d464c1d92f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FIkkYuw%2FSource%2FRepos%2FMetaSimulatorConsole%2FMetaSimulatorConsole%2Fbin%2FDebug%2FMetaSimulatorConsole.exe Namespace%3DMetaSimulatorConsole Type%3DZoneGenerale Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="db460609-49d5-42a5-b696-6c3f6766418b"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6823fe98-e23c-4bb7-a1c8-4f728fab82fa">
+                    <propertyInstance
+                      Id="ed7f43b2-2d2d-413a-869a-cbd88464970f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35564730-55af-46db-963b-bc34c801133e">
+                    <propertyInstance
+                      Id="de3f2fa3-03ac-4437-acd4-8e069a3472ff"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="853b7006-d5c6-4510-b36f-a9a663aab058">
+                    <propertyInstance
+                      Id="070c8948-34b5-4163-969a-49b71ecd1c9f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c5a8eb7-aef4-476f-98ad-9b3d4ef3b4ff">
+                    <propertyInstance
+                      Id="ae272b19-c74c-44dc-b008-f08cf71f4e0a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d9479a56-e741-43a4-ab8b-e3615266cf89">
+                    <propertyInstance
+                      Id="fbeaabdd-5f19-4cff-a948-3d94260ee1e5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="51cbe9d0-7949-4b6b-8bc0-822db19ea08f">
+                    <propertyInstance
+                      Id="360a507a-1f1c-4781-8718-53934896a52d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -27361,6 +28695,12 @@
         Id="03548ecf-6d3e-489f-a539-9f80ac16b33c"
         LastKnownName="Tableau"
         LastKnownLocation="Package_1226.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="598a363f-0e19-4c82-912d-ff92621a0af4"
+        LastKnownName="Gestion"
+        LastKnownLocation="Package_2044.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
