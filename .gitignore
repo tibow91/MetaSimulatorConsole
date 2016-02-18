@@ -1,4 +1,5 @@
 MetaSimulatorConsole/obj/
 MetaSimulatorConsole/bin/Debug/*
 !MetaSimulatorConsole/bin/Debug/res
-MetaSimulatorConsole/bin/Release
+MetaSimulatorConsole/bin/Release/*
+!MetaSimulatorConsole/bin/Release/res
