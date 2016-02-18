@@ -29,10 +29,10 @@ namespace MetaSimulatorConsole
                 return null;
             }
 
-            string path = @"C:\XML\" + filename + ".xml";
+            string path = "XML\\" + filename + ".xml";
             if (!File.Exists(path))
             {
-                Console.WriteLine("Serialize-Read: Impossible de déserializer '" + filename + ".xml' : Fichier non existant");
+                Console.WriteLine("Serialize-Read: Impossible de déserializer '" + path + ": Fichier non existant");
                 return null;
             }
             TextReader reader = new StreamReader(path);
@@ -59,9 +59,9 @@ namespace MetaSimulatorConsole
                 Console.WriteLine("Serialize-Write: Cannot execute serialization because of null serializer");
                 return;
             }
-            Directory.CreateDirectory(@"C:\XML\");
+            Directory.CreateDirectory("XML");
 
-            using (TextWriter writer = new StreamWriter(@"C:\XML\" + filename + ".xml"))
+            using (TextWriter writer = new StreamWriter("XML\\" + filename + ".xml"))
             {
                 //serializer.Serialize(writer, obj);
                 serialize(writer,serializer,obj);

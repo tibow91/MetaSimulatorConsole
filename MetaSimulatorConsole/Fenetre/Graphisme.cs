@@ -286,29 +286,29 @@ class Graphisme
         }
         public void ChargerTextures()
         {
-            Textures.Add(NomTexture.Herbe2, ChargerTexture("../res/grass2.png"));
-            Textures.Add(NomTexture.Ground1, ChargerTexture("../res/ground1.png"));
-            Textures.Add(NomTexture.Ground2, ChargerTexture("../res/ground2.png"));
-            Textures.Add(NomTexture.Mozaic1, ChargerTexture("../res/mozaic1.jpg"));
-            Textures.Add(NomTexture.WoodPlatform1, ChargerTexture("../res/platform_vertical.png"));
-            Textures.Add(NomTexture.WoodPlatform2, ChargerTexture("../res/platform_horizontal.png"));
-            Textures.Add(NomTexture.CrossedCircle, ChargerTexture("../res/circle_crossed.png"));
-            Textures.Add(NomTexture.Feet, ChargerTexture("../res/foot_icon.png"));
-            Textures.Add(NomTexture.Dollar3D, ChargerTexture("../res/dollar_3d_green.png"));
-            Textures.Add(NomTexture.Table, ChargerTexture("../res/table.png"));
-            Textures.Add(NomTexture.Player, ChargerTexture("../res/player.png"));
-            Textures.Add(NomTexture.Skull, ChargerTexture("../res/skull.png"));
+            Textures.Add(NomTexture.Herbe2, ChargerTexture("/res/grass2.png"));
+            Textures.Add(NomTexture.Ground1, ChargerTexture("/res/ground1.png"));
+            Textures.Add(NomTexture.Ground2, ChargerTexture("/res/ground2.png"));
+            Textures.Add(NomTexture.Mozaic1, ChargerTexture("/res/mozaic1.jpg"));
+            Textures.Add(NomTexture.WoodPlatform1, ChargerTexture("/res/platform_vertical.png"));
+            Textures.Add(NomTexture.WoodPlatform2, ChargerTexture("/res/platform_horizontal.png"));
+            Textures.Add(NomTexture.CrossedCircle, ChargerTexture("/res/circle_crossed.png"));
+            Textures.Add(NomTexture.Feet, ChargerTexture("/res/foot_icon.png"));
+            Textures.Add(NomTexture.Dollar3D, ChargerTexture("/res/dollar_3d_green.png"));
+            Textures.Add(NomTexture.Table, ChargerTexture("/res/table.png"));
+            Textures.Add(NomTexture.Player, ChargerTexture("/res/player.png"));
+            Textures.Add(NomTexture.Skull, ChargerTexture("/res/skull.png"));
 
 
-            Textures.Add(NomTexture.Herbe, ChargerTexture("../res/grass.png"));
-            Textures.Add(NomTexture.Pikachu, ChargerTexture("../res/m_front.png"));
+            Textures.Add(NomTexture.Herbe, ChargerTexture("/res/grass.png"));
+            Textures.Add(NomTexture.Pikachu, ChargerTexture("/res/m_front.png"));
 
-            Textures.Add(NomTexture.Bee, ChargerTexture("../res/bee.png"));
-            Textures.Add(NomTexture.Beehive, ChargerTexture("../res/beehive.png"));
-            Textures.Add(NomTexture.Flower, ChargerTexture("../res/flower.png"));
+            Textures.Add(NomTexture.Bee, ChargerTexture("/res/bee.png"));
+            Textures.Add(NomTexture.Beehive, ChargerTexture("/res/beehive.png"));
+            Textures.Add(NomTexture.Flower, ChargerTexture("/res/flower.png"));
 
-            Textures.Add(NomTexture.Plane1, ChargerTexture("../res/plane.png"));
-            Textures.Add(NomTexture.Plane2, ChargerTexture("../res/planetexpress.png"));
+            Textures.Add(NomTexture.Plane1, ChargerTexture("/res/plane.png"));
+            Textures.Add(NomTexture.Plane2, ChargerTexture("/res/planetexpress.png"));
         }
 
 

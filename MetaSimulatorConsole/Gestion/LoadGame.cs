@@ -111,7 +111,7 @@ namespace MetaSimulatorConsole.Gestion
         }
         private bool CheckFileExistence()
         {
-            string path = @"C:\XML\" + NomFichier + ".xml";
+            string path = @"XML\" + NomFichier + ".xml";
 
             if (!File.Exists(path))
             {

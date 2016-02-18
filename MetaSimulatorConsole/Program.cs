@@ -26,17 +26,12 @@ namespace MetaSimulatorConsole
 //            }
             //Thread workerThread = new Thread(Manager.Simulation.LancerSimulation);
             //workerThread.Start();
-            var serveur = new KebabDirecteur();
-            var menu = new KebabBuilderSimple();
-            serveur.Construire(menu);
-            var kebab = menu.RecupererKebab();
-            Console.WriteLine(kebab.Composition());
-            Console.WriteLine("prix = " + kebab.Cout());
-            new CoordonneesSerializer().Serialize(new Coordonnees(5, 5), "Coordonnées");
-            Coordonnees coor = (Coordonnees) new CoordonneesSerializer().Deserialize("Coordonnées");
-            Console.WriteLine("Coordonnées deserializées = " + coor);
-
-
+            //var serveur = new KebabDirecteur();
+            //var menu = new KebabBuilderSimple();
+            //serveur.Construire(menu);
+            //var kebab = menu.RecupererKebab();
+            //Console.WriteLine(kebab.Composition());
+            //Console.WriteLine("prix = " + kebab.Cout());
             manager.Fenetre.Run();
           // https://github.com/tibow91/MetaSimulatorConsole.git
         }
